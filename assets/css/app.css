@@ -1,4 +1,7 @@
 @import "~bootstrap";
+@import "~font-awesome";
+@import "~typeface-numans";
+@import "login.css";
 body {
     background-color: lightgray;
 }

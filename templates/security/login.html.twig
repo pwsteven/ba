@@ -1,39 +1,66 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Login - BA OnBoarding - Your Lawyers Ltd{% endblock %}
-
-{% block body %}
-    <form method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-        <label for="inputEmail" class="sr-only">Email</label>
-        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-
-        <input type="hidden" name="_csrf_token"
-               value="{{ csrf_token('authenticate') }}"
-        >
-
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="{{ asset('build/images/your_lawyers_icon.a7109bc7.png') }}">
+    <title>Login - BA OnBoarding - Your Lawyers Ltd</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body class="login">
+    <div class="container login_container">
+        <div class="d-flex justify-content-center h-100" id="login_form">
+            <div class="card">
+                <div class="card-header text-center">
+                    <img src="{{ asset('build/images/yl_92x75.1da10cc4.png') }}" alt="Your Lawyers Ltd">
+                    <h4>Sign In</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            <label for="inputEmail" class="sr-only"></label>
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="email" required autofocus>
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                            </div>
+                            <label for="inputPassword" class="sr-only"></label>
+                            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="password" required>
+                        </div>
+                        <div class="row align-items-center remember">
+                            <label for="rememberMe" class="sr-only"></label>
+                            <input type="checkbox" id="rememberMe" name="_remember_me">Remember Me
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
             </div>
-        #}
+        </div>
+    </div>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
+</html>
 
-        <button class="btn btn-lg btn-primary" type="submit">
-            Sign in
-        </button>
-    </form>
-{% endblock %}
 
 
 
