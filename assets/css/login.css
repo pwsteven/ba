@@ -1,19 +1,12 @@
-html,body.login {
-    background-image: url('../images/login-bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
-    font-family: 'Numans', sans-serif;
-}
 .login_container {
     height: 100%;
     align-content: center;
 }
 #login_form .card {
-    height: 390px;
+    padding: 20px;
     margin-top: auto;
     margin-bottom: auto;
-    width: 400px;
+
     background-color: rgba(0,0,0,0.6) !important;
 }
 #login_form .card-header h4 {

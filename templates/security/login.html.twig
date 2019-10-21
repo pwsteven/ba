@@ -9,8 +9,17 @@
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
+    <style>
+        html,body {
+            background-image: url({{ asset('build/images/login-bg.9bc12d45.jpg') }});
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Numans', sans-serif;
+        }
+    </style>
 </head>
-<body class="login">
+<body>
     <div class="container login_container">
         <div class="d-flex justify-content-center h-100" id="login_form">
             <div class="card">
