@@ -20,7 +20,15 @@
     <body>
         <div class="wrapper">
             {{ include('blocks/_header.html.twig') }}
-            {% block body %}{% endblock %}
+            <div class="page-wrap">
+                {{ include('blocks/_sidebar.html.twig') }}
+                <div class="main-content">
+                    <div class="container-fluid">
+                        {% block body %}{% endblock %}
+                    </div>
+                </div>
+                {{ include('blocks/_footer.html.twig') }}
+            </div>
         </div>
         {% block javascripts %}
             <script src="{{ asset('src/js/vendor/jquery-3.3.1.min.js') }}"></script>
