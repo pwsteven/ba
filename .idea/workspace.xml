@@ -1,7 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="" />
+    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/amcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/animate.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/gantt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/images/dragIconRoundBig.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/images/dragIconRoundBig.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/images/lens.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/images/lens.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/pie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/radar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/serial.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/themes/black.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/themes/chalk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/themes/dark.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/themes/light.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/themes/patterns.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/amcharts/xy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ammap3/ammap/ammap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ammap3/ammap/ammap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ammap3/ammap/ammap_amcharts_extension.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ammap3/ammap/maps/js/usaLow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap-slider/dist/bootstrap-slider.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap-slider/dist/css/bootstrap-slider.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap/dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap/dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/bootstrap/dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/c3/c3.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/c3/c3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/chartist/dist/chartist.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/chartist/dist/chartist.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/chartist/dist/chartist.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/d3/dist/d3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/d3/dist/d3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/d3/dist/d3.node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/d3/dist/package.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datatables.net-responsive/js/dataTables.responsive.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datatables.net/js/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datedropper/datedropper.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/datedropper/datedropper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/flot-charts/curvedLines.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/flot-charts/jquery.flot.categories.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/flot-charts/jquery.flot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/flot-charts/jquery.flot.pie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/flot-charts/jquery.flot.tooltip.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/css/all.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fullcalendar/dist/fullcalendar.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/fullcalendar/dist/fullcalendar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/icon-kit/dist/css/iconkit.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/icon-kit/dist/fonts/iconkit.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/icon-kit/dist/fonts/iconkit.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/icon-kit/dist/fonts/iconkit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/icon-kit/dist/fonts/iconkit.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/icon-kit/dist/fonts/iconkit.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/icon-kit/dist/fonts/iconkit.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ionicons/dist/css/ionicons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ionicons/dist/fonts/ionicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ionicons/dist/fonts/ionicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ionicons/dist/fonts/ionicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ionicons/dist/fonts/ionicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/ionicons/dist/fonts/ionicons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/jquery.barrating.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/jquery.barrating.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/bars-1to10.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/bars-horizontal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/bars-movie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/bars-pill.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/bars-reversed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/bars-square.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/bootstrap-stars.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/css-stars.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/fontawesome-stars-o.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-knob/dist/jquery.knob.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-minicolors/jquery.minicolors.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-minicolors/jquery.minicolors.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-minicolors/jquery.minicolors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-toast-plugin/dist/jquery.toast.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery-toast-plugin/dist/jquery.toast.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jquery.repeater/jquery.repeater.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jvectormap/jquery-jvectormap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/jvectormap/jquery-jvectormap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/mohithg-switchery/dist/switchery.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/mohithg-switchery/dist/switchery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/moment/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/nestable/jquery.nestable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/owl.carousel/dist/assets/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/owl.carousel/dist/assets/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/owl.carousel/dist/assets/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/owl.carousel/dist/assets/owl.video.play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/owl.carousel/dist/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/perfect-scrollbar/css/perfect-scrollbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/popper.js/dist/umd/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/popper.js/dist/umd/popper.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/screenfull/dist/screenfull.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/select2/dist/css/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/select2/dist/js/select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/summernote/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/summernote/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/summernote/dist/font/summernote.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/summernote/dist/font/summernote.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/summernote/dist/font/summernote.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/summernote/dist/summernote-bs4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/summernote/dist/summernote-bs4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/sweetalert/dist/sweetalert.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/weather-icons/css/weather-icons.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/weather-icons/font/WeatherIcons-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/weather-icons/font/weathericons-regular-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/weather-icons/font/weathericons-regular-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/weather-icons/font/weathericons-regular-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/plugins/weather-icons/font/weathericons-regular-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/modernizr-2.8.3.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +309,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571302492066</updated>
       <workItem from="1571302493844" duration="22562000" />
-      <workItem from="1571388995493" duration="23644000" />
+      <workItem from="1571388995493" duration="23751000" />
+      <workItem from="1571733416991" duration="1235000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -211,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571732558917</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Webpack Login build">
+      <created>1571732824353</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571732824353</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
