@@ -7,17 +7,8 @@
     <link rel="shortcut icon" href="{{ asset('build/images/your_lawyers_icon.a7109bc7.png') }}">
     <title>Login - BA OnBoarding - Your Lawyers Ltd</title>
     {% block stylesheets %}
-        {{ encore_entry_link_tags('app') }}
+        {{ encore_entry_link_tags('login') }}
     {% endblock %}
-    <style>
-        html,body {
-            background-image: url({{ asset('build/images/login-bg.9bc12d45.jpg') }});
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100%;
-            font-family: 'Numans', sans-serif;
-        }
-    </style>
 </head>
 <body>
     <div class="container login_container">
@@ -65,7 +56,7 @@
         </div>
     </div>
     {% block javascripts %}
-        {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('login') }}
     {% endblock %}
 </body>
 </html>

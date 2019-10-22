@@ -6324,6 +6324,11 @@ typeface-numans@^0.0.71:
   resolved "https://registry.yarnpkg.com/typeface-numans/-/typeface-numans-0.0.71.tgz#535269f84ec0a61a43fa5080804832df10a5ff6c"
   integrity sha512-J8TllZcRKfc0ehN8skNTwGz++tZgCSXIKbP2oiz32EzcFYJGNS5zQGL72qQJB7t5au5wfZkyovqdgQeZL5z51A==
 
+typeface-nunito-sans@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-nunito-sans/-/typeface-nunito-sans-0.0.72.tgz#c99198a8d62ebdda0399dbe8cd81586a0976a01c"
+  integrity sha512-b58R4movZchZJNe5pWvqMVoJzKRs7GP09iIri4WWQOs9+G+yjoTSIpOUMU2xtLmxuyXUo1F8XhnOHY06kSDhuQ==
+
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"

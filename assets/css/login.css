@@ -1,3 +1,14 @@
+@import "~bootstrap";
+@import "~font-awesome";
+@import "~typeface-numans";
+html,body {
+    background-color: lightgray;
+    background-image: url('../images/login-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
 .login_container {
     height: 100%;
     align-content: center;
