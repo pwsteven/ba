@@ -171,6 +171,9 @@
             "./config/packages/security_checker.yaml"
         ]
     },
+    "specshaper/encrypt-bundle": {
+        "version": "dev-master"
+    },
     "symfony/asset": {
         "version": "v4.3.5"
     },

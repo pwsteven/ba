@@ -13,8 +13,30 @@
     <div class="sidebar-content">
         <div class="nav-container">
             <nav id="main-menu-navigation" class="navigation-main">
-                <div class="nav-lavel">Welcome {{ app.user.firstName }}</div>
-
+                <div class="nav-lavel">
+                    Welcome {{ app.user.firstName }}
+                </div>
+                <div class="nav-item{% if app.request.pathinfo == '/dashboard' %} active{% endif %}">
+                    <a href="{{ path('app_dashboard') }}"><i class="ik ik-home"></i><span>Dashboard Home</span></a>
+                </div>
+                {% if app.user.appStarted or app.request.pathinfo == '/dashboard/personal-details' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/personal-details' %} active{% endif %}">
+                        <a href="{{ path('app_personal_details') }}"><i class="ik ik-user"></i><span>Personal Details</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-user"></i><span>Personal Details</span></a>
+                    </div>
+                {% endif %}
+                {% if app.user.appPersonalDetails or app.request.pathinfo == '/dashboard/contact-details' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/contact-details' %} active{% endif %}">
+                        <a href="{{ path('app_contact_details') }}"><i class="ik ik-user"></i><span>Contact Details</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-user"></i><span>Contact Details</span></a>
+                    </div>
+                {% endif %}
             </nav>
         </div>
     </div>

@@ -9,10 +9,10 @@
         <div class="row align-items-end">
             <div class="col-lg-8">
                 <div class="page-header-title">
-                    <i class="ik ik-home bg-blue"></i>
+                    <i class="ik ik-user bg-blue"></i>
                     <div class="d-inline">
-                        <h5>Dashboard</h5>
-                        <span>Welcome to the British Airways OnBoarding application.</span>
+                        <h5>Personal Details</h5>
+                        <span>Please enter all details correctly...</span>
                     </div>
                 </div>
             </div>
@@ -22,6 +22,7 @@
                         <li class="breadcrumb-item">
                             <a href="{{ path('app_dashboard') }}"><i class="ik ik-home"></i></a>
                         </li>
+                        <li class="breadcrumb-item active" aria-current="page">Personal Details</li>
                     </ol>
                 </nav>
             </div>
@@ -37,14 +38,8 @@
                     </div>
                 {% else %}
                     <div class="card-header"><h3>Lets Get Started</h3></div>
-                    <div class="card-body text-center">
-                        <p>Please click on the button below to begin the process...</p>
-                        <form method="post">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-lg btn-primary"><i class="ik ik-star"></i> Begin</button>
-                            </div>
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        </form>
+                    <div class="card-body">
+                        Something in here about starting the process
                     </div>
                 {% endif %}
             </div>

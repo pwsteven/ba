@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use SpecShaper\EncryptBundle\Annotations\Encrypted;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -35,8 +36,34 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Encrypted()
      */
     private $firstName;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appStarted;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appCompleted;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appPersonalDetails;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appContactDetails;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\PersonalDetails", mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $personalDetails;
 
     public function getId(): ?int
     {
@@ -124,6 +151,71 @@ class User implements UserInterface
     public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getAppStarted(): ?bool
+    {
+        return $this->appStarted;
+    }
+
+    public function setAppStarted(?bool $appStarted): self
+    {
+        $this->appStarted = $appStarted;
+
+        return $this;
+    }
+
+    public function getAppCompleted(): ?bool
+    {
+        return $this->appCompleted;
+    }
+
+    public function setAppCompleted(?bool $appCompleted): self
+    {
+        $this->appCompleted = $appCompleted;
+
+        return $this;
+    }
+
+    public function getAppPersonalDetails(): ?bool
+    {
+        return $this->appPersonalDetails;
+    }
+
+    public function setAppPersonalDetails(?bool $appPersonalDetails): self
+    {
+        $this->appPersonalDetails = $appPersonalDetails;
+
+        return $this;
+    }
+
+    public function getAppContactDetails(): ?bool
+    {
+        return $this->appContactDetails;
+    }
+
+    public function setAppContactDetails(?bool $appContactDetails): self
+    {
+        $this->appContactDetails = $appContactDetails;
+
+        return $this;
+    }
+
+    public function getPersonalDetails(): ?PersonalDetails
+    {
+        return $this->personalDetails;
+    }
+
+    public function setPersonalDetails(PersonalDetails $personalDetails): self
+    {
+        $this->personalDetails = $personalDetails;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $personalDetails->getUser()) {
+            $personalDetails->setUser($this);
+        }
 
         return $this;
     }

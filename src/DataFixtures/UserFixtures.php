@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\PersonalDetails;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -29,8 +30,11 @@ class UserFixtures extends Fixture
             $user,
             'letmein'
         ));
-        $manager->persist($user);
+        $personalDetails = new PersonalDetails();
+        $personalDetails->setUser($user);
 
+        $manager->persist($user);
+        $manager->persist($personalDetails);
         $manager->flush();
     }
 }

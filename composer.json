@@ -7,6 +7,7 @@
         "ext-iconv": "*",
         "ramsey/uuid-doctrine": "^1.5",
         "sensio/framework-extra-bundle": "^5.5",
+        "specshaper/encrypt-bundle": "dev-master",
         "symfony/asset": "4.3.*",
         "symfony/console": "4.3.*",
         "symfony/dotenv": "4.3.*",
