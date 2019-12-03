@@ -1,4 +1,10 @@
 {
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
+    "container-interop/container-interop": {
+        "version": "1.2.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -105,11 +111,36 @@
             "./config/packages/dev/easy_log_handler.yaml"
         ]
     },
+    "egulias/email-validator": {
+        "version": "2.1.11"
+    },
     "friendsofsymfony/user-bundle": {
         "version": "v2.1.2"
     },
+    "gedmo/doctrine-extensions": {
+        "version": "v2.4.37"
+    },
+    "imagine/imagine": {
+        "version": "1.2.2"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
+    },
+    "league/flysystem": {
+        "version": "1.0.57"
+    },
+    "liip/imagine-bundle": {
+        "version": "1.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.8",
+            "ref": "1d42bc3f713130582e6e0c475c49bc327ab0a2a2"
+        },
+        "files": [
+            "./config/packages/liip_imagine.yaml",
+            "./config/routes/liip_imagine.yaml"
+        ]
     },
     "monolog/monolog": {
         "version": "1.25.1"
@@ -122,6 +153,21 @@
     },
     "ocramius/proxy-manager": {
         "version": "2.2.3"
+    },
+    "oneup/flysystem-bundle": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0eb87bba411c227da027fe5f7c1dc7954b02f242"
+        },
+        "files": [
+            "./config/packages/oneup_flysystem.yaml"
+        ]
+    },
+    "phpmailer/phpmailer": {
+        "version": "v6.1.2"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -173,6 +219,9 @@
     },
     "specshaper/encrypt-bundle": {
         "version": "dev-master"
+    },
+    "swiftmailer/swiftmailer": {
+        "version": "v6.2.3"
     },
     "symfony/asset": {
         "version": "v4.3.5"
@@ -505,7 +554,25 @@
     "zendframework/zend-code": {
         "version": "3.4.0"
     },
+    "zendframework/zend-escaper": {
+        "version": "2.6.1"
+    },
     "zendframework/zend-eventmanager": {
         "version": "3.2.1"
+    },
+    "zendframework/zend-server": {
+        "version": "2.8.1"
+    },
+    "zendframework/zend-soap": {
+        "version": "2.8.0"
+    },
+    "zendframework/zend-stdlib": {
+        "version": "3.2.1"
+    },
+    "zendframework/zend-uri": {
+        "version": "2.7.1"
+    },
+    "zendframework/zend-validator": {
+        "version": "2.12.2"
     }
 }

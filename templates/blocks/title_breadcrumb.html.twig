@@ -1,0 +1,29 @@
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-12 mt-3 mb-3">
+            <div class="progress" style="height: 20px;">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: {{ step_integer }}%;" aria-valuenow="{{ step_integer }}" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p class="text-center font-weight-bold">{{ step_string }}</p>
+        </div>
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <i class="{{ header_icon }} bg-blue"></i>
+                <div class="d-inline">
+                    <h5>{{ header_text }}</h5>
+                    <span>Please enter all details correctly...</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <nav class="breadcrumb-container" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{{ path('app_dashboard') }}"><i class="ik ik-home"></i></a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ header_text }}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>

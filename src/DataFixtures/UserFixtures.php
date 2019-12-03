@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\ContactDetails;
 use App\Entity\PersonalDetails;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -30,11 +31,17 @@ class UserFixtures extends Fixture
             $user,
             'letmein'
         ));
+        $user->setRoles(['ROLE_ADMIN']);
+        $user->setProClaimReference(1051311);
         $personalDetails = new PersonalDetails();
         $personalDetails->setUser($user);
 
+        $contactDetails = new ContactDetails();
+        $contactDetails->setUser($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
+        $manager->persist($contactDetails);
         $manager->flush();
     }
 }

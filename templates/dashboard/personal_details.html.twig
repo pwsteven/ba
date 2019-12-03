@@ -1,50 +1,79 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home - BA OnBoarding - Your Lawyers Ltd{% endblock %}
+{% block title %}{{ header_text }} - BA OnBoarding - Your Lawyers Ltd{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('dist/css/dropzone.css') }}">
+{% endblock %}
 
 {% block body %}
-
-
-    <div class="page-header">
-        <div class="row align-items-end">
-            <div class="col-lg-8">
-                <div class="page-header-title">
-                    <i class="ik ik-user bg-blue"></i>
-                    <div class="d-inline">
-                        <h5>Personal Details</h5>
-                        <span>Please enter all details correctly...</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="{{ path('app_dashboard') }}"><i class="ik ik-home"></i></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Personal Details</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
+    {{ include('blocks/title_breadcrumb.html.twig') }}
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                {% if app.user.appStarted %}
-                    <div class="card-header"><h3>Continue Your Application</h3></div>
-                    <div class="card-body">
-                        Something in here about continuing with the process
+                <div class="card-body">
+
+                    <form method="POST" action="{{ path('app_personal_details_test') }}" enctype="multipart/form-data">
+                        <input type="file" name="image">
+                        <button type="submit" class="btn btn-primary">Upload!</button>
+                    </form>
+                    <hr>
+
+
+
+                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
+                    <div class="form-group mb-3">
+                        {{ form_label(form.firstName)}}
+                        {{ form_widget(form.firstName) }}
+                        <div class="error_message">{{ form_errors(form.firstName) }}</div>
                     </div>
-                {% else %}
-                    <div class="card-header"><h3>Lets Get Started</h3></div>
-                    <div class="card-body">
-                        Something in here about starting the process
+                    <div class="form-group mb-3">
+                        {{ form_label(form.middleName) }}
+                        {{ form_widget(form.middleName) }}
                     </div>
-                {% endif %}
+                    <div class="form-group mb-3">
+                        {{ form_label(form.surname) }}
+                        {{ form_widget(form.surname) }}
+                        <div class="error_message">{{ form_errors(form.surname) }}</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        {{ form_label(form.dateOfBirth) }}
+                        {{ form_widget(form.dateOfBirth) }}
+                        <div class="error_message">{{ form_errors(form.dateOfBirth) }}</div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="required">5. Please upload Photo ID</label>
+                        <div class="clsbox-1" runat="server"  >
+                            <div class="dropzone clsbox" id="mydropzone">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
             </div>
         </div>
     </div>
 
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('dist/js/dropzone.js') }}"></script>
+    <script>
+        Dropzone.autoDiscover = false;
+
+        // Dropzone class:
+        var myDropzone = new Dropzone("div#mydropzone", { url: "/file/post"});
+
+        // If you use jQuery, you can use the jQuery plugin Dropzone ships with:
+        $("div#myDrop").dropzone({ url: "/file/post" });
+    </script>
 {% endblock %}

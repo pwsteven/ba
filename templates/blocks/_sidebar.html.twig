@@ -30,11 +30,20 @@
                 {% endif %}
                 {% if app.user.appPersonalDetails or app.request.pathinfo == '/dashboard/contact-details' %}
                     <div class="nav-item{% if app.request.pathinfo == '/dashboard/contact-details' %} active{% endif %}">
-                        <a href="{{ path('app_contact_details') }}"><i class="ik ik-user"></i><span>Contact Details</span></a>
+                        <a href="{{ path('app_contact_details') }}"><i class="ik ik-edit"></i><span>Contact Details</span></a>
                     </div>
                 {% else %}
                     <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-user"></i><span>Contact Details</span></a>
+                        <a class="disabled"><i class="ik ik-edit"></i><span>Contact Details</span></a>
+                    </div>
+                {% endif %}
+                {% if app.user.appContactDetails or app.request.pathinfo == '/dashboard/ba-correspondence' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/ba-correspondence' %} active{% endif %}">
+                        <a href="{{ path('app_ba_correspondence') }}"><i class="ik ik-navigation"></i><span>BA Correspondence</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-navigation"></i><span>BA Correspondence</span></a>
                     </div>
                 {% endif %}
             </nav>

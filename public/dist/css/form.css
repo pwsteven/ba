@@ -1,0 +1,4 @@
+.forms-sample label.required:before, .forms-sample legend.required:before {content: "* "; color: #AA3333; font-weight: bold;}
+.forms-sample .error_message ul {list-style: none; margin: 0; padding: 0;}
+.forms-sample .error_message ul li {font-weight: bold; color: #AA3333; padding-top: 7px;}
+.forms-sample .embed_left {margin-left: 15px;}

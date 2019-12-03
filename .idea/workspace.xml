@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="Dashboard build">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/PersonalDetailsType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191023080525.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191023115621.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191023133026.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/PersonalDetailsRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" afterDir="false" />
+    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/liip_imagine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dist/css/dropzone.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dist/css/dropzone.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dist/css/form.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dist/js/dropzone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/dist/js/dropzone.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/FileReference.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191024113310.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191024121041.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191024161320.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191126151222.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191126163918.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ContactDetailsRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutFile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutPersonalDetails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/proclaim_put.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/blocks/title_breadcrumb.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1716325915.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db171efb7541.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1721c3389c.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/photo_id/daily-mail-650x350-5db1aa3a09d3a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ba_onboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ba_onboard.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -19,15 +46,20 @@
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/PersonalDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PersonalDetailsType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_header.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,8 +74,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -149,11 +181,32 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/templating" />
       <path value="$PROJECT_DIR$/vendor/specshaper/encrypt-bundle" />
+      <path value="$PROJECT_DIR$/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/vendor/imagine/imagine" />
+      <path value="$PROJECT_DIR$/vendor/liip/imagine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/oneup/flysystem-bundle" />
+      <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-uri" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-soap" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-validator" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-server" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-stdlib" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-escaper" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SKBd8CRlUERlCBj5pFGNoJUp0Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -170,15 +223,20 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="copyright.profiles" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ba_onboard\public\uploads" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -195,7 +253,12 @@
       <workItem from="1571302493844" duration="22562000" />
       <workItem from="1571388995493" duration="23751000" />
       <workItem from="1571733416991" duration="31829000" />
-      <workItem from="1571842112876" duration="8481000" />
+      <workItem from="1571842112876" duration="40100000" />
+      <workItem from="1573745680295" duration="4388000" />
+      <workItem from="1574178578933" duration="43951000" />
+      <workItem from="1574763626546" duration="16284000" />
+      <workItem from="1574949510863" duration="603000" />
+      <workItem from="1575381870237" duration="3904000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -267,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571757884669</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Dashboard Controller">
+      <created>1571853983612</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1571853983612</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,17 +364,17 @@
     <MESSAGE value="Webpack Admin build" />
     <MESSAGE value="Webpack Login build" />
     <MESSAGE value="Dashboard build" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dashboard build" />
+    <MESSAGE value="Dashboard Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Controller" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/templates/blocks/_header.html.twig</url>
-          <line>74</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="WindowStateProjectService">
+    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575382016283">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1575382016283" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1575381890800">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1575381890800" />
   </component>
 </project>

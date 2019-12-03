@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use SpecShaper\EncryptBundle\Annotations\Encrypted;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PersonalDetailsRepository")
@@ -20,6 +21,7 @@ class PersonalDetails
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Encrypted()
+     * @Assert\NotBlank(message="Please enter your First Name")
      */
     private $firstName;
 
@@ -32,19 +34,15 @@ class PersonalDetails
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Encrypted()
+     * @Assert\NotBlank(message="Please enter your Surname")
      */
     private $surname;
 
     /**
      * @ORM\Column(type="date", nullable=true)
-     * @Encrypted()
+     * @Assert\NotBlank(message="Please enter your Date of Birth")
      */
     private $dateOfBirth;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $photoID;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
@@ -106,18 +104,6 @@ class PersonalDetails
     public function setDateOfBirth(?\DateTimeInterface $dateOfBirth): self
     {
         $this->dateOfBirth = $dateOfBirth;
-
-        return $this;
-    }
-
-    public function getPhotoID(): ?string
-    {
-        return $this->photoID;
-    }
-
-    public function setPhotoID(?string $photoID): self
-    {
-        $this->photoID = $photoID;
 
         return $this;
     }

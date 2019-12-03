@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use SpecShaper\EncryptBundle\Annotations\Encrypted;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -64,6 +66,66 @@ class User implements UserInterface
      * @ORM\OneToOne(targetEntity="App\Entity\PersonalDetails", mappedBy="User", cascade={"persist", "remove"})
      */
     private $personalDetails;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\ContactDetails", mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $contactDetails;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $appCurrentForm;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appBACorrespondence;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appFutherCorrespondence;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appComplaints;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appFinancialLoss;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appReimbursements;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appCreditMonitoring;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $appEmotionalDistress;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $proClaimReference;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\FileReference", mappedBy="user")
+     */
+    private $fileReferences;
+
+    public function __construct()
+    {
+        $this->fileReferences = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -215,6 +277,162 @@ class User implements UserInterface
         // set the owning side of the relation if necessary
         if ($this !== $personalDetails->getUser()) {
             $personalDetails->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getContactDetails(): ?ContactDetails
+    {
+        return $this->contactDetails;
+    }
+
+    public function setContactDetails(ContactDetails $contactDetails): self
+    {
+        $this->contactDetails = $contactDetails;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $contactDetails->getUser()) {
+            $contactDetails->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getAppCurrentForm(): ?string
+    {
+        return $this->appCurrentForm;
+    }
+
+    public function setAppCurrentForm(?string $appCurrentForm): self
+    {
+        $this->appCurrentForm = $appCurrentForm;
+
+        return $this;
+    }
+
+    public function getAppBACorrespondence(): ?bool
+    {
+        return $this->appBACorrespondence;
+    }
+
+    public function setAppBACorrespondence(?bool $appBACorrespondence): self
+    {
+        $this->appBACorrespondence = $appBACorrespondence;
+
+        return $this;
+    }
+
+    public function getAppFutherCorrespondence(): ?bool
+    {
+        return $this->appFutherCorrespondence;
+    }
+
+    public function setAppFutherCorrespondence(?bool $appFutherCorrespondence): self
+    {
+        $this->appFutherCorrespondence = $appFutherCorrespondence;
+
+        return $this;
+    }
+
+    public function getAppComplaints(): ?bool
+    {
+        return $this->appComplaints;
+    }
+
+    public function setAppComplaints(?bool $appComplaints): self
+    {
+        $this->appComplaints = $appComplaints;
+
+        return $this;
+    }
+
+    public function getAppFinancialLoss(): ?bool
+    {
+        return $this->appFinancialLoss;
+    }
+
+    public function setAppFinancialLoss(?bool $appFinancialLoss): self
+    {
+        $this->appFinancialLoss = $appFinancialLoss;
+
+        return $this;
+    }
+
+    public function getAppReimbursements(): ?bool
+    {
+        return $this->appReimbursements;
+    }
+
+    public function setAppReimbursements(?bool $appReimbursements): self
+    {
+        $this->appReimbursements = $appReimbursements;
+
+        return $this;
+    }
+
+    public function getAppCreditMonitoring(): ?bool
+    {
+        return $this->appCreditMonitoring;
+    }
+
+    public function setAppCreditMonitoring(?bool $appCreditMonitoring): self
+    {
+        $this->appCreditMonitoring = $appCreditMonitoring;
+
+        return $this;
+    }
+
+    public function getAppEmotionalDistress(): ?bool
+    {
+        return $this->appEmotionalDistress;
+    }
+
+    public function setAppEmotionalDistress(?bool $appEmotionalDistress): self
+    {
+        $this->appEmotionalDistress = $appEmotionalDistress;
+
+        return $this;
+    }
+
+    public function getProClaimReference(): ?int
+    {
+        return $this->proClaimReference;
+    }
+
+    public function setProClaimReference(?int $proClaimReference): self
+    {
+        $this->proClaimReference = $proClaimReference;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|FileReference[]
+     */
+    public function getFileReferences(): Collection
+    {
+        return $this->fileReferences;
+    }
+
+    public function addFileReference(FileReference $fileReference): self
+    {
+        if (!$this->fileReferences->contains($fileReference)) {
+            $this->fileReferences[] = $fileReference;
+            $fileReference->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFileReference(FileReference $fileReference): self
+    {
+        if ($this->fileReferences->contains($fileReference)) {
+            $this->fileReferences->removeElement($fileReference);
+            // set the owning side to null (unless already changed)
+            if ($fileReference->getUser() === $this) {
+                $fileReference->setUser(null);
+            }
         }
 
         return $this;
