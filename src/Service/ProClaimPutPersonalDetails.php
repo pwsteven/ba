@@ -22,8 +22,6 @@ class ProClaimPutPersonalDetails
     public function putCaseDetails(array $caseData)
     {
 
-        //dd($caseData['image']);
-
         $data = [];
 
         $options = [
@@ -79,18 +77,60 @@ class ProClaimPutPersonalDetails
                 $data['message'] = 'Set Linked Action Error: ' .$response->cerror;
             }
 
-            // UPDATE TITLE
+            // UPDATE FORENAME
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => 'Client.Title',
-                'cfieldvalue' => $caseData['title'],
+                'cfieldname' => 'Client.Forename',
+                'cfieldvalue' => $caseData['first_name'],
             ];
             $response = $client->proPutData($param);
             $session_id = $response->csessionid;
             if ($response->cstatus != 'OK') {
-                $data['message'] = 'Set Title Error: ' .$response->cerror;
+                $data['message'] = 'Set Forename Error: ' .$response->cerror;
+            }
+
+            // UPDATE MIDDLE NAME
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Client.udf5',
+                'cfieldvalue' => $caseData['middle_name'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Middle Name Error: ' .$response->cerror;
+            }
+
+            // UPDATE SURNAME
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Client.Name',
+                'cfieldvalue' => $caseData['surname'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Surname Error: ' .$response->cerror;
+            }
+
+            // UPDATE DATE OF BIRTH
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Cl Date Of Birth.Date',
+                'cfieldvalue' => $caseData['date_of_birth'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Date Of Birth Error: ' .$response->cerror;
             }
 
 

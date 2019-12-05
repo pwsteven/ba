@@ -145,6 +145,22 @@ class ProClaimRequest
                 $data['claim_type_client_surname'] = $case_field_value;
             }
 
+            // GET CLIENT DATE OF BIRTH
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'Cl Date Of Birth.Date',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_date_of_birth'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_date_of_birth'] = $case_field_value;
+            }
+
             // LOGOUT OF PROCLAIM
             $client->proLogout([
                 'csessionid' => $session_id,

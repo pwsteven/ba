@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Service\UploaderHelper;
 use Doctrine\ORM\Mapping as ORM;
 use SpecShaper\EncryptBundle\Annotations\Encrypted;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -54,6 +55,11 @@ class PersonalDetails
      * @ORM\JoinColumn(nullable=false)
      */
     private $User;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imageFileName;
 
     public function getId(): ?int
     {
@@ -128,6 +134,18 @@ class PersonalDetails
     public function setUser(User $User): self
     {
         $this->User = $User;
+
+        return $this;
+    }
+
+    public function getImageFileName(): ?string
+    {
+        return UploaderHelper::FILE_IMAGE.'/'.$this->imageFileName;
+    }
+
+    public function setImageFileName(?string $imageFileName): self
+    {
+        $this->imageFileName = $imageFileName;
 
         return $this;
     }

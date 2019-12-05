@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\PersonalDetailsType;
 use App\Repository\PersonalDetailsRepository;
+use App\Service\ProClaimPutPersonalDetails;
 use App\Service\ProClaimRequest;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
@@ -31,14 +32,16 @@ class PersonalDetailsController extends BaseController
         $this->personalDetailsRepository = $personalDetailsRepository;
     }
 
+
     /**
      * @Route("/dashboard/personal-details", name="app_personal_details")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @param UploaderHelper $uploaderHelper
+     * @param ProClaimPutPersonalDetails $proClaimPutPersonalDetails
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
+    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutPersonalDetails $proClaimPutPersonalDetails)
     {
 
         $showForm = $this->getUser()->getAppStarted();
@@ -47,13 +50,24 @@ class PersonalDetailsController extends BaseController
         }
 
         $userID = $this->getUser()->getId();
+
         $personalDetails = $this->personalDetailsRepository->findOneBySomeField($userID);
         $form = $this->createForm(PersonalDetailsType::class, $personalDetails);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
 
+            //dd(date_format($form['dateOfBirth']->getData(),"d/m/Y"));
 
+            //Upload image file if not empty and commit to the database
+            /** @var UploadedFile $uploadedFile */
+            $uploadedFile = $form['imageFile']->getData();
+            if ($uploadedFile) {
+                $newFileName = $uploaderHelper->uploadClientFile($uploadedFile);
+                $personalDetails->setImageFileName($newFileName);
+            }
+
+            //Commit form values to the database
             $personalDetails->setCompleted(true);
             $UserSetPersonalDetails = $this->getUser()->setAppPersonalDetails(true);
             $UserSetAppCurrentForm = $this->getUser()->setAppCurrentForm('app_contact_details');
@@ -61,6 +75,20 @@ class PersonalDetailsController extends BaseController
             $entityManager->persist($UserSetAppCurrentForm);
             $entityManager->persist($personalDetails);
             $entityManager->flush();
+
+            //Commit to ProClaim
+            $data = [
+                'case_id' => $this->getUser()->getProClaimReference(),
+                'first_name' => $personalDetails->getFirstName(),
+                'middle_name' => $personalDetails->getMiddleName(),
+                'surname' => $personalDetails->getSurname(),
+                'date_of_birth' => date_format($personalDetails->getDateOfBirth(), "d/m/Y"),
+            ];
+
+            //dd($data);
+            $proClaimPutPersonalDetails->putCaseDetails($data);
+
+            //Redirect to next page
             $this->addFlash('success', 'Success! You have completed the Personal Details stage.');
             return $this->redirectToRoute('app_contact_details');
 
@@ -75,26 +103,4 @@ class PersonalDetailsController extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/dashboard/proclaim/{id}", name="app_get_proclaim_details")
-     * @param int $id
-     * @param ProClaimRequest $proClaimRequest
-     * @return Response
-     */
-    public function testGetCase(int $id, ProClaimRequest $proClaimRequest)
-    {
-        $proClaimRequest->getCaseDetails($id);
-        $response = new Response();
-        $response->headers->set('Content-Type', 'text/xml; charset=ISO-8859-1');
-        return $response;
-    }
-
-
-    /**
-     * @Route("dashboard/personal-details/test", name="app_personal_details_test")
-     */
-    public function temporaryUploadAction(Request $request)
-    {
-        dd($request->files->get('image'));
-    }
 }

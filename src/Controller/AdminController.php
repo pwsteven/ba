@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Repository\PersonalDetailsRepository;
+use App\Repository\UserRepository;
 use App\Service\ProClaimPutPersonalDetails;
 use App\Service\ProClaimRequest;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -20,12 +22,18 @@ class AdminController extends AbstractController
 
     /**
      * @var string
+     * @var PersonalDetailsRepository
+     * @var UserRepository
      */
     private $uploadUrl;
+    private $personalDetailsRepository;
+    private $userRepository;
 
-    public function __construct(string $uploadUrl)
+    public function __construct(string $uploadUrl, PersonalDetailsRepository $personalDetailsRepository, UserRepository $userRepository)
     {
         $this->uploadUrl = $uploadUrl;
+        $this->personalDetailsRepository = $personalDetailsRepository;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -48,8 +56,12 @@ class AdminController extends AbstractController
     {
 
         $proClaimDetails = $proClaimRequest->getCaseDetails($id);
+        $userID = $this->userRepository->findOneBySomeField($id);
+        $personalDetails = $this->personalDetailsRepository->findOneBySomeField($userID);
+        $imagePath = $personalDetails->getImageFileName();
         return $this->render('admin/proclaim_get.html.twig', [
             'proClaimData' => $proClaimDetails,
+            'imagePath' => $imagePath,
         ]);
 
     }

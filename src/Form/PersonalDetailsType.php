@@ -43,6 +43,16 @@ class PersonalDetailsType extends AbstractType
                 'widget' => 'choice',
                 'label' => ' 4. What is your full date of birth?'
             ])
+            ->add('imageFile', FileType::class, [
+                'mapped' => false,
+                'label' => '5. Upload Photo ID',
+                'required' => false,
+                'constraints' => [
+                    new Image([
+                        'maxSize' => '5M'
+                    ])
+                ]
+            ])
         ;
     }
 

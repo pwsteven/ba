@@ -2,62 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/routes/liip_imagine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/css/dropzone.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/css/dropzone.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/css/form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/js/dropzone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/dist/js/dropzone.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/FileReference.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191024113310.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191024121041.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191024161320.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191126151222.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191126163918.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ContactDetailsRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutFile.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutPersonalDetails.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/proclaim_put.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/blocks/title_breadcrumb.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1716325915.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db171efb7541.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1721c3389c.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/photo_id/daily-mail-650x350-5db1aa3a09d3a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191204113816.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutContactDetails.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Twig/AppExtension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/article_image/user-5de7da079d621.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ba_onboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ba_onboard.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/PersonalDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PersonalDetailsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/PersonalDetailsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonalDetailsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutPersonalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutPersonalDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UploaderHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,6 +163,7 @@
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/twig/extensions" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SKBd8CRlUERlCBj5pFGNoJUp0Z" />
@@ -258,7 +225,8 @@
       <workItem from="1574178578933" duration="43951000" />
       <workItem from="1574763626546" duration="16284000" />
       <workItem from="1574949510863" duration="603000" />
-      <workItem from="1575381870237" duration="3904000" />
+      <workItem from="1575381870237" duration="22234000" />
+      <workItem from="1575478230197" duration="9423000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -337,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571853983612</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="03/12/19 3:20pm">
+      <created>1575386814951</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575386814951</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -365,16 +340,25 @@
     <MESSAGE value="Webpack Login build" />
     <MESSAGE value="Dashboard build" />
     <MESSAGE value="Dashboard Controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Controller" />
+    <MESSAGE value="03/12/19 3:20pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="03/12/19 3:20pm" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575382016283">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575477954148">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1575382016283" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1575381890800">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1575477954148" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575546316357">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1575381890800" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575546316357" />
+    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575541445456">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1575541445456" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1575479145550">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1575479145550" />
   </component>
 </project>

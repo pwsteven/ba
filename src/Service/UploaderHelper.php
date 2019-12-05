@@ -4,6 +4,7 @@
 namespace App\Service;
 
 use Gedmo\Sluggable\Util\Urlizer;
+use Symfony\Component\Asset\Context\RequestStackContext;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
@@ -12,34 +13,28 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  */
 class UploaderHelper
 {
-    private $uploadsPath;
 
-    public function __construct(string $uploadsPath)
+    const FILE_IMAGE = 'article_image';
+
+    private $uploadsPath;
+    /**
+     * @var RequestStackContext
+     */
+    private $requestStackContext;
+
+    public function __construct(string $uploadsPath, RequestStackContext $requestStackContext)
     {
         $this->uploadsPath = $uploadsPath;
+        $this->requestStackContext = $requestStackContext;
     }
 
-    public function uploadClientFile(UploadedFile $uploadedFile, int $i): string
+    public function uploadClientFile(UploadedFile $uploadedFile): string
     {
 
-        if ($i === 1) {
-            $destination = $this->uploadsPath . '/photo_id';
-        } elseif ($i === 2) {
-            $destination = $this->uploadsPath . '/email_notification';
-        } elseif ($i === 3) {
-            $destination = $this->uploadsPath . '/booking_notification';
-        } elseif ($i === 4) {
-            $destination = $this->uploadsPath . '/correspondence';
-        } elseif ($i === 5) {
-            $destination = $this->uploadsPath . '/financial_documents';
-        } elseif ($i === 6) {
-            $destination = $this->uploadsPath . '/credit_monitor';
-        } else {
-            $destination = $this->uploadsPath . '/emotional_distress';
-        }
+        $destination = $this->uploadsPath.'/'.self::FILE_IMAGE;
 
         $originalFileName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-        $newFileName = Urlizer::urlize($originalFileName).'-'.uniqid().'.'.$uploadedFile->guessExtension();
+        $newFileName = Urlizer::urlize($originalFileName) . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
 
         $uploadedFile->move(
             $destination,
@@ -49,4 +44,10 @@ class UploaderHelper
         return $newFileName;
 
     }
+
+    public function getPublicPath(string $path): string
+    {
+        return $this->requestStackContext->getBasePath().'uploads/'.$path;
+    }
+
 }

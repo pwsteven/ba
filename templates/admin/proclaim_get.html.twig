@@ -3,10 +3,23 @@
 {% block body %}
     <p>Claim Type Code = {{ proClaimData.claim_type_code }}</p>
     <p>Claim Type Confidential Response = {{ proClaimData.claim_type_confidential_response }}</p>
-    <p>Client Title = {{ proClaimData.claim_type_client_title }}</p>
-    <p>Client Forename = {{ proClaimData.claim_type_client_forename }}</p>
-    <p>Client Middle Name = {{ proClaimData.claim_type_client_middle_name }}</p>
-    <p>Client Surname = {{ proClaimData.claim_type_client_surname }}</p>
+    <hr>
+    <h4>Personal Details</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <p>Client Title = {{ proClaimData.claim_type_client_title }}</p>
+            <p>Client Forename = {{ proClaimData.claim_type_client_forename }}</p>
+            <p>Client Middle Name = {{ proClaimData.claim_type_client_middle_name }}</p>
+            <p>Client Surname = {{ proClaimData.claim_type_client_surname }}</p>
+            <p>Client Date Of Birth = {{ proClaimData.claim_type_client_date_of_birth }}</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{{ uploaded_asset(imagePath) }}" alt="" height="200" width="200">
+        </div>
+    </div>
+
+    <hr>
+    <h4>Contact Details</h4>
 {% endblock %}
 
 {% block title %}
