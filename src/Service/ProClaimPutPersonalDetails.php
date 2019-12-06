@@ -22,7 +22,6 @@ class ProClaimPutPersonalDetails
     public function putCaseDetails(array $caseData)
     {
 
-        $data = [];
 
         $options = [
             'cuser'=>$this->proClaimUser,

@@ -122,6 +122,11 @@ class User implements UserInterface
      */
     private $fileReferences;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\BACorrespondence", mappedBy="userID", cascade={"persist", "remove"})
+     */
+    private $bACorrespondence;
+
     public function __construct()
     {
         $this->fileReferences = new ArrayCollection();
@@ -433,6 +438,23 @@ class User implements UserInterface
             if ($fileReference->getUser() === $this) {
                 $fileReference->setUser(null);
             }
+        }
+
+        return $this;
+    }
+
+    public function getBACorrespondence(): ?BACorrespondence
+    {
+        return $this->bACorrespondence;
+    }
+
+    public function setBACorrespondence(BACorrespondence $bACorrespondence): self
+    {
+        $this->bACorrespondence = $bACorrespondence;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $bACorrespondence->getUserID()) {
+            $bACorrespondence->setUserID($this);
         }
 
         return $this;

@@ -47,7 +47,7 @@ class UploaderHelper
 
     public function getPublicPath(string $path): string
     {
-        return $this->requestStackContext->getBasePath().'uploads/'.$path;
+        return $this->requestStackContext->getBasePath().'/uploads/'.$path;
     }
 
 }

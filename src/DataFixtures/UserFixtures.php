@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\BACorrespondence;
 use App\Entity\ContactDetails;
 use App\Entity\PersonalDetails;
 use App\Entity\User;
@@ -39,9 +40,14 @@ class UserFixtures extends Fixture
         $contactDetails = new ContactDetails();
         $contactDetails->setUser($user);
 
+        $baCorrespondenceDetails = new BACorrespondence();
+        $baCorrespondenceDetails->setUserID($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
         $manager->persist($contactDetails);
+        $manager->persist($baCorrespondenceDetails);
+
         $manager->flush();
     }
 }

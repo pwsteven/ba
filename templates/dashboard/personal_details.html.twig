@@ -13,7 +13,6 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
                     {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
                     <div class="form-group mb-30">
                         {{ form_label(form.firstName)}}
@@ -35,20 +34,20 @@
                         <div class="error_message">{{ form_errors(form.dateOfBirth) }}</div>
                     </div>
                     <div class="form-group mb-30">
-                        {{ form_label(form.imageFile) }}
-                        {{ form_widget(form.imageFile) }}
-                        <div class="error_message">{{ form_errors(form.imageFile) }}</div>
-                    </div>
-                    {#
-                    <div class="form-group mb-3">
-                        <label class="required">5. Please upload Photo ID</label>
-                        <div class="clsbox-1" runat="server">
-                            <div class="dropzone clsbox" id="mydropzone">
-
+                        <div class="row">
+                            <div class="col-sm-9">
+                                {{ form_label(form.imageFile) }}
+                                {{ form_widget(form.imageFile) }}
+                                <div class="error_message">{{ form_errors(form.imageFile) }}</div>
+                            </div>
+                            <div class="col-sm-3">
+                                {% if form.vars.data.imageFileName != "article_image/" %}
+                                    <img src="{{ uploaded_asset(form.vars.data.imageFileName)|imagine_filter('squared_thumbnail_small') }}" height="100">
+                                {% endif %}
                             </div>
                         </div>
                     </div>
-                    #}
+
                     <div class="row">
                         <div class="col-sm-12 text-right">
                             <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>

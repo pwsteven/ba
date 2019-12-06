@@ -57,8 +57,6 @@ class PersonalDetailsController extends BaseController
 
         if ($form->isSubmitted() && $form->isValid()){
 
-            //dd(date_format($form['dateOfBirth']->getData(),"d/m/Y"));
-
             //Upload image file if not empty and commit to the database
             /** @var UploadedFile $uploadedFile */
             $uploadedFile = $form['imageFile']->getData();

@@ -14,12 +14,20 @@
             <p>Client Date Of Birth = {{ proClaimData.claim_type_client_date_of_birth }}</p>
         </div>
         <div class="col-md-6">
-            <img src="{{ uploaded_asset(imagePath) }}" alt="" height="200" width="200">
+            <img src="{{ uploaded_asset(imagePath)|imagine_filter('squared_thumbnail_small') }}" alt="">
         </div>
     </div>
-
     <hr>
     <h4>Contact Details</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Client Address = {{ proClaimData.claim_type_client_address_block }}</p>
+            <p>Client PostCode = {{ proClaimData.claim_type_client_postcode }}</p>
+            <p>Client Email = {{ proClaimData.claim_type_client_email }}</p>
+            <p>Client Mobile/Telephone = {{ proClaimData.claim_type_client_mobile_phone }}</p>
+        </div>
+    </div>
+    <hr>
 {% endblock %}
 
 {% block title %}
