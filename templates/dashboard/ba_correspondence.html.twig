@@ -2,17 +2,116 @@
 
 {% block title %}{{ header_text }} - BA OnBoarding - Your Lawyers Ltd{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .display_none {display: none;}
+        .block_body {
+            padding: 15px;
+            margin-bottom: 30px;
+            border: 2px solid #cccccc;
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            border-radius: 7px;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
     {{ include('blocks/title_breadcrumb.html.twig') }}
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
+                    {{ form.vars.data.breachOneNotification }}
+                    {{ form_start(form, {'attr': {'class': 'forms-sample', 'novalidate': 'novalidate'}}) }}
+                    <div class="form-group mb-30">
+                        {{ form_label(form.receivedConfirmationEmail)}}
+                        {{ form_widget(form.receivedConfirmationEmail) }}
+                        <div class="error_message">{{ form_errors(form.receivedConfirmationEmail) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.breachOneNotification)}}
+                        {{ form_widget(form.breachOneNotification) }}
+                        <div class="error_message">{{ form_errors(form.breachOneNotification) }}</div>
+                    </div>
+                    {# BEGIN BREACH ONE BLOCK#}
+                    <div id="breach_one_block"{% if form.vars.data.breachOneNotification != 'YES' %} class="display_none"{% endif %}>
+                        <div class="col-sm-12">
+                            <div class="block_body">
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneDateReceived)}}
+                                    {{ form_widget(form.breachOneDateReceived) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneDateReceived) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneNotificationFile)}}
+                                    {{ form_widget(form.breachOneNotificationFile) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneNotificationFile) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneNotificationNotAffected)}}
+                                    {{ form_widget(form.breachOneNotificationNotAffected) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneNotificationNotAffected) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneDateOfBooking)}}
+                                    {{ form_widget(form.breachOneDateOfBooking) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneDateOfBooking) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneEmailAddressUsed)}}
+                                    {{ form_widget(form.breachOneEmailAddressUsed) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneEmailAddressUsed) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneBookingReference)}}
+                                    {{ form_widget(form.breachOneBookingReference) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneBookingReference) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneBookingPlatform)}}
+                                    {{ form_widget(form.breachOneBookingPlatform) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneBookingPlatform) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOnePaymentMethod)}}
+                                    {{ form_widget(form.breachOnePaymentMethod) }}
+                                    <div class="error_message">{{ form_errors(form.breachOnePaymentMethod) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachOneBookingConfirmationFile)}}
+                                    {{ form_widget(form.breachOneBookingConfirmationFile) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneBookingConfirmationFile) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {# END BREACH ONE BLOCK #}
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>
     </div>
 
 
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $('#ba_correspondence_breachOneNotification').on('change', function () {
+            const value = $('#ba_correspondence_breachOneNotification option:selected').attr("value");
+            if (value === 'YES') {
+                $('#breach_one_block').fadeIn(450);
+            } else {
+                $('#breach_one_block').fadeOut(250);
+            }
+        });
+    </script>
 {% endblock %}

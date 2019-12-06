@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BACorrespondenceRepository")
@@ -18,6 +19,7 @@ class BACorrespondence
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select either Yes or No")
      */
     private $receivedConfirmationEmail;
 
@@ -34,6 +36,7 @@ class BACorrespondence
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select either Yes or No")
      */
     private $breachOneNotification;
 
@@ -81,6 +84,11 @@ class BACorrespondence
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $breachOneBookingConfirmationFilePath;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $complete;
 
     public function getId(): ?int
     {
@@ -239,6 +247,18 @@ class BACorrespondence
     public function setBreachOneBookingConfirmationFilePath(?string $breachOneBookingConfirmationFilePath): self
     {
         $this->breachOneBookingConfirmationFilePath = $breachOneBookingConfirmationFilePath;
+
+        return $this;
+    }
+
+    public function getComplete(): ?bool
+    {
+        return $this->complete;
+    }
+
+    public function setComplete(?bool $complete): self
+    {
+        $this->complete = $complete;
 
         return $this;
     }
