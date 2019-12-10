@@ -10,14 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class FurtherCorrespondenceController
+ * Class CreditMonitoringController
  * @package App\Controller
  * @IsGranted("ROLE_USER")
  */
-class FurtherCorrespondenceController extends BaseController
+class CreditMonitoringController extends BaseController
 {
     /**
-     * @Route("/dashboard/further-correspondence", name="app_further_correspondence")
+     * @Route("/dashboard/credit-monitoring", name="app_credit_monitoring")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @param UploaderHelper $uploaderHelper
@@ -25,11 +25,11 @@ class FurtherCorrespondenceController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
-        return $this->render('dashboard/further_correspondence.html.twig', [
-            'step_integer' => 40,
-            'step_string' => 'Step 4 of 10',
-            'header_icon' => 'ik ik-at-sign',
-            'header_text' => 'Further Correspondence',
+        return $this->render('dashboard/credit_monitoring.html.twig', [
+            'step_integer' => 80,
+            'step_string' => 'Step 8 of 10',
+            'header_icon' => 'ik ik-globe',
+            'header_text' => 'Credit Monitoring',
         ]);
     }
 }

@@ -10,14 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class FurtherCorrespondenceController
+ * Class EmotionalDistressController
  * @package App\Controller
  * @IsGranted("ROLE_USER")
  */
-class FurtherCorrespondenceController extends BaseController
+class EmotionalDistressController extends BaseController
 {
     /**
-     * @Route("/dashboard/further-correspondence", name="app_further_correspondence")
+     * @Route("/dashboard/emotional-distress", name="app_emotional_distress")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @param UploaderHelper $uploaderHelper
@@ -25,11 +25,11 @@ class FurtherCorrespondenceController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
-        return $this->render('dashboard/further_correspondence.html.twig', [
-            'step_integer' => 40,
-            'step_string' => 'Step 4 of 10',
-            'header_icon' => 'ik ik-at-sign',
-            'header_text' => 'Further Correspondence',
+        return $this->render('dashboard/emotional_distress.html.twig', [
+            'step_integer' => 90,
+            'step_string' => 'Step 9 of 10',
+            'header_icon' => 'ik ik-flag',
+            'header_text' => 'Emotional Distress',
         ]);
     }
 }

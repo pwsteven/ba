@@ -2,17 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/dashboard/further_correspondence.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ComplaintsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CompleteController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ReimbursementsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/complete/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/credit_monitoring/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/complaints.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/complete.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/credit_monitoring.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/financial_loss.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/reimbursements.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/emotional_distress/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/BACorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BACorrespondence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/further_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/further_correspondence.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +226,7 @@
       <workItem from="1575381870237" duration="22234000" />
       <workItem from="1575478230197" duration="36292000" />
       <workItem from="1575643586669" duration="8665000" />
-      <workItem from="1575908966400" duration="3790000" />
+      <workItem from="1575908966400" duration="13253000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -323,7 +333,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575649226894</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="BA Correspondence&#10;10/12/19 09:37am">
+      <created>1575970674466</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1575970674788</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,21 +372,22 @@
     <MESSAGE value="05/12/19 11:44am" />
     <MESSAGE value="06/12/19 11:34am" />
     <MESSAGE value="BA Correspondence&#10;06/12/19 16:19pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="BA Correspondence&#10;06/12/19 16:19pm" />
+    <MESSAGE value="BA Correspondence&#10;10/12/19 09:37am" />
+    <option name="LAST_COMMIT_MESSAGE" value="BA Correspondence&#10;10/12/19 09:37am" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575477954148">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1575477954148" />
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575555753033">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575993377718">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575555753033" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575649224058">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575993377718" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575970666893">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575649224058" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575970666893" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575541445456">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -10,14 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class FurtherCorrespondenceController
+ * Class ComplaintsController
  * @package App\Controller
  * @IsGranted("ROLE_USER")
  */
-class FurtherCorrespondenceController extends BaseController
+class ComplaintsController extends BaseController
 {
     /**
-     * @Route("/dashboard/further-correspondence", name="app_further_correspondence")
+     * @Route("/dashboard/complaints", name="app_complaints")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @param UploaderHelper $uploaderHelper
@@ -25,11 +25,11 @@ class FurtherCorrespondenceController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
-        return $this->render('dashboard/further_correspondence.html.twig', [
-            'step_integer' => 40,
-            'step_string' => 'Step 4 of 10',
-            'header_icon' => 'ik ik-at-sign',
-            'header_text' => 'Further Correspondence',
+        return $this->render('dashboard/complaints.html.twig', [
+            'step_integer' => 50,
+            'step_string' => 'Step 5 of 10',
+            'header_icon' => 'ik ik-clipboard',
+            'header_text' => 'Complaints',
         ]);
     }
 }

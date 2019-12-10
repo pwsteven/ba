@@ -15,6 +15,7 @@
             <link rel="stylesheet" href="{{ asset('plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}">
             <link rel="stylesheet" href="{{ asset('dist/css/theme.min.css') }}">
             <link rel="stylesheet" href="{{ asset('dist/css/form.css') }}">
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
         <script src="{{ asset('src/js/vendor/modernizr-2.8.3.min.js') }}"></script>
     </head>
@@ -40,6 +41,7 @@
             <script src="{{ asset('plugins/screenfull/dist/screenfull.js') }}"></script>
             <script src="{{ asset('dist/js/theme.min.js') }}"></script>
             <script src="{{ asset('js/form-components.js') }}"></script>
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </body>
 </html>

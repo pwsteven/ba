@@ -55,7 +55,51 @@
                         <a class="disabled"><i class="ik ik-at-sign"></i><span>Further Correspondence</span></a>
                     </div>
                 {% endif %}
-                {{ dump() }}
+                {% if app.user.appFutherCorrespondence or app.request.pathinfo == '/dashboard/complaints' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/complaints' %} active{% endif %}">
+                        <a href="{{ path('app_complaints') }}"><i class="ik ik-clipboard"></i><span>Complaints</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-clipboard"></i><span>Complaints</span></a>
+                    </div>
+                {% endif %}
+                {% if app.user.appComplaints or app.request.pathinfo == '/dashboard/financial-loss' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/financial-loss' %} active{% endif %}">
+                        <a href="{{ path('app_financial_loss') }}"><i class="ik ik-dollar-sign"></i><span>Financial Loss</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-dollar-sign"></i><span>Financial Loss</span></a>
+                    </div>
+                {% endif %}
+                {% if app.user.appFinancialLoss or app.request.pathinfo == '/dashboard/reimbursements' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/reimbursements' %} active{% endif %}">
+                        <a href="{{ path('app_reimbursements') }}"><i class="ik ik-pocket"></i><span>Reimbursements</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-pocket"></i><span>Reimbursements</span></a>
+                    </div>
+                {% endif %}
+                {% if app.user.appReimbursements or app.request.pathinfo == '/dashboard/credit-monitoring' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/credit-monitoring' %} active{% endif %}">
+                        <a href="{{ path('app_credit_monitoring') }}"><i class="ik ik-globe"></i><span>Credit Monitoring</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-globe"></i><span>Credit Monitoring</span></a>
+                    </div>
+                {% endif %}
+                {% if app.user.appCreditMonitoring or app.request.pathinfo == '/dashboard/emotional-distress' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/emotional-distress' %} active{% endif %}">
+                        <a href="{{ path('app_emotional_distress') }}"><i class="ik ik-flag"></i><span>Emotional Distress</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-flag"></i><span>Emotional Distress</span></a>
+                    </div>
+                {% endif %}
             </nav>
         </div>
     </div>
