@@ -25,6 +25,13 @@ class FurtherCorrespondenceController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
+
+        $showForm = $this->getUser()->getAppBACorrespondence();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
+
         return $this->render('dashboard/further_correspondence.html.twig', [
             'step_integer' => 40,
             'step_string' => 'Step 4 of 10',

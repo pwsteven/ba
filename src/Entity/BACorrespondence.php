@@ -93,6 +93,59 @@ class BACorrespondence
      */
     private $complete;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select either Yes or No")
+     */
+    private $breachTwoNotification;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $breachTwoDateReceived;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $breachTwoNotificationFilePath;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $breachTwoNotificationNotAffected;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $breachTwoDateOfBooking;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
+     */
+    private $breachTwoEmailAddressUsed;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
+     */
+    private $breachTwoBookingReference;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $breachTwoBookingPlatform;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $breachTwoPaymentMethod;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $breachTwoBookingConfirmationFilePath;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -262,6 +315,126 @@ class BACorrespondence
     public function setComplete(?bool $complete): self
     {
         $this->complete = $complete;
+
+        return $this;
+    }
+
+    public function getBreachTwoNotification(): ?string
+    {
+        return $this->breachTwoNotification;
+    }
+
+    public function setBreachTwoNotification(?string $breachTwoNotification): self
+    {
+        $this->breachTwoNotification = $breachTwoNotification;
+
+        return $this;
+    }
+
+    public function getBreachTwoDateReceived(): ?\DateTimeInterface
+    {
+        return $this->breachTwoDateReceived;
+    }
+
+    public function setBreachTwoDateReceived(?\DateTimeInterface $breachTwoDateReceived): self
+    {
+        $this->breachTwoDateReceived = $breachTwoDateReceived;
+
+        return $this;
+    }
+
+    public function getBreachTwoNotificationFilePath(): ?string
+    {
+        return $this->breachTwoNotificationFilePath;
+    }
+
+    public function setBreachTwoNotificationFilePath(?string $breachTwoNotificationFilePath): self
+    {
+        $this->breachTwoNotificationFilePath = $breachTwoNotificationFilePath;
+
+        return $this;
+    }
+
+    public function getBreachTwoNotificationNotAffected(): ?string
+    {
+        return $this->breachTwoNotificationNotAffected;
+    }
+
+    public function setBreachTwoNotificationNotAffected(?string $breachTwoNotificationNotAffected): self
+    {
+        $this->breachTwoNotificationNotAffected = $breachTwoNotificationNotAffected;
+
+        return $this;
+    }
+
+    public function getBreachTwoDateOfBooking(): ?\DateTimeInterface
+    {
+        return $this->breachTwoDateOfBooking;
+    }
+
+    public function setBreachTwoDateOfBooking(?\DateTimeInterface $breachTwoDateOfBooking): self
+    {
+        $this->breachTwoDateOfBooking = $breachTwoDateOfBooking;
+
+        return $this;
+    }
+
+    public function getBreachTwoEmailAddressUsed(): ?string
+    {
+        return $this->breachTwoEmailAddressUsed;
+    }
+
+    public function setBreachTwoEmailAddressUsed(?string $breachTwoEmailAddressUsed): self
+    {
+        $this->breachTwoEmailAddressUsed = $breachTwoEmailAddressUsed;
+
+        return $this;
+    }
+
+    public function getBreachTwoBookingReference(): ?string
+    {
+        return $this->breachTwoBookingReference;
+    }
+
+    public function setBreachTwoBookingReference(?string $breachTwoBookingReference): self
+    {
+        $this->breachTwoBookingReference = $breachTwoBookingReference;
+
+        return $this;
+    }
+
+    public function getBreachTwoBookingPlatform(): ?string
+    {
+        return $this->breachTwoBookingPlatform;
+    }
+
+    public function setBreachTwoBookingPlatform(?string $breachTwoBookingPlatform): self
+    {
+        $this->breachTwoBookingPlatform = $breachTwoBookingPlatform;
+
+        return $this;
+    }
+
+    public function getBreachTwoPaymentMethod(): ?string
+    {
+        return $this->breachTwoPaymentMethod;
+    }
+
+    public function setBreachTwoPaymentMethod(?string $breachTwoPaymentMethod): self
+    {
+        $this->breachTwoPaymentMethod = $breachTwoPaymentMethod;
+
+        return $this;
+    }
+
+    public function getBreachTwoBookingConfirmationFilePath(): ?string
+    {
+        return $this->breachTwoBookingConfirmationFilePath;
+    }
+
+    public function setBreachTwoBookingConfirmationFilePath(?string $breachTwoBookingConfirmationFilePath): self
+    {
+        $this->breachTwoBookingConfirmationFilePath = $breachTwoBookingConfirmationFilePath;
 
         return $this;
     }

@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutComplaints.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutCreditMonitoring.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutEmotionalDistress.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutFinancialLoss.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutFurtherCorrespondence.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimPutReimbursements.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191210165416.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/complete/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/credit_monitoring/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/emotional_distress/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ComplaintsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ComplaintsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CompleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompleteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReimbursementsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReimbursementsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/BACorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BACorrespondence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +219,7 @@
       <workItem from="1575381870237" duration="22234000" />
       <workItem from="1575478230197" duration="36292000" />
       <workItem from="1575643586669" duration="8665000" />
-      <workItem from="1575908966400" duration="14689000" />
+      <workItem from="1575908966400" duration="18557000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -337,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575993630209</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm">
+      <created>1575994971769</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1575994971769</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +381,8 @@
     <MESSAGE value="BA Correspondence&#10;06/12/19 16:19pm" />
     <MESSAGE value="BA Correspondence&#10;10/12/19 09:37am" />
     <MESSAGE value="Dashboard Controller Page Structure Complete &#10;10/12/19 15:59pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Controller Page Structure Complete &#10;10/12/19 15:59pm" />
+    <MESSAGE value="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575477954148">
@@ -382,10 +393,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575993377718" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575993627840">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575994970143">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575993627840" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575994970143" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575994853144">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -25,6 +25,12 @@ class CompleteController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
+
+        $showForm = $this->getUser()->getAppEmotionalDistress();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         return $this->render('dashboard/complete.html.twig', [
             'step_integer' => 100,
             'step_string' => 'Step 10 of 10 - Complete!',

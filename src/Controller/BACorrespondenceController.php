@@ -41,6 +41,11 @@ class BACorrespondenceController extends BaseController
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
 
+        $showForm = $this->getUser()->getAppContactDetails();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         $userID = $this->getUser()->getId();
         $baCorrespondenceDetails = $this->BACorrespondenceRepository->findOneBySomeField($userID);
 

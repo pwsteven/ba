@@ -25,6 +25,12 @@ class FinancialLossController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
+
+        $showForm = $this->getUser()->getAppComplaints();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         return $this->render('dashboard/financial_loss.html.twig', [
             'step_integer' => 60,
             'step_string' => 'Step 6 of 10',

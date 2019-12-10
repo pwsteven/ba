@@ -25,6 +25,12 @@ class CreditMonitoringController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
+
+        $showForm = $this->getUser()->getAppReimbursements();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         return $this->render('dashboard/credit_monitoring.html.twig', [
             'step_integer' => 80,
             'step_string' => 'Step 8 of 10',

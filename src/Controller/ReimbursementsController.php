@@ -25,6 +25,12 @@ class ReimbursementsController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
+
+        $showForm = $this->getUser()->getAppFinancialLoss();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         return $this->render('dashboard/reimbursements.html.twig', [
             'step_integer' => 70,
             'step_string' => 'Step 7 of 10',

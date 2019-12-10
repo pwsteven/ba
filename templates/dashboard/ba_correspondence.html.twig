@@ -69,10 +69,43 @@
                                     {{ form_widget(form.breachOneBookingConfirmationFile) }}
                                     <div class="error_message">{{ form_errors(form.breachOneBookingConfirmationFile) }}</div>
                                 </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoNotificationNotAffected)}}
+                                    {{ form_widget(form.breachTwoNotificationNotAffected) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoNotificationNotAffected) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoDateOfBooking)}}
+                                    {{ form_widget(form.breachTwoDateOfBooking) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoDateOfBooking) }}</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {# END BREACH ONE BLOCK #}
+                    <div class="form-group mb-30">
+                        {{ form_label(form.breachTwoNotification)}}
+                        {{ form_widget(form.breachTwoNotification) }}
+                        <div class="error_message">{{ form_errors(form.breachTwoNotification) }}</div>
+                    </div>
+                    {# START BREACH TWO BLOCK #}
+                    <div id="breach_two_block"{% if form.vars.data.breachTwoNotification != 'YES' %} class="display_none"{% endif %}>
+                        <div class="col-sm-12">
+                            <div class="block_body">
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoDateReceived)}}
+                                    {{ form_widget(form.breachTwoDateReceived) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoDateReceived) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoNotificationFile)}}
+                                    {{ form_widget(form.breachTwoNotificationFile) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoNotificationFile) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {# END BREACH TWO BLOCK #}
                     <div class="row">
                         <div class="col-sm-12 text-right">
                             <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>

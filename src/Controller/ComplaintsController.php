@@ -25,6 +25,12 @@ class ComplaintsController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
+
+        $showForm = $this->getUser()->getAppFutherCorrespondence();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         return $this->render('dashboard/complaints.html.twig', [
             'step_integer' => 50,
             'step_string' => 'Step 5 of 10',

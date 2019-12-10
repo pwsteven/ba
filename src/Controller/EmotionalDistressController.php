@@ -25,6 +25,12 @@ class EmotionalDistressController extends BaseController
      */
     public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
     {
+
+        $showForm = $this->getUser()->getAppCreditMonitoring();
+        if (!$showForm){
+            return $this->redirectToRoute('app_dashboard');
+        }
+
         return $this->render('dashboard/emotional_distress.html.twig', [
             'step_integer' => 90,
             'step_string' => 'Step 9 of 10',

@@ -167,7 +167,77 @@ class BACorrespondenceType extends AbstractType
                     'class' => 'form-control',
                 ],
             ])
-
+            ->add('breachTwoNotification', ChoiceType::class, [
+                'label' => ' 11. Did you receive notification that you had been affected by the data event occurring between 10.58pm on 21 August 2018 – 9.45pm on 5 September 2018?',
+                'choices' => [
+                    'Please Select' => '',
+                    'Yes' => 'YES',
+                    'No' => 'NO',
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoDateReceived', DateType::class, [
+                'format' => 'dd-MM-yyyy',
+                'years' => range(date('Y'), 2018),
+                'placeholder' => [
+                    'day' => 'Day', 'month' => 'Month', 'year' => 'Year'
+                ],
+                'label' => 'Date Received',
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoNotificationFile', FileType::class, [
+                'mapped' => false,
+                'label' => 'Please upload a copy of the notification:',
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2M',
+                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
+                        'mimeTypes' => [
+                            'application/pdf',
+                            'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'text/plain',
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
+                    ])
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoNotificationNotAffected', ChoiceType::class, [
+                'label' => 'Have you since received notification confirming you were not affected?',
+                'choices' => [
+                    'Please Select' => '',
+                    'YES, not received' => 'YES not received',
+                    'NO, received' => 'No received',
+                ],
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoDateOfBooking', DateType::class, [
+                'format' => 'dd-MM-yyyy',
+                'years' => range('2018', '2018'),
+                'placeholder' => [
+                    'day' => 'Day', 'month' => 'Month', 'year' => 'Year'
+                ],
+                'label' => 'Date of Booking',
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
         ;
     }
 
