@@ -1,0 +1,9 @@
+.display_none {display: none;}
+.block_body {
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 2px solid #cccccc;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}

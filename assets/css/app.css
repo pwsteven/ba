@@ -1,6 +1,7 @@
 @import "~bootstrap";
 @import "~font-awesome";
 @import "~typeface-numans";
+@import url('form.css');
 html,body {
     background-color: lightgray;
     background-image: url('../images/login-bg.jpg');

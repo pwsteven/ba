@@ -46,6 +46,16 @@
                         <a class="disabled"><i class="ik ik-navigation"></i><span>BA Correspondence</span></a>
                     </div>
                 {% endif %}
+                {% if app.user.appBACorrespondence or app.request.pathinfo == '/dashboard/further-correspondence' %}
+                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/further-correspondence' %} active{% endif %}">
+                        <a href="{{ path('app_further_correspondence') }}"><i class="ik ik-at-sign"></i><span>Further Correspondence</span></a>
+                    </div>
+                {% else %}
+                    <div class="nav-item">
+                        <a class="disabled"><i class="ik ik-at-sign"></i><span>Further Correspondence</span></a>
+                    </div>
+                {% endif %}
+                {{ dump() }}
             </nav>
         </div>
     </div>

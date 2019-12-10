@@ -56,8 +56,34 @@ class BACorrespondenceController extends BaseController
                 $newFileName = $uploaderHelper->uploadClientFile($breachOneNotificationFile);
                 $baCorrespondenceDetails->setBreachOneNotificationFilePath($newFileName);
             }
+
+            /** @var UploadedFile $breachOneBookingConfirmationFile */
             $breachOneBookingConfirmationFile = $form['breachOneBookingConfirmationFile']->getData();
-            dd($breachOneBookingConfirmationFile);
+            if ($breachOneBookingConfirmationFile){
+                $newFileName = $uploaderHelper->uploadClientFile($breachOneBookingConfirmationFile);
+                $baCorrespondenceDetails->setBreachOneBookingConfirmationFilePath($newFileName);
+            }
+
+            // COMMIT FORM FIELD VALUES TO DATABASE
+            $baCorrespondenceDetails->setComplete(true);
+            $userSetBACorrespondence = $this->getUser()->setAppBACorrespondence(true);
+            $UserSetAppCurrentForm = $this->getUser()->setAppCurrentForm('app_ba_correspondence');
+            $entityManager->persist($userSetBACorrespondence);
+            $entityManager->persist($UserSetAppCurrentForm);
+            $entityManager->persist($baCorrespondenceDetails);
+            $entityManager->flush();
+
+            // COMMIT TO PROCLAIM TODO
+            $data = [
+                'case_id' => $this->getUser()->getProClaimReference(),
+
+            ];
+            //dd($data);
+            //$proClaimPutBACorrespondenceDetails->putCaseDetails($data);
+
+            // REDIRECT TO NEXT PAGE TODO
+            $this->addFlash('success', 'Success! You have completed the BA Correspondence stage.');
+            return $this->redirectToRoute('app_further_correspondence');
 
         }
 
