@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Form\BACorrespondenceType;
 use App\Repository\BACorrespondenceRepository;
+use App\Service\ProClaimPutBACorrespondence;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -36,9 +37,10 @@ class BACorrespondenceController extends BaseController
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @param UploaderHelper $uploaderHelper
+     * @param ProClaimPutBACorrespondence $proClaimPutBACorrespondence
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper)
+    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutBACorrespondence $proClaimPutBACorrespondence)
     {
 
         $showForm = $this->getUser()->getAppContactDetails();
@@ -69,6 +71,20 @@ class BACorrespondenceController extends BaseController
                 $baCorrespondenceDetails->setBreachOneBookingConfirmationFilePath($newFileName);
             }
 
+            /** @var UploadedFile $breachTwoNotificationFile */
+            $breachTwoNotificationFile = $form['breachTwoNotificationFile']->getData();
+            if ($breachTwoNotificationFile){
+                $newFileName = $uploaderHelper->uploadClientFile($breachTwoNotificationFile);
+                $baCorrespondenceDetails->setBreachTwoNotificationFilePath($newFileName);
+            }
+
+            /** @var UploadedFile $breachTwoBookingConfirmationFile */
+            $breachTwoBookingConfirmationFile = $form['breachTwoBookingConfirmationFile']->getData();
+            if ($breachTwoBookingConfirmationFile){
+                $newFileName = $uploaderHelper->uploadClientFile($breachTwoBookingConfirmationFile);
+                $baCorrespondenceDetails->setBreachTwoBookingConfirmationFilePath($newFileName);
+            }
+
             // COMMIT FORM FIELD VALUES TO DATABASE
             $baCorrespondenceDetails->setComplete(true);
             $userSetBACorrespondence = $this->getUser()->setAppBACorrespondence(true);
@@ -81,10 +97,18 @@ class BACorrespondenceController extends BaseController
             // COMMIT TO PROCLAIM TODO
             $data = [
                 'case_id' => $this->getUser()->getProClaimReference(),
-
+                'ba_correspondence_email' => $baCorrespondenceDetails->getReceivedConfirmationEmail(),
+                'breach_one_notification' => $baCorrespondenceDetails->getBreachOneNotification(),
+                'breach_one_date_received' => date_format($baCorrespondenceDetails->getBreachOneDateReceived(), 'd/m/Y'),
+                'breach_one_notification_not_affected' => $baCorrespondenceDetails->getBreachOneNotificationNotAffected(),
+                'breach_one_date_of_booking' => date_format($baCorrespondenceDetails->getBreachOneDateOfBooking(), 'd/m/Y'),
+                'breach_one_email_address_used' => $baCorrespondenceDetails->getBreachOneEmailAddressUsed(),
+                'breach_one_booking_reference' => $baCorrespondenceDetails->getBreachOneBookingReference(),
+                'breach_one_booking_platform' => $baCorrespondenceDetails->getBreachOneBookingPlatform(),
+                'breach_one_payment_method' => $baCorrespondenceDetails->getBreachOnePaymentMethod(),
             ];
             //dd($data);
-            //$proClaimPutBACorrespondenceDetails->putCaseDetails($data);
+            $proClaimPutBACorrespondence->putCaseDetails($data);
 
             // REDIRECT TO NEXT PAGE TODO
             $this->addFlash('success', 'Success! You have completed the BA Correspondence stage.');

@@ -238,6 +238,74 @@ class BACorrespondenceType extends AbstractType
                     'class' => 'form-control',
                 ],
             ])
+            ->add('breachTwoEmailAddressUsed', TextType::class, [
+                'label' => 'Email address used for the booking related to the claim:',
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoBookingReference', TextType::class, [
+                'label' => 'Booking Reference:',
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoBookingPlatform', ChoiceType::class, [
+                'label' => 'The booking was made on British Airways:',
+                'choices' => [
+                    'Please Select' => '',
+                    'Website' => 'Website',
+                    'Mobile Application' => 'Mobile Application',
+                    'Other' => 'Other',
+                ],
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoPaymentMethod', ChoiceType::class, [
+                'label' => 'The booking was paid for using:',
+                'choices' => [
+                    'Please Select' => '',
+                    'Credit Card' => 'Credit Card',
+                    'Debit Card' => 'Debit Card',
+                    'Cash' => 'Cash',
+                    'Air Miles' => 'Air Miles',
+                    'Apple Pay' => 'Apple Pay',
+                    'PayPal' => 'PayPal',
+                    'Other' => 'Other',
+                ],
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('breachTwoBookingConfirmationFile', FileType::class, [
+                'label' => 'Please upload a copy of the booking notification:',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2M',
+                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
+                        'mimeTypes' => [
+                            'application/pdf',
+                            'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'text/plain',
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
+                    ])
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
         ;
     }
 

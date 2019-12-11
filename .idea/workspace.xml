@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191210165416.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/FurtherCorrespondence.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/FurtherCorrespondenceType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/FurtherCorrespondenceRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ComplaintsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ComplaintsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CompleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompleteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ReimbursementsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReimbursementsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/BACorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/BACorrespondence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +220,9 @@
       <workItem from="1575381870237" duration="22234000" />
       <workItem from="1575478230197" duration="36292000" />
       <workItem from="1575643586669" duration="8665000" />
-      <workItem from="1575908966400" duration="18557000" />
+      <workItem from="1575908966400" duration="19077000" />
+      <workItem from="1576062228454" duration="4246000" />
+      <workItem from="1576073145355" duration="14804000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -347,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575994971769</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adding Breach Two fields to BACorrespondenceType and relevant form template&#10;10/12/19 17:28pm">
+      <created>1575998930682</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1575998930685</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,29 +392,38 @@
     <MESSAGE value="BA Correspondence&#10;10/12/19 09:37am" />
     <MESSAGE value="Dashboard Controller Page Structure Complete &#10;10/12/19 15:59pm" />
     <MESSAGE value="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm" />
+    <MESSAGE value="Adding Breach Two fields to BACorrespondenceType and relevant form template&#10;10/12/19 17:28pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Breach Two fields to BACorrespondenceType and relevant form template&#10;10/12/19 17:28pm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575477954148">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1575477954148" />
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1575993377718">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576079440897">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1575993377718" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575994970143">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576079440897" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1575998928464">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575994970143" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1575998928464" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575994853144">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1575994853144" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1575643588971">
+    <state x="511" y="73" key="RollbackChangesDialog" timestamp="1576063065979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1575643588971" />
+    <state x="511" y="73" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063065979" />
+    <state x="569" y="279" key="VCS.EditChangelistDialog" timestamp="1576063088318">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="569" y="279" key="VCS.EditChangelistDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063088318" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1576073150647">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576073150647" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1575649264953">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

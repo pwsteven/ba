@@ -8,7 +8,6 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    {{ form.vars.data.breachOneNotification }}
                     {{ form_start(form, {'attr': {'class': 'forms-sample', 'novalidate': 'novalidate'}}) }}
                     <div class="form-group mb-30">
                         {{ form_label(form.receivedConfirmationEmail)}}
@@ -69,16 +68,6 @@
                                     {{ form_widget(form.breachOneBookingConfirmationFile) }}
                                     <div class="error_message">{{ form_errors(form.breachOneBookingConfirmationFile) }}</div>
                                 </div>
-                                <div class="form-group mb-30">
-                                    {{ form_label(form.breachTwoNotificationNotAffected)}}
-                                    {{ form_widget(form.breachTwoNotificationNotAffected) }}
-                                    <div class="error_message">{{ form_errors(form.breachTwoNotificationNotAffected) }}</div>
-                                </div>
-                                <div class="form-group mb-30">
-                                    {{ form_label(form.breachTwoDateOfBooking)}}
-                                    {{ form_widget(form.breachTwoDateOfBooking) }}
-                                    <div class="error_message">{{ form_errors(form.breachTwoDateOfBooking) }}</div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -101,6 +90,41 @@
                                     {{ form_label(form.breachTwoNotificationFile)}}
                                     {{ form_widget(form.breachTwoNotificationFile) }}
                                     <div class="error_message">{{ form_errors(form.breachTwoNotificationFile) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoNotificationNotAffected)}}
+                                    {{ form_widget(form.breachTwoNotificationNotAffected) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoNotificationNotAffected) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoDateOfBooking)}}
+                                    {{ form_widget(form.breachTwoDateOfBooking) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoDateOfBooking) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoEmailAddressUsed)}}
+                                    {{ form_widget(form.breachTwoEmailAddressUsed) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoEmailAddressUsed) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoBookingReference)}}
+                                    {{ form_widget(form.breachTwoBookingReference) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoBookingReference) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoBookingPlatform)}}
+                                    {{ form_widget(form.breachTwoBookingPlatform) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoBookingPlatform) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoPaymentMethod)}}
+                                    {{ form_widget(form.breachTwoPaymentMethod) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoPaymentMethod) }}</div>
+                                </div>
+                                <div class="form-group mb-30">
+                                    {{ form_label(form.breachTwoBookingConfirmationFile)}}
+                                    {{ form_widget(form.breachTwoBookingConfirmationFile) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoBookingConfirmationFile) }}</div>
                                 </div>
                             </div>
                         </div>

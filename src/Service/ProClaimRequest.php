@@ -81,6 +81,10 @@ class ProClaimRequest
                 $data['claim_type_confidential_response'] = $case_field_value;
             }
 
+            //**************************************************************************************
+            //******************************* PERSONAL DETAILS *************************************
+            //**************************************************************************************
+
             // GET CLIENT TITLE
             $param = [
                 'csessionid' => $session_id,
@@ -161,6 +165,10 @@ class ProClaimRequest
                 $data['claim_type_client_date_of_birth'] = $case_field_value;
             }
 
+            //**************************************************************************************
+            //******************************** CONTACT DETAILS *************************************
+            //**************************************************************************************
+
             // GET CLIENT ADDRESS BLOCK
             $param = [
                 'csessionid' => $session_id,
@@ -224,6 +232,162 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['claim_type_client_mobile_phone'] = $case_field_value;
             }
+
+            //**************************************************************************************
+            //****************************** BA CORRESPONDENCE *************************************
+            //**************************************************************************************
+
+            // GET BA CONFIRMATION EMAIL RESPONSE
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA - S1 Notification.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_ba_confirmation_email'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_ba_confirmation_email'] = $case_field_value;
+            }
+
+            // GET BREACH ONE NOTIFICATION TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_breach_one_notification'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_breach_one_notification'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH ONE DATE RECEIVED TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_one_date_received'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_one_date_received'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH ONE NOTIFICATION NOT AFFECTED
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA - S1 Notification NOT Affected.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_one_notification_not_affected'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_one_notification_not_affected'] = $case_field_value;
+            }
+
+            // GET BREACH ONE DATE OF BOOKING
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - Date of Booking.Date',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_one_date_of_booking'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_one_date_of_booking'] = $case_field_value;
+            }
+
+            // GET BREACH ONE EMAIL ADDRESS USED
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'GAC - Breached Email Address.Text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_one_email_address_used'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_one_email_address_used'] = $case_field_value;
+            }
+
+            // GET BREACH ONE BOOKING REFERENCE
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA - Booking Reference.Text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_one_booking_reference'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_one_booking_reference'] = $case_field_value;
+            }
+
+            // GET BREACH ONE BOOKING PLATFORM
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA - Booking Platform.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_one_booking_platform'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_one_booking_platform'] = $case_field_value;
+            }
+
+            // GET BREACH ONE PAYMENT METHOD
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA - Payment Method.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_one_payment_method'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_one_payment_method'] = $case_field_value;
+            }
+
+            //**************************************************************************************
+            //*************************** END PROCLAIM SESSION *************************************
+            //**************************************************************************************
 
             // LOGOUT OF PROCLAIM
             $client->proLogout([

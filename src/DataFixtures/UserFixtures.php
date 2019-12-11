@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\BACorrespondence;
 use App\Entity\ContactDetails;
+use App\Entity\FurtherCorrespondence;
 use App\Entity\PersonalDetails;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -43,10 +44,14 @@ class UserFixtures extends Fixture
         $baCorrespondenceDetails = new BACorrespondence();
         $baCorrespondenceDetails->setUserID($user);
 
+        $furtherCorrespondenceDetails = new FurtherCorrespondence();
+        $furtherCorrespondenceDetails->setUser($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
         $manager->persist($contactDetails);
         $manager->persist($baCorrespondenceDetails);
+        $manager->persist($furtherCorrespondenceDetails);
 
         $manager->flush();
     }

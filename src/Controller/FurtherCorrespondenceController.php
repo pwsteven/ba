@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FurtherCorrespondenceRepository;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -16,6 +17,17 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class FurtherCorrespondenceController extends BaseController
 {
+
+    /**
+     * @var FurtherCorrespondenceRepository
+     */
+    private $furtherCorrespondenceRepository;
+
+    public function __construct(FurtherCorrespondenceRepository $furtherCorrespondenceRepository)
+   {
+       $this->furtherCorrespondenceRepository = $furtherCorrespondenceRepository;
+   }
+
     /**
      * @Route("/dashboard/further-correspondence", name="app_further_correspondence")
      * @param Request $request

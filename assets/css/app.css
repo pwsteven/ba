@@ -1,3 +1,7 @@
+@import "~bootstrap";
+@import "~font-awesome";
+@import "~typeface-numans";
+
 .display_none {display: none;}
 .block_body {
     padding: 15px;
@@ -7,4 +11,3 @@
     -moz-border-radius: 7px;
     border-radius: 7px;
 }
-
