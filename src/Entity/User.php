@@ -132,6 +132,11 @@ class User implements UserInterface
      */
     private $furtherCorrespondence;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Complaints", mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $complaints;
+
     public function __construct()
     {
         $this->fileReferences = new ArrayCollection();
@@ -477,6 +482,23 @@ class User implements UserInterface
         // set the owning side of the relation if necessary
         if ($this !== $furtherCorrespondence->getUser()) {
             $furtherCorrespondence->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getComplaints(): ?Complaints
+    {
+        return $this->complaints;
+    }
+
+    public function setComplaints(Complaints $complaints): self
+    {
+        $this->complaints = $complaints;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $complaints->getUser()) {
+            $complaints->setUser($this);
         }
 
         return $this;

@@ -386,6 +386,28 @@ class ProClaimRequest
             }
 
             //**************************************************************************************
+            //**************************** FURTHER CORRESPONDENCE **********************************
+            //**************************************************************************************
+
+            // GET RECEIVED ANY OTHER BA CORRESPONDENCE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_received_any_other_ba_correspondence'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_received_any_other_ba_correspondence'] = $case_field_value;
+            }
+            */
+
+            //**************************************************************************************
             //*************************** END PROCLAIM SESSION *************************************
             //**************************************************************************************
 

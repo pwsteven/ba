@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\FurtherCorrespondenceRepository")
@@ -29,6 +30,7 @@ class FurtherCorrespondence
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select either yes or no")
      */
     private $receivedAnyOtherBACorrespondence;
 
@@ -41,6 +43,11 @@ class FurtherCorrespondence
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $complete;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $allCorrespondenceFilePath;
 
     public function getId(): ?int
     {
@@ -103,6 +110,18 @@ class FurtherCorrespondence
     public function setComplete(?bool $complete): self
     {
         $this->complete = $complete;
+
+        return $this;
+    }
+
+    public function getAllCorrespondenceFilePath(): ?string
+    {
+        return $this->allCorrespondenceFilePath;
+    }
+
+    public function setAllCorrespondenceFilePath(?string $allCorrespondenceFilePath): self
+    {
+        $this->allCorrespondenceFilePath = $allCorrespondenceFilePath;
 
         return $this;
     }

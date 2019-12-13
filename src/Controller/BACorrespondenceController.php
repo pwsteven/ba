@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Class BACorrespondenceController
@@ -95,13 +96,25 @@ class BACorrespondenceController extends BaseController
             $entityManager->flush();
 
             // COMMIT TO PROCLAIM TODO
+
+            if (!empty($baCorrespondenceDetails->getBreachOneDateReceived())){
+                $breach_one_date_received = date_format($baCorrespondenceDetails->getBreachOneDateReceived(), 'd/m/Y');
+            } else {
+                $breach_one_date_received = "";
+            }
+            if (!empty($baCorrespondenceDetails->getBreachOneDateOfBooking())){
+                $breach_one_date_of_booking = date_format($baCorrespondenceDetails->getBreachOneDateOfBooking(), 'd/m/Y');
+            } else {
+                $breach_one_date_of_booking = "";
+            }
+
             $data = [
                 'case_id' => $this->getUser()->getProClaimReference(),
                 'ba_correspondence_email' => $baCorrespondenceDetails->getReceivedConfirmationEmail(),
                 'breach_one_notification' => $baCorrespondenceDetails->getBreachOneNotification(),
-                'breach_one_date_received' => date_format($baCorrespondenceDetails->getBreachOneDateReceived(), 'd/m/Y'),
+                'breach_one_date_received' => $breach_one_date_received,
                 'breach_one_notification_not_affected' => $baCorrespondenceDetails->getBreachOneNotificationNotAffected(),
-                'breach_one_date_of_booking' => date_format($baCorrespondenceDetails->getBreachOneDateOfBooking(), 'd/m/Y'),
+                'breach_one_date_of_booking' => $breach_one_date_of_booking,
                 'breach_one_email_address_used' => $baCorrespondenceDetails->getBreachOneEmailAddressUsed(),
                 'breach_one_booking_reference' => $baCorrespondenceDetails->getBreachOneBookingReference(),
                 'breach_one_booking_platform' => $baCorrespondenceDetails->getBreachOneBookingPlatform(),

@@ -75,12 +75,19 @@ class PersonalDetailsController extends BaseController
             $entityManager->flush();
 
             //Commit to ProClaim
+
+            if (!empty($personalDetails->getDateOfBirth())){
+                $date_of_birth = date_format($personalDetails->getDateOfBirth(), "d/m/Y");
+            } else {
+                $date_of_birth = "";
+            }
+
             $data = [
                 'case_id' => $this->getUser()->getProClaimReference(),
                 'first_name' => $personalDetails->getFirstName(),
                 'middle_name' => $personalDetails->getMiddleName(),
                 'surname' => $personalDetails->getSurname(),
-                'date_of_birth' => date_format($personalDetails->getDateOfBirth(), "d/m/Y"),
+                'date_of_birth' => $date_of_birth,
             ];
 
             //dd($data);

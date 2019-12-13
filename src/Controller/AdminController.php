@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FurtherCorrespondenceRepository;
 use App\Repository\PersonalDetailsRepository;
 use App\Repository\UserRepository;
 use App\Service\ProClaimPutPersonalDetails;
@@ -24,16 +25,19 @@ class AdminController extends AbstractController
      * @var string
      * @var PersonalDetailsRepository
      * @var UserRepository
+     * @var FurtherCorrespondenceRepository
      */
     private $uploadUrl;
     private $personalDetailsRepository;
     private $userRepository;
+    private $furtherCorrespondenceRepository;
 
-    public function __construct(string $uploadUrl, PersonalDetailsRepository $personalDetailsRepository, UserRepository $userRepository)
+    public function __construct(string $uploadUrl, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, PersonalDetailsRepository $personalDetailsRepository, UserRepository $userRepository)
     {
         $this->uploadUrl = $uploadUrl;
         $this->personalDetailsRepository = $personalDetailsRepository;
         $this->userRepository = $userRepository;
+        $this->furtherCorrespondenceRepository = $furtherCorrespondenceRepository;
     }
 
     /**
@@ -58,10 +62,12 @@ class AdminController extends AbstractController
         $proClaimDetails = $proClaimRequest->getCaseDetails($id);
         $userID = $this->userRepository->findOneBySomeField($id);
         $personalDetails = $this->personalDetailsRepository->findOneBySomeField($userID);
+        $furtherCorrespondenceDetails = $this->furtherCorrespondenceRepository->findOneBySomeField($userID);
         $imagePath = $personalDetails->getImageFileName();
         return $this->render('admin/proclaim_get.html.twig', [
             'proClaimData' => $proClaimDetails,
             'imagePath' => $imagePath,
+            'fc' => $furtherCorrespondenceDetails,
         ]);
 
     }

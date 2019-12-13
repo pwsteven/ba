@@ -8,7 +8,28 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
+                    {{ form_start(form, {'attr': {'class': 'forms-sample', 'novalidate': 'novalidate'}}) }}
+                    <div class="form-group mb-30">
+                        {{ form_label(form.personalInformationBreachedFile)}}
+                        {{ form_widget(form.personalInformationBreachedFile) }}
+                        <div class="error_message">{{ form_errors(form.personalInformationBreachedFile) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.receivedAnyOtherBACorrespondence)}}
+                        {{ form_widget(form.receivedAnyOtherBACorrespondence) }}
+                        <div class="error_message">{{ form_errors(form.receivedAnyOtherBACorrespondence) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.allCorrespondenceSentReceivedFile)}}
+                        {{ form_widget(form.allCorrespondenceSentReceivedFile) }}
+                        <div class="error_message">{{ form_errors(form.allCorrespondenceSentReceivedFile) }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

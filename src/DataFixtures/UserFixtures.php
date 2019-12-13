@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\BACorrespondence;
+use App\Entity\Complaints;
 use App\Entity\ContactDetails;
 use App\Entity\FurtherCorrespondence;
 use App\Entity\PersonalDetails;
@@ -47,11 +48,15 @@ class UserFixtures extends Fixture
         $furtherCorrespondenceDetails = new FurtherCorrespondence();
         $furtherCorrespondenceDetails->setUser($user);
 
+        $complaintDetails = new Complaints();
+        $complaintDetails->setUser($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
         $manager->persist($contactDetails);
         $manager->persist($baCorrespondenceDetails);
         $manager->persist($furtherCorrespondenceDetails);
+        $manager->persist($complaintDetails);
 
         $manager->flush();
     }
