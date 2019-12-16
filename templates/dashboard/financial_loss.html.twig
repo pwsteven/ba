@@ -8,7 +8,40 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
+                    {{ form_start(form, {'attr': {'class': 'forms-sample', 'novalidate': 'novalidate'}}) }}
+                    <div class="form-group mb-30">
+                        {{ form_label(form.typeFinancialLoss)}}
+                        {% for FinancialLoss in form.typeFinancialLoss %}
+                        <div class="border-checkbox-section ml-20">
+                            {{ form_widget(FinancialLoss) }} <label>{{ FinancialLoss.vars.label }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {# start financial_loss_block #}
+                    <div id="financial_loss_block" class="display_none">
+                        <div class="form-group mb-30">
+                            {{ form_label(form.typeFinancialLossOtherComment) }}
+                            {{ form_widget(form.typeFinancialLossOtherComment) }}
+                            <div class="error_message">{{ form_errors(form.typeFinancialLossOtherComment) }}</div>
+                        </div>
+                    </div>
+                    {# end financial_loss_block #}
+                    <div class="form-group mb-30">
+                        {{ form_label(form.totalLossAmount) }}
+                        {{ form_widget(form.totalLossAmount) }}
+                        <div class="error_message">{{ form_errors(form.totalLossAmount) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.financialLossFiles) }}
+                        {{ form_widget(form.financialLossFiles) }}
+                        <div class="error_message">{{ form_errors(form.financialLossFiles) }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

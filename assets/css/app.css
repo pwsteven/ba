@@ -11,3 +11,4 @@
     -moz-border-radius: 7px;
     border-radius: 7px;
 }
+input[type="checkbox"]:hover {cursor: pointer;}

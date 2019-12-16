@@ -540,6 +540,42 @@ class ProClaimRequest
             }
 
             //**************************************************************************************
+            //****************************** FINANCIAL LOSS ****************************************
+            //**************************************************************************************
+
+            // GET TYPE OF FINANCIAL LOSS
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - Financial Loss circumstances.Text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_financial_Loss'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_financial_Loss'] = $case_field_value;
+            }
+
+            // GET TOTAL LOSS AMOUNT
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - Financial Loss amount.Value',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_total_loss_amount'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_total_loss_amount'] = $case_field_value;
+            }
+
+            //**************************************************************************************
             //*************************** END PROCLAIM SESSION *************************************
             //**************************************************************************************
 

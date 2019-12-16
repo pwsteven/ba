@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\BACorrespondence;
 use App\Entity\Complaints;
 use App\Entity\ContactDetails;
+use App\Entity\FinancialLoss;
 use App\Entity\FurtherCorrespondence;
 use App\Entity\PersonalDetails;
 use App\Entity\User;
@@ -51,12 +52,16 @@ class UserFixtures extends Fixture
         $complaintDetails = new Complaints();
         $complaintDetails->setUser($user);
 
+        $financialLossDetails = new FinancialLoss();
+        $financialLossDetails->setUser($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
         $manager->persist($contactDetails);
         $manager->persist($baCorrespondenceDetails);
         $manager->persist($furtherCorrespondenceDetails);
         $manager->persist($complaintDetails);
+        $manager->persist($financialLossDetails);
 
         $manager->flush();
     }
