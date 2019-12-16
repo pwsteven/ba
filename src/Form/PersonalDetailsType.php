@@ -41,7 +41,10 @@ class PersonalDetailsType extends AbstractType
                     'day' => 'Day', 'month' => 'Month', 'year' => 'Year'
                 ],
                 'widget' => 'choice',
-                'label' => ' 4. What is your full date of birth?'
+                'label' => ' 4. What is your full date of birth?',
+                'attr' => [
+                    'class' => 'form-control form-control-default form-txt-inverse',
+                ],
             ])
             ->add('imageFile', FileType::class, [
                 'mapped' => false,
@@ -51,7 +54,10 @@ class PersonalDetailsType extends AbstractType
                     new Image([
                         'maxSize' => '5M'
                     ])
-                ]
+                ],
+                'attr' => [
+                    'class' => 'form-control form-control-default form-txt-inverse',
+                ],
             ])
         ;
     }

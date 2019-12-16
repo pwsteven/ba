@@ -90,7 +90,7 @@ class FurtherCorrespondenceController extends BaseController
             ];
             $proClaimPutFurtherCorrespondence->putCaseDetails($data);
 
-            // REDIRECT TO NEXT PAGE TODO
+            // REDIRECT TO NEXT PAGE
             $this->addFlash('success', 'Success! You have completed the Further Correspondence stage.');
             return $this->redirectToRoute('app_complaints');
 
