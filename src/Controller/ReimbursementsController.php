@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\ReimbursementsType;
 use App\Repository\ReimbursementsRepository;
 use App\Service\ProClaimPutReimbursements;
 use App\Service\UploaderHelper;
@@ -46,13 +47,18 @@ class ReimbursementsController extends BaseController
         }
 
         $userID = $this->getUser()->getId();
-        dd($userID);
+        $reimbursementDetails = $this->reimbursementsRepository->findOneBySomeField($userID);
+
+        $form = $this->createForm(ReimbursementsType::class, $reimbursementDetails);
+        $form->handleRequest($request);
+
 
         return $this->render('dashboard/reimbursements.html.twig', [
             'step_integer' => 70,
             'step_string' => 'Step 7 of 10',
             'header_icon' => 'ik ik-pocket',
             'header_text' => 'Reimbursements',
+            'form' => $form->createView(),
         ]);
     }
 }

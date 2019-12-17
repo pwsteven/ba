@@ -8,7 +8,23 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
+                    {{ form_start(form, {'attr': {'class': 'forms-sample', 'novalidate': 'novalidate'}}) }}
+                    <div class="form-group mb-30">
+                        {{ form_label(form.financialLossSuffered) }}
+                        {{ form_widget(form.financialLossSuffered) }}
+                        <div class="error_message">{{ form_errors(form.financialLossSuffered) }}</div>
+                    </div>
+                    {# BEGIN REIMBURSEMENTS BLOCK #}
+                    <div id="reimbursements_block" class="display_none">
+                        Hello
+                    </div>
+                    {# END REIMBURSEMENTS BLOCK #}
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

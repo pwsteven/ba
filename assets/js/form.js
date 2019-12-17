@@ -81,3 +81,12 @@ if ($('#financial_loss_typeFinancialLoss_0').prop("checked") === true){
     $('#financial_loss_totalLossAmount').prop('disabled', true);
     $('#financial_loss_financialLossFiles').prop('disabled', true);
 }
+$('#reimbursements_financialLossSuffered').on('change', function () {
+    const value = $('#reimbursements_financialLossSuffered option:selected').attr("value");
+    console.log(value);
+    if (value === 'YES') {
+        $('#reimbursements_block').fadeIn(450);
+    } else {
+        $('#reimbursements_block').fadeOut(250);
+    }
+});
