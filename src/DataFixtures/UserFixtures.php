@@ -8,6 +8,7 @@ use App\Entity\ContactDetails;
 use App\Entity\FinancialLoss;
 use App\Entity\FurtherCorrespondence;
 use App\Entity\PersonalDetails;
+use App\Entity\Reimbursements;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -55,6 +56,9 @@ class UserFixtures extends Fixture
         $financialLossDetails = new FinancialLoss();
         $financialLossDetails->setUser($user);
 
+        $reimbursementDetails = new Reimbursements();
+        $reimbursementDetails->setUser($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
         $manager->persist($contactDetails);
@@ -62,6 +66,7 @@ class UserFixtures extends Fixture
         $manager->persist($furtherCorrespondenceDetails);
         $manager->persist($complaintDetails);
         $manager->persist($financialLossDetails);
+        $manager->persist($reimbursementDetails);
 
         $manager->flush();
     }
