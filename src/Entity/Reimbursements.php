@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use SpecShaper\EncryptBundle\Annotations\Encrypted;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReimbursementsRepository")
@@ -29,6 +30,7 @@ class Reimbursements
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
      */
     private $provider;
 

@@ -8,15 +8,29 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    {{ form_start(form, {'attr': {'class': 'forms-sample', 'novalidate': 'novalidate'}}) }}
+                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
                     <div class="form-group mb-30">
                         {{ form_label(form.financialLossSuffered) }}
                         {{ form_widget(form.financialLossSuffered) }}
                         <div class="error_message">{{ form_errors(form.financialLossSuffered) }}</div>
                     </div>
                     {# BEGIN REIMBURSEMENTS BLOCK #}
-                    <div id="reimbursements_block" class="display_none">
-                        Hello
+                    <div id="reimbursements_block"{% if form.vars.data.financialLossSuffered != 'YES' %} class="display_none"{% endif %}>
+                        <div class="form-group mb-30">
+                            {{ form_label(form.provider) }}
+                            {{ form_widget(form.provider) }}
+                            <div class="error_message">{{ form_errors(form.provider) }}</div>
+                        </div>
+                        <div class="form-group mb-30">
+                            {{ form_label(form.amountReimbursed) }}
+                            {{ form_widget(form.amountReimbursed) }}
+                            <div class="error_message">{{ form_errors(form.amountReimbursed) }}</div>
+                        </div>
+                        <div class="form-group mb-30">
+                            {{ form_label(form.reimbursementFiles) }}
+                            {{ form_widget(form.reimbursementFiles) }}
+                            <div class="error_message">{{ form_errors(form.reimbursementFiles) }}</div>
+                        </div>
                     </div>
                     {# END REIMBURSEMENTS BLOCK #}
                     <div class="row">

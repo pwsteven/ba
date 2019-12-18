@@ -76,11 +76,20 @@
     </div>
 </div>
 <hr>
-<h4>Complaints</h4>
+<h4>Financial Loss</h4>
 <div class="row">
     <div class="col-md-12">
         <p>Type Financial Loss = {{ proClaimData.claim_type_client_type_financial_Loss }}</p>
         <p>Total Loss Amount = {{ proClaimData.claim_type_client_type_total_loss_amount }}</p>
+    </div>
+</div>
+<hr>
+<h4>Reimbursements</h4>
+<div class="row">
+    <div class="col-md-12">
+        <p>Financial Loss Suffered = {{ proClaimData.claim_type_client_type_financial_loss_suffered }}</p>
+        <p>Provider = {# proClaimData.claim_type_client_type_provider #} TODO</p>
+        <p>Amount Reimbursed = {{ proClaimData.claim_type_client_type_amount_reimbursed }}</p>
     </div>
 </div>
 {% endblock %}

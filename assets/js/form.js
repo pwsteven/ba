@@ -83,10 +83,17 @@ if ($('#financial_loss_typeFinancialLoss_0').prop("checked") === true){
 }
 $('#reimbursements_financialLossSuffered').on('change', function () {
     const value = $('#reimbursements_financialLossSuffered option:selected').attr("value");
-    console.log(value);
     if (value === 'YES') {
         $('#reimbursements_block').fadeIn(450);
     } else {
         $('#reimbursements_block').fadeOut(250);
+    }
+});
+$('#credit_monitor_monitorCredit').on('change', function () {
+    const value = $('#credit_monitor_monitorCredit option:selected').attr("value");
+    if (value === 'YES') {
+        $('#credit_monitor_block').fadeIn(450);
+    } else {
+        $('#credit_monitor_block').fadeOut(250);
     }
 });

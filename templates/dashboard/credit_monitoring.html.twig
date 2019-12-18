@@ -8,7 +8,23 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-
+                    {{ form_start(form, {'attr': {'class': 'forms-sample', 'novalidate': 'novalidate'}}) }}
+                    <div class="form-group mb-30">
+                        {{ form_label(form.monitorCredit) }}
+                        {{ form_widget(form.monitorCredit) }}
+                        <div class="error_message">{{ form_errors(form.monitorCredit) }}</div>
+                    </div>
+                    {# START CREDIT MONITOR BLOCK #}
+                    <div id="credit_monitor_block"{% if form.vars.data.monitorCredit != 'YES' %} class="display_none"{% endif %}>
+                        Hello
+                    </div>
+                    {# END CREDIT MONITOR BLOCK #}
+                    <div class="row">
+                        <div class="col-sm-12 text-right">
+                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
                 </div>
             </div>
         </div>

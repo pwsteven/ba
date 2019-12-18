@@ -147,6 +147,11 @@ class User implements UserInterface
      */
     private $reimbursements;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\CreditMonitor", mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $creditMonitor;
+
     public function __construct()
     {
         $this->fileReferences = new ArrayCollection();
@@ -543,6 +548,23 @@ class User implements UserInterface
         // set the owning side of the relation if necessary
         if ($this !== $reimbursements->getUser()) {
             $reimbursements->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getCreditMonitor(): ?CreditMonitor
+    {
+        return $this->creditMonitor;
+    }
+
+    public function setCreditMonitor(CreditMonitor $creditMonitor): self
+    {
+        $this->creditMonitor = $creditMonitor;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $creditMonitor->getUser()) {
+            $creditMonitor->setUser($this);
         }
 
         return $this;

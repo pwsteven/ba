@@ -8,6 +8,7 @@ use App\Service\ProClaimPutReimbursements;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -52,6 +53,44 @@ class ReimbursementsController extends BaseController
         $form = $this->createForm(ReimbursementsType::class, $reimbursementDetails);
         $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            //COLLECT + UPLOAD FILE|IMAGE FILES
+            /** @var UploadedFile $reimbursementFiles */
+            $reimbursementFiles = $form['reimbursementFiles']->getData();
+            if ($reimbursementFiles){
+                $filesData = [];
+                foreach ($reimbursementFiles as $reimbursementFile) {
+                    $newFileName = $uploaderHelper->uploadClientFile($reimbursementFile);
+                    $filesData[] = $newFileName;
+                }
+                $reimbursementDetails->setReimbursementFilesPath($filesData);
+            }
+
+            // COMMIT FORM FIELD VALUES TO DATABASE
+            $reimbursementDetails->setComplete(true);
+            $userSetReimbursement = $this->getUser()->setAppReimbursements(true);
+            $userSetAppCurrentForm = $this->getUser()->setAppCurrentForm('app_reimbursements');
+
+            $entityManager->persist($userSetReimbursement);
+            $entityManager->persist($userSetAppCurrentForm);
+            $entityManager->persist($reimbursementDetails);
+            $entityManager->flush();
+
+            // COMMIT TO PROCLAIM TODO
+            $data = [
+                'case_id' => $this->getUser()->getProClaimReference(),
+                'financial_loss_suffered' => $reimbursementDetails->getFinancialLossSuffered(),
+                'provider' => $reimbursementDetails->getProvider(),
+                'amount_reimbursed' => $reimbursementDetails->getAmountReimbursed(),
+            ];
+            $proClaimPutReimbursements->putCaseDetails($data);
+
+            // REDIRECT TO NEXT PAGE
+            $this->addFlash('success', 'Success! You have completed the Reimbursements stage.');
+            return $this->redirectToRoute('app_credit_monitoring');
+
+        }
 
         return $this->render('dashboard/reimbursements.html.twig', [
             'step_integer' => 70,

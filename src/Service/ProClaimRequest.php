@@ -576,6 +576,60 @@ class ProClaimRequest
             }
 
             //**************************************************************************************
+            //****************************** REIMBURSEMENTS ****************************************
+            //**************************************************************************************
+
+            // GET FINANCIAL LOSS SUFFERED
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - Financial Loss.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_financial_loss_suffered'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_financial_loss_suffered'] = $case_field_value;
+            }
+
+            // GET PROVIDER TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_provider'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_provider'] = $case_field_value;
+            }
+            */
+
+            // GET AMOUNT REIMBURSED
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - Financial Loss amount reimbursed.Value',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_amount_reimbursed'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_amount_reimbursed'] = $case_field_value;
+            }
+
+            //**************************************************************************************
             //*************************** END PROCLAIM SESSION *************************************
             //**************************************************************************************
 
