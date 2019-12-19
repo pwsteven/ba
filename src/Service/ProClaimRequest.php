@@ -630,6 +630,26 @@ class ProClaimRequest
             }
 
             //**************************************************************************************
+            //**************************** CREDIT MONITORING ***************************************
+            //**************************************************************************************
+
+            // GET MONITOR CREDIT
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'GAC - Credit Monitoring.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_monitor_credit'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_monitor_credit'] = $case_field_value;
+            }
+
+            //**************************************************************************************
             //*************************** END PROCLAIM SESSION *************************************
             //**************************************************************************************
 

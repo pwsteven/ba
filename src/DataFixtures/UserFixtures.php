@@ -6,6 +6,7 @@ use App\Entity\BACorrespondence;
 use App\Entity\Complaints;
 use App\Entity\ContactDetails;
 use App\Entity\CreditMonitor;
+use App\Entity\EmotionalDistress;
 use App\Entity\FinancialLoss;
 use App\Entity\FurtherCorrespondence;
 use App\Entity\PersonalDetails;
@@ -63,6 +64,9 @@ class UserFixtures extends Fixture
         $creditMonitorDetails = new CreditMonitor();
         $creditMonitorDetails->setUser($user);
 
+        $emotionalDistressDetails = new EmotionalDistress();
+        $emotionalDistressDetails->setUser($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
         $manager->persist($contactDetails);
@@ -72,6 +76,7 @@ class UserFixtures extends Fixture
         $manager->persist($financialLossDetails);
         $manager->persist($reimbursementDetails);
         $manager->persist($creditMonitorDetails);
+        $manager->persist($emotionalDistressDetails);
 
         $manager->flush();
     }

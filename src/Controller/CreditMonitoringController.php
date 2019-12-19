@@ -8,6 +8,7 @@ use App\Service\ProClaimPutCreditMonitoring;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,6 +52,39 @@ class CreditMonitoringController extends BaseController
 
         $form = $this->createForm(CreditMonitorType::class, $creditMonitorDetails);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            //COLLECT + UPLOAD FILE|IMAGE FILES
+            /** @var UploadedFile $monitorCreditFile */
+            $monitorCreditFile = $form['monitorCreditFile']->getData();
+            if ($monitorCreditFile) {
+                $newFileName = $uploaderHelper->uploadClientFile($monitorCreditFile);
+                $creditMonitorDetails->setMonitorCreditFilePath($newFileName);
+            }
+
+            // COMMIT FORM FIELD VALUES TO DATABASE
+            $creditMonitorDetails->setComplete(true);
+            $userSetCreditMonitor = $this->getUser()->setAppCreditMonitoring(true);
+            $userSetAppCurrentForm = $this->getUser()->setAppCurrentForm('app_credit_monitoring');
+
+            $entityManager->persist($userSetCreditMonitor);
+            $entityManager->persist($userSetAppCurrentForm);
+            $entityManager->persist($creditMonitorDetails);
+            $entityManager->flush();
+
+            // COMMIT TO PROCLAIM TODO
+            $data = [
+                'case_id' => $this->getUser()->getProClaimReference(),
+                'monitor_credit' => $creditMonitorDetails->getMonitorCredit(),
+            ];
+            $proClaimPutCreditMonitoring->putCaseDetails($data);
+
+            // REDIRECT TO NEXT PAGE
+            $this->addFlash('success', 'Success! You have completed the Credit Monitoring stage.');
+            return $this->redirectToRoute('app_emotional_distress');
+
+        }
 
         return $this->render('dashboard/credit_monitoring.html.twig', [
             'step_integer' => 80,

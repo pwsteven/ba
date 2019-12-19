@@ -152,6 +152,11 @@ class User implements UserInterface
      */
     private $creditMonitor;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\EmotionalDistress", mappedBy="User", cascade={"persist", "remove"})
+     */
+    private $emotionalDistress;
+
     public function __construct()
     {
         $this->fileReferences = new ArrayCollection();
@@ -565,6 +570,23 @@ class User implements UserInterface
         // set the owning side of the relation if necessary
         if ($this !== $creditMonitor->getUser()) {
             $creditMonitor->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function getEmotionalDistress(): ?EmotionalDistress
+    {
+        return $this->emotionalDistress;
+    }
+
+    public function setEmotionalDistress(EmotionalDistress $emotionalDistress): self
+    {
+        $this->emotionalDistress = $emotionalDistress;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $emotionalDistress->getUser()) {
+            $emotionalDistress->setUser($this);
         }
 
         return $this;

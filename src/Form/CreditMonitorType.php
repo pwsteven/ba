@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class CreditMonitorType extends AbstractType
 {
@@ -25,8 +26,29 @@ class CreditMonitorType extends AbstractType
                     'class' => 'form-control',
                 ]
             ])
-            ->add('monitorCreditFilePath', FileType::class, [
-
+            ->add('monitorCreditFile', FileType::class, [
+                'label' => 'Please upload evidence of your account:',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2M',
+                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
+                        'mimeTypes' => [
+                            'application/pdf',
+                            'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                            'text/plain',
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
+                    ])
+                ],
+                'attr' => [
+                    'class' => 'form-control',
+                ],
             ])
         ;
     }
