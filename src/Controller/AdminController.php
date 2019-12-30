@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\EmotionalDistressRepository;
 use App\Repository\FurtherCorrespondenceRepository;
 use App\Repository\PersonalDetailsRepository;
 use App\Repository\UserRepository;
@@ -26,18 +27,21 @@ class AdminController extends AbstractController
      * @var PersonalDetailsRepository
      * @var UserRepository
      * @var FurtherCorrespondenceRepository
+     * @var EmotionalDistressRepository
      */
     private $uploadUrl;
     private $personalDetailsRepository;
     private $userRepository;
     private $furtherCorrespondenceRepository;
+    private $emotionalDistressRepository;
 
-    public function __construct(string $uploadUrl, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, PersonalDetailsRepository $personalDetailsRepository, UserRepository $userRepository)
+    public function __construct(string $uploadUrl, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, PersonalDetailsRepository $personalDetailsRepository, EmotionalDistressRepository $emotionalDistressRepository, UserRepository $userRepository)
     {
         $this->uploadUrl = $uploadUrl;
         $this->personalDetailsRepository = $personalDetailsRepository;
         $this->userRepository = $userRepository;
         $this->furtherCorrespondenceRepository = $furtherCorrespondenceRepository;
+        $this->emotionalDistressRepository = $emotionalDistressRepository;
     }
 
     /**
@@ -63,11 +67,13 @@ class AdminController extends AbstractController
         $userID = $this->userRepository->findOneBySomeField($id);
         $personalDetails = $this->personalDetailsRepository->findOneBySomeField($userID);
         $furtherCorrespondenceDetails = $this->furtherCorrespondenceRepository->findOneBySomeField($userID);
+        $emotionalDistressDetails = $this->emotionalDistressRepository->findOneBySomeField($userID);
         $imagePath = $personalDetails->getImageFileName();
         return $this->render('admin/proclaim_get.html.twig', [
             'proClaimData' => $proClaimDetails,
             'imagePath' => $imagePath,
             'fc' => $furtherCorrespondenceDetails,
+            'ed' => $emotionalDistressDetails,
         ]);
 
     }

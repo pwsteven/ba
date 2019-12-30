@@ -15,12 +15,200 @@
                         <div class="error_message">{{ form_errors(form.personalDetails) }}</div>
                     </div>
                     <div class="form-group mb-30">
-                        {{ form_label(form.emotionsExperienced)}}
-                        {% for Emotions in form.emotionsExperienced %}
+                        {{ form_label(form.emotionsExperiencedNew)}}
+                        {% for Emotions in form.emotionsExperiencedNew %}
                             <div class="border-checkbox-section ml-20">
                                 {{ form_widget(Emotions) }} <label>{{ Emotions.vars.label }}</label>
                             </div>
                         {% endfor %}
+                        <div class="error_message">{{ form_errors(form.emotionsExperiencedNew) }}</div>
+                    </div>
+                    <div id="emotions_experienced_block" class="display_none">
+                        <div class="form-group mb-30">
+                            {{ form_label(form.emotionsExperiencedComment) }}
+                            {{ form_widget(form.emotionsExperiencedComment) }}
+                            <div class="error_message">{{ form_errors(form.emotionsExperiencedComment) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.emotionalDistressLasted) }}
+                        {{ form_widget(form.emotionalDistressLasted) }}
+                        <div class="error_message">{{ form_errors(form.emotionalDistressLasted) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        <label>27. As a result of the breach have you felt:</label>
+                        <div id="distressed_block">
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionA) }}
+                                {{ form_widget(form.breachQuestionA) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionA) }}</div>
+                            </div>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionA_example) }}
+                                {{ form_widget(form.breachQuestionA_example) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionA_example) }}</div>
+                            </div>
+                            <hr>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionB) }}
+                                {{ form_widget(form.breachQuestionB) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionB) }}</div>
+                            </div>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionB_example) }}
+                                {{ form_widget(form.breachQuestionB_example) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionB_example) }}</div>
+                            </div>
+                            <hr>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionC) }}
+                                {{ form_widget(form.breachQuestionC) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionC) }}</div>
+                            </div>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionC_example) }}
+                                {{ form_widget(form.breachQuestionC_example) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionC_example) }}</div>
+                            </div>
+                            <hr>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionD) }}
+                                {{ form_widget(form.breachQuestionD) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionD) }}</div>
+                            </div>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionD_example) }}
+                                {{ form_widget(form.breachQuestionD_example) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionD_example) }}</div>
+                            </div>
+                            <hr>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionE) }}
+                                {{ form_widget(form.breachQuestionE) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionE) }}</div>
+                            </div>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionE_example) }}
+                                {{ form_widget(form.breachQuestionE_example) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionE_example) }}</div>
+                            </div>
+                            <hr>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionF) }}
+                                {{ form_widget(form.breachQuestionF) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionF) }}</div>
+                            </div>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionF_example) }}
+                                {{ form_widget(form.breachQuestionF_example) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionF_example) }}</div>
+                            </div>
+                            <hr>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionG) }}
+                                {{ form_widget(form.breachQuestionG) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionG) }}</div>
+                            </div>
+                            <div class="form-group mb-30">
+                                {{ form_label(form.breachQuestionG_example) }}
+                                {{ form_widget(form.breachQuestionG_example) }}
+                                <div class="error_message">{{ form_errors(form.breachQuestionG_example) }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-30 mb-30">
+                        {{ form_label(form.diagnosedConditions)}}
+                        {% for Conditions in form.diagnosedConditions %}
+                            <div class="border-checkbox-section ml-20">
+                                {{ form_widget(Conditions) }} <label>{{ Conditions.vars.label }}</label>
+                            </div>
+                        {% endfor %}
+                        <div class="error_message">{{ form_errors(form.diagnosedConditions) }}</div>
+                    </div>
+                    <div id="diagnosed_conditions_block" class="display_none">
+                        <div class="form-group mb-30">
+                            {{ form_label(form.diagnosedConditionsExample) }}
+                            {{ form_widget(form.diagnosedConditionsExample) }}
+                            <div class="error_message">{{ form_errors(form.diagnosedConditionsExample) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-30 mb-30">
+                        {{ form_label(form.impactCondition)}}
+                        {% for Conditions in form.impactCondition %}
+                            <div class="border-checkbox-section ml-20">
+                                {{ form_widget(Conditions) }} <label>{{ Conditions.vars.label }}</label>
+                            </div>
+                        {% endfor %}
+                        <div class="error_message">{{ form_errors(form.impactCondition) }}</div>
+                    </div>
+                    <div id="impact_condition_block" class="display_none">
+                        <div class="form-group mb-30">
+                            {{ form_label(form.impactConditionExample) }}
+                            {{ form_widget(form.impactConditionExample) }}
+                            <div class="error_message">{{ form_errors(form.impactConditionExample) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-30 mb-30">
+                        {{ form_label(form.stepsTaken)}}
+                        {% for Steps in form.stepsTaken %}
+                            <div class="border-checkbox-section ml-20">
+                                {{ form_widget(Steps) }} <label>{{ Steps.vars.label }}</label>
+                            </div>
+                        {% endfor %}
+                        <div class="error_message">{{ form_errors(form.stepsTaken) }}</div>
+                    </div>
+                    <div id="steps_taken_block" class="display_none">
+                        <div class="form-group mb-30">
+                            {{ form_label(form.stepsTakenExample) }}
+                            {{ form_widget(form.stepsTakenExample) }}
+                            <div class="error_message">{{ form_errors(form.stepsTakenExample) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.stepsTakenDetails) }}
+                        {{ form_widget(form.stepsTakenDetails) }}
+                        <div class="error_message">{{ form_errors(form.stepsTakenDetails) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.stepsTakenFiles) }}
+                        {{ form_widget(form.stepsTakenFiles) }}
+                        <div class="error_message">{{ form_errors(form.stepsTakenFiles) }}</div>
+                    </div>
+                    <div class="form-group mt-30 mb-30">
+                        {{ form_label(form.adverseConsequences)}}
+                        {% for Consequences in form.adverseConsequences %}
+                            <div class="border-checkbox-section ml-20">
+                                {{ form_widget(Consequences) }} <label>{{ Consequences.vars.label }}</label>
+                            </div>
+                        {% endfor %}
+                        <div class="error_message">{{ form_errors(form.adverseConsequences) }}</div>
+                    </div>
+                    <div id="adverse_consequences_block" class="display_none">
+                        <div class="form-group mb-30">
+                            {{ form_label(form.adverseConsequencesExample) }}
+                            {{ form_widget(form.adverseConsequencesExample) }}
+                            <div class="error_message">{{ form_errors(form.adverseConsequencesExample) }}</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.adverseConsequencesDetails) }}
+                        {{ form_widget(form.adverseConsequencesDetails) }}
+                        <div class="error_message">{{ form_errors(form.adverseConsequencesDetails) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.adverseConsequencesFiles) }}
+                        {{ form_widget(form.adverseConsequencesFiles) }}
+                        <div class="error_message">{{ form_errors(form.adverseConsequencesFiles) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.additionalInformation) }}
+                        {{ form_widget(form.additionalInformation) }}
+                        <div class="error_message">{{ form_errors(form.additionalInformation) }}</div>
+                    </div>
+                    <div class="form-group mb-30">
+                        {{ form_label(form.leadTestClaimant) }}
+                        {{ form_widget(form.leadTestClaimant) }}
+                        <div class="error_message">{{ form_errors(form.leadTestClaimant) }}</div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 text-right">

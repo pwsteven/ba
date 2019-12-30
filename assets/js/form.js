@@ -97,3 +97,72 @@ $('#credit_monitor_monitorCredit').on('change', function () {
         $('#credit_monitor_block').fadeOut(250);
     }
 });
+$('#emotional_distress_emotionsExperiencedNew_7').click(function () {
+    if($(this).prop("checked") === true){
+        $('#emotions_experienced_block').fadeIn(450);
+    } else {
+        $('#emotions_experienced_block').fadeOut(450);
+    }
+});
+if ($('#emotional_distress_emotionsExperiencedNew_7').prop("checked") === true){
+    $('#emotions_experienced_block').show();
+}
+$('#emotional_distress_emotionsExperiencedNew_8').click(function () {
+    if($(this).prop("checked") === true){
+        for (let i = 0; i < 8; i++) {
+            $('#emotional_distress_emotionsExperiencedNew_'+i).prop('disabled', true);
+        }
+        $('#emotional_distress_emotionsExperiencedComment').prop('disabled', true);
+    } else {
+        for (let i = 0; i < 8; i++) {
+            $('#emotional_distress_emotionsExperiencedNew_'+i).prop('disabled', false);
+        }
+        $('#emotional_distress_emotionsExperiencedComment').prop('disabled', false);
+    }
+});
+if ($('#emotional_distress_emotionsExperiencedNew_8').prop("checked") === true){
+    for (let i = 0; i < 8; i++) {
+        $('#emotional_distress_emotionsExperiencedNew_'+i).prop('disabled', false);
+    }
+    $('#emotional_distress_emotionsExperiencedComment').prop('disabled', false);
+}
+$('#emotional_distress_diagnosedConditions_4').click(function () {
+    if($(this).prop("checked") === true){
+        $('#diagnosed_conditions_block').fadeIn(450);
+    } else {
+        $('#diagnosed_conditions_block').fadeOut(450);
+    }
+});
+if ($('#emotional_distress_diagnosedConditions_4').prop("checked") === true){
+    $('#diagnosed_conditions_block').show();
+}
+$('#emotional_distress_impactCondition_2').click(function () {
+    if($(this).prop("checked") === true){
+        $('#impact_condition_block').fadeIn(450);
+    } else {
+        $('#impact_condition_block').fadeOut(450);
+    }
+});
+if ($('#emotional_distress_impactCondition_2').prop("checked") === true){
+    $('#impact_condition_block').show();
+}
+$('#emotional_distress_stepsTaken_7').click(function () {
+    if($(this).prop("checked") === true){
+        $('#steps_taken_block').fadeIn(450);
+    } else {
+        $('#steps_taken_block').fadeOut(450);
+    }
+});
+if ($('#emotional_distress_stepsTaken_7').prop("checked") === true){
+    $('#steps_taken_block').show();
+}
+$('#emotional_distress_adverseConsequences_8').click(function () {
+    if($(this).prop("checked") === true){
+        $('#adverse_consequences_block').fadeIn(450);
+    } else {
+        $('#adverse_consequences_block').fadeOut(450);
+    }
+});
+if ($('#emotional_distress_adverseConsequences_8').prop("checked") === true){
+    $('#adverse_consequences_block').show();
+}

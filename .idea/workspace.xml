@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/EmotionalDistress.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/EmotionalDistressType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191219123714.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/EmotionalDistressRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CreditMonitor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CreditMonitor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CreditMonitorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CreditMonitorType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutCreditMonitoring.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutCreditMonitoring.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EmotionalDistress.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EmotionalDistress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EmotionalDistressType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmotionalDistressType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutEmotionalDistress.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutEmotionalDistress.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/credit_monitoring.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/credit_monitoring.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +223,7 @@
       <workItem from="1576164037454" duration="53482000" />
       <workItem from="1576597072154" duration="4852000" />
       <workItem from="1576662418553" duration="6414000" />
-      <workItem from="1576676459966" duration="15815000" />
+      <workItem from="1576676459966" duration="62390000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -412,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576682219721</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Started Emotiobs Distressed Entity, Controller, Type, ProClaim + Template  &#10;19/12/19 15:41pm">
+      <created>1576770092684</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1576770092684</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,21 +457,22 @@
     <MESSAGE value="Started Reimbursements Entity, Controller, Type, ProClaim + Template  &#10;17/12/19 09:14am" />
     <MESSAGE value="Started Reimbursements Entity, Controller, Type, ProClaim + Template  &#10;17/12/19 16:17pm" />
     <MESSAGE value="Started Credit Monitoring Entity, Controller, Type, ProClaim + Template  &#10;18/12/19 15:15pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started Credit Monitoring Entity, Controller, Type, ProClaim + Template  &#10;18/12/19 15:15pm" />
+    <MESSAGE value="Started Emotiobs Distressed Entity, Controller, Type, ProClaim + Template  &#10;19/12/19 15:41pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started Emotiobs Distressed Entity, Controller, Type, ProClaim + Template  &#10;19/12/19 15:41pm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575477954148">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1575477954148" />
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1576686032179">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577700336916">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576686032179" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1576682214190">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1577700336916" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1576770090260">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576682214190" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576770090260" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575994853144">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -486,13 +489,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576676502251" />
-    <state x="339" y="157" key="run.anything.popup" timestamp="1576507683721">
+    <state x="339" y="157" key="run.anything.popup" timestamp="1577703757436">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1576507683721" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1576766410881">
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1577703757436" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577104892640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1576766410881" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577104892640" />
   </component>
 </project>

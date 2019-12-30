@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use SpecShaper\EncryptBundle\Annotations\Encrypted;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\EmotionalDistressRepository")
@@ -24,6 +26,7 @@ class EmotionalDistress
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select either Yes or No")
      */
     private $personalDetails;
 
@@ -34,116 +37,139 @@ class EmotionalDistress
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $emotionsExperiencedComment;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $emotionalDistressLasted;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $breachQuestionA = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $breachQuestionA_example;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $breachQuestionB = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $breachQuestionB_example;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $breachQuestionC = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $breachQuestionC_example;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $breachQuestionD = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $breachQuestionD_example;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $breachQuestionE = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $breachQuestionE_example;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $breachQuestionF = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $breachQuestionF_example;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $breachQuestionG = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $breachQuestionG_example;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $diagnosedConditions = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $diagnosedConditionsExample;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $impactCondition = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $impactConditionExample;
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $stepsTaken = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $stepsTakenExample;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $stepsTakenDetails;
 
@@ -154,16 +180,19 @@ class EmotionalDistress
 
     /**
      * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
     private $adverseConsequences = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $adverseConsequencesExample;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $adverseConsequencesDetails;
 
@@ -174,11 +203,13 @@ class EmotionalDistress
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
      */
     private $additionalInformation;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select either Yes or No")
      */
     private $leadTestClaimant;
 
@@ -186,6 +217,12 @@ class EmotionalDistress
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $complete;
+
+    /**
+     * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
+     */
+    private $emotionsExperiencedNew = [];
 
     public function getId(): ?int
     {
@@ -596,6 +633,18 @@ class EmotionalDistress
     public function setComplete(?bool $complete): self
     {
         $this->complete = $complete;
+
+        return $this;
+    }
+
+    public function getEmotionsExperiencedNew(): ?array
+    {
+        return $this->emotionsExperiencedNew;
+    }
+
+    public function setEmotionsExperiencedNew(?array $emotionsExperiencedNew): self
+    {
+        $this->emotionsExperiencedNew = $emotionsExperiencedNew;
 
         return $this;
     }

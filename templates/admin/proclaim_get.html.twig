@@ -34,8 +34,8 @@
     <div class="row">
         <div class="col-md-12">
             <p>Confirmation Email = {{ proClaimData.claim_type_client_ba_confirmation_email }}</p>
-            <p>Breach One Notification = {# proClaimData.claim_type_breach_one_notification #} TODO</p>
-            <p>Breach One Date Received = {# proClaimData.claim_type_client_breach_one_date_received #} TODO</p>
+            <p>Breach One Notification = {# proClaimData.claim_type_breach_one_notification #} <span class="text-danger">TODO</span></p>
+            <p>Breach One Date Received = {# proClaimData.claim_type_client_breach_one_date_received #} <span class="text-danger">TODO</span></p>
             <p>Breach One Notification Not Affected = {{ proClaimData.claim_type_client_breach_one_notification_not_affected }}</p>
             <p>Breach One Date Of Booking = {{ proClaimData.claim_type_client_breach_one_date_of_booking }}</p>
             <p>Breach One Email Address Used = {{ proClaimData.claim_type_client_breach_one_email_address_used }}</p>
@@ -52,7 +52,7 @@
             <ul>
                 <li>{{ fc.personalInformationBreachedFilePath }}</li>
             </ul>
-            <p>Received Any Other Correspondence = {# proClaimData.claim_type_client_received_any_other_ba_correspondence #} TODO</p>
+            <p>Received Any Other Correspondence = {# proClaimData.claim_type_client_received_any_other_ba_correspondence #} <span class="text-danger">TODO</span></p>
             <p>All Correspondence Sent To And Received From BA Regarding Claim :</p>
             <ul>
                 {% for key, value in fc.allCorrespondenceSentReceivedFilePath %}
@@ -88,7 +88,7 @@
     <div class="row">
         <div class="col-md-12">
             <p>Financial Loss Suffered = {{ proClaimData.claim_type_client_type_financial_loss_suffered }}</p>
-            <p>Provider = {# proClaimData.claim_type_client_type_provider #} TODO</p>
+            <p>Provider = {# proClaimData.claim_type_client_type_provider #} <span class="text-danger">TODO</span></p>
             <p>Amount Reimbursed = {{ proClaimData.claim_type_client_type_amount_reimbursed }}</p>
         </div>
     </div>
@@ -97,6 +97,54 @@
     <div class="row">
         <div class="col-md-12">
             <p>Monitor Credit = {{ proClaimData.claim_type_client_type_monitor_credit }}</p>
+        </div>
+    </div>
+    <hr>
+    <h4>Emotional Distress</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <p>Personal Details = {# proClaimData.claim_type_client_type_personal_details #} <span class="text-danger">TODO</span></p>
+            <p>Emotions Experienced = {# proClaimData.claim_type_client_type_emotions_experienced_new #} <span class="text-danger">TODO</span></p>
+            <p>Emotions Experienced Comment = {{  proClaimData.claim_type_client_type_emotions_experienced_comment }} </p>
+            <p>Emotional Distress Lasted = {# proClaimData.claim_type_client_type_emotional_distress_lasted #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question A = {# proClaimData.claim_type_client_type_breach_question_a #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question A Example = {# proClaimData.claim_type_client_type_breach_question_a_example #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question B = {# proClaimData.claim_type_client_type_breach_question_b #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question B Example = {# proClaimData.claim_type_client_type_breach_question_b_example #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question C = {# proClaimData.claim_type_client_type_breach_question_c #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question C Example = {# proClaimData.claim_type_client_type_breach_question_c_example #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question D = {# proClaimData.claim_type_client_type_breach_question_d #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question D Example = {# proClaimData.claim_type_client_type_breach_question_d_example #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question E = {# proClaimData.claim_type_client_type_breach_question_e #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question E Example = {# proClaimData.claim_type_client_type_breach_question_e_example #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question F = {# proClaimData.claim_type_client_type_breach_question_f #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question F Example = {# proClaimData.claim_type_client_type_breach_question_f_example #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question G = {# proClaimData.claim_type_client_type_breach_question_g #} <span class="text-danger">TODO</span></p>
+            <p>Breach Question G Example = {# proClaimData.claim_type_client_type_breach_question_g_example #} <span class="text-danger">TODO</span></p>
+            <p>Diagnosed Conditions = {# proClaimData.claim_type_client_type_diagnosed_conditions #} <span class="text-danger">TODO</span></p>
+            <p>Diagnosed Conditions More Info Example = {# proClaimData.claim_type_client_type_diagnosed_conditions_example #} <span class="text-danger">TODO</span></p>
+            <p>Impact Condition = {# proClaimData.claim_type_client_type_impact_condition #} <span class="text-danger">TODO</span></p>
+            <p>Impact Condition More Info Example = {# proClaimData.claim_type_client_type_impact_condition_example #} <span class="text-danger">TODO</span></p>
+            <p>Steps Taken = {# proClaimData.claim_type_client_type_steps_taken #} <span class="text-danger">TODO</span></p>
+            <p>Steps Taken More Info Example = {# proClaimData.claim_type_client_type_steps_taken_example #} <span class="text-danger">TODO</span></p>
+            <p>Steps Taken Details = {# proClaimData.claim_type_client_type_steps_taken_details #} <span class="text-danger">TODO</span></p>
+            <p>If you have any documents evidencing the steps you have taken as a result of the breach, please upload these. Please Note: any personal information that you would prefer not to disclose (such as account numbers) can be blanked out before uploading :</p>
+            <ul>
+                {% for key, value in ed.stepsTakenFilesPath %}
+                    <li>{{ value }}</li>
+                {% endfor %}
+            </ul>
+            <p>Adverse Consequences = {{  proClaimData.claim_type_client_type_adverse_consequences }}</p>
+            <p>Adverse Consequences More Info Example = {# proClaimData.claim_type_client_type_adverse_consequences_example #} <span class="text-danger">TODO</span></p>
+            <p>Adverse Consequences Details = {{  proClaimData.claim_type_client_type_adverse_consequences_details }}</p>
+            <p>If you have any documents evidencing the consequences of the breach, please upload these. Please Note: any personal information that you would prefer not to disclose (such as account numbers) can be blanked out before uploading :</p>
+            <ul>
+                {% for key, value in ed.adverseConsequencesFilesPath %}
+                    <li>{{ value }}</li>
+                {% endfor %}
+            </ul>
+            <p>Additional Information = {{  proClaimData.claim_type_client_type_additional_information }}</p>
+            <p>Claimant Type = {{  proClaimData.claim_type_client_type_lead_test_claimant }}</p>
         </div>
     </div>
 {% endblock %}

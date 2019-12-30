@@ -8,6 +8,7 @@ use App\Service\ProClaimPutEmotionalDistress;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -53,7 +54,87 @@ class EmotionalDistressController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            dd($form->getData());
+
+            //COLLECT + UPLOAD FILE|IMAGE FILES
+            /** @var UploadedFile $stepsTakenFiles */
+            $stepsTakenFiles = $form['stepsTakenFiles']->getData();
+            if ($stepsTakenFiles) {
+                $filesData = [];
+                foreach ($stepsTakenFiles as $stepsTakenFile) {
+                    $newFileName = $uploaderHelper->uploadClientFile($stepsTakenFile);
+                    $filesData[] = $newFileName;
+                }
+                $emotionalDistressDetails->setStepsTakenFilesPath($filesData);
+            }
+
+            /** @var UploadedFile $adverseConsequencesFiles */
+            $adverseConsequencesFiles = $form['adverseConsequencesFiles']->getData();
+            if ($adverseConsequencesFiles) {
+                $filesData = [];
+                foreach ($adverseConsequencesFiles as $adverseConsequencesFile) {
+                    $newFileName = $uploaderHelper->uploadClientFile($adverseConsequencesFile);
+                    $filesData[] = $newFileName;
+                }
+                $emotionalDistressDetails->setAdverseConsequencesFilesPath($filesData);
+            }
+
+            // COMMIT FORM FIELD VALUES TO DATABASE
+            $emotionalDistressDetails->setComplete(true);
+            $userSetEmotionalDistress = $this->getUser()->setAppEmotionalDistress(true);
+            $userSetAppCurrentForm = $this->getUser()->setAppCurrentForm('app_emotional_distress');
+
+            $entityManager->persist($userSetEmotionalDistress);
+            $entityManager->persist($userSetAppCurrentForm);
+            $entityManager->persist($emotionalDistressDetails);
+            $entityManager->flush();
+
+            // COMMIT TO PROCLAIM TODO
+
+            $adverseConsequences = "";
+            if (!empty($emotionalDistressDetails->getAdverseConsequences())) {
+                $adverseConsequences = implode(', ', $emotionalDistressDetails->getAdverseConsequences());
+            }
+
+            $data = [
+                'case_id' => $this->getUser()->getProClaimReference(),
+                'personal_details' => $emotionalDistressDetails->getPersonalDetails(),
+                'emotions_experienced_new' => $emotionalDistressDetails->getEmotionsExperiencedNew(),
+                'emotions_experienced_comment' => $emotionalDistressDetails->getEmotionsExperiencedComment(),
+                'emotional_distress_lasted' => $emotionalDistressDetails->getEmotionalDistressLasted(),
+                'breach_question_a' => $emotionalDistressDetails->getBreachQuestionA(),
+                'breach_question_a_example' => $emotionalDistressDetails->getBreachQuestionAExample(),
+                'breach_question_b' => $emotionalDistressDetails->getBreachQuestionB(),
+                'breach_question_b_example' => $emotionalDistressDetails->getBreachQuestionBExample(),
+                'breach_question_c' => $emotionalDistressDetails->getBreachQuestionC(),
+                'breach_question_c_example' => $emotionalDistressDetails->getBreachQuestionCExample(),
+                'breach_question_d' => $emotionalDistressDetails->getBreachQuestionD(),
+                'breach_question_d_example' => $emotionalDistressDetails->getBreachQuestionDExample(),
+                'breach_question_e' => $emotionalDistressDetails->getBreachQuestionE(),
+                'breach_question_e_example' => $emotionalDistressDetails->getBreachQuestionEExample(),
+                'breach_question_f' => $emotionalDistressDetails->getBreachQuestionF(),
+                'breach_question_f_example' => $emotionalDistressDetails->getBreachQuestionFExample(),
+                'breach_question_g' => $emotionalDistressDetails->getBreachQuestionG(),
+                'breach_question_g_example' => $emotionalDistressDetails->getBreachQuestionGExample(),
+                'diagnosed_conditions' => $emotionalDistressDetails->getDiagnosedConditions(),
+                'diagnosed_conditions_example' => $emotionalDistressDetails->getDiagnosedConditionsExample(),
+                'impact_condition' => $emotionalDistressDetails->getImpactCondition(),
+                'impact_condition_example' => $emotionalDistressDetails->getImpactConditionExample(),
+                'steps_taken' => $emotionalDistressDetails->getStepsTaken(),
+                'steps_taken_example' => $emotionalDistressDetails->getStepsTakenExample(),
+                'steps_taken_details' => $emotionalDistressDetails->getStepsTakenDetails(),
+                'adverse_consequences' => $adverseConsequences,
+                'adverse_consequences_example' => $emotionalDistressDetails->getAdverseConsequencesExample(),
+                'adverse_consequences_details' => $emotionalDistressDetails->getAdverseConsequencesDetails(),
+                'additional_information' => $emotionalDistressDetails->getAdditionalInformation(),
+                'lead_test_claimant' => $emotionalDistressDetails->getLeadTestClaimant(),
+            ];
+            //dd($data);
+            $proClaimPutEmotionalDistress->putCaseDetails($data);
+
+            // REDIRECT TO NEXT PAGE
+            $this->addFlash('success', 'Success! You have completed the Emotional Distress stage.');
+            return $this->redirectToRoute('app_complete');
+
         }
 
         return $this->render('dashboard/emotional_distress.html.twig', [

@@ -650,6 +650,539 @@ class ProClaimRequest
             }
 
             //**************************************************************************************
+            //*************************** EMOTIONAL DISTRESS ***************************************
+            //**************************************************************************************
+
+            // GET PERSONAL DETAILS USED FRAUDULENTLY TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_personal_details'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_personal_details'] = $case_field_value;
+            }
+            */
+
+            // GET EMOTIONS EXPERIENCED TODO
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - distress.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_emotions_experienced_new'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_emotions_experienced_new'] = $case_field_value;
+            }
+
+            // GET EMOTIONS EXPERIENCED COMMENT
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - distress explanation.Text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_emotions_experienced_comment'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_emotions_experienced_comment'] = $case_field_value;
+            }
+
+            // GET EMOTIONAL DISTRESS LASTED TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_emotional_distress_lasted'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_emotional_distress_lasted'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION A TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_a'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_a'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION A EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_a_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_a_example'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION B TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_b'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_b'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION B EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_b_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_b_example'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION C TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_c'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_c'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION C EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_c_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_c_example'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION D TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_d'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_d'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION D EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_d_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_d_example'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION E TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_e'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_e'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION E EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_e_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_e_example'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION F TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_f'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_f'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION F EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_f_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_f_example'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION G TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_g'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_g'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH QUESTION G EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_breach_question_g_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_breach_question_g_example'] = $case_field_value;
+            }
+            */
+
+            // GET DIAGNOSED CONDITIONS TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA SOI - diagnosis.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_diagnosed_conditions'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_diagnosed_conditions'] = $case_field_value;
+            }
+            */
+
+            // GET DIAGNOSED CONDITIONS MORE INFO EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_diagnosed_conditions_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_diagnosed_conditions_example'] = $case_field_value;
+            }
+            */
+
+            // GET IMPACT CONDITION TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_impact_condition'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_impact_condition'] = $case_field_value;
+            }
+            */
+
+            // GET IMPACT CONDITION MORE INFO EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_impact_condition_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_impact_condition_example'] = $case_field_value;
+            }
+            */
+
+            // GET STEPS TAKEN TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_steps_taken'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_steps_taken'] = $case_field_value;
+            }
+            */
+
+            // GET STEPS TAKEN MORE INFO EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_steps_taken_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_steps_taken_example'] = $case_field_value;
+            }
+            */
+
+            // GET STEPS TAKEN DETAILS TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_steps_taken_details'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_steps_taken_details'] = $case_field_value;
+            }
+            */
+
+            // GET ADVERSE CONSEQUENCES
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'GAC - Adverse Breach Consequences.Text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_adverse_consequences'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_adverse_consequences'] = $case_field_value;
+            }
+
+            // GET ADVERSE CONSEQUENCES MORE INFO EXAMPLE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_adverse_consequences_example'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_adverse_consequences_example'] = $case_field_value;
+            }
+            */
+
+            // GET ADVERSE CONSEQUENCES DETAILS
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'GAC - Adverse Breach Consequences Details.Text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_adverse_consequences_details'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_adverse_consequences_details'] = $case_field_value;
+            }
+
+            // GET ADDITIONAL INFORMATION
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'GAC - Additional Onboarding Information.Text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_additional_information'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_additional_information'] = $case_field_value;
+            }
+
+            // GET CLAIMANT TYPE SETTING
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'GAC - Claimant Type.Response',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_type_lead_test_claimant'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_type_lead_test_claimant'] = $case_field_value;
+            }
+
+
+            //**************************************************************************************
             //*************************** END PROCLAIM SESSION *************************************
             //**************************************************************************************
 
