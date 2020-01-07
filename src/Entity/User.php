@@ -157,6 +157,16 @@ class User implements UserInterface
      */
     private $emotionalDistress;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $token;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $expiresAt;
+
     public function __construct()
     {
         $this->fileReferences = new ArrayCollection();
@@ -588,6 +598,30 @@ class User implements UserInterface
         if ($this !== $emotionalDistress->getUser()) {
             $emotionalDistress->setUser($this);
         }
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(?string $token): self
+    {
+        $this->token = $token;
+
+        return $this;
+    }
+
+    public function getExpiresAt(): ?\DateTimeInterface
+    {
+        return $this->expiresAt;
+    }
+
+    public function setExpiresAt(?\DateTimeInterface $expiresAt): self
+    {
+        $this->expiresAt = $expiresAt;
 
         return $this;
     }

@@ -34,14 +34,42 @@
     <div class="row">
         <div class="col-md-12">
             <p>Confirmation Email = {{ proClaimData.claim_type_client_ba_confirmation_email }}</p>
-            <p>Breach One Notification = {# proClaimData.claim_type_breach_one_notification #} <span class="text-danger">TODO</span></p>
-            <p>Breach One Date Received = {# proClaimData.claim_type_client_breach_one_date_received #} <span class="text-danger">TODO</span></p>
-            <p>Breach One Notification Not Affected = {{ proClaimData.claim_type_client_breach_one_notification_not_affected }}</p>
-            <p>Breach One Date Of Booking = {{ proClaimData.claim_type_client_breach_one_date_of_booking }}</p>
-            <p>Breach One Email Address Used = {{ proClaimData.claim_type_client_breach_one_email_address_used }}</p>
-            <p>Breach One Booking Reference = {{ proClaimData.claim_type_client_breach_one_booking_reference }}</p>
-            <p>Breach One Booking Platform = {{ proClaimData.claim_type_client_breach_one_booking_platform }}</p>
-            <p>Breach One Payment Method = {{ proClaimData.claim_type_client_breach_one_payment_method }}</p>
+            <p><strong>Breach One</strong></p>
+            <p>Notification = {# proClaimData.claim_type_breach_one_notification #} <span class="text-danger">TODO</span></p>
+            <p>Date Received = {# proClaimData.claim_type_client_breach_one_date_received #} <span class="text-danger">TODO</span></p>
+            <p>Copy Of Notification: :</p>
+            <ul>
+                <li>{{ ba.breachOneNotificationFilePath }}</li>
+            </ul>
+            <p>Notification Not Affected = {{ proClaimData.claim_type_client_breach_one_notification_not_affected }}</p>
+            <p>Date Of Booking = {{ proClaimData.claim_type_client_breach_one_date_of_booking }}</p>
+            <p>Email Address Used = {{ proClaimData.claim_type_client_breach_one_email_address_used }}</p>
+            <p>Booking Reference = {{ proClaimData.claim_type_client_breach_one_booking_reference }}</p>
+            <p>Booking Platform = {{ proClaimData.claim_type_client_breach_one_booking_platform }}</p>
+            <p>Payment Method = {{ proClaimData.claim_type_client_breach_one_payment_method }}</p>
+            <p>Copy Of Booking Notification: :</p>
+            <ul>
+                <li>{{ ba.breachOneBookingConfirmationFilePath }}</li>
+            </ul>
+            <p>-------------------------------------------------------------------</p>
+            <p><strong>Breach Two</strong></p>
+            <p>Notification = {# proClaimData.claim_type_breach_two_notification #} <span class="text-danger">TODO</span></p>
+            <p>Date Received = {# proClaimData.claim_type_client_breach_two_date_received #} <span class="text-danger">TODO</span></p>
+            <p>Copy Of Notification: :</p>
+            <ul>
+                <li>{{ ba.breachTwoNotificationFilePath }}</li>
+            </ul>
+            <p>Notification Not Affected = {# proClaimData.claim_type_client_breach_two_notification_not_affected #} <span class="text-danger">TODO</span></p>
+            <p>Date Of Booking = {# proClaimData.claim_type_client_breach_two_date_of_booking #} <span class="text-danger">TODO</span></p>
+            <p>Email Address Used = {# proClaimData.claim_type_client_breach_two_email_address_used #} <span class="text-danger">TODO</span></p>
+            <p>Booking Reference = {# proClaimData.claim_type_client_breach_two_booking_reference #} <span class="text-danger">TODO</span></p>
+            <p>Booking Platform = {# proClaimData.claim_type_client_breach_two_booking_platform #} <span class="text-danger">TODO</span></p>
+            <p>Payment Method = {# proClaimData.claim_type_client_breach_two_payment_method #} <span class="text-danger">TODO</span></p>
+            <p>Copy Of Booking Notification: :</p>
+            <ul>
+                <li>{{ ba.breachTwoBookingConfirmationFilePath }}</li>
+            </ul>
+            <p>-------------------------------------------------------------------</p>
         </div>
     </div>
     <hr>
@@ -81,6 +109,12 @@
         <div class="col-md-12">
             <p>Type Financial Loss = {{ proClaimData.claim_type_client_type_financial_Loss }}</p>
             <p>Total Loss Amount = {{ proClaimData.claim_type_client_type_total_loss_amount }}</p>
+            <p>All Documents Uploaded Evidencing Financial Loss Suffered:</p>
+            <ul>
+                {% for key, value in fl.financialLossFilesPath %}
+                    <li>{{ value }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     <hr>
@@ -90,6 +124,12 @@
             <p>Financial Loss Suffered = {{ proClaimData.claim_type_client_type_financial_loss_suffered }}</p>
             <p>Provider = {# proClaimData.claim_type_client_type_provider #} <span class="text-danger">TODO</span></p>
             <p>Amount Reimbursed = {{ proClaimData.claim_type_client_type_amount_reimbursed }}</p>
+            <p>All Correspondence Uploaded in Relation To Reimbursements:</p>
+            <ul>
+                {% for key, value in re.reimbursementFilesPath %}
+                    <li>{{ value }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
     <hr>
@@ -97,6 +137,10 @@
     <div class="row">
         <div class="col-md-12">
             <p>Monitor Credit = {{ proClaimData.claim_type_client_type_monitor_credit }}</p>
+            <p>Uploaded Evidence Of Account:</p>
+            <ul>
+                <li>{{ cm.monitorCreditFilePath }}</li>
+            </ul>
         </div>
     </div>
     <hr>

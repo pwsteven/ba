@@ -20,6 +20,9 @@ services:
             $proClaimPassword: 'Rudi'
             $proClaimEndPoint: 'http://remote.yourlawyers.co.uk:8085/wsa/wsa1'
             $uploadUrl: '%uploads_base_url%'
+            $emailHost: 'smtp.gmail.com'
+            $emailUsername: 'pwsteven13@gmail.com'
+            $emailPassword: 'SkyeJay13'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

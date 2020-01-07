@@ -108,6 +108,17 @@ class BACorrespondenceController extends BaseController
                 $breach_one_date_of_booking = "";
             }
 
+            if (!empty($baCorrespondenceDetails->getBreachTwoDateReceived())) {
+                $breach_two_date_received = date_format($baCorrespondenceDetails->getBreachTwoDateReceived(), 'd/m/Y');
+            } else {
+                $breach_two_date_received = "";
+            }
+            if (!empty($baCorrespondenceDetails->getBreachTwoDateOfBooking())){
+                $breach_two_date_of_booking = date_format($baCorrespondenceDetails->getBreachTwoDateOfBooking(), 'd/m/Y');
+            } else {
+                $breach_two_date_of_booking = "";
+            }
+
             $data = [
                 'case_id' => $this->getUser()->getProClaimReference(),
                 'ba_correspondence_email' => $baCorrespondenceDetails->getReceivedConfirmationEmail(),
@@ -119,6 +130,14 @@ class BACorrespondenceController extends BaseController
                 'breach_one_booking_reference' => $baCorrespondenceDetails->getBreachOneBookingReference(),
                 'breach_one_booking_platform' => $baCorrespondenceDetails->getBreachOneBookingPlatform(),
                 'breach_one_payment_method' => $baCorrespondenceDetails->getBreachOnePaymentMethod(),
+                'breach_two_notification' => $baCorrespondenceDetails->getBreachTwoNotification(),
+                'breach_two_date_received' => $breach_two_date_received,
+                'breach_two_notification_not_affected' => $baCorrespondenceDetails->getBreachTwoNotificationNotAffected(),
+                'breach_two_date_of_booking' => $breach_two_date_of_booking,
+                'breach_two_email_address_used' => $baCorrespondenceDetails->getBreachTwoEmailAddressUsed(),
+                'breach_two_booking_reference' => $baCorrespondenceDetails->getBreachTwoBookingReference(),
+                'breach_two_booking_platform' => $baCorrespondenceDetails->getBreachTwoBookingPlatform(),
+                'breach_two_payment_method' => $baCorrespondenceDetails->getBreachTwoPaymentMethod(),
             ];
             //dd($data);
             $proClaimPutBACorrespondence->putCaseDetails($data);

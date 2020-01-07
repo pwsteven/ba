@@ -2,17 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/config/packages/datatables.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/mailer.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/PasswordController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/PasswordResetType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191231154610.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/PasswordRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/email/forgot_password.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/forgot_password.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/reset_password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ba_onboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ba_onboard.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EmotionalDistress.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EmotionalDistress.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EmotionalDistressType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmotionalDistressType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutEmotionalDistress.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutEmotionalDistress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,6 +165,9 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
+      <path value="$PROJECT_DIR$/vendor/omines/datatables-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SKBd8CRlUERlCBj5pFGNoJUp0Z" />
@@ -223,7 +239,11 @@
       <workItem from="1576164037454" duration="53482000" />
       <workItem from="1576597072154" duration="4852000" />
       <workItem from="1576662418553" duration="6414000" />
-      <workItem from="1576676459966" duration="62390000" />
+      <workItem from="1576676459966" duration="67095000" />
+      <workItem from="1577784341853" duration="21882000" />
+      <workItem from="1578040642599" duration="230000" />
+      <workItem from="1578040913345" duration="20767000" />
+      <workItem from="1578319221287" duration="21102000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -414,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576770092684</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Finished Emotional Distress Entity, Controller, Type, ProClaim + Template  &#10;30/12/19 15:51pm">
+      <created>1577721152307</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1577721152307</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,25 +485,30 @@
     <MESSAGE value="Started Reimbursements Entity, Controller, Type, ProClaim + Template  &#10;17/12/19 16:17pm" />
     <MESSAGE value="Started Credit Monitoring Entity, Controller, Type, ProClaim + Template  &#10;18/12/19 15:15pm" />
     <MESSAGE value="Started Emotiobs Distressed Entity, Controller, Type, ProClaim + Template  &#10;19/12/19 15:41pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started Emotiobs Distressed Entity, Controller, Type, ProClaim + Template  &#10;19/12/19 15:41pm" />
+    <MESSAGE value="Finished Emotional Distress Entity, Controller, Type, ProClaim + Template  &#10;30/12/19 15:51pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished Emotional Distress Entity, Controller, Type, ProClaim + Template  &#10;30/12/19 15:51pm" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575477954148">
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1578063652400">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1575477954148" />
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1577700336916">
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1578063652400" />
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1577783968437">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1577700336916" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1576770090260">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1577783968437" />
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578052962568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1576770090260" />
-    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1575994853144">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578052962568" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1577721146155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1575994853144" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1577721146155" />
+    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1578052680530">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1578052680530" />
     <state x="511" y="73" key="RollbackChangesDialog" timestamp="1576063065979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -485,14 +517,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="569" y="279" key="VCS.EditChangelistDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063088318" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1576676502251">
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1578319346312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1576676502251" />
-    <state x="339" y="157" key="run.anything.popup" timestamp="1577703757436">
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578319346312" />
+    <state x="339" y="157" key="run.anything.popup" timestamp="1578065732369">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1577703757436" />
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1578065732369" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577104892640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

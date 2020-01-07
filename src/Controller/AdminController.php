@@ -2,9 +2,13 @@
 
 namespace App\Controller;
 
+use App\Repository\BACorrespondenceRepository;
+use App\Repository\CreditMonitorRepository;
 use App\Repository\EmotionalDistressRepository;
+use App\Repository\FinancialLossRepository;
 use App\Repository\FurtherCorrespondenceRepository;
 use App\Repository\PersonalDetailsRepository;
+use App\Repository\ReimbursementsRepository;
 use App\Repository\UserRepository;
 use App\Service\ProClaimPutPersonalDetails;
 use App\Service\ProClaimRequest;
@@ -26,22 +30,34 @@ class AdminController extends AbstractController
      * @var string
      * @var PersonalDetailsRepository
      * @var UserRepository
+     * @var BACorrespondenceRepository
      * @var FurtherCorrespondenceRepository
      * @var EmotionalDistressRepository
+     * @var FinancialLossRepository
+     * @var ReimbursementsRepository
+     * @var CreditMonitorRepository
      */
     private $uploadUrl;
     private $personalDetailsRepository;
     private $userRepository;
+    private $BACorrespondenceRepository;
     private $furtherCorrespondenceRepository;
     private $emotionalDistressRepository;
+    private $financialLossRepository;
+    private $reimbursementsRepository;
+    private $creditMonitorRepository;
 
-    public function __construct(string $uploadUrl, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, PersonalDetailsRepository $personalDetailsRepository, EmotionalDistressRepository $emotionalDistressRepository, UserRepository $userRepository)
+    public function __construct(string $uploadUrl, BACorrespondenceRepository $BACorrespondenceRepository, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, PersonalDetailsRepository $personalDetailsRepository, EmotionalDistressRepository $emotionalDistressRepository, UserRepository $userRepository, FinancialLossRepository $financialLossRepository, ReimbursementsRepository $reimbursementsRepository, CreditMonitorRepository $creditMonitorRepository)
     {
         $this->uploadUrl = $uploadUrl;
         $this->personalDetailsRepository = $personalDetailsRepository;
         $this->userRepository = $userRepository;
+        $this->BACorrespondenceRepository = $BACorrespondenceRepository;
         $this->furtherCorrespondenceRepository = $furtherCorrespondenceRepository;
         $this->emotionalDistressRepository = $emotionalDistressRepository;
+        $this->financialLossRepository = $financialLossRepository;
+        $this->reimbursementsRepository = $reimbursementsRepository;
+        $this->creditMonitorRepository = $creditMonitorRepository;
     }
 
     /**
@@ -66,14 +82,22 @@ class AdminController extends AbstractController
         $proClaimDetails = $proClaimRequest->getCaseDetails($id);
         $userID = $this->userRepository->findOneBySomeField($id);
         $personalDetails = $this->personalDetailsRepository->findOneBySomeField($userID);
+        $baCorrespondenceDetails = $this->BACorrespondenceRepository->findOneBySomeField($userID);
         $furtherCorrespondenceDetails = $this->furtherCorrespondenceRepository->findOneBySomeField($userID);
+        $financialLossDetails = $this->financialLossRepository->findOneBySomeField($userID);
         $emotionalDistressDetails = $this->emotionalDistressRepository->findOneBySomeField($userID);
+        $reimbursementDetails = $this->reimbursementsRepository->findOneBySomeField($userID);
+        $creditMonitorDetails = $this->creditMonitorRepository->findOneBySomeField($userID);
         $imagePath = $personalDetails->getImageFileName();
         return $this->render('admin/proclaim_get.html.twig', [
             'proClaimData' => $proClaimDetails,
             'imagePath' => $imagePath,
+            'ba' => $baCorrespondenceDetails,
             'fc' => $furtherCorrespondenceDetails,
+            'fl' => $financialLossDetails,
             'ed' => $emotionalDistressDetails,
+            're' => $reimbursementDetails,
+            'cm' => $creditMonitorDetails,
         ]);
 
     }

@@ -385,6 +385,150 @@ class ProClaimRequest
                 $data['claim_type_client_breach_one_payment_method'] = $case_field_value;
             }
 
+            // GET BREACH TWO NOTIFICATION TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_breach_two_notification'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_breach_two_notification'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH TWO DATE RECEIVED TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_two_date_received'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_two_date_received'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH TWO NOTIFICATION NOT AFFECTED TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_two_notification_not_affected'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_two_notification_not_affected'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH TWO DATE OF BOOKING TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_two_date_of_booking'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_two_date_of_booking'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH TWO EMAIL ADDRESS USED TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_two_email_address_used'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_two_email_address_used'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH TWO BOOKING REFERENCE TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_two_booking_reference'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_two_booking_reference'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH TWO BOOKING PLATFORM TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_two_booking_platform'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_two_booking_platform'] = $case_field_value;
+            }
+            */
+
+            // GET BREACH TWO PAYMENT METHOD TODO
+            /*
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => '',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['claim_type_client_breach_two_payment_method'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['claim_type_client_breach_two_payment_method'] = $case_field_value;
+            }
+            */
+
             //**************************************************************************************
             //**************************** FURTHER CORRESPONDENCE **********************************
             //**************************************************************************************
