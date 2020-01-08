@@ -71,6 +71,16 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/admin/users", name="app_admin_users")
+     */
+    public function viewUsers()
+    {
+        return $this->render('admin/view_users.html.twig', [
+            'controller_name' => 'AdminController',
+        ]);
+    }
+
+    /**
      * @Route("/admin/proclaim-request/{id}", name="app_admin_proclaim_get")
      * @param int $id
      * @param ProClaimRequest $proClaimRequest

@@ -32,13 +32,13 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $user = new User();
-        $user->setEmail('pwsteven13@gmail.com');
-        $user->setFirstName('Paul');
+        $user->setEmail('psteven13@outlook.com');
+        $user->setFirstName('Paul William');
         $user->setPassword($this->passwordEncoder->encodePassword(
             $user,
             'letmein'
         ));
-        $user->setRoles(['ROLE_ADMIN']);
+        $user->setRoles(['ROLE_USER']);
         $user->setProClaimReference(1051311);
         $personalDetails = new PersonalDetails();
         $personalDetails->setUser($user);
