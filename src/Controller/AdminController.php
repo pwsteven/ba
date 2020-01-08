@@ -13,7 +13,6 @@ use App\Repository\UserRepository;
 use App\Service\ProClaimPutPersonalDetails;
 use App\Service\ProClaimRequest;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,7 +22,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @package App\Controller
  * @IsGranted("ROLE_ADMIN")
  */
-class AdminController extends AbstractController
+class AdminController extends BaseController
 {
 
     /**
@@ -66,7 +65,7 @@ class AdminController extends AbstractController
     public function index()
     {
         return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
+
         ]);
     }
 
