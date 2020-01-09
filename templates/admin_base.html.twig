@@ -1,89 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Meta tags -->
+    {# Meta Tags #}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- /meta tags -->
+    {# /Meta Tags #}
     <title>{% block title %}{% endblock %} - BA OnBoarding - Your Lawyers Ltd</title>
-
-    <!-- Site favicon -->
     <link rel="shortcut icon" href="{{ asset('build/images/your_lawyers_icon.a7109bc7.png') }}" type="image/x-icon">
-    <!-- /site favicon -->
     {% block stylesheets %}
-    <!-- Font Icon Styles -->
-    <link rel="stylesheet" href="{{ asset('html-bs4/node_modules/flag-icon-css/css/flag-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('html-bs4/vendors/gaxon-icon/style.css') }}">
-    <!-- /font icon Styles -->
-
-    <!-- Perfect Scrollbar stylesheet -->
-    <link rel="stylesheet" href="{{ asset('html-bs4/node_modules/perfect-scrollbar/css/perfect-scrollbar.css') }}">
-    <!-- /perfect scrollbar stylesheet -->
-
-    <!-- Load Styles -->
-    <link rel="stylesheet" href="{{ asset('html-bs4/default/assets/css/dark-style-1.min.css') }}">
-    <!-- /load styles -->
+        {# Font Icon Styles #}
+        <link rel="stylesheet" href="{{ asset('html-bs4/node_modules/flag-icon-css/css/flag-icon.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('html-bs4/vendors/gaxon-icon/style.css') }}">
+        {# /Font Icon Styles #}
+        {# Perfect Scrollbar StyleSheet #}
+        <link rel="stylesheet" href="{{ asset('html-bs4/node_modules/perfect-scrollbar/css/perfect-scrollbar.css') }}">
+        {# /Perfect Scrollbar StyleSheet #}
     {% endblock %}
-
+    {# Load Main StyleSheet #}
+    <link rel="stylesheet" href="{{ asset('html-bs4/default/assets/css/dark-style-1.min.css') }}">
+    {# /Load Main StyleSheet #}
 </head>
 
 <body class="dt-sidebar--fixed dt-header--fixed">
 
-<!-- Loader -->
-<div class="dt-loader-container">
-    <div class="dt-loader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
-        </svg>
+    {# Loader #}
+    <div class="dt-loader-container">
+        <div class="dt-loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
     </div>
-</div>
-<!-- /loader -->
+    {# /Loader #}
 
-<!-- Root -->
-<div class="dt-root">
+    {# Root #}
+    <div class="dt-root">
 
-    {{ include('blocks/_admin_header.html.twig') }}
+        {# Load Admin Header #}
+        {{ include('blocks/_admin_header.html.twig') }}
+        {# /Load Admin Header #}
 
-    <!-- Site Main -->
-    <main class="dt-main">
+        {# Start Main #}
+        <main class="dt-main">
 
-        {{ include('blocks/_admin_sidebar.html.twig') }}
+            {# Load Admin SideBar #}
+            {{ include('blocks/_admin_sidebar.html.twig') }}
+            {# /Load Admin SideBar #}
 
-        <!-- Site Content Wrapper -->
-        <div class="dt-content-wrapper">
+            {# Content Wrapper #}
+            <div class="dt-content-wrapper">
 
-            <!-- Site Content -->
-            <div class="dt-content">
+                {# Content #}
+                <div class="dt-content">
+                    {% block body %}{% endblock %}
+                </div>
+                {# /Content #}
 
-                {% block body %}{% endblock %}
+                {# Load Footer #}
+                {{ include('blocks/admin_footer.html.twig') }}
+                {# /Load Footer #}
 
             </div>
-            <!-- /site content -->
+            {# /Content Wrapper #}
 
-            {{ include('blocks/admin_footer.html.twig') }}
+        </main>
+        {# /Main #}
 
-        </div>
-        <!-- /site content wrapper -->
+    </div>
+    {# /Root #}
 
-
-    </main>
-</div>
-<!-- /root -->
-
-<!-- Optional JavaScript -->
-<script src="{{ asset('html-bs4/node_modules/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('html-bs4/node_modules/moment/moment.js') }}"></script>
-<script src="{{ asset('html-bs4/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-<!-- Perfect Scrollbar jQuery -->
-<script src="{{ asset('html-bs4/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
-<!-- /perfect scrollbar jQuery -->
-<!-- masonry script -->
-<script src="{{ asset('html-bs4/node_modules/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
-<script src="{{ asset('html-bs4/node_modules/sweetalert2/dist/sweetalert2.js') }}"></script>
-<script src="{{ asset('html-bs4/default/assets/js/script.js') }}"></script>
-
+    {% block javascripts %}
+        {# Optional Javascript #}
+        <script src="{{ asset('html-bs4/node_modules/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ asset('html-bs4/node_modules/moment/moment.js') }}"></script>
+        <script src="{{ asset('html-bs4/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+        {# Perfect Scrollbr jQuery #}
+        <script src="{{ asset('html-bs4/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
+        {# Masonry Script #}
+        <script src="{{ asset('html-bs4/node_modules/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
+        <script src="{{ asset('html-bs4/node_modules/sweetalert2/dist/sweetalert2.js') }}"></script>
+        {# Custom JavaScript #}
+    {% endblock %}
+    <script src="{{ asset('html-bs4/default/assets/js/script.js') }}"></script>
 
 </body>
 </html>

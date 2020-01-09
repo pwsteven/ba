@@ -32,8 +32,8 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $user = new User();
-        $user->setEmail('psteven13@outlook.com');
-        $user->setFirstName('Paul William');
+        $user->setEmail('test@test.com');
+        $user->setFirstName('Boris Bohmson');
         $user->setPassword($this->passwordEncoder->encodePassword(
             $user,
             'letmein'
