@@ -1,107 +1,222 @@
-<div class="app-sidebar colored">
-    <div class="sidebar-header">
-        <a class="header-brand" href="{{ path('app_dashboard') }}">
-            <div class="logo-img">
-                <img src="{{ asset('build/images/yl_36x36.a46e64e2.png') }}" class="header-brand-img" alt="Your Lawyers Ltd">
+{# Siebar #}
+<aside id="main-sidebar" class="dt-sidebar">
+
+    {# Sidebar Container #}
+    <div class="dt-sidebar__container">
+
+        {# Sidebar Notification #}
+        <div class="dt-sidebar__notification  d-none d-lg-block">
+
+            {# Dropdown #}
+            <div class="dropdown mb-6" id="user-menu-dropdown">
+
+                {# Dropdown Link #}
+                <a href="#" class="dropdown-toggle dt-avatar-wrapper text-body"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
+                    <span class="dt-avatar-info">
+                        <span class="dt-avatar-name">{{ app.user.firstName }}</span>
+                    </span>
+                </a>
+                {# /Dropdown Link #}
+
+                {# Dropdown Option #}
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dt-avatar-wrapper flex-nowrap p-6 mt--5 bg-gradient-purple text-white rounded-top">
+                        <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
+                        <span class="dt-avatar-info">
+                            <span class="dt-avatar-name">{{ app.user.firstName }}</span>
+                            <span class="f-12">Administrator</span>
+                        </span>
+                    </div>
+                    <a class="dropdown-item" href="javascript:void(0)"> <i class="icon icon-user-o icon-fw mr-2 mr-sm-1"></i>Account</a>
+                    <a class="dropdown-item" href="javascript:void(0)"><i class="icon icon-setting icon-fw mr-2 mr-sm-1"></i>Setting </a>
+                    <a class="dropdown-item" href="{{ path('app_logout') }}"> <i class="icon icon-edit icon-fw mr-2 mr-sm-1"></i>Logout</a>
+                </div>
+                {# /Dropdown Option #}
+
             </div>
-            <span class="text"> Your Lawyers</span>
-        </a>
-        <button type="button" class="nav-toggle"><i data-toggle="expanded" class="ik ik-toggle-right toggle-icon"></i></button>
-        <button id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></button>
-    </div>
+            {# /Dropdown #}
 
-    <div class="sidebar-content">
-        <div class="nav-container">
-            <nav id="main-menu-navigation" class="navigation-main">
-                <div class="nav-lavel">
-                    Welcome {{ app.user.firstName }}
-                </div>
-                <div class="nav-item{% if app.request.pathinfo == '/dashboard' %} active{% endif %}">
-                    <a href="{{ path('app_dashboard') }}"><i class="ik ik-home"></i><span>Dashboard Home</span></a>
-                </div>
-                {% if app.user.appStarted or app.request.pathinfo == '/dashboard/personal-details' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/personal-details' %} active{% endif %}">
-                        <a href="{{ path('app_personal_details') }}"><i class="ik ik-user"></i><span>Personal Details</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-user"></i><span>Personal Details</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appPersonalDetails or app.request.pathinfo == '/dashboard/contact-details' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/contact-details' %} active{% endif %}">
-                        <a href="{{ path('app_contact_details') }}"><i class="ik ik-edit"></i><span>Contact Details</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-edit"></i><span>Contact Details</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appContactDetails or app.request.pathinfo == '/dashboard/ba-correspondence' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/ba-correspondence' %} active{% endif %}">
-                        <a href="{{ path('app_ba_correspondence') }}"><i class="ik ik-navigation"></i><span>BA Correspondence</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-navigation"></i><span>BA Correspondence</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appBACorrespondence or app.request.pathinfo == '/dashboard/further-correspondence' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/further-correspondence' %} active{% endif %}">
-                        <a href="{{ path('app_further_correspondence') }}"><i class="ik ik-at-sign"></i><span>Further Correspondence</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-at-sign"></i><span>Further Correspondence</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appFutherCorrespondence or app.request.pathinfo == '/dashboard/complaints' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/complaints' %} active{% endif %}">
-                        <a href="{{ path('app_complaints') }}"><i class="ik ik-clipboard"></i><span>Complaints</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-clipboard"></i><span>Complaints</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appComplaints or app.request.pathinfo == '/dashboard/financial-loss' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/financial-loss' %} active{% endif %}">
-                        <a href="{{ path('app_financial_loss') }}"><i class="ik ik-dollar-sign"></i><span>Financial Loss</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-dollar-sign"></i><span>Financial Loss</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appFinancialLoss or app.request.pathinfo == '/dashboard/reimbursements' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/reimbursements' %} active{% endif %}">
-                        <a href="{{ path('app_reimbursements') }}"><i class="ik ik-pocket"></i><span>Reimbursements</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-pocket"></i><span>Reimbursements</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appReimbursements or app.request.pathinfo == '/dashboard/credit-monitoring' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/credit-monitoring' %} active{% endif %}">
-                        <a href="{{ path('app_credit_monitoring') }}"><i class="ik ik-globe"></i><span>Credit Monitoring</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-globe"></i><span>Credit Monitoring</span></a>
-                    </div>
-                {% endif %}
-                {% if app.user.appCreditMonitoring or app.request.pathinfo == '/dashboard/emotional-distress' %}
-                    <div class="nav-item{% if app.request.pathinfo == '/dashboard/emotional-distress' %} active{% endif %}">
-                        <a href="{{ path('app_emotional_distress') }}"><i class="ik ik-flag"></i><span>Emotional Distress</span></a>
-                    </div>
-                {% else %}
-                    <div class="nav-item">
-                        <a class="disabled"><i class="ik ik-flag"></i><span>Emotional Distress</span></a>
-                    </div>
-                {% endif %}
-            </nav>
         </div>
-    </div>
+        {# /Sidebar Notification #}
 
-</div>
+        {# Sidebar Navigation #}
+        <ul class="dt-side-nav">
+
+            {# Dashboard Menu Item #}
+            <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard' %} selected{% endif %}">
+                <a href="{{ path('app_dashboard') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard' %} active{% endif %}" title="Dashboard">
+                    <i class="icon icon-dashboard icon-fw icon-xl"></i> <span class="dt-side-nav__text">Dashboard</span> </a>
+            </li>
+            {# /Dashboard Menu Item #}
+
+            {# Personal Details Menu Item #}
+            {% if app.user.appStarted or app.request.pathinfo == '/dashboard/personal-details' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/personal-details' %} selected{% endif %}">
+                    <a href="{{ path('app_personal_details') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/personal-details' %} active{% endif %}" title="Personal Details">
+                        <i class="icon icon-profile2 icon-fw icon-xl"></i> <span class="dt-side-nav__text">Personal Details</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-profile2 icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Personal Details</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Personal Details Menu Item #}
+
+            {# Contact Details Menu Item #}
+            {% if app.user.appPersonalDetails or app.request.pathinfo == '/dashboard/contact-details' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/contact-details' %} selected{% endif %}">
+                    <a href="{{ path('app_contact_details') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/contact-details' %} active{% endif %}" title="Contact Details">
+                        <i class="icon icon-contacts icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Contact Details</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-contacts icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Contact Details</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Contact Details Menu Item #}
+
+            {# BA Correspondence Menu Item #}
+            {% if app.user.appContactDetails or app.request.pathinfo == '/dashboard/ba-correspondence' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/ba-correspondence' %} selected{% endif %}">
+                    <a href="{{ path('app_ba_correspondence') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/ba-correspondence' %} active{% endif %}" title="BA Correspondence">
+                        <i class="icon icon-widgets icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">BA Correspondence</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-widgets icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">BA Correspondence</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /BA Correspondence Menu Item #}
+
+            {# Further Correspondence Menu Item #}
+            {% if app.user.appBACorrespondence or app.request.pathinfo == '/dashboard/further-correspondence' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/further-correspondence' %} selected{% endif %}">
+                    <a href="{{ path('app_further_correspondence') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/further-correspondence' %} active{% endif %}" title="Further Correspondence">
+                        <i class="icon icon-apps icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Further Correspondence</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-apps icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Further Correspondence</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Further Correspondence Menu Item #}
+
+            {# Complaints Menu Item #}
+            {% if app.user.appFutherCorrespondence or app.request.pathinfo == '/dashboard/complaints' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/complaints' %} selected{% endif %}">
+                    <a href="{{ path('app_complaints') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/complaints' %} active{% endif %}" title="Complaints">
+                        <i class="icon icon-feedback icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Complaints</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-feedback icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Complaints</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Complaints Menu Item #}
+
+            {# Financial Loss Menu Item #}
+            {% if app.user.appComplaints or app.request.pathinfo == '/dashboard/financial-loss' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/financial-loss' %} selected{% endif %}">
+                    <a href="{{ path('app_financial_loss') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/financial-loss' %} active{% endif %}" title="Financial Loss">
+                        <i class="icon icon-sweet-alert icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Financial Loss</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-sweet-alert icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Financial Loss</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Financial Loss Menu Item #}
+
+            {# Reimbursements Menu Item #}
+            {% if app.user.appFinancialLoss or app.request.pathinfo == '/dashboard/reimbursements' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/reimbursements' %} selected{% endif %}">
+                    <a href="{{ path('app_reimbursements') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/reimbursements' %} active{% endif %}" title="Reimbursements">
+                        <i class="icon icon-notification icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Reimbursements</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-notification icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Reimbursements</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Reimbursements Menu Item #}
+
+            {# Credit Monitoring Menu Item #}
+            {% if app.user.appReimbursements or app.request.pathinfo == '/dashboard/credit-monitoring' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/credit-monitoring' %} selected{% endif %}">
+                    <a href="{{ path('app_credit_monitoring') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/credit-monitoring' %} active{% endif %}" title="Credit Monitoring">
+                        <i class="icon icon-auth-screen icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Credit Monitoring</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-auth-screen icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Credit Monitoring</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Credit Monitoring Menu Item #}
+
+            {# Emotional Distress Menu Item #}
+            {% if app.user.appCreditMonitoring or app.request.pathinfo == '/dashboard/emotional-distress' %}
+                <li class="dt-side-nav__item{% if app.request.pathinfo == '/dashboard/emotional-distress' %} selected{% endif %}">
+                    <a href="{{ path('app_emotional_distress') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/dashboard/emotional-distress' %} active{% endif %}" title="Emotional Distress">
+                        <i class="icon icon-avatar icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Emotional Distress</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="dt-side-nav__item">
+                    <a class="dt-side-nav__link disabled">
+                        <i class="icon icon-avatar icon-fw icon-xl"></i>
+                        <span class="dt-side-nav__text">Emotional Distress</span>
+                    </a>
+                </li>
+            {% endif %}
+            {# /Emotional Distress Menu Item #}
+
+        </ul>
+        {# /Sidebar Navigation #}
+
+    </div>
+    {# /Sidebar Container #}
+
+</aside>
+{# /Sidebar #}

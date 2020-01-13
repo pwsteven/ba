@@ -19,20 +19,20 @@ class PersonalDetailsType extends AbstractType
             ->add('firstName', TextType::class, [
                 'label' => ' 1. What is your First Name? (Please provide your legal first name, not a nickname or shortened name.)',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('middleName', TextType::class, [
                 'label' => '2. What is your Middle Name? (Please provide your legal middle name, if you have one.)',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ],
                 'required' => false,
             ])
             ->add('surname', TextType::class, [
                 'label' => ' 3. What is your Surname?',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('dateOfBirth', BirthdayType::class, [
@@ -41,9 +41,9 @@ class PersonalDetailsType extends AbstractType
                     'day' => 'Day', 'month' => 'Month', 'year' => 'Year'
                 ],
                 'widget' => 'choice',
-                'label' => ' 4. What is your full date of birth?',
+                'label' => ' 4. What is your full Date-of-Birth?',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('imageFile', FileType::class, [
@@ -56,7 +56,7 @@ class PersonalDetailsType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
         ;

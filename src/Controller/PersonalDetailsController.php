@@ -94,7 +94,7 @@ class PersonalDetailsController extends BaseController
             $proClaimPutPersonalDetails->putCaseDetails($data);
 
             //Redirect to next page
-            $this->addFlash('success', 'Success! You have completed the Personal Details stage.');
+            $this->addFlash('success', 'Personal Details stage complete!');
             return $this->redirectToRoute('app_contact_details');
 
         }
@@ -102,7 +102,6 @@ class PersonalDetailsController extends BaseController
         return $this->render('dashboard/personal_details.html.twig', [
             'step_integer' => 10,
             'step_string' => 'Step 1 of 10',
-            'header_icon' => 'ik ik-user',
             'header_text' => 'Personal Details',
             'form' => $form->createView(),
         ]);

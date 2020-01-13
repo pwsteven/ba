@@ -1,13 +1,16 @@
-<!-- Sidebar -->
+{# Siebar #}
 <aside id="main-sidebar" class="dt-sidebar">
+
+    {# Sidebar Container #}
     <div class="dt-sidebar__container">
 
-        <!-- Sidebar Notification -->
+        {# Sidebar Notification #}
         <div class="dt-sidebar__notification  d-none d-lg-block">
-            <!-- Dropdown -->
+
+            {# Dropdown #}
             <div class="dropdown mb-6" id="user-menu-dropdown">
 
-                <!-- Dropdown Link -->
+                {# Dropdown Link #}
                 <a href="#" class="dropdown-toggle dt-avatar-wrapper text-body"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
@@ -15,9 +18,9 @@
                         <span class="dt-avatar-name">{{ app.user.firstName }}</span>
                     </span>
                 </a>
-                <!-- /dropdown link -->
+                {# /Dropdown Link #}
 
-                <!-- Dropdown Option -->
+                {# Dropdown Option #}
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="dt-avatar-wrapper flex-nowrap p-6 mt--5 bg-gradient-purple text-white rounded-top">
                         <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
@@ -30,32 +33,56 @@
                     <a class="dropdown-item" href="javascript:void(0)"><i class="icon icon-setting icon-fw mr-2 mr-sm-1"></i>Setting </a>
                     <a class="dropdown-item" href="{{ path('app_logout') }}"> <i class="icon icon-edit icon-fw mr-2 mr-sm-1"></i>Logout</a>
                 </div>
-                <!-- /dropdown option -->
+                {# /Dropdown Option #}
 
             </div>
-            <!-- /dropdown -->
+            {# /Dropdown #}
 
         </div>
-        <!-- /sidebar notification -->
+        {# /Sidebar Notification #}
 
-        <!-- Sidebar Navigation -->
+        {# Sidebar Navigation #}
         <ul class="dt-side-nav">
 
-            <!-- Menu Header -->
+            {# Menu Header #}
             <li class="dt-side-nav__item dt-side-nav__header">
                 <span class="dt-side-nav__text">Main Menu</span>
             </li>
-            <!-- /menu header -->
+            {# /Menu Header #}
 
-            <!-- Menu Item -->
+            {# Menu Item #}
             <li class="dt-side-nav__item{% if app.request.pathinfo == '/admin' %} open selected{% endif %}">
                 <a href="{{ path('app_admin') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/admin' %} active{% endif %}" title="Dashboard">
                     <i class="icon icon-dashboard icon-fw icon-xl"></i> <span class="dt-side-nav__text">Dashboard</span> </a>
             </li>
+            {# Menu Item #}
             <li class="dt-side-nav__item{% if app.request.pathinfo == '/admin/clients' %} open selected{% endif %}">
-                <a href="{{ path('app_admin_clients') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/admin/clients' %} active{% endif %}" title="Clients">
-                    <i class="icon icon-widgets icon-fw icon-xl"></i> <span class="dt-side-nav__text">Clients</span> </a>
+                <a href="javascript:void(0)" class="dt-side-nav__link dt-side-nav__arrow" title="Clients">
+                    <i class="icon icon-all-contacts icon-fw icon-xl"></i>
+                    <span class="dt-side-nav__text">Clients</span>
+                </a>
+                {# Sub-Menu Items #}
+                <ul class="dt-side-nav__sub-menu">
+                    <li class="dt-side-nav__item">
+                        <a href="{{ path('app_admin_clients') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/admin/clients' %} active{% endif %}" title="View All Clients">
+                            <span class="dt-side-nav__text">View All Clients</span>
+                        </a>
+                    </li>
+                    <li class="dt-side-nav__item">
+                        <a href="#" class="dt-side-nav__link{% if app.request.pathinfo == '' %} active{% endif %}" title="Auto Load Clients">
+                            <span class="dt-side-nav__text">Auto Import</span>
+                        </a>
+                    </li>
+                    <li class="dt-side-nav__item">
+                        <a href="#" class="dt-side-nav__link{% if app.request.pathinfo == '' %} active{% endif %}" title="Manual Import Clients">
+                            <span class="dt-side-nav__text">Manual Import</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
+
+
+
             <li class="dt-side-nav__item">
                 <a href="#" class="dt-side-nav__link" title="Users">
                     <i class="icon icon-apps icon-fw icon-xl"></i> <span class="dt-side-nav__text">Users</span> </a>
@@ -64,10 +91,13 @@
                 <a href="#" class="dt-side-nav__link" title="Emails">
                     <i class="icon icon-card icon-fw icon-xl"></i> <span class="dt-side-nav__text">Emails</span> </a>
             </li>
-            <!-- /menu item -->
+            {# /Menu Items #}
+
         </ul>
-        <!-- /sidebar navigation -->
+        {# /Sidebar Navigation #}
 
     </div>
+    {# /Sidebar Container #}
+
 </aside>
-<!-- /sidebar -->
+{# /Sidebar #}

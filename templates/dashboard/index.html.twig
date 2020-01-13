@@ -4,52 +4,64 @@
 
 {% block body %}
 
+    {# Grid #}
+    <div class="col-12">
+        {# Page Header #}
+        <div class="dt-page__header">
+            <h1 class="dt-page__title">Dashboard</h1>
+            <span>The British Airways OnBoarding App.</span>
+        </div>
+        {# /Page Header #}
+    </div>
+    {# /Grid #}
 
-    <div class="page-header">
-        <div class="row align-items-end">
-            <div class="col-lg-8">
-                <div class="page-header-title">
-                    <i class="ik ik-home bg-blue"></i>
-                    <div class="d-inline">
-                        <h5>Dashboard</h5>
-                        <span>The British Airways OnBoarding App.</span>
+
+    {# Grid #}
+    <div class="col-12">
+        {# Card #}
+        <div class="dt-card">
+
+            {% if app.user.appStarted %}
+                {# Card Header #}
+                <div class="dt-card__header">
+                    {# Card Heading #}
+                    <div class="dt-card__heading">
+                        <h3 class="dt-card__title">Continue Your Application</h3>
                     </div>
+                    {# /Card Heading #}
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="{{ path('app_dashboard') }}"><i class="ik ik-home"></i></a>
-                        </li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                {% if app.user.appStarted %}
-                    <div class="card-header"><h3>Continue Your Application</h3></div>
-                    <div class="card-body">
-                        Something in here about continuing with the process
+                {# /Card Header #}
+                {# Card Body #}
+                <div class="dt-card__body">
+                    Something in here about continuing with the process...
+                </div>
+                {# /Card Body #}
+            {% else %}
+                {# Card Header #}
+                <div class="dt-card__header">
+                    {# Card Heading #}
+                    <div class="dt-card__heading">
+                        <h3 class="dt-card__title">Lets Get Started</h3>
                     </div>
-                {% else %}
-                    <div class="card-header"><h3>Lets Get Started</h3></div>
-                    <div class="card-body text-center">
-                        <p>Please click on the button below to begin the process...</p>
-                        <form method="post">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-lg btn-primary"><i class="ik ik-star"></i> Begin</button>
-                            </div>
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        </form>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </div>
+                    {# /Card Heading #}
+                </div>
+                {# /Card Header #}
+                {# Card Body #}
+                <div class="dt-card__body">
+                    <p>Please click on the button below to begin the process...</p>
+                    <form method="post">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg mr-2 mb-2"> Begin </button>
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    </form>
+                </div>
+                {# /Card Body #}
+            {% endif %}
 
+        </div>
+        {# /Card #}
+    </div>
+    {# /Grid #}
 
 {% endblock %}

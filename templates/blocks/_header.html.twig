@@ -1,13 +1,117 @@
-<header class="header-top" header-theme="dark">
-    <div class="container-fluid">
-        <div class="d-flex justify-content-between">
-            <div class="top-menu d-flex align-items-center">
-                <button type="button" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></button>
-                <button type="button" id="navbar-fullscreen" class="nav-link"><i class="ik ik-maximize"></i></button>
+{# Header Container #}
+<header class="dt-header">
+
+    {# Brand Container #}
+    <div class="dt-header__container">
+
+        {# Brand #}
+        <div class="dt-brand">
+
+            {# Brand Tool #}
+            <div class="dt-brand__tool" data-toggle="main-sidebar">
+                <i class="icon icon-xl icon-menu-fold d-none d-lg-inline-block"></i>
+                <i class="icon icon-xl icon-menu d-lg-none"></i>
             </div>
-            <div class="top-menu d-flex align-items-center">
-                <a class="btn btn-icon btn-info" href="{{ path('app_logout') }}" title="logout"><i class="ik ik-lock"></i></a>
-            </div>
+            {# /Brand Tool #}
+
+            {# Brand Logo - TODO fix not working properly #}
+            <span class="dt-brand__logo">
+                <a class="dt-brand__logo-link" href="{{ path('app_admin') }}">
+                    Your Lawyers Ltd
+                </a>
+            </span>
+            {# /Brand Logo #}
+
         </div>
+        {# /Brand #}
+
+        {# Header ToolBar #}
+        <div class="dt-header__toolbar">
+
+            {# Search Box #}
+            <form class="search-box d-none d-lg-block">
+                <input class="form-control border-0" placeholder="Search in app..." value="" type="search">
+                <span class="search-icon text-light-gray"><i class="icon icon-search icon-lg"></i></span>
+            </form>
+            {# /Search Box #}
+
+            {# Header Navigation Wrapper #}
+            <div class="dt-nav-wrapper">
+
+                {# Mobile Search #}
+                <ul class="dt-nav d-lg-none">
+                    <li class="dt-nav__item dt-notification-search dropdown">
+
+                        {# Dropdown Link #}
+                        <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"> <i class="icon icon-search-new icon-fw icon-lg"></i> </a>
+                        {# /Dropdown Link #}
+
+                        {# Dropdown Option #}
+                        <div class="dropdown-menu">
+
+                            {# Mobile Search Box #}
+                            <form class="search-box right-side-icon">
+                                <input class="form-control form-control-lg" type="search" placeholder="Search in app...">
+                                <button type="submit" class="search-icon"><i class="icon icon-search icon-lg"></i></button>
+                            </form>
+                            {# /Mobile Search Box #}
+
+                        </div>
+                        {# /DropDown Option #}
+
+                    </li>
+                </ul>
+                {# /Mobile Search #}
+
+                {# Logout #}
+                <ul class="dt-nav">
+                    <form class="form-inline d-none d-lg-block">
+                        <a href="{{ path('app_logout') }}" class="btn btn-outline-secondary mt-5 mr-2"><span>Logout</span></a>
+                    </form>
+                </ul>
+                {# /Logout #}
+
+                <!-- Header Menu -->
+                <ul class="dt-nav d-lg-none">
+                    <li class="dt-nav__item dropdown">
+
+                        <!-- Dropdown Link -->
+                        <a href="#" class="dt-nav__link dropdown-toggle no-arrow dt-avatar-wrapper"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="dt-avatar size-40" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
+                        </a>
+                        <!-- /dropdown link -->
+
+                        <!-- Dropdown Option -->
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dt-avatar-wrapper flex-nowrap p-6 mt--5 bg-gradient-purple text-white rounded-top">
+                                <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
+                                <span class="dt-avatar-info">
+                                    <span class="dt-avatar-name">{{ app.user.firstName }}</span>
+                                    <span class="f-12">Administrator</span>
+                                </span>
+                            </div>
+                            <a class="dropdown-item" href="javascript:void(0)"> <i class="icon icon-user-o icon-fw mr-2 mr-sm-1"></i>Account
+                            </a> <a class="dropdown-item" href="javascript:void(0)">
+                                <i class="icon icon-setting icon-fw mr-2 mr-sm-1"></i>Setting </a>
+                            <a class="dropdown-item" href="{{ path('app_logout') }}"> <i class="icon icon-edit icon-fw mr-2 mr-sm-1"></i>Logout
+                            </a>
+                        </div>
+                        <!-- /dropdown option -->
+
+                    </li>
+                </ul>
+                <!-- /header menu -->
+
+            </div>
+            {# /Header Navigation Wrapper #}
+
+        </div>
+        {# /Header ToolBar #}
+
     </div>
+    {# /Brand Container #}
+
 </header>
+{# /Header #}

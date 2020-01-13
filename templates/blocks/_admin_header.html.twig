@@ -1,187 +1,76 @@
-<!-- Header -->
+{# Header Container #}
 <header class="dt-header">
 
-    <!-- Header container -->
+    {# Brand Container #}
     <div class="dt-header__container">
 
-        <!-- Brand -->
+        {# Brand #}
         <div class="dt-brand">
 
-            <!-- Brand tool -->
+            {# Brand Tool #}
             <div class="dt-brand__tool" data-toggle="main-sidebar">
                 <i class="icon icon-xl icon-menu-fold d-none d-lg-inline-block"></i>
                 <i class="icon icon-xl icon-menu d-lg-none"></i>
             </div>
-            <!-- /brand tool -->
+            {# /Brand Tool #}
 
-            <!-- Brand logosssssss -->
+            {# Brand Logo - TODO fix not working properly #}
             <span class="dt-brand__logo">
                 <a class="dt-brand__logo-link" href="{{ path('app_admin') }}">
                     Your Lawyers Ltd
                 </a>
             </span>
-            <!-- /brand logo -->
+            {# /Brand Logo #}
 
         </div>
-        <!-- /brand -->
+        {# /Brand #}
 
-        <!-- Header toolbar-->
+        {# Header ToolBar #}
         <div class="dt-header__toolbar">
 
-            <!-- Search box -->
+            {# Search Box #}
             <form class="search-box d-none d-lg-block">
                 <input class="form-control border-0" placeholder="Search in app..." value="" type="search">
                 <span class="search-icon text-light-gray"><i class="icon icon-search icon-lg"></i></span>
             </form>
-            <!-- /search box -->
+            {# /Search Box #}
 
-            <!-- Header Menu Wrapper -->
+            {# Header Navigation Wrapper #}
             <div class="dt-nav-wrapper">
-                <!-- Header Menu -->
+
+                {# Mobile Search #}
                 <ul class="dt-nav d-lg-none">
                     <li class="dt-nav__item dt-notification-search dropdown">
 
-                        <!-- Dropdown Link -->
+                        {# Dropdown Link #}
                         <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false"> <i class="icon icon-search-new icon-fw icon-lg"></i> </a>
-                        <!-- /dropdown link -->
+                        {# /Dropdown Link #}
 
-                        <!-- Dropdown Option -->
+                        {# Dropdown Option #}
                         <div class="dropdown-menu">
 
-                            <!-- Search Box -->
+                            {# Mobile Search Box #}
                             <form class="search-box right-side-icon">
                                 <input class="form-control form-control-lg" type="search" placeholder="Search in app...">
                                 <button type="submit" class="search-icon"><i class="icon icon-search icon-lg"></i></button>
                             </form>
-                            <!-- /search box -->
+                            {# /Mobile Search Box #}
 
                         </div>
-                        <!-- /dropdown option -->
+                        {# /DropDown Option #}
 
                     </li>
                 </ul>
-                <!-- /header menu -->
+                {# /Mobile Search #}
 
-                <!-- Header Menu -->
-                <ul class="dt-nav d-lg-none">
-                    <li class="dt-nav__item dt-notification dropdown">
-
-                        <!-- Dropdown Link -->
-                        <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"> <i class="icon icon-notification icon-fw dt-icon-alert"></i>
-                        </a>
-                        <!-- /dropdown link -->
-
-                        <!-- Dropdown Option -->
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-media">
-                            <!-- Dropdown Menu Header -->
-                            <div class="dropdown-menu-header">
-                                <h4 class="title">Notifications (9)</h4>
-
-                                <div class="ml-auto action-area">
-                                    <a href="javascript:void(0)">Mark All Read</a> <a class="ml-2" href="javascript:void(0)">
-                                        <i class="icon icon-setting icon-lg text-light-gray"></i> </a>
-                                </div>
-                            </div>
-                            <!-- /dropdown menu header -->
-
-                            <!-- Dropdown Menu Body -->
-                            <div class="dropdown-menu-body ps-custom-scrollbar">
-
-                                <div class="h-auto">
-
-                                </div>
-
-                            </div>
-                            <!-- /dropdown menu body -->
-
-                            <!-- Dropdown Menu Footer -->
-                            <div class="dropdown-menu-footer">
-                                <a href="javascript:void(0)" class="card-link"> See All <i class="icon icon-arrow-right icon-fw"></i>
-                                </a>
-                            </div>
-                            <!-- /dropdown menu footer -->
-                        </div>
-                        <!-- /dropdown option -->
-
-                    </li>
-
-                    <li class="dt-nav__item dt-notification dropdown">
-
-                        <!-- Dropdown Link -->
-                        <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"> <i class="icon icon-chat-new icon-fw"></i> </a>
-                        <!-- /dropdown link -->
-
-                        <!-- Dropdown Option -->
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-media">
-                            <!-- Dropdown Menu Header -->
-                            <div class="dropdown-menu-header">
-                                <h4 class="title">Messages (0)</h4>
-
-                                <div class="ml-auto action-area">
-                                    <a href="javascript:void(0)">Mark All Read</a> <a class="ml-2" href="javascript:void(0)">
-                                        <i class="icon icon-setting icon-lg text-light-gray"></i></a>
-                                </div>
-                            </div>
-                            <!-- /dropdown menu header -->
-
-                            <!-- Dropdown Menu Body -->
-                            <div class="dropdown-menu-body ps-custom-scrollbar">
-
-                                <div class="h-auto">
-
-
-                                </div>
-
-                            </div>
-                            <!-- /dropdown menu body -->
-
-                            <!-- Dropdown Menu Footer -->
-                            <div class="dropdown-menu-footer">
-                                <a href="javascript:void(0)" class="card-link"> See All <i class="icon icon-arrow-right icon-fw"></i>
-                                </a>
-                            </div>
-                            <!-- /dropdown menu footer -->
-                        </div>
-                        <!-- /dropdown option -->
-
-                    </li>
-                </ul>
-                <!-- /header menu -->
-
-                <!-- Header Menu -->
+                {# Logout #}
                 <ul class="dt-nav">
-                    <li class="dt-nav__item dropdown">
-
-                        <!-- Dropdown Link -->
-                        <a href="#" class="dt-nav__link dropdown-toggle" data-toggle="dropdown"
-                           aria-haspopup="true"
-                           aria-expanded="false">
-                            <i class="flag-icon flag-icon-gb flag-icon-lg"></i><span>English</span> </a>
-                        <!-- /dropdown link -->
-
-                        <!-- Dropdown Option -->
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="flag-icon flag-icon-us mr-2"></i><span>English</span> </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="flag-icon flag-icon-cn mr-2"></i><span>Chinese</span> </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="flag-icon flag-icon-es mr-2"></i><span>Spanish</span> </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="flag-icon flag-icon-fr mr-2"></i><span>French</span> </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="flag-icon flag-icon-it mr-2"></i><span>Italian</span> </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="flag-icon flag-icon-sa mr-2"></i><span>Arabic</span> </a>
-                        </div>
-                        <!-- /dropdown option -->
-
-                    </li>
+                    <form class="form-inline d-none d-lg-block">
+                        <a href="{{ path('app_logout') }}" class="btn btn-outline-secondary mt-5 mr-2"><span>Logout</span></a>
+                    </form>
                 </ul>
-                <!-- /header menu -->
+                {# /Logout #}
 
                 <!-- Header Menu -->
                 <ul class="dt-nav d-lg-none">
@@ -216,13 +105,13 @@
                 <!-- /header menu -->
 
             </div>
-            <!-- Header Menu Wrapper -->
+            {# /Header Navigation Wrapper #}
 
         </div>
-        <!-- /header toolbar -->
+        {# /Header ToolBar #}
 
     </div>
-    <!-- /header container -->
+    {# /Brand Container #}
 
 </header>
-<!-- /header -->
+{# /Header #}

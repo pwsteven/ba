@@ -1,77 +1,105 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ header_text }} - BA OnBoarding - Your Lawyers Ltd{% endblock %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('dist/css/dropzone.css') }}">
-{% endblock %}
+{% block title %}{{ header_text }}{% endblock %}
 
 {% block body %}
-    {{ include('blocks/title_breadcrumb.html.twig') }}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
-                    <div class="form-group mb-30">
-                        {{ form_label(form.firstName)}}
-                        {{ form_widget(form.firstName) }}
-                        <div class="error_message">{{ form_errors(form.firstName) }}</div>
-                    </div>
-                    <div class="form-group mb-30">
-                        {{ form_label(form.middleName) }}
-                        {{ form_widget(form.middleName) }}
-                    </div>
-                    <div class="form-group mb-30">
-                        {{ form_label(form.surname) }}
-                        {{ form_widget(form.surname) }}
-                        <div class="error_message">{{ form_errors(form.surname) }}</div>
-                    </div>
-                    <div class="form-group mb-30">
-                        {{ form_label(form.dateOfBirth) }}
-                        {{ form_widget(form.dateOfBirth) }}
-                        <div class="error_message">{{ form_errors(form.dateOfBirth) }}</div>
-                    </div>
-                    <div class="form-group mb-30">
-                        <div class="row">
-                            <div class="col-sm-9">
-                                {{ form_label(form.imageFile) }}
-                                {{ form_widget(form.imageFile) }}
-                                <div class="error_message">{{ form_errors(form.imageFile) }}</div>
-                            </div>
-                            <div class="col-sm-3">
-                                {% if form.vars.data.imageFileName != "article_image/" %}
-                                    <img src="{{ uploaded_asset(form.vars.data.imageFileName)|imagine_filter('squared_thumbnail_small') }}" height="100">
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
-                        </div>
-                    </div>
-                    {{ form_end(form) }}
-                </div>
+    {# Grid #}
+    <div class="col-12" xmlns="http://www.w3.org/1999/html">
+        {# Page Header #}
+        <div class="dt-page__header">
+            <h1 class="dt-page__title">{{ header_text }}</h1>
+            <span>The British Airways OnBoarding App.</span>
+        </div>
+        {# /Page Header #}
+    </div>
+    {# /Grid #}
+
+    {# Grid #}
+    <div class="col-12">
+        <div class="progress mb-2">
+            <div class="progress-bar" role="progressbar" style="width: {{ step_integer }}%" aria-valuenow="{{ step_integer }}" aria-valuemin="0"
+                 aria-valuemax="100">{{ step_string }}
             </div>
         </div>
     </div>
+    {# /Grid #}
 
+    {# Grid #}
+    <div class="col-12">
+        {# Card #}
+        <div class="dt-card">
+
+            {{ form_start(form, {'attr': {'id': 'ba_form'}}) }}
+
+            {# First Name Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.firstName)}}
+                    {{ form_widget(form.firstName) }}
+                    <div class="error_message">{{ form_errors(form.firstName) }}</div>
+                </div>
+            </div>
+            {# /First Name Form Row #}
+
+            {# Middle Name Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.middleName) }}
+                    {{ form_widget(form.middleName) }}
+                </div>
+            </div>
+            {# /Middle Name Form Row #}
+
+            {# Surname Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.surname) }}
+                    {{ form_widget(form.surname) }}
+                    <div class="error_message">{{ form_errors(form.surname) }}</div>
+                </div>
+            </div>
+            {# /Surname Form Row #}
+
+            {# Date Of Birth Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.dateOfBirth) }}
+                    {{ form_widget(form.dateOfBirth) }}
+                    <div class="error_message">{{ form_errors(form.dateOfBirth) }}</div>
+                </div>
+            </div>
+            {# /Date Of Birth Form Row #}
+
+            {# Upload Photo ID Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-9">
+                    {{ form_label(form.imageFile) }}
+                    {{ form_widget(form.imageFile) }}
+                    <div class="error_message">{{ form_errors(form.imageFile) }}</div>
+                </div>
+                <div class="form-group col-md-3">
+                    {% if form.vars.data.imageFileName != "article_image/" %}
+                        <img src="{{ uploaded_asset(form.vars.data.imageFileName)|imagine_filter('squared_thumbnail_small') }}" height="100">
+                    {% endif %}
+                </div>
+            </div>
+            {# /Upload Photo ID Form Row #}
+
+            {# Submit Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12 text-right">
+                    <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage...">Submit &amp; Continue <i class="icon icon-forward"></i></button>
+                </div>
+            </div>
+            {# /Submit Form Row #}
+
+            {{ form_end(form) }}
+
+        </div>
+        {# /Card #}
+    </div>
+    {# /Grid #}
 
 {% endblock %}
 
-{% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('dist/js/dropzone.js') }}"></script>
-    <script>
-        Dropzone.autoDiscover = false;
-
-        // Dropzone class:
-        var myDropzone = new Dropzone("div#mydropzone", { url: "/file/post"});
-
-        // If you use jQuery, you can use the jQuery plugin Dropzone ships with:
-        $("div#myDrop").dropzone({ url: "/file/post" });
-    </script>
-{% endblock %}
