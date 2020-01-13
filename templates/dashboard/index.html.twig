@@ -51,7 +51,7 @@
                     <p>Please click on the button below to begin the process...</p>
                     <form method="post">
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-lg mr-2 mb-2"> Begin </button>
+                            <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage..."> Begin <i class="icon icon-forward"></i> </button>
                         </div>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                     </form>

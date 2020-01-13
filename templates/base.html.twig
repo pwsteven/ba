@@ -83,23 +83,6 @@
         <script src="{{ asset('html-bs4/node_modules/sweetalert2/dist/sweetalert2.js') }}"></script>
         {# Custom JavaScript #}
     {% endblock %}
-    {% for message in app.flashes('success') %}
-        <script>
-            jQuery(document).ready(function(){
-                const toast = swal.mixin({
-                    toast: true,
-                    position: 'top-end',
-                    showConfirmButton: false,
-                    timer: 3000
-                });
-
-                toast({
-                    type: 'success',
-                    title: {{ message }}
-                })
-            });
-        </script>
-    {% endfor %}
     <script src="{{ asset('html-bs4/default/assets/js/script.js') }}"></script>
 
 </body>

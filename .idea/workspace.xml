@@ -2,101 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/html-bs4/default/assets/css/ba_form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/alerts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/am-maps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/badges.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/basic-form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/basic-table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/breadcrumbs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/button-group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/callout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/card-group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/card-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/carousel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/chart-amcharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/chart-chartjs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/chat-start.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/chat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/code-editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/collapse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/color-picker.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/dashboard-crm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/dashboard-listing.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/data-maps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/data-table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/date-time-pickers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/drag-drop.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/dropdown.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/editor-summernote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/file-upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/input-group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/jumbotron.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/layouts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/list-group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/mail-detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/mail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-advance-route.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-events.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-geo-polygons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-geocoding.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-geolocation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-markers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-overlay-polygons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-overlay-polylines.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-overlay.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/map-route.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/metrics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/modal.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/navbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/navs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/notification-alert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-500.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-blank.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-forgot-password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-lock-screen.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-login-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-reset-password.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-signup-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-signup.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/page-wall.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/pagination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/popovers.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/pricing-table.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/product-grid.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/product-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/progress.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/scrollspy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/simple-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/strip-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/sweet-alert.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/task-manager-inner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/task-manager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/testimonials.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/tooltip.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/typography.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/widget.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PersonalDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PersonalDetailsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_clients/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_admin_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_admin_header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_admin_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_admin_sidebar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/blocks/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_header.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/admin_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/admin_footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" afterDir="false" />
     </list>
@@ -324,7 +238,7 @@
       <workItem from="1578497556359" duration="6422000" />
       <workItem from="1578555411387" duration="23247000" />
       <workItem from="1578649068514" duration="22071000" />
-      <workItem from="1578913514602" duration="823000" />
+      <workItem from="1578913514602" duration="5389000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -550,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578580263404</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Personal Details reworked&#10;13/01/20 11:20am">
+      <created>1578914470419</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1578914470419</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,7 +494,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Webpack Admin build" />
     <MESSAGE value="Webpack Login build" />
     <MESSAGE value="Dashboard build" />
     <MESSAGE value="Dashboard Controller" />
@@ -598,7 +518,8 @@
     <MESSAGE value="Setting up Admin interface + possible change to Client forms&#10;08/01/20 10:45am" />
     <MESSAGE value="Setting up Admin interface + possible change to Client forms&#10;08/01/20 15:19pm" />
     <MESSAGE value="Setting up DataTables on Admin Client page&#10;09/01/20 14:30pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up DataTables on Admin Client page&#10;09/01/20 14:30pm" />
+    <MESSAGE value="Personal Details reworked&#10;13/01/20 11:20am" />
+    <option name="LAST_COMMIT_MESSAGE" value="Personal Details reworked&#10;13/01/20 11:20am" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1578063652400">
@@ -613,10 +534,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578052962568" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1578580258270">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1578914464491">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578580258270" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578914464491" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1578052680530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -5,7 +5,7 @@
 {% block body %}
 
     {# Grid #}
-    <div class="col-12" xmlns="http://www.w3.org/1999/html">
+    <div class="col-12">
         {# Page Header #}
         <div class="dt-page__header">
             <h1 class="dt-page__title">{{ header_text }}</h1>
@@ -18,8 +18,8 @@
     {# Grid #}
     <div class="col-12">
         <div class="progress mb-2">
-            <div class="progress-bar" role="progressbar" style="width: {{ step_integer }}%" aria-valuenow="{{ step_integer }}" aria-valuemin="0"
-                 aria-valuemax="100">{{ step_string }}
+            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
+                 aria-valuemax="100">Step 1 of 10
             </div>
         </div>
     </div>

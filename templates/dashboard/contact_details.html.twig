@@ -1,82 +1,163 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ header_text }} - BA OnBoarding - Your Lawyers Ltd{% endblock %}
+{% block title %}{{ header_text }}{% endblock %}
 
 {% block body %}
-    {{ include('blocks/title_breadcrumb.html.twig') }}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
-                    <div class="form-group mb-3">
-                        <label>6. Please provide your full address</label>
-                    </div>
-                    <div class="form-group mb-30">
-                        <div class="embed_left">
-                            {{ form_label(form.houseNameNumber)}}
-                            {{ form_widget(form.houseNameNumber) }}
-                            <div class="error_message">{{ form_errors(form.houseNameNumber) }}</div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-30">
-                        <div class="embed_left">
-                            {{ form_label(form.streetAddress)}}
-                            {{ form_widget(form.streetAddress) }}
-                            <div class="error_message">{{ form_errors(form.streetAddress) }}</div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-30">
-                        <div class="embed_left">
-                            {{ form_label(form.streetAddress2)}}
-                            {{ form_widget(form.streetAddress2) }}
-                            <div class="error_message">{{ form_errors(form.streetAddress2) }}</div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-30">
-                        <div class="embed_left">
-                            {{ form_label(form.townCity)}}
-                            {{ form_widget(form.townCity) }}
-                            <div class="error_message">{{ form_errors(form.townCity) }}</div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-30">
-                        <div class="embed_left">
-                            {{ form_label(form.county)}}
-                            {{ form_widget(form.county) }}
-                            <div class="error_message">{{ form_errors(form.county) }}</div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-30">
-                        <div class="embed_left">
-                            {{ form_label(form.postcode)}}
-                            {{ form_widget(form.postcode) }}
-                            <div class="error_message">{{ form_errors(form.postcode) }}</div>
-                        </div>
-                    </div>
-                    <div class="form-group mb-30">
-                        {{ form_label(form.emailAddress)}}
-                        {{ form_widget(form.emailAddress) }}
-                        <div class="error_message">{{ form_errors(form.emailAddress) }}</div>
-                    </div>
-                    <div class="form-group mb-30">
-                        {{ form_label(form.mobileTelephoneNumber)}}
-                        {{ form_widget(form.mobileTelephoneNumber) }}
-                        <div class="error_message">{{ form_errors(form.mobileTelephoneNumber) }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
-                        </div>
-                    </div>
-                    {{ form_end(form) }}
 
-                </div>
+    {# Grid #}
+    <div class="col-12">
+        {# Page Header #}
+        <div class="dt-page__header">
+            <h1 class="dt-page__title">{{ header_text }}</h1>
+            <span>The British Airways OnBoarding App.</span>
+        </div>
+        {# /Page Header #}
+    </div>
+    {# /Grid #}
+
+    {# Grid #}
+    <div class="col-12">
+        <div class="progress mb-2">
+            <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
+                 aria-valuemax="100">Step 2 of 10
             </div>
         </div>
     </div>
+    {# /Grid #}
+
+    {# Grid #}
+    <div class="col-12">
+        {# Card #}
+        <div class="dt-card">
+
+            {{ form_start(form, {'attr': {'id': 'ba_form'}}) }}
+
+            {# Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label>6. Please provide your Full Address</label>
+                </div>
+            </div>
+            {# /Form Row #}
+
+            {# House Name/Number Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.houseNameNumber)}}
+                    {{ form_widget(form.houseNameNumber) }}
+                    <div class="error_message">{{ form_errors(form.houseNameNumber) }}</div>
+                </div>
+            </div>
+            {# /House Name/Number Form Row #}
+
+            {# Street Address Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.streetAddress)}}
+                    {{ form_widget(form.streetAddress) }}
+                    <div class="error_message">{{ form_errors(form.streetAddress) }}</div>
+                </div>
+            </div>
+            {# /Street Address Form Row #}
+
+            {# Street Address Line 2 Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.streetAddress2)}}
+                    {{ form_widget(form.streetAddress2) }}
+                    <div class="error_message">{{ form_errors(form.streetAddress2) }}</div>
+                </div>
+            </div>
+            {# /Street Address Line 2 Form Row #}
+
+            {# Town/City Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.townCity)}}
+                    {{ form_widget(form.townCity) }}
+                    <div class="error_message">{{ form_errors(form.townCity) }}</div>
+                </div>
+            </div>
+            {# /Town/City Form Row #}
+
+            {# County Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.county)}}
+                    {{ form_widget(form.county) }}
+                    <div class="error_message">{{ form_errors(form.county) }}</div>
+                </div>
+            </div>
+            {# /County Form Row #}
+
+            {# Postcode Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.postcode)}}
+                    {{ form_widget(form.postcode) }}
+                    <div class="error_message">{{ form_errors(form.postcode) }}</div>
+                </div>
+            </div>
+            {# /Postcode Form Row #}
+
+            {# Email Address Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.emailAddress)}}
+                    {{ form_widget(form.emailAddress) }}
+                    <div class="error_message">{{ form_errors(form.emailAddress) }}</div>
+                </div>
+            </div>
+            {# /Email Address Form Row #}
+
+            {# Mobile/Telephone Number Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.mobileTelephoneNumber)}}
+                    {{ form_widget(form.mobileTelephoneNumber) }}
+                    <div class="error_message">{{ form_errors(form.mobileTelephoneNumber) }}</div>
+                </div>
+            </div>
+            {# /Mobile/Telephone Number Form Row #}
+
+            {# Submit Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12 text-right">
+                    <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage...">Submit &amp; Continue <i class="icon icon-forward"></i></button>
+                </div>
+            </div>
+            {# /Submit Form Row #}
+
+            {{ form_end(form) }}
+
+        </div>
+        {# /Card #}
+    </div>
+    {# /Grid #}
 
 
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% for message in app.session.flashBag('page_success') %}
+        <script>
+            jQuery(document).ready(function(){
+                const toast = swal.mixin({
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+
+                toast({
+                    type: 'success',
+                    title: 'Personal Details stage complete!',
+                })
+            });
+        </script>
+    {% endfor %}
+{% endblock %}
+
 
 

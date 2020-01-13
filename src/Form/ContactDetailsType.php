@@ -17,51 +17,51 @@ class ContactDetailsType extends AbstractType
             ->add('houseNameNumber', TextType::class, [
                 'label' => 'House Name/Number',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('streetAddress', TextType::class, [
                 'label' => 'Street Address',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('streetAddress2', TextType::class, [
                 'label' => 'Street Address Line 2',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('townCity', TextType::class, [
                 'label' => 'Town/City',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('county', TextType::class, [
                 'label' => 'County',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('postcode', TextType::class, [
                 'label' => 'Postcode',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('emailAddress', EmailType::class, [
-                'label' => ' 7. Please provide your email address',
+                'label' => ' 7. Please provide your Email Address',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('mobileTelephoneNumber', TextType::class, [
-                'label' => ' 8. Please provide your mobile/telephone number',
+                'label' => ' 8. Please provide your Mobile/Telephone Number',
                 'attr' => [
-                    'class' => 'form-control form-control-default form-txt-inverse',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
         ;

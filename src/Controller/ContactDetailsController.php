@@ -81,14 +81,11 @@ class ContactDetailsController extends BaseController
             //dd($data);
             $proClaimPutContactDetails->putCaseDetails($data);
 
-            $this->addFlash('success', 'Success! You have completed the Contact Details stage.');
+            $this->addFlash('page_success', 'Contact Details stage complete!');
             return $this->redirectToRoute('app_ba_correspondence');
         }
 
         return $this->render('dashboard/contact_details.html.twig', [
-            'step_integer' => 20,
-            'step_string' => 'Step 2 of 10',
-            'header_icon' => 'ik ik-edit',
             'header_text' => 'Contact Details',
             'form' => $form->createView(),
         ]);
