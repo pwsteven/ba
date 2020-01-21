@@ -253,13 +253,13 @@ class ProClaimRequest
                 $data['claim_type_client_ba_confirmation_email'] = $case_field_value;
             }
 
-            // GET BREACH ONE NOTIFICATION TODO
-            /*
+            // GET BREACH ONE NOTIFICATION
+
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Reward Breach - notifcation received.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -269,7 +269,7 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['claim_type_breach_one_notification'] = $case_field_value;
             }
-            */
+
 
             // GET BREACH ONE DATE RECEIVED TODO
             /*

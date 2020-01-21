@@ -1,38 +1,119 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ header_text }} - BA OnBoarding - Your Lawyers Ltd{% endblock %}
+{% block title %}{{ header_text }}{% endblock %}
 
 {% block body %}
-    {{ include('blocks/title_breadcrumb.html.twig') }}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
-                    <div class="form-group mb-30">
-                        {{ form_label(form.monitorCredit) }}
-                        {{ form_widget(form.monitorCredit) }}
-                        <div class="error_message">{{ form_errors(form.monitorCredit) }}</div>
-                    </div>
-                    {# START CREDIT MONITOR BLOCK #}
-                    <div id="credit_monitor_block"{% if form.vars.data.monitorCredit != 'YES' %} class="display_none"{% endif %}>
-                        <div class="form-group mb-30">
+
+    {# Grid #}
+    <div class="col-12">
+        {# Page Header #}
+        <div class="dt-page__header">
+            <h1 class="dt-page__title">{{ header_text }}</h1>
+            <span>The British Airways OnBoarding App.</span>
+        </div>
+        {# /Page Header #}
+    </div>
+    {# /Grid #}
+
+    {# Grid #}
+    <div class="col-12">
+        <div class="progress mb-2">
+            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+                 aria-valuemax="100">Step 8 of 10
+            </div>
+        </div>
+    </div>
+    {# /Grid #}
+
+    {# Grid #}
+    <div class="col-12">
+        {# Card #}
+        <div class="dt-card">
+
+            {{ form_start(form, {'attr': {'id': 'ba_form'}}) }}
+
+            {# Experian ProtectMyID Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.monitorCredit) }}
+                    {{ form_widget(form.monitorCredit) }}
+                    <div class="error_message">{{ form_errors(form.monitorCredit) }}</div>
+                </div>
+            </div>
+            {# /Experian ProtectMyID Form Row #}
+
+            {# CREDIT MONITOR BLOCK #}
+            <div id="credit_monitor_block"{% if form.vars.data.monitorCredit != 'YES' %} class="display_none"{% endif %}>
+                <div class="block_body">
+
+                    {# Account Evidence File Upload #}
+
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             {{ form_label(form.monitorCreditFile) }}
                             {{ form_widget(form.monitorCreditFile) }}
                             <div class="error_message">{{ form_errors(form.monitorCreditFile) }}</div>
                         </div>
-                    </div>
-                    {# END CREDIT MONITOR BLOCK #}
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        <div class="form-group col-md-12">
+                            {% if form.vars.data.monitorCreditFilePath != "" %}
+                                <p><b>Uploaded File:</b> {{ form.vars.data.monitorCreditFilePath }}</p>
+                                <hr class="border-dashed my-8">
+                            {% endif %}
                         </div>
                     </div>
-                    {{ form_end(form) }}
+
+                    {# /Account Evidence File Upload #}
+
                 </div>
             </div>
-        </div>
-    </div>
+            {# /CREDIT MONITOR BLOCK #}
 
+            {# Submit Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12 text-right">
+                    <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage...">Submit &amp; Continue <i class="icon icon-forward"></i></button>
+                </div>
+            </div>
+            {# /Submit Form Row #}
+
+            {{ form_end(form) }}
+
+        </div>
+        {# /Card #}
+    </div>
+    {# /Grid #}
 
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+
+        {% for message in app.session.flashBag.get('page_success') %}
+        jQuery(document).ready(function(){
+            const toast = swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            toast({
+                type: 'success',
+                title: 'Reimbursements stage complete!',
+            })
+        });
+        {% endfor %}
+
+        $('#credit_monitor_monitorCredit').on('change', function () {
+            const value = $('#credit_monitor_monitorCredit option:selected').attr("value");
+            if (value === 'YES') {
+                $('#credit_monitor_block').fadeIn(450);
+            } else {
+                $('#credit_monitor_block').fadeOut(250);
+            }
+        });
+
+    </script>
+{% endblock %}
+

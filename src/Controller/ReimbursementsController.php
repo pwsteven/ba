@@ -87,15 +87,12 @@ class ReimbursementsController extends BaseController
             $proClaimPutReimbursements->putCaseDetails($data);
 
             // REDIRECT TO NEXT PAGE
-            $this->addFlash('success', 'Success! You have completed the Reimbursements stage.');
+            $this->addFlash('page_success', 'Reimbursements stage completed!');
             return $this->redirectToRoute('app_credit_monitoring');
 
         }
 
         return $this->render('dashboard/reimbursements.html.twig', [
-            'step_integer' => 70,
-            'step_string' => 'Step 7 of 10',
-            'header_icon' => 'ik ik-pocket',
             'header_text' => 'Reimbursements',
             'form' => $form->createView(),
         ]);

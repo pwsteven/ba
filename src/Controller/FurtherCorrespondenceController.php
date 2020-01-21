@@ -91,15 +91,12 @@ class FurtherCorrespondenceController extends BaseController
             $proClaimPutFurtherCorrespondence->putCaseDetails($data);
 
             // REDIRECT TO NEXT PAGE
-            $this->addFlash('success', 'Success! You have completed the Further Correspondence stage.');
+            $this->addFlash('page_success', 'Further Correspondence stage complete!');
             return $this->redirectToRoute('app_complaints');
 
         }
 
         return $this->render('dashboard/further_correspondence.html.twig', [
-            'step_integer' => 40,
-            'step_string' => 'Step 4 of 10',
-            'header_icon' => 'ik ik-at-sign',
             'header_text' => 'Further Correspondence',
             'form' => $form->createView(),
         ]);

@@ -2,17 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200116102406.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/admin_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/admin_footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/html-bs4/default/assets/css/ba_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/html-bs4/default/assets/css/ba_form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ComplaintsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ComplaintsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CompleteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompleteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreditMonitoringController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmotionalDistressController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FurtherCorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ReimbursementsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ReimbursementsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/EmotionalDistress.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EmotionalDistress.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ComplaintsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ComplaintsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CreditMonitorType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CreditMonitorType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EmotionalDistressType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmotionalDistressType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/FinancialLossType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FinancialLossType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/FurtherCorrespondenceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/FurtherCorrespondenceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ReimbursementsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ReimbursementsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/complaints.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/complaints.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/complete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/complete.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/credit_monitoring.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/credit_monitoring.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/financial_loss.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/financial_loss.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/further_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/further_correspondence.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/reimbursements.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/reimbursements.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +49,26 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -168,6 +207,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -238,7 +278,10 @@
       <workItem from="1578497556359" duration="6422000" />
       <workItem from="1578555411387" duration="23247000" />
       <workItem from="1578649068514" duration="22071000" />
-      <workItem from="1578913514602" duration="5389000" />
+      <workItem from="1578913514602" duration="36784000" />
+      <workItem from="1579165897276" duration="8480000" />
+      <workItem from="1579184382541" duration="11117000" />
+      <workItem from="1579522211146" duration="13324000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -471,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578914470419</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Contact Details reworked&#10;13/01/20 12:39pm">
+      <created>1578919208838</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1578919208838</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -494,7 +544,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Webpack Login build" />
     <MESSAGE value="Dashboard build" />
     <MESSAGE value="Dashboard Controller" />
     <MESSAGE value="03/12/19 3:20pm" />
@@ -519,7 +568,8 @@
     <MESSAGE value="Setting up Admin interface + possible change to Client forms&#10;08/01/20 15:19pm" />
     <MESSAGE value="Setting up DataTables on Admin Client page&#10;09/01/20 14:30pm" />
     <MESSAGE value="Personal Details reworked&#10;13/01/20 11:20am" />
-    <option name="LAST_COMMIT_MESSAGE" value="Personal Details reworked&#10;13/01/20 11:20am" />
+    <MESSAGE value="Contact Details reworked&#10;13/01/20 12:39pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Contact Details reworked&#10;13/01/20 12:39pm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1578063652400">
@@ -534,10 +584,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578052962568" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1578914464491">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1578919207130">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578914464491" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578919207130" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1578052680530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -550,10 +600,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="569" y="279" key="VCS.EditChangelistDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063088318" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1578913526051">
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1579522214713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578913526051" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1579522214713" />
     <state x="339" y="157" key="run.anything.popup" timestamp="1578065732369">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

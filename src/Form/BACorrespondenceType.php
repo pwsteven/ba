@@ -25,7 +25,7 @@ class BACorrespondenceType extends AbstractType
                     'No' => 'NO',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneNotification', ChoiceType::class, [
@@ -36,7 +36,7 @@ class BACorrespondenceType extends AbstractType
                     'No' => 'NO',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneDateReceived', DateType::class, [
@@ -48,7 +48,7 @@ class BACorrespondenceType extends AbstractType
                 'label' => 'Date Received',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneNotificationFile', FileType::class, [
@@ -72,7 +72,7 @@ class BACorrespondenceType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneNotificationNotAffected', ChoiceType::class, [
@@ -84,7 +84,7 @@ class BACorrespondenceType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneDateOfBooking', DateType::class, [
@@ -96,25 +96,25 @@ class BACorrespondenceType extends AbstractType
                 'label' => 'Date of Booking',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneEmailAddressUsed', TextType::class, [
                 'label' => 'Email address used for the booking related to the claim:',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneBookingReference', TextType::class, [
                 'label' => 'Booking Reference:',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneBookingPlatform', ChoiceType::class, [
-                'label' => 'The booking was made on British Airways:',
+                'label' => 'Platform the British Airways booking was made on:',
                 'choices' => [
                     'Please Select' => '',
                     'Website' => 'Website',
@@ -123,7 +123,7 @@ class BACorrespondenceType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOnePaymentMethod', ChoiceType::class, [
@@ -140,7 +140,7 @@ class BACorrespondenceType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachOneBookingConfirmationFile', FileType::class, [
@@ -164,7 +164,7 @@ class BACorrespondenceType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoNotification', ChoiceType::class, [
@@ -175,7 +175,7 @@ class BACorrespondenceType extends AbstractType
                     'No' => 'NO',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoDateReceived', DateType::class, [
@@ -187,7 +187,7 @@ class BACorrespondenceType extends AbstractType
                 'label' => 'Date Received',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoNotificationFile', FileType::class, [
@@ -211,7 +211,7 @@ class BACorrespondenceType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoNotificationNotAffected', ChoiceType::class, [
@@ -223,7 +223,7 @@ class BACorrespondenceType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoDateOfBooking', DateType::class, [
@@ -235,25 +235,25 @@ class BACorrespondenceType extends AbstractType
                 'label' => 'Date of Booking',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoEmailAddressUsed', TextType::class, [
                 'label' => 'Email address used for the booking related to the claim:',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoBookingReference', TextType::class, [
                 'label' => 'Booking Reference:',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoBookingPlatform', ChoiceType::class, [
-                'label' => 'The booking was made on British Airways:',
+                'label' => 'Platform the British Airways booking was made on:',
                 'choices' => [
                     'Please Select' => '',
                     'Website' => 'Website',
@@ -262,7 +262,7 @@ class BACorrespondenceType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoPaymentMethod', ChoiceType::class, [
@@ -279,7 +279,7 @@ class BACorrespondenceType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachTwoBookingConfirmationFile', FileType::class, [
@@ -303,7 +303,7 @@ class BACorrespondenceType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
         ;

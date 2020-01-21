@@ -32,7 +32,7 @@ class FinancialLossType extends AbstractType
                     'Other (please specify)' => 'Other'
                 ],
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'custom-control-input'
                 ]
             ])
             ->add('typeFinancialLossOtherComment', TextareaType::class, [
@@ -44,10 +44,10 @@ class FinancialLossType extends AbstractType
             ])
             ->add('totalLossAmount', MoneyType::class, [
                 'label' => '20. What was the total amount of the financial loss suffered?',
-                'currency' => 'GBP',
+                'currency' => false,
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control form-control-lg'
                 ]
             ])
             ->add('financialLossFiles', FileType::class, [
@@ -74,7 +74,7 @@ class FinancialLossType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                     'multiple' => 'multiple',
                 ],
             ])

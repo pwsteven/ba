@@ -32,9 +32,6 @@ class CompleteController extends BaseController
         }
 
         return $this->render('dashboard/complete.html.twig', [
-            'step_integer' => 100,
-            'step_string' => 'Step 10 of 10 - Complete!',
-            'header_icon' => 'ik ik-check-square',
             'header_text' => 'Complete',
         ]);
     }

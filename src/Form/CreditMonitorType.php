@@ -23,7 +23,7 @@ class CreditMonitorType extends AbstractType
                     'No' => 'NO',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ]
             ])
             ->add('monitorCreditFile', FileType::class, [
@@ -47,7 +47,7 @@ class CreditMonitorType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
         ;

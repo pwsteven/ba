@@ -100,6 +100,8 @@
             </div>
             {# /Postcode Form Row #}
 
+            <hr class="border-dashed my-8">
+
             {# Email Address Form Row #}
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -109,6 +111,8 @@
                 </div>
             </div>
             {# /Email Address Form Row #}
+
+            <hr class="border-dashed my-8">
 
             {# Mobile/Telephone Number Form Row #}
             <div class="form-row">
@@ -140,7 +144,7 @@
 
 {% block javascripts %}
     {{ parent() }}
-    {% for message in app.session.flashBag('page_success') %}
+    {% for message in app.session.flashBag.get('page_success') %}
         <script>
             jQuery(document).ready(function(){
                 const toast = swal.mixin({

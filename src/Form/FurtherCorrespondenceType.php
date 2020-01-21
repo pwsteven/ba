@@ -38,7 +38,7 @@ class FurtherCorrespondenceType extends AbstractType
                     ])
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('receivedAnyOtherBACorrespondence', ChoiceType::class, [
@@ -49,7 +49,7 @@ class FurtherCorrespondenceType extends AbstractType
                     'No' => 'NO',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('allCorrespondenceSentReceivedFile', FileType::class, [
@@ -76,7 +76,7 @@ class FurtherCorrespondenceType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                     'multiple' => 'multiple',
                 ],
             ])

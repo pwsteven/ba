@@ -143,16 +143,13 @@ class BACorrespondenceController extends BaseController
             $proClaimPutBACorrespondence->putCaseDetails($data);
 
             // REDIRECT TO NEXT PAGE TODO
-            $this->addFlash('success', 'Success! You have completed the BA Correspondence stage.');
+            $this->addFlash('page_success', 'BA Correspondence stage complete!');
             return $this->redirectToRoute('app_further_correspondence');
 
         }
 
 
         return $this->render('dashboard/ba_correspondence.html.twig', [
-            'step_integer' => 30,
-            'step_string' => 'Step 3 of 10',
-            'header_icon' => 'ik ik-navigation',
             'header_text' => 'BA Correspondence',
             'form' => $form->createView(),
         ]);

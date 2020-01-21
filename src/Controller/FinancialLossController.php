@@ -96,15 +96,12 @@ class FinancialLossController extends BaseController
             $proClaimPutFinancialLoss->putCaseDetails($data);
 
             // REDIRECT TO NEXT PAGE
-            $this->addFlash('success', 'Success! You have completed the Financial Loss stage.');
+            $this->addFlash('page_success', 'Financial Loss stage complete!');
             return $this->redirectToRoute('app_reimbursements');
 
         }
 
         return $this->render('dashboard/financial_loss.html.twig', [
-            'step_integer' => 60,
-            'step_string' => 'Step 6 of 10',
-            'header_icon' => 'ik ik-dollar-sign',
             'header_text' => 'Financial Loss',
             'form' => $form->createView(),
         ]);

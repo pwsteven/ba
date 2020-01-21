@@ -52,31 +52,25 @@ if ($('#financial_loss_typeFinancialLoss_5').prop("checked") === true){
 }
 $('#financial_loss_typeFinancialLoss_0').click(function () {
     if($(this).prop("checked") === true){
-        $('#financial_loss_typeFinancialLoss_1').prop('disabled', true);
-        $('#financial_loss_typeFinancialLoss_2').prop('disabled', true);
-        $('#financial_loss_typeFinancialLoss_3').prop('disabled', true);
-        $('#financial_loss_typeFinancialLoss_4').prop('disabled', true);
-        $('#financial_loss_typeFinancialLoss_5').prop('disabled', true);
+        for (let i = 1; i < 6; i++) {
+            $('#financial_loss_typeFinancialLoss_'+i).prop('disabled', true);
+        }
         $('#financial_loss_typeFinancialLossOtherComment').prop('disabled', true);
         $('#financial_loss_totalLossAmount').prop('disabled', true);
         $('#financial_loss_financialLossFiles').prop('disabled', true);
     } else {
-        $('#financial_loss_typeFinancialLoss_1').prop('disabled', false);
-        $('#financial_loss_typeFinancialLoss_2').prop('disabled', false);
-        $('#financial_loss_typeFinancialLoss_3').prop('disabled', false);
-        $('#financial_loss_typeFinancialLoss_4').prop('disabled', false);
-        $('#financial_loss_typeFinancialLoss_5').prop('disabled', false);
+        for (let i = 1; i < 6; i++) {
+            $('#financial_loss_typeFinancialLoss_'+i).prop('disabled', false);
+        }
         $('#financial_loss_typeFinancialLossOtherComment').prop('disabled', false);
         $('#financial_loss_totalLossAmount').prop('disabled', false);
         $('#financial_loss_financialLossFiles').prop('disabled', false);
     }
 });
 if ($('#financial_loss_typeFinancialLoss_0').prop("checked") === true){
-    $('#financial_loss_typeFinancialLoss_1').prop('disabled', true);
-    $('#financial_loss_typeFinancialLoss_2').prop('disabled', true);
-    $('#financial_loss_typeFinancialLoss_3').prop('disabled', true);
-    $('#financial_loss_typeFinancialLoss_4').prop('disabled', true);
-    $('#financial_loss_typeFinancialLoss_5').prop('disabled', true);
+    for (let i = 1; i < 6; i++) {
+        $('#financial_loss_typeFinancialLoss_'+i).prop('disabled', true);
+    }
     $('#financial_loss_typeFinancialLossOtherComment').prop('disabled', true);
     $('#financial_loss_totalLossAmount').prop('disabled', true);
     $('#financial_loss_financialLossFiles').prop('disabled', true);

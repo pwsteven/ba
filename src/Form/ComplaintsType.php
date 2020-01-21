@@ -24,7 +24,7 @@ class ComplaintsType extends AbstractType
                     'Yes' => 'YES',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('complaintMade', DateType::class, [
@@ -36,7 +36,7 @@ class ComplaintsType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('receivedResponse', ChoiceType::class, [
@@ -48,7 +48,7 @@ class ComplaintsType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('satisfiedResponse', ChoiceType::class, [
@@ -60,14 +60,14 @@ class ComplaintsType extends AbstractType
                 ],
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('reasonUnsatisfied', TextareaType::class, [
                 'label' => 'If you are unsatisfied with your complaint, please explain your reasons for this:',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('contactedIOC', ChoiceType::class, [
@@ -78,7 +78,7 @@ class ComplaintsType extends AbstractType
                     'Yes' => 'YES',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('contactedActionFraud', ChoiceType::class, [
@@ -89,7 +89,7 @@ class ComplaintsType extends AbstractType
                     'Yes' => 'YES',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('accessedGetSafeOnline', ChoiceType::class, [
@@ -100,7 +100,7 @@ class ComplaintsType extends AbstractType
                     'Yes' => 'YES',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
         ;

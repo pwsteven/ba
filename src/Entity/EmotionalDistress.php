@@ -31,9 +31,10 @@ class EmotionalDistress
     private $personalDetails;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
+     * @Assert\NotBlank(message="Please select an option")
      */
-    private $emotionsExperienced;
+    private $emotionsExperiencedNew = [];
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -132,10 +133,10 @@ class EmotionalDistress
     private $breachQuestionG_example;
 
     /**
-     * @ORM\Column(type="simple_array", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank(message="Please select an option")
      */
-    private $diagnosedConditions = [];
+    private $diagnosedConditionsNew;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -144,10 +145,10 @@ class EmotionalDistress
     private $diagnosedConditionsExample;
 
     /**
-     * @ORM\Column(type="simple_array", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @Assert\NotBlank(message="Please select an option")
      */
-    private $impactCondition = [];
+    private $impactConditionNew;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -218,11 +219,7 @@ class EmotionalDistress
      */
     private $complete;
 
-    /**
-     * @ORM\Column(type="simple_array", nullable=true)
-     * @Assert\NotBlank(message="Please select an option")
-     */
-    private $emotionsExperiencedNew = [];
+
 
     public function getId(): ?int
     {
@@ -253,14 +250,14 @@ class EmotionalDistress
         return $this;
     }
 
-    public function getEmotionsExperienced(): ?string
+    public function getEmotionsExperiencedNew(): ?array
     {
-        return $this->emotionsExperienced;
+        return $this->emotionsExperiencedNew;
     }
 
-    public function setEmotionsExperienced(?string $emotionsExperienced): self
+    public function setEmotionsExperiencedNew(?array $emotionsExperiencedNew): self
     {
-        $this->emotionsExperienced = $emotionsExperienced;
+        $this->emotionsExperiencedNew = $emotionsExperiencedNew;
 
         return $this;
     }
@@ -457,14 +454,14 @@ class EmotionalDistress
         return $this;
     }
 
-    public function getDiagnosedConditions(): ?array
+    public function getDiagnosedConditionsNew(): ?string
     {
-        return $this->diagnosedConditions;
+        return $this->diagnosedConditionsNew;
     }
 
-    public function setDiagnosedConditions(?array $diagnosedConditions): self
+    public function setDiagnosedConditionsNew(?string $diagnosedConditionsNew): self
     {
-        $this->diagnosedConditions = $diagnosedConditions;
+        $this->diagnosedConditionsNew = $diagnosedConditionsNew;
 
         return $this;
     }
@@ -481,14 +478,14 @@ class EmotionalDistress
         return $this;
     }
 
-    public function getImpactCondition(): ?array
+    public function getImpactConditionNew(): ?string
     {
-        return $this->impactCondition;
+        return $this->impactConditionNew;
     }
 
-    public function setImpactCondition(?array $impactCondition): self
+    public function setImpactConditionNew(?string $impactConditionNew): self
     {
-        $this->impactCondition = $impactCondition;
+        $this->impactConditionNew = $impactConditionNew;
 
         return $this;
     }
@@ -613,6 +610,11 @@ class EmotionalDistress
         return $this;
     }
 
+    public function getComplete(): ?bool
+    {
+        return $this->complete;
+    }
+
     public function getLeadTestClaimant(): ?string
     {
         return $this->leadTestClaimant;
@@ -625,11 +627,6 @@ class EmotionalDistress
         return $this;
     }
 
-    public function getComplete(): ?bool
-    {
-        return $this->complete;
-    }
-
     public function setComplete(?bool $complete): self
     {
         $this->complete = $complete;
@@ -637,15 +634,5 @@ class EmotionalDistress
         return $this;
     }
 
-    public function getEmotionsExperiencedNew(): ?array
-    {
-        return $this->emotionsExperiencedNew;
-    }
 
-    public function setEmotionsExperiencedNew(?array $emotionsExperiencedNew): self
-    {
-        $this->emotionsExperiencedNew = $emotionsExperiencedNew;
-
-        return $this;
-    }
 }

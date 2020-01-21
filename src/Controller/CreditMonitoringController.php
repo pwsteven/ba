@@ -81,15 +81,12 @@ class CreditMonitoringController extends BaseController
             $proClaimPutCreditMonitoring->putCaseDetails($data);
 
             // REDIRECT TO NEXT PAGE
-            $this->addFlash('success', 'Success! You have completed the Credit Monitoring stage.');
+            $this->addFlash('page_success', 'Credit Monitoring stage complete!');
             return $this->redirectToRoute('app_emotional_distress');
 
         }
 
         return $this->render('dashboard/credit_monitoring.html.twig', [
-            'step_integer' => 80,
-            'step_string' => 'Step 8 of 10',
-            'header_icon' => 'ik ik-globe',
             'header_text' => 'Credit Monitoring',
             'form' => $form->createView(),
         ]);

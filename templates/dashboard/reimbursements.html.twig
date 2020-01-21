@@ -1,48 +1,148 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ header_text }} - BA OnBoarding - Your Lawyers Ltd{% endblock %}
+{% block title %}{{ header_text }}{% endblock %}
 
 {% block body %}
-    {{ include('blocks/title_breadcrumb.html.twig') }}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
-                    <div class="form-group mb-30">
-                        {{ form_label(form.financialLossSuffered) }}
-                        {{ form_widget(form.financialLossSuffered) }}
-                        <div class="error_message">{{ form_errors(form.financialLossSuffered) }}</div>
-                    </div>
-                    {# BEGIN REIMBURSEMENTS BLOCK #}
-                    <div id="reimbursements_block"{% if form.vars.data.financialLossSuffered != 'YES' %} class="display_none"{% endif %}>
-                        <div class="form-group mb-30">
+
+    {# Grid #}
+    <div class="col-12">
+        {# Page Header #}
+        <div class="dt-page__header">
+            <h1 class="dt-page__title">{{ header_text }}</h1>
+            <span>The British Airways OnBoarding App.</span>
+        </div>
+        {# /Page Header #}
+    </div>
+    {# /Grid #}
+
+        {# Grid #}
+    <div class="col-12">
+        <div class="progress mb-2">
+            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0"
+                 aria-valuemax="100">Step 7 of 10
+            </div>
+        </div>
+    </div>
+    {# /Grid #}
+
+    {# Grid #}
+    <div class="col-12">
+        {# Card #}
+        <div class="dt-card">
+
+            {{ form_start(form, {'attr': {'id': 'ba_form'}}) }}
+
+            {# Reimbursed For Financial Loss Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.financialLossSuffered) }}
+                    {{ form_widget(form.financialLossSuffered) }}
+                    <div class="error_message">{{ form_errors(form.financialLossSuffered) }}</div>
+                </div>
+            </div>
+            {# /Reimbursed For Financial Loss Form Row #}
+
+            {# REIMBURSEMENTS BLOCK #}
+            <div id="reimbursements_block"{% if form.vars.data.financialLossSuffered != 'YES' %} class="display_none"{% endif %}>
+                <div class="block_body">
+
+                    {# Who Provided Reimbursement Form Row #}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             {{ form_label(form.provider) }}
                             {{ form_widget(form.provider) }}
                             <div class="error_message">{{ form_errors(form.provider) }}</div>
                         </div>
-                        <div class="form-group mb-30">
+                    </div>
+                    {# /Who Provided Reimbursement Form Row #}
+
+                    {# Amount Reimbursed Form Row #}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             {{ form_label(form.amountReimbursed) }}
-                            {{ form_widget(form.amountReimbursed) }}
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"> &pound; </span>
+                                </div>
+                                {{ form_widget(form.amountReimbursed) }}
+                            </div>
                             <div class="error_message">{{ form_errors(form.amountReimbursed) }}</div>
                         </div>
-                        <div class="form-group mb-30">
+                    </div>
+                    {# /Amount Reimbursed Form Row #}
+
+                    {# Reimbursement Upload Files Form Row #}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
                             {{ form_label(form.reimbursementFiles) }}
+                        </div>
+                        <div class="form-group col-md-12">
                             {{ form_widget(form.reimbursementFiles) }}
                             <div class="error_message">{{ form_errors(form.reimbursementFiles) }}</div>
                         </div>
-                    </div>
-                    {# END REIMBURSEMENTS BLOCK #}
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
+                        <div class="form-group col-md-12">
+                            {% if form.vars.data.reimbursementFilesPath != NULL %}
+                                <p>
+                                    <b>Uploaded Files:</b><br>
+                                    {% for key,value in form.vars.data.reimbursementFilesPath %}
+                                        {{ value }}<br>
+                                    {% endfor %}
+                                </p>
+                                <hr class="border-dashed my-8">
+                            {% endif %}
                         </div>
                     </div>
-                    {{ form_end(form) }}
+                    {# /Reimbursement Upload Files Form Row #}
+
                 </div>
             </div>
+            {# /REIMBURSEMENTS BLOCK #}
+
+            {# Submit Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12 text-right">
+                    <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage...">Submit &amp; Continue <i class="icon icon-forward"></i></button>
+                </div>
+            </div>
+            {# /Submit Form Row #}
+
+            {{ form_end(form) }}
+
         </div>
+        {# /Card #}
     </div>
+    {# /Grid #}
 
+{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+
+        {% for message in app.session.flashBag.get('page_success') %}
+        jQuery(document).ready(function(){
+            const toast = swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            toast({
+                type: 'success',
+                title: 'Financial Loss stage complete!',
+            })
+        });
+        {% endfor %}
+
+        $('#reimbursements_financialLossSuffered').on('change', function () {
+            const value = $('#reimbursements_financialLossSuffered option:selected').attr("value");
+            if (value === 'YES') {
+                $('#reimbursements_block').fadeIn(450);
+            } else {
+                $('#reimbursements_block').fadeOut(250);
+            }
+        });
+
+    </script>
 {% endblock %}

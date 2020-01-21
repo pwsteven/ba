@@ -91,13 +91,12 @@ class ProClaimPutBACorrespondence
                 $data['message'] = 'Set BA Confirmation Error: ' . $response->cerror;
             }
 
-            // UPDATE BREACH ONE NOTIFICATION TODO
-            /*
+            // UPDATE BREACH ONE NOTIFICATION
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Reward Breach - notifcation received.response',
                 'cfieldvalue' => $caseData['breach_one_notification'],
             ];
             $response = $client->proPutData($param);
@@ -105,7 +104,6 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach One Notification Error: ' . $response->cerror;
             }
-            */
 
             // UPDATE BREACH ONE DATE RECEIVED TODO
             /*

@@ -1,76 +1,206 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ header_text }} - BA OnBoarding - Your Lawyers Ltd{% endblock %}
+{% block title %}{{ header_text }}{% endblock %}
 
 {% block body %}
-    {{ include('blocks/title_breadcrumb.html.twig') }}
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    {{ form_start(form, {'attr': {'class': 'forms-sample'}}) }}
-                    <div class="form-group mb-30">
-                        {{ form_label(form.lodgedComplaint)}}
-                        {{ form_widget(form.lodgedComplaint) }}
-                        <div class="error_message">{{ form_errors(form.lodgedComplaint) }}</div>
-                    </div>
-                    {# BEGIN COMPLAINT BLOCK #}
-                    <div id="complaint_block"{% if form.vars.data.lodgedComplaint != 'YES' %} class="display_none"{% endif %}>
-                        <div class="col-sm-12">
-                            <div class="block_body">
-                                <div class="form-group mb-30">
-                                    {{ form_label(form.complaintMade)}}
-                                    {{ form_widget(form.complaintMade) }}
-                                    <div class="error_message">{{ form_errors(form.complaintMade) }}</div>
-                                </div>
-                                <div class="form-group mb-30">
-                                    {{ form_label(form.receivedResponse)}}
-                                    {{ form_widget(form.receivedResponse) }}
-                                    <div class="error_message">{{ form_errors(form.receivedResponse) }}</div>
-                                </div>
-                                <div id="complaint_satisfied_response_block"{% if form.vars.data.receivedResponse is null or form.vars.data.receivedResponse == 'Yes' %} class="display_none"{% endif %}>
-                                    <div class="form-group mb-30">
-                                        {{ form_label(form.satisfiedResponse)}}
-                                        {{ form_widget(form.satisfiedResponse) }}
-                                        <div class="error_message">{{ form_errors(form.satisfiedResponse) }}</div>
-                                    </div>
-                                </div>
-                                <div id="complaint_reason_unsatisfied_block"{% if form.vars.data.reasonUnsatisfied is null or form.vars.data.satisfiedResponse == 'Yes' %} class="display_none"{% endif %}>
-                                    <div class="form-group mb-30">
-                                        {{ form_label(form.reasonUnsatisfied)}}
-                                        {{ form_widget(form.reasonUnsatisfied) }}
-                                        <div class="error_message">{{ form_errors(form.reasonUnsatisfied) }}</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {# END COMPLAINT BLOCK #}
-                    <div class="form-group mb-30">
-                        {{ form_label(form.contactedIOC)}}
-                        {{ form_widget(form.contactedIOC) }}
-                        <div class="error_message">{{ form_errors(form.contactedIOC) }}</div>
-                    </div>
-                    <div class="form-group mb-30">
-                        {{ form_label(form.contactedActionFraud)}}
-                        {{ form_widget(form.contactedActionFraud) }}
-                        <div class="error_message">{{ form_errors(form.contactedActionFraud) }}</div>
-                    </div>
-                    <div class="form-group mb-30">
-                        {{ form_label(form.accessedGetSafeOnline)}}
-                        {{ form_widget(form.accessedGetSafeOnline) }}
-                        <div class="error_message">{{ form_errors(form.accessedGetSafeOnline) }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 text-right">
-                            <button type="submit" class="btn btn-primary mr-2 p5">Submit &amp; Continue <i class="ik ik-chevrons-right"></i></button>
-                        </div>
-                    </div>
-                    {{ form_end(form) }}
-                </div>
+
+    {# Grid #}
+    <div class="col-12">
+        {# Page Header #}
+        <div class="dt-page__header">
+            <h1 class="dt-page__title">{{ header_text }}</h1>
+            <span>The British Airways OnBoarding App.</span>
+        </div>
+        {# /Page Header #}
+    </div>
+    {# /Grid #}
+
+    {# Grid #}
+    <div class="col-12">
+        <div class="progress mb-2">
+            <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                 aria-valuemax="100">Step 5 of 10
             </div>
         </div>
     </div>
+    {# /Grid #}
 
+    {# Grid #}
+    <div class="col-12">
+        {# Card #}
+        <div class="dt-card">
 
+            {{ form_start(form, {'attr': {'id': 'ba_form'}}) }}
+
+            {# Lodged Complaint Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.lodgedComplaint) }}
+                    {{ form_widget(form.lodgedComplaint) }}
+                    <div class="error_message">{{ form_errors(form.lodgedComplaint) }}</div>
+                </div>
+            </div>
+            {# /Lodged Complaint Form Row #}
+
+            {# COMPLAINT BLOCK #}
+            <div id="complaint_block"{% if form.vars.data.lodgedComplaint != 'YES' %} class="display_none"{% endif %}>
+                <div class="block_body">
+
+                    {# Complaint Made Form Row #}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            {{ form_label(form.complaintMade) }}
+                            {{ form_widget(form.complaintMade) }}
+                            <div class="error_message">{{ form_errors(form.complaintMade) }}</div>
+                        </div>
+                    </div>
+                    {# /Complaint Made Form Row #}
+
+                    {# Received Response Form Row #}
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            {{ form_label(form.receivedResponse) }}
+                            {{ form_widget(form.receivedResponse) }}
+                            <div class="error_message">{{ form_errors(form.receivedResponse) }}</div>
+                        </div>
+                    </div>
+                    {# /Received Response Form Row #}
+
+                    {# RECEIVED RESPONSE BLOCK #}
+                    <div id="complaint_satisfied_response_block"{% if form.vars.data.receivedResponse is null or form.vars.data.receivedResponse == 'Yes' %} class="display_none"{% endif %}>
+
+                        {# Satisfied Response Form Row #}
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                {{ form_label(form.satisfiedResponse) }}
+                                {{ form_widget(form.satisfiedResponse) }}
+                                <div class="error_message">{{ form_errors(form.satisfiedResponse) }}</div>
+                            </div>
+                        </div>
+                        {# /Satisfied Response Form Row #}
+
+                    </div>
+                    {# /RECEIVED RESPONSE BLOCK #}
+
+                    {# UNSATISFIED RESPONSE BLOCK #}
+                    <div id="complaint_reason_unsatisfied_block"{% if form.vars.data.reasonUnsatisfied is null or form.vars.data.satisfiedResponse == 'Yes' %} class="display_none"{% endif %}>
+
+                        {# Unsatisfied Response Form Row #}
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                {{ form_label(form.reasonUnsatisfied) }}
+                                {{ form_widget(form.reasonUnsatisfied) }}
+                                <div class="error_message">{{ form_errors(form.reasonUnsatisfied) }}</div>
+                            </div>
+                        </div>
+                        {# /Unsatisfied Response Form Row #}
+
+                    </div>
+                    {# /UNSATISFIED RESPONSE BLOCK #}
+
+                </div>
+            </div>
+            {# /COMPLAINT BLOCK #}
+
+            <hr class="border-dashed my-8">
+
+            {# Contacted ICO Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.contactedIOC) }}
+                    {{ form_widget(form.contactedIOC) }}
+                    <div class="error_message">{{ form_errors(form.contactedIOC) }}</div>
+                </div>
+            </div>
+            {# /Contacted ICO Form Row #}
+
+            <hr class="border-dashed my-8">
+
+            {# Contacted Action Fraud Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.contactedActionFraud) }}
+                    {{ form_widget(form.contactedActionFraud) }}
+                    <div class="error_message">{{ form_errors(form.contactedActionFraud) }}</div>
+                </div>
+            </div>
+            {# /Contacted Action Fraud Form Row #}
+
+            <hr class="border-dashed my-8">
+
+            {# Contacted Get Safe Online Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.accessedGetSafeOnline) }}
+                    {{ form_widget(form.accessedGetSafeOnline) }}
+                    <div class="error_message">{{ form_errors(form.accessedGetSafeOnline) }}</div>
+                </div>
+            </div>
+            {# /Contacted Get Safe Online Form Row #}
+
+            {# Submit Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12 text-right">
+                    <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage...">Submit &amp; Continue <i class="icon icon-forward"></i></button>
+                </div>
+            </div>
+            {# /Submit Form Row #}
+
+            {{ form_end(form) }}
+
+        </div>
+        {# /Card #}
+    </div>
+    {# /Grid #}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+
+        {% for message in app.session.flashBag.get('page_success') %}
+        jQuery(document).ready(function(){
+            const toast = swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000
+            });
+
+            toast({
+                type: 'success',
+                title: 'Further Correspondence stage complete!',
+            })
+        });
+        {% endfor %}
+
+        $('#complaints_lodgedComplaint').on('change', function () {
+            const value = $('#complaints_lodgedComplaint option:selected').attr("value");
+            if (value === 'YES') {
+                $('#complaint_block').fadeIn(450);
+            } else {
+                $('#complaint_block').fadeOut(250);
+            }
+        });
+
+        $('#complaints_receivedResponse').on('change', function () {
+            const value = $('#complaints_receivedResponse option:selected').attr("value");
+            if (value === 'Yes') {
+                $('#complaint_satisfied_response_block').fadeIn(450);
+            } else {
+                $('#complaint_satisfied_response_block').fadeOut(250);
+            }
+        });
+
+        $('#complaints_satisfiedResponse').on('change', function () {
+            const value = $('#complaints_satisfiedResponse option:selected').attr("value");
+            if (value === 'No') {
+                $('#complaint_reason_unsatisfied_block').fadeIn(450);
+            } else {
+                $('#complaint_reason_unsatisfied_block').fadeOut(250);
+            }
+        });
+
+    </script>
 {% endblock %}

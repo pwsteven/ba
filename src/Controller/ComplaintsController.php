@@ -84,15 +84,12 @@ class ComplaintsController extends BaseController
             $proClaimPutComplaints->putCaseDetails($data);
 
             // REDIRECT TO NEXT PAGE
-            $this->addFlash('success', 'Success! You have completed the Complaints stage.');
+            $this->addFlash('page_success', 'Complaints stage complete!.');
             return $this->redirectToRoute('app_financial_loss');
 
         }
 
         return $this->render('dashboard/complaints.html.twig', [
-            'step_integer' => 50,
-            'step_string' => 'Step 5 of 10',
-            'header_icon' => 'ik ik-clipboard',
             'header_text' => 'Complaints',
             'form' => $form->createView(),
         ]);

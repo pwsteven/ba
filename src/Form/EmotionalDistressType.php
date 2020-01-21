@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\EmotionalDistress;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -29,7 +30,7 @@ class EmotionalDistressType extends AbstractType
                     'No' => 'NO',
                 ],
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => 'form-control form-control-lg'
                 ],
             ])
             ->add('emotionsExperiencedNew', ChoiceType::class, [
@@ -49,7 +50,7 @@ class EmotionalDistressType extends AbstractType
                     'None of the above' => 'None',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'custom-control-input',
                 ],
             ])
             ->add('emotionsExperiencedComment', TextareaType::class, [
@@ -71,7 +72,7 @@ class EmotionalDistressType extends AbstractType
                     'Ongoing' => 'Ongoing',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('breachQuestionA', ChoiceType::class, [
@@ -85,7 +86,7 @@ class EmotionalDistressType extends AbstractType
                     'Nearly every day' => 3,
                 ],
                 'attr' => [
-                    'class' => 'select_multiple',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('breachQuestionA_example', TextareaType::class, [
@@ -106,7 +107,7 @@ class EmotionalDistressType extends AbstractType
                     'Nearly every day' => 3,
                 ],
                 'attr' => [
-                    'class' => 'select_multiple',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('breachQuestionB_example', TextareaType::class, [
@@ -127,7 +128,7 @@ class EmotionalDistressType extends AbstractType
                     'Nearly every day' => 3,
                 ],
                 'attr' => [
-                    'class' => 'select_multiple',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('breachQuestionC_example', TextareaType::class, [
@@ -149,7 +150,7 @@ class EmotionalDistressType extends AbstractType
                     'Nearly every day' => 3,
                 ],
                 'attr' => [
-                    'class' => 'select_multiple',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('breachQuestionD_example', TextareaType::class, [
@@ -171,7 +172,7 @@ class EmotionalDistressType extends AbstractType
                     'Nearly every day' => 3,
                 ],
                 'attr' => [
-                    'class' => 'select_multiple',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('breachQuestionE_example', TextareaType::class, [
@@ -193,7 +194,7 @@ class EmotionalDistressType extends AbstractType
                     'Nearly every day' => 3,
                 ],
                 'attr' => [
-                    'class' => 'select_multiple',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('breachQuestionF_example', TextareaType::class, [
@@ -215,7 +216,7 @@ class EmotionalDistressType extends AbstractType
                     'Nearly every day' => 3,
                 ],
                 'attr' => [
-                    'class' => 'select_multiple',
+                    'class' => 'form-control',
                 ],
             ])
             ->add('breachQuestionG_example', TextareaType::class, [
@@ -225,12 +226,10 @@ class EmotionalDistressType extends AbstractType
                     'class' => 'form-control',
                 ],
             ])
-
-            ->add('diagnosedConditions', ChoiceType::class, [
+            ->add('diagnosedConditionsNew', ChoiceType::class, [
                 'label' => ' 28. Please indicate whether you have ever been diagnosed as suffering from any of the following conditions:',
-                'multiple' => true,
-                'expanded' => true,
                 'choices' => [
+                    'Please Select' => '',
                     'Anxiety' => 'Anxiety',
                     'Depression' => 'Depression',
                     'Both' => 'Both',
@@ -238,7 +237,7 @@ class EmotionalDistressType extends AbstractType
                     'Other (please specify)' => 'Other',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('diagnosedConditionsExample', TextareaType::class, [
@@ -248,17 +247,16 @@ class EmotionalDistressType extends AbstractType
                     'class' => 'form-control',
                 ],
             ])
-            ->add('impactCondition', ChoiceType::class, [
+            ->add('impactConditionNew', ChoiceType::class, [
                 'label' => ' 29. Did finding out that your personal information had been breached have an impact on your condition?',
-                'multiple' => true,
-                'expanded' => true,
                 'choices' => [
+                    'Please Select' => '',
                     'Not applicable' => 'Not applicable',
                     'No effect' => 'No effect',
                     'Symptoms were exacerbated' => 'Symptoms were exacerbated',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('impactConditionExample', TextareaType::class, [
@@ -273,17 +271,17 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
                 'choices' => [
+                    'None' => 'None',
                     'Contacted your bank(s)' => 'Contacted your bank(s)',
                     'Obtained new bank card(s)' => 'Obtained new bank card(s)',
                     'Changed password(s)' => 'Changed password(s)',
                     'Changed email address(es)' => 'Changed email address(es)',
                     'Contacted BA' => 'Contacted BA',
                     'Signed up to credit monitoring and/or fraud detection service' => 'Signed up to credit monitoring and/or fraud detection service',
-                    'None' => 'None',
                     'Other (please specify)' => 'Other',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'custom-control-input',
                 ],
             ])
             ->add('stepsTakenExample', TextareaType::class, [
@@ -325,15 +323,16 @@ class EmotionalDistressType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                     'multiple' => 'multiple',
                 ],
             ])
             ->add('adverseConsequences', ChoiceType::class, [
-                'label' => ' 33. Which, if any of the following adverse consequences have you suffered as a result of the breach?',
+                'label' => ' 33. Which, if any, of the following adverse consequences have you suffered as a result of the breach?',
                 'multiple' => true,
                 'expanded' => true,
                 'choices' => [
+                    'None' => 'None',
                     'Refused credit' => 'Refused credit',
                     'Difficulties obtaining finance' => 'Difficulties obtaining finance',
                     'Identity theft' => 'Identity theft',
@@ -341,11 +340,10 @@ class EmotionalDistressType extends AbstractType
                     'Targeted for unwanted advertising/marketing or sales' => 'Targeted for unwanted advertising/marketing or sales',
                     'Personal information published online without your consent' => 'Personal information published online without your consent',
                     'Received ransom/blackmail/scam emails' => 'Received ransom/blackmail/scam emails',
-                    'None' => 'None',
                     'Other (please specify)' => 'Other',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'custom-control-input',
                 ]
             ])
             ->add('adverseConsequencesExample', TextareaType::class, [
@@ -387,7 +385,7 @@ class EmotionalDistressType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                     'multiple' => 'multiple',
                 ],
             ])
@@ -409,10 +407,11 @@ class EmotionalDistressType extends AbstractType
                     'No' => 'STANDARD'
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
         ;
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -26,22 +26,22 @@ class ReimbursementsType extends AbstractType
                     'Yes' => 'YES',
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('provider', TextType::class, [
                 'label' => 'Please state who provided the reimbursement:',
                 'required' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('amountReimbursed', MoneyType::class, [
                 'label' => 'Please enter the amount you were reimbursed:',
                 'required' => false,
-                'currency' => 'GBP',
+                'currency' => false,
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
             ->add('reimbursementFiles', FileType::class, [
@@ -68,7 +68,7 @@ class ReimbursementsType extends AbstractType
                     ]),
                 ],
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'form-control form-control-lg',
                 ],
             ])
         ;
