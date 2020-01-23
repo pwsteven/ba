@@ -22,11 +22,11 @@ class ReimbursementsRepository extends ServiceEntityRepository
     // /**
     //  * @return Reimbursements[] Returns an array of Reimbursements objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+            ->andWhere('r.User = :val')
             ->setParameter('val', $value)
             ->orderBy('r.id', 'ASC')
             ->setMaxResults(10)
@@ -34,7 +34,7 @@ class ReimbursementsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
 
     public function findOneBySomeField($value): ?Reimbursements

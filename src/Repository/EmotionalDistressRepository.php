@@ -22,11 +22,11 @@ class EmotionalDistressRepository extends ServiceEntityRepository
     // /**
     //  * @return EmotionalDistress[] Returns an array of EmotionalDistress objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
+            ->andWhere('e.User = :val')
             ->setParameter('val', $value)
             ->orderBy('e.id', 'ASC')
             ->setMaxResults(10)
@@ -34,7 +34,6 @@ class EmotionalDistressRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
 
     public function findOneBySomeField($value): ?EmotionalDistress

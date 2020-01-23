@@ -57,11 +57,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus != 'OK') {
-                $data['claim_type_code'] = $response->cerror;
+                $data['client_claim_code'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_code'] = $case_field_value;
+                $data['client_claim_code'] = $case_field_value;
             }
 
             // GET CLAIM TYPE DESCRIPTION
@@ -74,11 +74,11 @@ class ProClaimRequest
             $response = $client->proGetData($param);
             $session_id = $response->csessionid;
             if ($response->cstatus!='OK') {
-                $data['claim_type_confidential_response'] = $response->cerror;
+                $data['client_confidential_response'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_confidential_response'] = $case_field_value;
+                $data['client_confidential_response'] = $case_field_value;
             }
 
             //**************************************************************************************
@@ -94,11 +94,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_title'] = $response->cerror;
+                $data['client_title'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_title'] = $case_field_value;
+                $data['client_title'] = $case_field_value;
             }
 
             // GET CLIENT FIRST NAME
@@ -110,11 +110,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_forename'] = $response->cerror;
+                $data['client_forename'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_forename'] = $case_field_value;
+                $data['client_forename'] = $case_field_value;
             }
 
             // GET CLIENT MIDDLE NAME
@@ -126,11 +126,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_middle_name'] = $response->cerror;
+                $data['client_middle_name'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_middle_name'] = $case_field_value;
+                $data['client_middle_name'] = $case_field_value;
             }
 
             // GET CLIENT SURNAME
@@ -142,11 +142,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_surname'] = $response->cerror;
+                $data['client_surname'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_surname'] = $case_field_value;
+                $data['client_surname'] = $case_field_value;
             }
 
             // GET CLIENT DATE OF BIRTH
@@ -158,11 +158,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_date_of_birth'] = $response->cerror;
+                $data['client_date_of_birth'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_date_of_birth'] = $case_field_value;
+                $data['client_date_of_birth'] = $case_field_value;
             }
 
             //**************************************************************************************
@@ -178,11 +178,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_address_block'] = $response->cerror;
+                $data['client_address_block'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_address_block'] = $case_field_value;
+                $data['client_address_block'] = $case_field_value;
             }
 
             // GET CLIENT POSTCODE
@@ -194,11 +194,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_postcode'] = $response->cerror;
+                $data['client_postcode'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_postcode'] = $case_field_value;
+                $data['client_postcode'] = $case_field_value;
             }
 
             // GET CLIENT EMAIL
@@ -210,11 +210,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_email'] = $response->cerror;
+                $data['client_email'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_email'] = $case_field_value;
+                $data['client_email'] = $case_field_value;
             }
 
             // GET CLIENT MOBILE/TELEPHONE
@@ -226,11 +226,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_mobile_phone'] = $response->cerror;
+                $data['client_mobile_phone'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_mobile_phone'] = $case_field_value;
+                $data['client_mobile_phone'] = $case_field_value;
             }
 
             //**************************************************************************************
@@ -246,11 +246,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_ba_confirmation_email'] = $response->cerror;
+                $data['client_ba_confirmation_email'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_ba_confirmation_email'] = $case_field_value;
+                $data['client_ba_confirmation_email'] = $case_field_value;
             }
 
             // GET BREACH ONE NOTIFICATION
@@ -263,11 +263,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_breach_one_notification'] = $response->cerror;
+                $data['client_breach_one_notification'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_breach_one_notification'] = $case_field_value;
+                $data['client_breach_one_notification'] = $case_field_value;
             }
 
 
@@ -281,11 +281,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_one_date_received'] = $response->cerror;
+                $data['client_breach_one_date_received'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_one_date_received'] = $case_field_value;
+                $data['client_breach_one_date_received'] = $case_field_value;
             }
             */
 
@@ -298,11 +298,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_one_notification_not_affected'] = $response->cerror;
+                $data['client_breach_one_notification_not_affected'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_one_notification_not_affected'] = $case_field_value;
+                $data['client_breach_one_notification_not_affected'] = $case_field_value;
             }
 
             // GET BREACH ONE DATE OF BOOKING
@@ -314,11 +314,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_one_date_of_booking'] = $response->cerror;
+                $data['client_breach_one_date_of_booking'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_one_date_of_booking'] = $case_field_value;
+                $data['client_breach_one_date_of_booking'] = $case_field_value;
             }
 
             // GET BREACH ONE EMAIL ADDRESS USED
@@ -330,11 +330,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_one_email_address_used'] = $response->cerror;
+                $data['client_breach_one_email_address_used'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_one_email_address_used'] = $case_field_value;
+                $data['client_breach_one_email_address_used'] = $case_field_value;
             }
 
             // GET BREACH ONE BOOKING REFERENCE
@@ -346,11 +346,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_one_booking_reference'] = $response->cerror;
+                $data['client_breach_one_booking_reference'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_one_booking_reference'] = $case_field_value;
+                $data['client_breach_one_booking_reference'] = $case_field_value;
             }
 
             // GET BREACH ONE BOOKING PLATFORM
@@ -362,11 +362,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_one_booking_platform'] = $response->cerror;
+                $data['client_breach_one_booking_platform'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_one_booking_platform'] = $case_field_value;
+                $data['client_breach_one_booking_platform'] = $case_field_value;
             }
 
             // GET BREACH ONE PAYMENT METHOD
@@ -378,11 +378,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_one_payment_method'] = $response->cerror;
+                $data['client_breach_one_payment_method'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_one_payment_method'] = $case_field_value;
+                $data['client_breach_one_payment_method'] = $case_field_value;
             }
 
             // GET BREACH TWO NOTIFICATION TODO
@@ -395,11 +395,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_breach_two_notification'] = $response->cerror;
+                $data['client_breach_two_notification'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_breach_two_notification'] = $case_field_value;
+                $data['client_breach_two_notification'] = $case_field_value;
             }
             */
 
@@ -413,11 +413,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_two_date_received'] = $response->cerror;
+                $data['client_breach_two_date_received'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_two_date_received'] = $case_field_value;
+                $data['client_breach_two_date_received'] = $case_field_value;
             }
             */
 
@@ -431,11 +431,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_two_notification_not_affected'] = $response->cerror;
+                $data['client_breach_two_notification_not_affected'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_two_notification_not_affected'] = $case_field_value;
+                $data['client_breach_two_notification_not_affected'] = $case_field_value;
             }
             */
 
@@ -449,11 +449,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_two_date_of_booking'] = $response->cerror;
+                $data['client_breach_two_date_of_booking'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_two_date_of_booking'] = $case_field_value;
+                $data['client_breach_two_date_of_booking'] = $case_field_value;
             }
             */
 
@@ -467,11 +467,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_two_email_address_used'] = $response->cerror;
+                $data['client_breach_two_email_address_used'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_two_email_address_used'] = $case_field_value;
+                $data['client_breach_two_email_address_used'] = $case_field_value;
             }
             */
 
@@ -485,11 +485,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_two_booking_reference'] = $response->cerror;
+                $data['client_breach_two_booking_reference'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_two_booking_reference'] = $case_field_value;
+                $data['client_breach_two_booking_reference'] = $case_field_value;
             }
             */
 
@@ -503,11 +503,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_two_booking_platform'] = $response->cerror;
+                $data['client_breach_two_booking_platform'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_two_booking_platform'] = $case_field_value;
+                $data['client_breach_two_booking_platform'] = $case_field_value;
             }
             */
 
@@ -521,11 +521,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_breach_two_payment_method'] = $response->cerror;
+                $data['client_breach_two_payment_method'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_breach_two_payment_method'] = $case_field_value;
+                $data['client_breach_two_payment_method'] = $case_field_value;
             }
             */
 
@@ -543,11 +543,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_received_any_other_ba_correspondence'] = $response->cerror;
+                $data['client_received_any_other_ba_correspondence'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_received_any_other_ba_correspondence'] = $case_field_value;
+                $data['client_received_any_other_ba_correspondence'] = $case_field_value;
             }
             */
 
@@ -564,11 +564,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_lodged_complaint'] = $response->cerror;
+                $data['client_lodged_complaint'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_lodged_complaint'] = $case_field_value;
+                $data['client_lodged_complaint'] = $case_field_value;
             }
 
             // GET COMPLAINT MADE
@@ -580,11 +580,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_complaint_made'] = $response->cerror;
+                $data['client_complaint_made'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_complaint_made'] = $case_field_value;
+                $data['client_complaint_made'] = $case_field_value;
             }
 
             // GET RECEIVED RESPONSE
@@ -596,11 +596,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_received_response'] = $response->cerror;
+                $data['client_received_response'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_received_response'] = $case_field_value;
+                $data['client_received_response'] = $case_field_value;
             }
 
             // GET SATISFIED RESPONSE
@@ -612,11 +612,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_satisfied_response'] = $response->cerror;
+                $data['client_satisfied_response'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_satisfied_response'] = $case_field_value;
+                $data['client_satisfied_response'] = $case_field_value;
             }
 
             // GET REASON UNSATISFIED
@@ -628,11 +628,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_reason_unsatisfied'] = $response->cerror;
+                $data['client_reason_unsatisfied'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_reason_unsatisfied'] = $case_field_value;
+                $data['client_reason_unsatisfied'] = $case_field_value;
             }
 
             // GET CONTACTED IOC
@@ -644,11 +644,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_contacted_ioc'] = $response->cerror;
+                $data['client_contacted_ioc'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_contacted_ioc'] = $case_field_value;
+                $data['client_contacted_ioc'] = $case_field_value;
             }
 
             // GET CONTACTED ACTION FRAUD
@@ -660,11 +660,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_contacted_action_fraud'] = $response->cerror;
+                $data['client_contacted_action_fraud'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_contacted_action_fraud'] = $case_field_value;
+                $data['client_contacted_action_fraud'] = $case_field_value;
             }
 
             // GET ACCESSED GET SAFE ONLINE
@@ -676,11 +676,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_accessed_get_safe_online'] = $response->cerror;
+                $data['client_accessed_get_safe_online'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_accessed_get_safe_online'] = $case_field_value;
+                $data['client_accessed_get_safe_online'] = $case_field_value;
             }
 
             //**************************************************************************************
@@ -696,11 +696,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_financial_Loss'] = $response->cerror;
+                $data['client_financial_Loss'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_financial_Loss'] = $case_field_value;
+                $data['client_financial_Loss'] = $case_field_value;
             }
 
             // GET TOTAL LOSS AMOUNT
@@ -712,11 +712,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_total_loss_amount'] = $response->cerror;
+                $data['client_total_loss_amount'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_total_loss_amount'] = $case_field_value;
+                $data['client_total_loss_amount'] = $case_field_value;
             }
 
             //**************************************************************************************
@@ -732,11 +732,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_financial_loss_suffered'] = $response->cerror;
+                $data['client_financial_loss_suffered'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_financial_loss_suffered'] = $case_field_value;
+                $data['client_financial_loss_suffered'] = $case_field_value;
             }
 
             // GET PROVIDER TODO
@@ -749,11 +749,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_provider'] = $response->cerror;
+                $data['client_provider'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_provider'] = $case_field_value;
+                $data['client_provider'] = $case_field_value;
             }
             */
 
@@ -766,11 +766,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_amount_reimbursed'] = $response->cerror;
+                $data['client_amount_reimbursed'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_amount_reimbursed'] = $case_field_value;
+                $data['client_amount_reimbursed'] = $case_field_value;
             }
 
             //**************************************************************************************
@@ -786,11 +786,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_monitor_credit'] = $response->cerror;
+                $data['client_monitor_credit'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_monitor_credit'] = $case_field_value;
+                $data['client_monitor_credit'] = $case_field_value;
             }
 
             //**************************************************************************************
@@ -807,11 +807,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_personal_details'] = $response->cerror;
+                $data['client_personal_details'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_personal_details'] = $case_field_value;
+                $data['client_personal_details'] = $case_field_value;
             }
             */
 
@@ -824,11 +824,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_emotions_experienced_new'] = $response->cerror;
+                $data['client_emotions_experienced_new'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_emotions_experienced_new'] = $case_field_value;
+                $data['client_emotions_experienced_new'] = $case_field_value;
             }
 
             // GET EMOTIONS EXPERIENCED COMMENT
@@ -840,11 +840,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_emotions_experienced_comment'] = $response->cerror;
+                $data['client_emotions_experienced_comment'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_emotions_experienced_comment'] = $case_field_value;
+                $data['client_emotions_experienced_comment'] = $case_field_value;
             }
 
             // GET EMOTIONAL DISTRESS LASTED TODO
@@ -857,11 +857,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_emotional_distress_lasted'] = $response->cerror;
+                $data['client_emotional_distress_lasted'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_emotional_distress_lasted'] = $case_field_value;
+                $data['client_emotional_distress_lasted'] = $case_field_value;
             }
             */
 
@@ -875,11 +875,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_a'] = $response->cerror;
+                $data['client_breach_question_a'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_a'] = $case_field_value;
+                $data['client_breach_question_a'] = $case_field_value;
             }
             */
 
@@ -893,11 +893,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_a_example'] = $response->cerror;
+                $data['client_breach_question_a_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_a_example'] = $case_field_value;
+                $data['client_breach_question_a_example'] = $case_field_value;
             }
             */
 
@@ -911,11 +911,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_b'] = $response->cerror;
+                $data['client_breach_question_b'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_b'] = $case_field_value;
+                $data['client_breach_question_b'] = $case_field_value;
             }
             */
 
@@ -929,11 +929,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_b_example'] = $response->cerror;
+                $data['client_breach_question_b_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_b_example'] = $case_field_value;
+                $data['client_breach_question_b_example'] = $case_field_value;
             }
             */
 
@@ -947,11 +947,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_c'] = $response->cerror;
+                $data['client_breach_question_c'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_c'] = $case_field_value;
+                $data['client_breach_question_c'] = $case_field_value;
             }
             */
 
@@ -965,11 +965,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_c_example'] = $response->cerror;
+                $data['client_breach_question_c_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_c_example'] = $case_field_value;
+                $data['client_breach_question_c_example'] = $case_field_value;
             }
             */
 
@@ -983,11 +983,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_d'] = $response->cerror;
+                $data['client_breach_question_d'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_d'] = $case_field_value;
+                $data['client_breach_question_d'] = $case_field_value;
             }
             */
 
@@ -1001,11 +1001,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_d_example'] = $response->cerror;
+                $data['client_breach_question_d_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_d_example'] = $case_field_value;
+                $data['client_breach_question_d_example'] = $case_field_value;
             }
             */
 
@@ -1019,11 +1019,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_e'] = $response->cerror;
+                $data['client_breach_question_e'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_e'] = $case_field_value;
+                $data['client_breach_question_e'] = $case_field_value;
             }
             */
 
@@ -1037,11 +1037,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_e_example'] = $response->cerror;
+                $data['client_breach_question_e_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_e_example'] = $case_field_value;
+                $data['client_breach_question_e_example'] = $case_field_value;
             }
             */
 
@@ -1055,11 +1055,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_f'] = $response->cerror;
+                $data['client_breach_question_f'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_f'] = $case_field_value;
+                $data['client_breach_question_f'] = $case_field_value;
             }
             */
 
@@ -1073,11 +1073,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_f_example'] = $response->cerror;
+                $data['client_breach_question_f_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_f_example'] = $case_field_value;
+                $data['client_breach_question_f_example'] = $case_field_value;
             }
             */
 
@@ -1091,11 +1091,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_g'] = $response->cerror;
+                $data['client_breach_question_g'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_g'] = $case_field_value;
+                $data['client_breach_question_g'] = $case_field_value;
             }
             */
 
@@ -1109,11 +1109,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_breach_question_g_example'] = $response->cerror;
+                $data['client_breach_question_g_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_breach_question_g_example'] = $case_field_value;
+                $data['client_breach_question_g_example'] = $case_field_value;
             }
             */
 
@@ -1127,11 +1127,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_diagnosed_conditions'] = $response->cerror;
+                $data['client_diagnosed_conditions'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_diagnosed_conditions'] = $case_field_value;
+                $data['client_diagnosed_conditions'] = $case_field_value;
             }
             */
 
@@ -1145,11 +1145,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_diagnosed_conditions_example'] = $response->cerror;
+                $data['client_diagnosed_conditions_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_diagnosed_conditions_example'] = $case_field_value;
+                $data['client_diagnosed_conditions_example'] = $case_field_value;
             }
             */
 
@@ -1163,11 +1163,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_impact_condition'] = $response->cerror;
+                $data['client_impact_condition'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_impact_condition'] = $case_field_value;
+                $data['client_impact_condition'] = $case_field_value;
             }
             */
 
@@ -1181,11 +1181,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_impact_condition_example'] = $response->cerror;
+                $data['client_impact_condition_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_impact_condition_example'] = $case_field_value;
+                $data['client_impact_condition_example'] = $case_field_value;
             }
             */
 
@@ -1199,11 +1199,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_steps_taken'] = $response->cerror;
+                $data['client_steps_taken'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_steps_taken'] = $case_field_value;
+                $data['client_steps_taken'] = $case_field_value;
             }
             */
 
@@ -1217,11 +1217,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_steps_taken_example'] = $response->cerror;
+                $data['client_steps_taken_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_steps_taken_example'] = $case_field_value;
+                $data['client_steps_taken_example'] = $case_field_value;
             }
             */
 
@@ -1235,11 +1235,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_steps_taken_details'] = $response->cerror;
+                $data['client_steps_taken_details'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_steps_taken_details'] = $case_field_value;
+                $data['client_steps_taken_details'] = $case_field_value;
             }
             */
 
@@ -1252,11 +1252,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_adverse_consequences'] = $response->cerror;
+                $data['client_adverse_consequences'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_adverse_consequences'] = $case_field_value;
+                $data['client_adverse_consequences'] = $case_field_value;
             }
 
             // GET ADVERSE CONSEQUENCES MORE INFO EXAMPLE TODO
@@ -1269,11 +1269,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_adverse_consequences_example'] = $response->cerror;
+                $data['client_adverse_consequences_example'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_adverse_consequences_example'] = $case_field_value;
+                $data['client_adverse_consequences_example'] = $case_field_value;
             }
             */
 
@@ -1286,11 +1286,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_adverse_consequences_details'] = $response->cerror;
+                $data['client_adverse_consequences_details'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_adverse_consequences_details'] = $case_field_value;
+                $data['client_adverse_consequences_details'] = $case_field_value;
             }
 
             // GET ADDITIONAL INFORMATION
@@ -1302,11 +1302,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_additional_information'] = $response->cerror;
+                $data['client_additional_information'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_additional_information'] = $case_field_value;
+                $data['client_additional_information'] = $case_field_value;
             }
 
             // GET CLAIMANT TYPE SETTING
@@ -1318,11 +1318,11 @@ class ProClaimRequest
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
-                $data['claim_type_client_type_lead_test_claimant'] = $response->cerror;
+                $data['client_lead_test_claimant'] = $response->cerror;
             } else {
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
-                $data['claim_type_client_type_lead_test_claimant'] = $case_field_value;
+                $data['client_lead_test_claimant'] = $case_field_value;
             }
 
 

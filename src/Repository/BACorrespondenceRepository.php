@@ -22,11 +22,11 @@ class BACorrespondenceRepository extends ServiceEntityRepository
     // /**
     //  * @return BACorrespondence[] Returns an array of BACorrespondence objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('b')
-            ->andWhere('b.exampleField = :val')
+            ->andWhere('b.userID = :val')
             ->setParameter('val', $value)
             ->orderBy('b.id', 'ASC')
             ->setMaxResults(10)
@@ -34,7 +34,7 @@ class BACorrespondenceRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
 
     public function findOneBySomeField($value): ?BACorrespondence

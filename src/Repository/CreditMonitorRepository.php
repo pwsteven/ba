@@ -22,11 +22,11 @@ class CreditMonitorRepository extends ServiceEntityRepository
     // /**
     //  * @return CreditMonitor[] Returns an array of CreditMonitor objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.User = :val')
             ->setParameter('val', $value)
             ->orderBy('c.id', 'ASC')
             ->setMaxResults(10)
@@ -34,7 +34,6 @@ class CreditMonitorRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
 
     public function findOneBySomeField($value): ?CreditMonitor

@@ -80,10 +80,10 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
                 'choices' => [
-                    'Not at all' => 0,
-                    'Several days' => 1,
-                    'More than half the days' => 2,
-                    'Nearly every day' => 3,
+                    'Not at all' => 'Not at all',
+                    'Several days' => 'Several days',
+                    'More than half the days' => 'More than half the days',
+                    'Nearly every day' => 'Nearly every day',
                 ],
                 'attr' => [
                     'class' => 'form-control',
@@ -101,10 +101,10 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
                 'choices' => [
-                    'Not at all' => 0,
-                    'Several days' => 1,
-                    'More than half the days' => 2,
-                    'Nearly every day' => 3,
+                    'Not at all' => 'Not at all',
+                    'Several days' => 'Several days',
+                    'More than half the days' => 'More than half the days',
+                    'Nearly every day' => 'Nearly every day',
                 ],
                 'attr' => [
                     'class' => 'form-control',
@@ -122,10 +122,10 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
                 'choices' => [
-                    'Not at all' => 0,
-                    'Several days' => 1,
-                    'More than half the days' => 2,
-                    'Nearly every day' => 3,
+                    'Not at all' => 'Not at all',
+                    'Several days' => 'Several days',
+                    'More than half the days' => 'More than half the days',
+                    'Nearly every day' => 'Nearly every day',
                 ],
                 'attr' => [
                     'class' => 'form-control',
@@ -144,10 +144,10 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
                 'choices' => [
-                    'Not at all' => 0,
-                    'Several days' => 1,
-                    'More than half the days' => 2,
-                    'Nearly every day' => 3,
+                    'Not at all' => 'Not at all',
+                    'Several days' => 'Several days',
+                    'More than half the days' => 'More than half the days',
+                    'Nearly every day' => 'Nearly every day',
                 ],
                 'attr' => [
                     'class' => 'form-control',
@@ -166,10 +166,10 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
                 'choices' => [
-                    'Not at all' => 0,
-                    'Several days' => 1,
-                    'More than half the days' => 2,
-                    'Nearly every day' => 3,
+                    'Not at all' => 'Not at all',
+                    'Several days' => 'Several days',
+                    'More than half the days' => 'More than half the days',
+                    'Nearly every day' => 'Nearly every day',
                 ],
                 'attr' => [
                     'class' => 'form-control',
@@ -188,10 +188,10 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
                 'choices' => [
-                    'Not at all' => 0,
-                    'Several days' => 1,
-                    'More than half the days' => 2,
-                    'Nearly every day' => 3,
+                    'Not at all' => 'Not at all',
+                    'Several days' => 'Several days',
+                    'More than half the days' => 'More than half the days',
+                    'Nearly every day' => 'Nearly every day',
                 ],
                 'attr' => [
                     'class' => 'form-control',
@@ -210,10 +210,10 @@ class EmotionalDistressType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
                 'choices' => [
-                    'Not at all' => 0,
-                    'Several days' => 1,
-                    'More than half the days' => 2,
-                    'Nearly every day' => 3,
+                    'Not at all' => 'Not at all',
+                    'Several days' => 'Several days',
+                    'More than half the days' => 'More than half the days',
+                    'Nearly every day' => 'Nearly every day',
                 ],
                 'attr' => [
                     'class' => 'form-control',
@@ -232,7 +232,7 @@ class EmotionalDistressType extends AbstractType
                     'Please Select' => '',
                     'Anxiety' => 'Anxiety',
                     'Depression' => 'Depression',
-                    'Both' => 'Both',
+                    'Both' => 'Both Anxiety And Depression',
                     'None' => 'None',
                     'Other (please specify)' => 'Other',
                 ],

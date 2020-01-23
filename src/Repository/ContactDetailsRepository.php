@@ -23,11 +23,11 @@ class ContactDetailsRepository extends ServiceEntityRepository
     // /**
     //  * @return ContactDetails[] Returns an array of ContactDetails objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.User = :val')
             ->setParameter('val', $value)
             ->orderBy('c.id', 'ASC')
             ->setMaxResults(10)
@@ -35,7 +35,7 @@ class ContactDetailsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
 
     public function findOneBySomeField($value): ?ContactDetails

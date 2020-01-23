@@ -23,11 +23,11 @@ class PersonalDetailsRepository extends ServiceEntityRepository
     // /**
     //  * @return PersonalDetails[] Returns an array of PersonalDetails objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
+            ->andWhere('p.User = :val')
             ->setParameter('val', $value)
             ->orderBy('p.id', 'ASC')
             ->setMaxResults(10)
@@ -35,7 +35,7 @@ class PersonalDetailsRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
 
     public function findOneBySomeField($value): ?PersonalDetails

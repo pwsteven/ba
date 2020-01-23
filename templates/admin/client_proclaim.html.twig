@@ -1,0 +1,115 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Client ProClaim Entries{% endblock %}
+
+{% block body %}
+    {# Page Header #}
+    <div class="dt-page__header">
+        <h1 class="dt-page__title">Client ProClaim Entries For {{ proclaim.client_forename }} {{ proclaim.client_surname }}</h1>
+    </div>
+    {# /Page Header #}
+
+    {# Grid #}
+    <div class="row dt-masonry">
+
+        {# Grid Item #}
+        <div class="col-sm-12 dt-masonry__item">
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Personal Details</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%">Title:</td>
+                                <td>{{ proclaim.client_title }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">1</span> First Name:</td>
+                                <td>{{ proclaim.client_forename }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">2</span> Middle Name:</td>
+                                <td>{{ proclaim.client_middle_name }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">3</span> Surname:</td>
+                                <td>{{ proclaim.client_surname }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">4</span> Date Of Birth:</td>
+                                <td>{{ proclaim.client_date_of_birth }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">5</span> Image File:</td>
+                                <td><span class="badge badge-danger">NO Endpoint</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Contact Details</h5>
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" colspan="2"><span class="badge badge-info mb-1 mr-1">6</span> Clients Full Address Details</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%">Address:</td>
+                                <td>{{ proclaim.client_address_block }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Postcode:</td>
+                                <td>{{ proclaim.client_postcode }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">7</span> Email Address:</td>
+                                <td>{{ proclaim.client_email }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">8</span> Mobile/Phone Number:</td>
+                                <td>{{ proclaim.client_mobile_phone }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+        </div>
+        {# /Grid Item #}
+
+    </div>
+    {# /Grid #}
+
+    {{ dump() }}
+
+{% endblock %}
+

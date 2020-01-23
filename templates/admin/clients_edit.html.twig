@@ -1,10 +1,693 @@
 {% extends 'admin_base.html.twig' %}
 
+{% block title %}Client Database Entries{% endblock %}
+
 {% block body %}
+    {# Page Header #}
+    <div class="dt-page__header">
+        <h1 class="dt-page__title">Client Database Entries For {{ client_personal.0.getFirstName }} {{ client_personal.0.getSurname }}</h1>
+    </div>
+    {# /Page Header #}
 
-{% endblock %}
+    {# Grid #}
+    <div class="row dt-masonry">
 
-{% block title %}
+        {# Grid Item #}
+        <div class="col-sm-12 dt-masonry__item">
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Personal Details</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">1</span> First Name:</td>
+                                <td>{{ client_personal.0.firstName }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">2</span> Middle Name:</td>
+                                <td>{{ client_personal.0.middleName }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">3</span> Surname:</td>
+                                <td>{{ client_personal.0.surname }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">4</span> Date Of Birth:</td>
+                                <td>{{ client_personal.0.dateOfBirth|date('d/m/Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">5</span> Image File:</td>
+                                <td><img src="{{ uploaded_asset(client_personal.0.imageFileName)|imagine_filter('squared_thumbnail_small') }}" alt=""></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Contact Details</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" colspan="2"><span class="badge badge-info mb-1 mr-1">6</span> Clients Full Address Details</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%">House Name/Number:</td>
+                                <td>{{ client_contact.0.houseNameNumber }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Street Address:</td>
+                                <td>{{ client_contact.0.streetAddress }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Street Address 2:</td>
+                                <td>{{ client_contact.0.streetAddress2 }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Town/City:</td>
+                                <td>{{ client_contact.0.townCity }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">County:</td>
+                                <td>{{ client_contact.0.county }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Postcode:</td>
+                                <td>{{ client_contact.0.postcode }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">7</span> Email Address:</td>
+                                <td>{{ client_contact.0.emailAddress }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">8</span> Mobile/Phone Number:</td>
+                                <td>{{ client_contact.0.mobileTelephoneNumber }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">BA Correspondence</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">9</span> Received email from BA confirming personal information has been compromised:</td>
+                                <td>{{ client_ba.0.receivedConfirmationEmail }}</td>
+                            </tr>
+                            {# BREACH ONE #}
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">10</span> Received notification affected by data event occurring between 21 April 2018 – 28 July 2018:</td>
+                                <td>{{ client_ba.0.breachOneNotification }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Date Received:</td>
+                                <td>{{ client_ba.0.breachOneDateReceived|date('d/m/Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Copy of the notification:</td>
+                                <td>{{ client_ba.0.breachOneNotificationFilePath }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Since received notification confirming not affected:</td>
+                                <td>{{ client_ba.0.breachOneNotificationNotAffected }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Date of Booking:</td>
+                                <td>{{ client_ba.0.breachOneDateOfBooking|date('d/m/Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Email address used for the booking related to the claim:</td>
+                                <td>{{ client_ba.0.breachOneEmailAddressUsed }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Booking Reference:</td>
+                                <td>{{ client_ba.0.breachOneBookingReference }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Platform British Airways booking made on:</td>
+                                <td>{{ client_ba.0.breachOneBookingPlatform }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Booking paid for using:</td>
+                                <td>{{ client_ba.0.breachOnePaymentMethod }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Copy of booking notification:</td>
+                                <td>{{ client_ba.0.breachOneBookingConfirmationFilePath }}</td>
+                            </tr>
+                            {# /BREACH ONE #}
+
+                            {# BREACH TWO #}
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">11</span> Receive notification been affected by data event occurring between 10.58pm on 21 August 2018 – 9.45pm on 5 September 2018:</td>
+                                <td>{{ client_ba.0.breachTwoNotification }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Date Received:</td>
+                                <td>{{ client_ba.0.breachTwoDateReceived|date('d/m/Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Copy of the notification:</td>
+                                <td>{{ client_ba.0.breachTwoNotificationFilePath }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Since received notification confirming not affected:</td>
+                                <td>{{ client_ba.0.breachTwoNotificationNotAffected }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Date of Booking:</td>
+                                <td>{{ client_ba.0.breachTwoDateOfBooking|date('d/m/Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Email address used for the booking related to the claim:</td>
+                                <td>{{ client_ba.0.breachTwoEmailAddressUsed }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Booking Reference:</td>
+                                <td>{{ client_ba.0.breachTwoBookingReference }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Platform British Airways booking made on:</td>
+                                <td>{{ client_ba.0.breachTwoBookingPlatform }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Booking paid for using:</td>
+                                <td>{{ client_ba.0.breachTwoPaymentMethod }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Copy of booking notification:</td>
+                                <td>{{ client_ba.0.breachTwoBookingConfirmationFilePath }}</td>
+                            </tr>
+                            {# /BREACH TWO #}
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Further Correspondence</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">12</span> Copy of the email from BA confirming that your personal information has been breached:</td>
+                                <td>{{ client_further.0.personalInformationBreachedFilePath }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">13</span> Received any other correspondence from BA regarding the breach:</td>
+                                <td>{{ client_further.0.receivedAnyOtherBACorrespondence }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">14</span> Copies of all correspondence sent to and received from BA regarding the claim:</td>
+                                <td>
+                                    {% if client_further.0.allCorrespondenceSentReceivedFilePath != NULL %}
+                                        {% for key,value in client_further.0.allCorrespondenceSentReceivedFilePath %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Complaints</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">15</span> Lodged formal complaint through British Airways official procedures:</td>
+                                <td>{{ client_complaints.0.lodgedComplaint }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">When was complaint made:</td>
+                                <td>{{ client_complaints.0.complaintMade|date('d/m/Y') }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Received response to complaint:</td>
+                                <td>{{ client_complaints.0.receivedResponse }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Satisfied with the response to complaint:</td>
+                                <td>{{ client_complaints.0.satisfiedResponse }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Reason why unsatisfied with complaint:</td>
+                                <td>{{ client_complaints.0.reasonUnsatisfied }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">16</span> Contacted the Information Commissioner's Office:</td>
+                                <td>{{ client_complaints.0.contactedIOC }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">17</span> Contacted Action Fraud:</td>
+                                <td>{{ client_complaints.0.contactedActionFraud }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">18</span> Accessed "Get Safe Online" following the British Airways data breach:</td>
+                                <td>{{ client_complaints.0.accessedGetSafeOnline }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Financial Loss</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">19</span> Incurred any financial loss as a result of the breach, and if so what type of financial loss:</td>
+                                <td>
+                                    {% if client_finance.0.typeFinancialLoss != NULL %}
+                                        {% for key,value in client_finance.0.typeFinancialLoss %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">More info:</td>
+                                <td>{{ client_finance.0.typeFinancialLossOtherComment }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">20</span> Total amount of financial loss suffered (£):</td>
+                                <td>{{ client_finance.0.totalLossAmount }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">21</span> All documents evidencing the financial loss suffered:</td>
+                                <td>
+                                    {% if client_finance.0.financialLossFilesPath != NULL %}
+                                        {% for key,value in client_finance.0.financialLossFilesPath %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Reimbursements</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">22</span> Reimbursed for financial loss suffered:</td>
+                                <td>{{ client_reimbursements.0.financialLossSuffered }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">If Yes, who provided the reimbursement:</td>
+                                <td>{{ client_reimbursements.0.provider }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Total amount reimbursed (£):</td>
+                                <td>{{ client_reimbursements.0.amountReimbursed }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">All correspondence documents provided in relation to the reimbursement:</td>
+                                <td>
+                                    {% if client_reimbursements.0.reimbursementFilesPath != NULL %}
+                                        {% for key,value in client_reimbursements.0.reimbursementFilesPath %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Credit Monitoring</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">23</span> Client signed up for Experian ProtectMyID or accepted any other offer sent to them by British Airways to monitor their credit:</td>
+                                <td>{{ client_credit.0.monitorCredit }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Uploaded evidence of account:</td>
+                                <td>{{ client_credit.0.monitorCreditFilePath }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+            {# Card #}
+            <div class="dt-card">
+
+                {# Card Body #}
+                <div class="dt-card__body">
+
+                    <h5 class="card-subtitle text-yellow text-uppercase">Emotional Distress</h5>
+
+                    {# Table #}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover mb-0">
+                            <tbody>
+                            <tr>
+                                <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">24</span> Client concerned their personal details will be used fraudulently now or at some point in the future:</td>
+                                <td>{{ client_emotions.0.personalDetails }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">25</span> Upon finding out that their personal information had been breached, did they experience any type of emotional distress:</td>
+                                <td>
+                                    {% if client_emotions.0.emotionsExperiencedNew != NULL %}
+                                        {% for key,value in client_emotions.0.emotionsExperiencedNew %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">More Info:</td>
+                                <td>{{ client_emotions.0.emotionsExperiencedComment }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">26</span> How long did the emotional distress last:</td>
+                                <td>{{ client_emotions.0.emotionalDistressLasted }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase" colspan="2"><span class="badge badge-info mb-1 mr-1">27</span> As a result of the breach has the client felt:</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Feeling nervous, anxious or on edge?</td>
+                                <td>
+                                    {% if client_emotions.0.breachQuestionA != NULL %}
+                                        {% for key,value in client_emotions.0.breachQuestionA %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Example Provided:</td>
+                                <td>{{ client_emotions.0.breachQuestionAExample }}</td>
+                            </tr>
+                            <tr><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="text-uppercase">Not being able to stop or control worrying?</td>
+                                <td>
+                                    {% if client_emotions.0.breachQuestionB != NULL %}
+                                        {% for key,value in client_emotions.0.breachQuestionB %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Example Provided:</td>
+                                <td>{{ client_emotions.0.breachQuestionBExample }}</td>
+                            </tr>
+                            <tr><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="text-uppercase">Worrying too much about different things?</td>
+                                <td>
+                                    {% if client_emotions.0.breachQuestionC != NULL %}
+                                        {% for key,value in client_emotions.0.breachQuestionC %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Example Provided:</td>
+                                <td>{{ client_emotions.0.breachQuestionCExample }}</td>
+                            </tr>
+                            <tr><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="text-uppercase">Trouble relaxing?</td>
+                                <td>
+                                    {% if client_emotions.0.breachQuestionD != NULL %}
+                                        {% for key,value in client_emotions.0.breachQuestionD %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Example Provided:</td>
+                                <td>{{ client_emotions.0.breachQuestionDExample }}</td>
+                            </tr>
+                            <tr><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="text-uppercase">Being so restless that it is hard to sit still?</td>
+                                <td>
+                                    {% if client_emotions.0.breachQuestionE != NULL %}
+                                        {% for key,value in client_emotions.0.breachQuestionE %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Example Provided:</td>
+                                <td>{{ client_emotions.0.breachQuestionEExample }}</td>
+                            </tr>
+                            <tr><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="text-uppercase">Becoming easily annoyed or irritable?</td>
+                                <td>
+                                    {% if client_emotions.0.breachQuestionF != NULL %}
+                                        {% for key,value in client_emotions.0.breachQuestionF %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Example Provided:</td>
+                                <td>{{ client_emotions.0.breachQuestionFExample }}</td>
+                            </tr>
+                            <tr><td colspan="2"><hr></td></tr>
+                            <tr>
+                                <td class="text-uppercase">Feeling afraid as if something awful might happen?</td>
+                                <td>
+                                    {% if client_emotions.0.breachQuestionG != NULL %}
+                                        {% for key,value in client_emotions.0.breachQuestionG %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">Example Provided:</td>
+                                <td>{{ client_emotions.0.breachQuestionGExample }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">28</span> Client diagnosed as suffering from the following conditions:</td>
+                                <td>{{ client_emotions.0.diagnosedConditionsNew }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">More Info:</td>
+                                <td>{{ client_emotions.0.diagnosedConditionsExample }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">29</span> Did finding out their personal information had been breached have an impact on clients condition?</td>
+                                <td>{{ client_emotions.0.impactConditionNew }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">If symptoms got worse, please provide details:</td>
+                                <td>{{ client_emotions.0.impactConditionExample }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">30</span> What, if any, steps has the client taken as a result of the breach?</td>
+                                <td>
+                                    {% if client_emotions.0.stepsTaken != NULL %}
+                                        {% for key,value in client_emotions.0.stepsTaken %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">More Info:</td>
+                                <td>{{ client_emotions.0.stepsTakenExample }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">31</span> In the event of any steps taken above, please describe the inconvenience that this has caused and the time taken to do so:</td>
+                                <td>{{ client_emotions.0.stepsTakenDetails }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">32</span> All documents evidencing the steps you have taken as a result of the breach:</td>
+                                <td>
+                                    {% if client_emotions.0.stepsTakenFilesPath != NULL %}
+                                        {% for key,value in client_emotions.0.stepsTakenFilesPath %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">33</span> Which, if any, of the following adverse consequences has the client suffered as a result of the breach?</td>
+                                <td>
+                                    {% if client_emotions.0.adverseConsequences != NULL %}
+                                        {% for key,value in client_emotions.0.adverseConsequences %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase">More Info:</td>
+                                <td>{{ client_emotions.0.adverseConsequencesExample }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">34</span> Details of adverse consequences regarding the breach:</td>
+                                <td>{{ client_emotions.0.adverseConsequencesDetails }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">35</span> All documents evidencing the consequences of the breach:</td>
+                                <td>
+                                    {% if client_emotions.0.adverseConsequencesFilesPath != NULL %}
+                                        {% for key,value in client_emotions.0.adverseConsequencesFilesPath %}
+                                            {{ value }}<br>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">36</span> Any other additional information that may be of relevance:</td>
+                                <td>{{ client_emotions.0.additionalInformation }}</td>
+                            </tr>
+                            <tr>
+                                <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">37</span> Claimant Type:</td>
+                                <td>{{ client_emotions.0.leadTestClaimant }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    {# /Table #}
+
+                </div>
+                {# /Card Body #}
+
+            </div>
+            {# /Card #}
+
+        </div>
+        {# /Grid Item #}
+
+    </div>
+    {# /Grid #}
 
 {% endblock %}
 

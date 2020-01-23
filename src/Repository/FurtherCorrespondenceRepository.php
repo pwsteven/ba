@@ -22,11 +22,11 @@ class FurtherCorrespondenceRepository extends ServiceEntityRepository
     // /**
     //  * @return FurtherCorrespondence[] Returns an array of FurtherCorrespondence objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
+            ->andWhere('f.User = :val')
             ->setParameter('val', $value)
             ->orderBy('f.id', 'ASC')
             ->setMaxResults(10)
@@ -34,7 +34,6 @@ class FurtherCorrespondenceRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
 
     public function findOneBySomeField($value): ?FurtherCorrespondence

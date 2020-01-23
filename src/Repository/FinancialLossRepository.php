@@ -22,11 +22,11 @@ class FinancialLossRepository extends ServiceEntityRepository
     // /**
     //  * @return FinancialLoss[] Returns an array of FinancialLoss objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
+            ->andWhere('f.User = :val')
             ->setParameter('val', $value)
             ->orderBy('f.id', 'ASC')
             ->setMaxResults(10)
@@ -34,7 +34,7 @@ class FinancialLossRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
 
     public function findOneBySomeField($value): ?FinancialLoss

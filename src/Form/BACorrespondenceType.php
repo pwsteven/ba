@@ -119,7 +119,7 @@ class BACorrespondenceType extends AbstractType
                     'Please Select' => '',
                     'Website' => 'Website',
                     'Mobile Application' => 'Mobile Application',
-                    'Other' => 'Other',
+                    'Other' => 'Other Platform',
                 ],
                 'required' => false,
                 'attr' => [
@@ -136,7 +136,7 @@ class BACorrespondenceType extends AbstractType
                     'Air Miles' => 'Air Miles',
                     'Apple Pay' => 'Apple Pay',
                     'PayPal' => 'PayPal',
-                    'Other' => 'Other',
+                    'Other' => 'Other Payment Method',
                 ],
                 'required' => false,
                 'attr' => [
@@ -258,7 +258,7 @@ class BACorrespondenceType extends AbstractType
                     'Please Select' => '',
                     'Website' => 'Website',
                     'Mobile Application' => 'Mobile Application',
-                    'Other' => 'Other',
+                    'Other' => 'Other Platform',
                 ],
                 'required' => false,
                 'attr' => [
@@ -275,7 +275,7 @@ class BACorrespondenceType extends AbstractType
                     'Air Miles' => 'Air Miles',
                     'Apple Pay' => 'Apple Pay',
                     'PayPal' => 'PayPal',
-                    'Other' => 'Other',
+                    'Other' => 'Other Payment Method',
                 ],
                 'required' => false,
                 'attr' => [
