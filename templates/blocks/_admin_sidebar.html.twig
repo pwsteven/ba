@@ -56,7 +56,7 @@
                     <i class="icon icon-dashboard icon-fw icon-xl"></i> <span class="dt-side-nav__text">Dashboard</span> </a>
             </li>
             {# Menu Item #}
-            <li class="dt-side-nav__item{% if app.request.pathinfo == '/admin/clients' %} open selected{% endif %}">
+            <li class="dt-side-nav__item{% if app.request.pathinfo == '/admin/clients' or app.request.pathinfo == '/admin/clients/auto-import' or app.request.pathinfo == '/admin/clients/manual-import' %} open selected{% endif %}">
                 <a href="javascript:void(0)" class="dt-side-nav__link dt-side-nav__arrow" title="Clients">
                     <i class="icon icon-all-contacts icon-fw icon-xl"></i>
                     <span class="dt-side-nav__text">Clients</span>
@@ -69,12 +69,12 @@
                         </a>
                     </li>
                     <li class="dt-side-nav__item">
-                        <a href="#" class="dt-side-nav__link{% if app.request.pathinfo == '' %} active{% endif %}" title="Auto Load Clients">
+                        <a href="{{ path('app_admin_client_auto_import') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/admin/clients/auto-import' %} active{% endif %}" title="Auto Load Clients">
                             <span class="dt-side-nav__text">Auto Import</span>
                         </a>
                     </li>
                     <li class="dt-side-nav__item">
-                        <a href="#" class="dt-side-nav__link{% if app.request.pathinfo == '' %} active{% endif %}" title="Manual Import Clients">
+                        <a href="{{ path('app_admin_client_manual_import') }}" class="dt-side-nav__link{% if app.request.pathinfo == '/admin/clients/manual-import' %} active{% endif %}" title="Manual Import Clients">
                             <span class="dt-side-nav__text">Manual Import</span>
                         </a>
                     </li>

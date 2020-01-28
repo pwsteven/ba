@@ -189,4 +189,26 @@ class AdminClientsController extends BaseController
         ]);
     }
 
+    /**
+     * @Route("admin/clients/manual-import", name="app_admin_client_manual_import")
+     */
+    public function clientManualInput()
+    {
+
+        return $this->render('admin/client_manual_import.html.twig', [
+
+        ]);
+    }
+
+    /**
+     * @Route("admin/clients/auto-import", name="app_admin_client_auto_import")
+     */
+    public function clientAutoInput()
+    {
+
+        return $this->render('admin/client_auto_import.html.twig', [
+
+        ]);
+    }
+
 }

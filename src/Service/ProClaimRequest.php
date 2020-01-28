@@ -815,7 +815,7 @@ class ProClaimRequest
             }
             */
 
-            // GET EMOTIONS EXPERIENCED TODO
+            // GET EMOTIONS EXPERIENCED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',

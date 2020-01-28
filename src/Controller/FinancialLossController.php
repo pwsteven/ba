@@ -83,9 +83,12 @@ class FinancialLossController extends BaseController
             if (!empty($financialLossDetails->getTypeFinancialLoss())) {
                 $typeFinancialLoss = implode(', ', $financialLossDetails->getTypeFinancialLoss());
             }
+
+            /*
             if (!empty($financialLossDetails->getTypeFinancialLossOtherComment())){
                 $typeFinancialLoss .= ', '.$financialLossDetails->getTypeFinancialLossOtherComment();
             }
+            */
 
             $data = [
                 'case_id' => $this->getUser()->getProClaimReference(),
