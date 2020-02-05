@@ -16,7 +16,30 @@
         <div class="dt-card__body">
 
             {# Form #}
+            {{ form_start(form, {'attr': {
+                'id': 'admin_form',
+                'novalidate': 'true'
+            }}) }}
 
+            {# ProClaim Reference Number Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.ProClaimRefNo) }}
+                    {{ form_widget(form.ProClaimRefNo) }}
+                    <div class="error_message">{{ form_errors(form.ProClaimRefNo) }}</div>
+                </div>
+            </div>
+            {# /ProClaim Reference Number Form Row #}
+
+            {# Submit Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12 text-right">
+                    <button type="submit" class="btn btn-outline-info btn-lg" title="click to continue...">Submit <i class="icon icon-forward"></i></button>
+                </div>
+            </div>
+            {# /Submit Form Row #}
+
+            {{ form_end(form) }}
             {# /Form #}
 
         </div>

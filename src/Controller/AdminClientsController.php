@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\ManualImportType;
 use App\Repository\BACorrespondenceRepository;
 use App\Repository\ComplaintsRepository;
 use App\Repository\ContactDetailsRepository;
@@ -191,12 +192,23 @@ class AdminClientsController extends BaseController
 
     /**
      * @Route("admin/clients/manual-import", name="app_admin_client_manual_import")
+     * @param Request $request
+     * @return Response
      */
-    public function clientManualInput()
+    public function clientManualInput(Request $request)
     {
 
-        return $this->render('admin/client_manual_import.html.twig', [
+        $form = $this->createForm(ManualImportType::class);
+        $form->handleRequest($request);
 
+        if ($form->isSubmitted() && $form->isValid()){
+
+            dd($form->getData());
+
+        }
+
+        return $this->render('admin/client_manual_import.html.twig', [
+            'form' => $form->createView(),
         ]);
     }
 
