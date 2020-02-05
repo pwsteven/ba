@@ -198,7 +198,7 @@ class PasswordController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Success! Password has been set.<br>Please continue to login.');
+            $this->addFlash('success', 'Password has been reset. Please login.');
             return $this->redirectToRoute('app_login');
 
         }

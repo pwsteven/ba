@@ -1,0 +1,9 @@
+@import "../gaxon-icon/style.css";
+@import "~perfect-scrollbar";
+@import "dark-style-1.min.css";
+
+#admin_form {padding: 20px;}
+#admin_form label.required:before {content:"* "; color: #d9534f; font-weight: bold;}
+#admin_form input[type="text"], #admin_form input[type="number"] {color: #fff;}
+#admin_form .error_message ul {margin: 0; padding: 0; list-style: none;}
+#admin_form .error_message ul li {color: #d9534f; padding-top: 10px;}
