@@ -9,18 +9,8 @@
     <title>{% block title %}{% endblock %} - BA OnBoarding - Your Lawyers Ltd</title>
     <link rel="shortcut icon" href="{{ asset('build/images/your_lawyers_icon.a7109bc7.png') }}" type="image/x-icon">
     {% block stylesheets %}
-        {# Font Icon Styles #}
-        <link rel="stylesheet" href="{{ asset('html-bs4/node_modules/flag-icon-css/css/flag-icon.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('html-bs4/vendors/gaxon-icon/style.css') }}">
-        {# /Font Icon Styles #}
-        {# Perfect Scrollbar StyleSheet #}
-        <link rel="stylesheet" href="{{ asset('html-bs4/node_modules/perfect-scrollbar/css/perfect-scrollbar.css') }}">
-        {# /Perfect Scrollbar StyleSheet #}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
-    {# Load Main StyleSheet #}
-    <link rel="stylesheet" href="{{ asset('html-bs4/default/assets/css/semidark-style-1.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('html-bs4/default/assets/css/ba_form.css') }}">
-    {# /Load Main StyleSheet #}
 
 </head>
 <body class="dt-sidebar--fixed dt-header--fixed">
@@ -72,18 +62,8 @@
     {# /Root #}
 
     {% block javascripts %}
-        {# Optional Javascript #}
-        <script src="{{ asset('html-bs4/node_modules/jquery/dist/jquery.min.js') }}"></script>
-        <script src="{{ asset('html-bs4/node_modules/moment/moment.js') }}"></script>
-        <script src="{{ asset('html-bs4/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-        {# Perfect Scrollbr jQuery #}
-        <script src="{{ asset('html-bs4/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
-        {# Masonry Script #}
-        <script src="{{ asset('html-bs4/node_modules/masonry-layout/dist/masonry.pkgd.min.js') }}"></script>
-        <script src="{{ asset('html-bs4/node_modules/sweetalert2/dist/sweetalert2.js') }}"></script>
-        {# Custom JavaScript #}
+        {{ encore_entry_script_tags('app') }}
     {% endblock %}
-    <script src="{{ asset('html-bs4/default/assets/js/script.js') }}"></script>
 
 </body>
 </html>

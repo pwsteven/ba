@@ -9,8 +9,13 @@
 import '../css/app_admin.css';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
+import $ from 'jquery';
 import 'moment';
 import 'bootstrap';
 import 'masonry-layout';
 import 'sweetalert2';
 import './script';
+
+
+
+

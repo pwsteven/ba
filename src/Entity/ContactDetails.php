@@ -83,6 +83,17 @@ class ContactDetails
      */
     private $User;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     * @Encrypted()
+     */
+    private $addressBlock;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $useClientAddressBlock;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -204,6 +215,30 @@ class ContactDetails
     public function setUser(User $User): self
     {
         $this->User = $User;
+
+        return $this;
+    }
+
+    public function getAddressBlock(): ?string
+    {
+        return $this->addressBlock;
+    }
+
+    public function setAddressBlock(?string $addressBlock): self
+    {
+        $this->addressBlock = $addressBlock;
+
+        return $this;
+    }
+
+    public function getUseClientAddressBlock(): ?bool
+    {
+        return $this->useClientAddressBlock;
+    }
+
+    public function setUseClientAddressBlock(?bool $useClientAddressBlock): self
+    {
+        $this->useClientAddressBlock = $useClientAddressBlock;
 
         return $this;
     }

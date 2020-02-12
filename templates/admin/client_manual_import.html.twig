@@ -21,6 +21,10 @@
                 'novalidate': 'true'
             }}) }}
 
+            {%  if error %}
+                <div class="alert alert-danger"><small>{{ error }}</small></div>
+            {% endif %}
+
             {# ProClaim Reference Number Form Row #}
             <div class="form-row">
                 <div class="form-group col-md-12">

@@ -15,6 +15,17 @@
     </div>
     {# /Grid #}
 
+    {% for message in app.session.flashBag.get('page_success') %}
+        <div class="dt-card__body">
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <strong>Fantastical!</strong> You completed the Emotional Distress section. Thanks...
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    {% endfor %}
+
     {# Grid #}
     <div class="col-12">
         <div class="progress mb-2">
@@ -39,28 +50,4 @@
     </div>
     {# /Grid #}
 
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-
-    <script>
-
-    {% for message in app.session.flashBag.get('page_success') %}
-    jQuery(document).ready(function(){
-        const toast = swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000
-        });
-
-        toast({
-            type: 'success',
-            title: 'Emotional Distress stage complete!',
-        })
-    });
-    {% endfor %}
-
-    </script>
 {% endblock %}

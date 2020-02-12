@@ -96,7 +96,7 @@ class ProClaimPutBACorrespondence
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => 'BA - Reward Breach - notifcation received.response',
+                'cfieldname' => 'BA - Reward Breach - notification received.response',
                 'cfieldvalue' => $caseData['breach_one_notification'],
             ];
             $response = $client->proPutData($param);
@@ -105,13 +105,12 @@ class ProClaimPutBACorrespondence
                 $data['message'] = 'Set Breach One Notification Error: ' . $response->cerror;
             }
 
-            // UPDATE BREACH ONE DATE RECEIVED TODO
-            /*
+            // UPDATE BREACH ONE DATE RECEIVED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Reward Breach - notification date.date',
                 'cfieldvalue' => $caseData['breach_one_date_received'],
             ];
             $response = $client->proPutData($param);
@@ -119,7 +118,6 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach One Date Received Error: ' . $response->cerror;
             }
-            */
 
             // UPDATE BREACH ONE NOTIFICATION NOT AFFECTED
             $param = [
@@ -205,13 +203,12 @@ class ProClaimPutBACorrespondence
                 $data['message'] = 'Set Breach One Payment Method Error: ' . $response->cerror;
             }
 
-            // UPDATE BREACH TWO NOTIFICATION TODO
-            /*
+            // UPDATE BREACH TWO NOTIFICATION
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - notification received.response',
                 'cfieldvalue' => $caseData['breach_two_notification'],
             ];
             $response = $client->proPutData($param);
@@ -219,15 +216,13 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Notification Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH TWO DATE RECEIVED TODO
-            /*
+            // UPDATE BREACH TWO DATE RECEIVED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - notification date.date',
                 'cfieldvalue' => $caseData['breach_two_date_received'],
             ];
             $response = $client->proPutData($param);
@@ -235,15 +230,13 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Date Received Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH TWO NOTIFICATION NOT AFFECTED TODO
-            /*
+            // UPDATE BREACH TWO NOTIFICATION NOT AFFECTED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - not affected.response',
                 'cfieldvalue' => $caseData['breach_two_notification_not_affected'],
             ];
             $response = $client->proPutData($param);
@@ -251,15 +244,13 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Notification Not Affected Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH TWO DATE OF BOOKING TODO
-            /*
+            // UPDATE BREACH TWO DATE OF BOOKING
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - booking date.date',
                 'cfieldvalue' => $caseData['breach_two_date_of_booking'],
             ];
             $response = $client->proPutData($param);
@@ -267,15 +258,13 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Date Of Booking Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH TWO EMAIL ADDRESS USED TODO
-            /*
+            // UPDATE BREACH TWO EMAIL ADDRESS USED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - email used.text',
                 'cfieldvalue' => $caseData['breach_two_email_address_used'],
             ];
             $response = $client->proPutData($param);
@@ -283,15 +272,13 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Email Address Used Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH TWO BOOKING REFERENCE TODO
-            /*
+            // UPDATE BREACH TWO BOOKING REFERENCE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - booking ref.text',
                 'cfieldvalue' => $caseData['breach_two_booking_reference'],
             ];
             $response = $client->proPutData($param);
@@ -299,15 +286,13 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Booking Reference Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH TWO BOOKING PLATFORM TODO
-            /*
+            // UPDATE BREACH TWO BOOKING PLATFORM
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Platform 2.response',
                 'cfieldvalue' => $caseData['breach_two_booking_platform'],
             ];
             $response = $client->proPutData($param);
@@ -315,15 +300,13 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Booking Platform Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH TWO PAYMENT METHOD TODO
-            /*
+            // UPDATE BREACH TWO PAYMENT METHOD
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Payment Method 2.response',
                 'cfieldvalue' => $caseData['breach_two_payment_method'],
             ];
             $response = $client->proPutData($param);
@@ -331,8 +314,6 @@ class ProClaimPutBACorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Two Payment Method Error: ' . $response->cerror;
             }
-            */
-
 
             // COMMIT TO PROCLAIM
             $param = [

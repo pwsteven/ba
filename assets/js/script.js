@@ -3,6 +3,7 @@
 import $ from "jquery";
 import PerfectScrollbar from "perfect-scrollbar";
 
+
 let wieldy = {
     docBody: $('body'),
     customStyle: null,

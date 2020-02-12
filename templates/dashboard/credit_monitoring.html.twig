@@ -15,6 +15,17 @@
     </div>
     {# /Grid #}
 
+    {% for message in app.session.flashBag.get('page_success') %}
+        <div class="dt-card__body">
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <strong>Sensational!</strong> You completed the Reimbursements section. Let's keep going...
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    {% endfor %}
+
     {# Grid #}
     <div class="col-12">
         <div class="progress mb-2">
@@ -83,37 +94,5 @@
     </div>
     {# /Grid #}
 
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script>
-
-        {% for message in app.session.flashBag.get('page_success') %}
-        jQuery(document).ready(function(){
-            const toast = swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000
-            });
-
-            toast({
-                type: 'success',
-                title: 'Reimbursements stage complete!',
-            })
-        });
-        {% endfor %}
-
-        $('#credit_monitor_monitorCredit').on('change', function () {
-            const value = $('#credit_monitor_monitorCredit option:selected').attr("value");
-            if (value === 'YES') {
-                $('#credit_monitor_block').fadeIn(450);
-            } else {
-                $('#credit_monitor_block').fadeOut(250);
-            }
-        });
-
-    </script>
 {% endblock %}
 

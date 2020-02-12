@@ -14,7 +14,9 @@ use App\Repository\FurtherCorrespondenceRepository;
 use App\Repository\PersonalDetailsRepository;
 use App\Repository\ReimbursementsRepository;
 use App\Repository\UserRepository;
+use App\Service\ProClaimGetClientStarterDetails;
 use App\Service\ProClaimRequest;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Omines\DataTablesBundle\Adapter\Doctrine\ORMAdapter;
 use Omines\DataTablesBundle\Column\BoolColumn;
@@ -25,6 +27,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 /**
@@ -61,6 +64,7 @@ class AdminClientsController extends BaseController
     private $reimbursementsRepository;
     private $creditMonitorRepository;
     private $emotionalDistressRepository;
+    private $errorMessage;
 
     public function __construct(DataTableFactory $dataTableFactory, RouterInterface $router, UserRepository $userRepository, PersonalDetailsRepository $personalDetailsRepository, ContactDetailsRepository $contactDetailsRepository, BACorrespondenceRepository $BACorrespondenceRepository, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, ComplaintsRepository $complaintsRepository, FinancialLossRepository $financialLossRepository, ReimbursementsRepository $reimbursementsRepository, CreditMonitorRepository $creditMonitorRepository, EmotionalDistressRepository $emotionalDistressRepository)
     {
@@ -76,6 +80,7 @@ class AdminClientsController extends BaseController
         $this->reimbursementsRepository = $reimbursementsRepository;
         $this->creditMonitorRepository = $creditMonitorRepository;
         $this->emotionalDistressRepository = $emotionalDistressRepository;
+        $this->errorMessage = "";
     }
 
     /**
@@ -193,9 +198,11 @@ class AdminClientsController extends BaseController
     /**
      * @Route("admin/clients/manual-import", name="app_admin_client_manual_import")
      * @param Request $request
+     * @param ProClaimGetClientStarterDetails $claimGetClientStarterDetails
+     * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function clientManualInput(Request $request)
+    public function clientManualInput(Request $request, ProClaimGetClientStarterDetails $claimGetClientStarterDetails, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder)
     {
 
         $form = $this->createForm(ManualImportType::class);
@@ -203,12 +210,42 @@ class AdminClientsController extends BaseController
 
         if ($form->isSubmitted() && $form->isValid()){
 
-            dd($form->getData());
+            $proClaimRefNo = $form['ProClaimRefNo']->getData();
+            $proClaimDetails = $claimGetClientStarterDetails->getCaseDetails($proClaimRefNo);
+            $tempPassword = $this->randomPassword(8);
+
+            if ($proClaimDetails['client_claim_code'] === "CON"){
+
+                dd($tempPassword);
+
+                // IMPORT DETAILS FROM PROCLAIM TO DATABASE 'USER' TABLE
+                $user = new User();
+                //$user->setEmail($proClaimDetails['client_email']);
+                // THIS IS JUST FOR TESTING PURPOSES
+                $user->setEmail('paul@shopnbag.co.uk');
+                $user->setRoles(['ROLE_USER']);
+                $user->setPassword($passwordEncoder->encodePassword(
+                   $user,
+                   $tempPassword
+                ));
+                $user->setFirstName($proClaimDetails['client_forename']);
+                $user->setProClaimReference($proClaimRefNo);
+
+                $entityManager->persist($user);
+                $entityManager->flush();
+
+                return $this->redirectToRoute('app_admin_clients');
+
+            } else {
+                // SEND MESSAGE BACK TO FORM THAT PROCLAIM REF NO CANNOT BE FOUND
+                $this->errorMessage = 'Sorry! ProClaim Reference Number not found!';
+            }
 
         }
 
         return $this->render('admin/client_manual_import.html.twig', [
             'form' => $form->createView(),
+            'error' => $this->errorMessage,
         ]);
     }
 
@@ -221,6 +258,12 @@ class AdminClientsController extends BaseController
         return $this->render('admin/client_auto_import.html.twig', [
 
         ]);
+    }
+
+    public function randomPassword($length = 8): string
+    {
+        $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        return substr(str_shuffle( $chars ), 0, $length);
     }
 
 }

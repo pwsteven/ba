@@ -9,8 +9,12 @@
 require('../css/app.css');
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
-//const $ = require('jquery');
-//import 'bootstrap';
+const $ = require('jquery');
+import 'moment';
+import 'bootstrap';
+import 'masonry-layout';
+import 'sweetalert2';
+import './script';
 import './form';
 
 //console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

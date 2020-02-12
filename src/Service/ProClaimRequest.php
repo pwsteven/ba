@@ -259,7 +259,7 @@ class ProClaimRequest
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => 'BA - Reward Breach - notifcation received.response',
+                'cfieldname' => 'BA - Reward Breach - notification received.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -271,13 +271,12 @@ class ProClaimRequest
             }
 
 
-            // GET BREACH ONE DATE RECEIVED TODO
-            /*
+            // GET BREACH ONE DATE RECEIVED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Reward Breach - notification date.date',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -287,7 +286,6 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_one_date_received'] = $case_field_value;
             }
-            */
 
             // GET BREACH ONE NOTIFICATION NOT AFFECTED
             $param = [
@@ -385,13 +383,12 @@ class ProClaimRequest
                 $data['client_breach_one_payment_method'] = $case_field_value;
             }
 
-            // GET BREACH TWO NOTIFICATION TODO
-            /*
+            // GET BREACH TWO NOTIFICATION
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - notification received.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -401,15 +398,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_notification'] = $case_field_value;
             }
-            */
 
-            // GET BREACH TWO DATE RECEIVED TODO
-            /*
+            // GET BREACH TWO DATE RECEIVED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - notification date.date',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -419,15 +414,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_date_received'] = $case_field_value;
             }
-            */
 
-            // GET BREACH TWO NOTIFICATION NOT AFFECTED TODO
-            /*
+            // GET BREACH TWO NOTIFICATION NOT AFFECTED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - not affected.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -437,15 +430,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_notification_not_affected'] = $case_field_value;
             }
-            */
 
-            // GET BREACH TWO DATE OF BOOKING TODO
-            /*
+            // GET BREACH TWO DATE OF BOOKING
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - booking date.date',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -455,15 +446,14 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_date_of_booking'] = $case_field_value;
             }
-            */
 
-            // GET BREACH TWO EMAIL ADDRESS USED TODO
-            /*
+
+            // GET BREACH TWO EMAIL ADDRESS USED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - email used.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -473,15 +463,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_email_address_used'] = $case_field_value;
             }
-            */
 
-            // GET BREACH TWO BOOKING REFERENCE TODO
-            /*
+            // GET BREACH TWO BOOKING REFERENCE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Breach - booking ref.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -491,15 +479,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_booking_reference'] = $case_field_value;
             }
-            */
 
-            // GET BREACH TWO BOOKING PLATFORM TODO
-            /*
+            // GET BREACH TWO BOOKING PLATFORM
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Booking Platform 2.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -509,15 +495,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_booking_platform'] = $case_field_value;
             }
-            */
 
-            // GET BREACH TWO PAYMENT METHOD TODO
-            /*
+            // GET BREACH TWO PAYMENT METHOD
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Payment Method 2.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -527,7 +511,6 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_two_payment_method'] = $case_field_value;
             }
-            */
 
             //**************************************************************************************
             //**************************** FURTHER CORRESPONDENCE **********************************

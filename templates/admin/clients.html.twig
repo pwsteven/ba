@@ -32,6 +32,7 @@
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('html-bs4/node_modules/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('html-bs4/node_modules/datatables.net/js/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('html-bs4/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js') }}"></script>
     <script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>

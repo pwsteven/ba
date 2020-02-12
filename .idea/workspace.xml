@@ -2,104 +2,245 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/css/dark-style-1.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Bold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Bold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Bold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Heavy.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Heavy.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Heavy.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Light.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Light.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Light.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Medium.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Medium.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Medium.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-SemiBold.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-SemiBold.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/NoirPro-SemiBold.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/noir-pro/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/Read Me.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/demo-files/demo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/demo-files/demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/fonts/gaxon.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/fonts/gaxon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/fonts/gaxon.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/fonts/gaxon.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/selection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/gaxon-icon/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer-icons/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/customizer-icons/check.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/dashboard/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/dashboard/apple-app-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/dashboard/cat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/dashboard/google-play-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/dashboard/hand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/dashboard/ribbon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/data-leak-icon-90x90.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-account.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-calendar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-drive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-gmail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-google-plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-google.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-news.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-photos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-playstore.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-translate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/icon/icon-youtube.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/boxed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/drawer-nav-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/drawer-nav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/fixed-layout.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/fixed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/framed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/full-width.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-bottom-nav-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-bottom-nav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-dark-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-default-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-inside-nav-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-inside-nav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-top-nav-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/horizontal-top-nav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/mini-sidebar-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/mini-sidebar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/no-header-mini-sidebar-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/no-header-mini-sidebar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/vertical-no-header-dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/layouts/vertical-no-header.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/patterns/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/patterns/pattern1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/patterns/pattern2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/patterns/pattern3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/patterns/pattern4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/patterns/pattern5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/widget/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/widget/icon-building.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/widget/icon-project-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/widget/icon-project.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/semidark-style-1.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200212115623.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/ProClaimGetClientStarterDetails.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app_admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app_admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app_login.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app_login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app_admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app_login.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app_login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/forgot_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/forgot_password.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/reset_password.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/reset_password.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/.idea/css.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/dropzone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/dropzone.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/theme.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/theme.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/css/theme.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/img/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/img/brand-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/img/brand.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/img/down-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/js/dropzone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/js/dropzone.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/js/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dist/js/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/alerts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/carousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chart-amcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chart-chartist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chart-flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/chart-knob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/datatables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/form-advanced.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/form-components.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/form-picker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/forms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/layouts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/range-slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/rating.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/session-time-out.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/tables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/taskboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/widget-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/widget-data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/widget-statistic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/widgets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/amcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/animate.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/gantt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/gauge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/images/dragIconRoundBig.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/images/dragIconRoundBig.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/images/lens.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/images/lens.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/radar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/serial.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/themes/black.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/themes/chalk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/themes/dark.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/themes/light.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/themes/patterns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/amcharts/xy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ammap3/ammap/ammap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ammap3/ammap/ammap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ammap3/ammap/ammap_amcharts_extension.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ammap3/ammap/maps/js/usaLow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap-slider/dist/bootstrap-slider.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap-slider/dist/css/bootstrap-slider.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap/dist/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap/dist/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap/dist/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/bootstrap/dist/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/c3/c3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/c3/c3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/chartist/dist/chartist.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/chartist/dist/chartist.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/chartist/dist/chartist.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/d3/dist/d3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/d3/dist/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/d3/dist/d3.node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/d3/dist/package.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datatables.net-responsive/js/dataTables.responsive.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datatables.net/js/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datedropper/datedropper.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/datedropper/datedropper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/flot-charts/curvedLines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/flot-charts/jquery.flot.categories.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/flot-charts/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/flot-charts/jquery.flot.pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/flot-charts/jquery.flot.tooltip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-brands-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-brands-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-brands-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-brands-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-brands-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-regular-400.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-regular-400.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-regular-400.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-regular-400.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-regular-400.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fontawesome-free/webfonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fullcalendar/dist/fullcalendar.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/fullcalendar/dist/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/icon-kit/dist/css/iconkit.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/icon-kit/dist/fonts/iconkit.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/icon-kit/dist/fonts/iconkit.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/icon-kit/dist/fonts/iconkit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/icon-kit/dist/fonts/iconkit.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/icon-kit/dist/fonts/iconkit.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/icon-kit/dist/fonts/iconkit.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ionicons/dist/css/ionicons.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ionicons/dist/fonts/ionicons.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ionicons/dist/fonts/ionicons.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ionicons/dist/fonts/ionicons.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ionicons/dist/fonts/ionicons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/ionicons/dist/fonts/ionicons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/jquery.barrating.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/jquery.barrating.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/bars-1to10.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/bars-horizontal.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/bars-movie.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/bars-pill.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/bars-reversed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/bars-square.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/bootstrap-stars.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/css-stars.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/fontawesome-stars-o.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-knob/dist/jquery.knob.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-minicolors/jquery.minicolors.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-minicolors/jquery.minicolors.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-minicolors/jquery.minicolors.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-toast-plugin/dist/jquery.toast.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery-toast-plugin/dist/jquery.toast.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jquery.repeater/jquery.repeater.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jvectormap/jquery-jvectormap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/jvectormap/jquery-jvectormap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/mohithg-switchery/dist/switchery.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/mohithg-switchery/dist/switchery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/moment/moment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/nestable/jquery.nestable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/owl.carousel/dist/assets/ajax-loader.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/owl.carousel/dist/assets/owl.carousel.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/owl.carousel/dist/assets/owl.theme.default.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/owl.carousel/dist/assets/owl.video.play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/owl.carousel/dist/owl.carousel.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/perfect-scrollbar/css/perfect-scrollbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/popper.js/dist/umd/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/popper.js/dist/umd/popper.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/screenfull/dist/screenfull.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/select2/dist/css/select2.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/select2/dist/js/select2.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/summernote/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/summernote/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/summernote/dist/font/summernote.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/summernote/dist/font/summernote.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/summernote/dist/font/summernote.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/summernote/dist/summernote-bs4.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/summernote/dist/summernote-bs4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/sweetalert/dist/sweetalert.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/weather-icons/css/weather-icons.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/weather-icons/font/WeatherIcons-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/weather-icons/font/weathericons-regular-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/weather-icons/font/weathericons-regular-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/weather-icons/font/weathericons-regular-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/plugins/weather-icons/font/weathericons-regular-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/img/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/img/brand-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/img/brand.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/img/down-arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/img/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/js/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/js/theme.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/js/vendor/jquery-3.3.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/js/vendor/jquery-3.3.1.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/js/vendor/modernizr-2.8.3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_auth.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_badges.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_calendar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_carousel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_main.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_navigation.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_range-slider.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_rating.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_settings.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/_widgets.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/scss/theme.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutBACorrespondence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/client_manual_import.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_manual_import.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/clients.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/admin_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/admin_footer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/complaints.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/complaints.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/complete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/complete.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/credit_monitoring.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/credit_monitoring.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/emotional_distress.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/financial_loss.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/financial_loss.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/further_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/further_correspondence.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/reimbursements.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/reimbursements.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,8 +272,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -351,7 +492,14 @@
       <workItem from="1579855157729" duration="605000" />
       <workItem from="1580204332234" duration="11628000" />
       <workItem from="1580382112831" duration="23000" />
-      <workItem from="1580905323849" duration="8503000" />
+      <workItem from="1580905323849" duration="13238000" />
+      <workItem from="1580979068314" duration="3350000" />
+      <workItem from="1581073827877" duration="3957000" />
+      <workItem from="1581085579729" duration="8091000" />
+      <workItem from="1581450842444" duration="24000" />
+      <workItem from="1581450895648" duration="45000" />
+      <workItem from="1581498345228" duration="8215000" />
+      <workItem from="1581517520323" duration="1045000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -619,7 +767,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580907196057</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Webpacking...&#10;05/02/20 16:07pm">
+      <created>1580919018622</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1580919018622</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,8 +794,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="06/12/19 11:34am" />
     <MESSAGE value="BA Correspondence&#10;06/12/19 16:19pm" />
     <MESSAGE value="BA Correspondence&#10;10/12/19 09:37am" />
     <MESSAGE value="Dashboard Controller Page Structure Complete &#10;10/12/19 15:59pm" />
@@ -665,29 +820,30 @@
     <MESSAGE value="Admin View Client Database Details Complete&#10;23/01/20 12:32pm" />
     <MESSAGE value="Beginning Manual + Auto Import pages in Admin&#10;28/01/20 10:30am" />
     <MESSAGE value="Webpacking...&#10;05/02/20 12:52pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Webpacking...&#10;05/02/20 12:52pm" />
+    <MESSAGE value="Webpacking...&#10;05/02/20 16:07pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Webpacking...&#10;05/02/20 16:07pm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1578063652400">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1578063652400" />
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1578913409790">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581450858793">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1578913409790" />
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578052962568">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1581450858793" />
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581505787688">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578052962568" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1580918936387">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581505787688" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1580919009781">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580918936387" />
-    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1580907068096">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1580919009781" />
+    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581499866842">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1580907068096" />
+    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1581499866842" />
     <state x="511" y="73" key="RollbackChangesDialog" timestamp="1576063065979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -696,10 +852,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="569" y="279" key="VCS.EditChangelistDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063088318" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1580382124514">
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1581517530265">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1580382124514" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581517530265" />
     <state x="339" y="157" key="run.anything.popup" timestamp="1578065732369">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -708,5 +864,16 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577104892640" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/js/script.js</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
