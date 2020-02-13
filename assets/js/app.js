@@ -16,5 +16,6 @@ import 'masonry-layout';
 import 'sweetalert2';
 import './script';
 import './form';
+import './address_lookup';
 
 //console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

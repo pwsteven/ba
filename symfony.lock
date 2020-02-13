@@ -120,6 +120,15 @@
     "gedmo/doctrine-extensions": {
         "version": "v2.4.37"
     },
+    "guzzlehttp/guzzle": {
+        "version": "6.5.2"
+    },
+    "guzzlehttp/promises": {
+        "version": "v1.3.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "1.6.1"
+    },
     "imagine/imagine": {
         "version": "1.2.2"
     },
@@ -178,6 +187,9 @@
             "./config/packages/oneup_flysystem.yaml"
         ]
     },
+    "philcross/getaddress-php": {
+        "version": "0.1.0"
+    },
     "phpmailer/phpmailer": {
         "version": "v6.1.2"
     },
@@ -187,8 +199,14 @@
     "psr/container": {
         "version": "1.0.0"
     },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/log": {
         "version": "1.1.0"
+    },
+    "ralouphie/getallheaders": {
+        "version": "3.0.3"
     },
     "ramsey/uuid": {
         "version": "3.8.0"

@@ -23,6 +23,8 @@ services:
             $emailHost: 'smtp.gmail.com'
             $emailUsername: 'pwsteven13@gmail.com'
             $emailPassword: 'SkyeJay13'
+            $getAddressAPIKey: 'yMq37HTxWk24mVx9f5AfOQ15358'
+            $getAddressAdminAPIKey: 'eum7JZ5rIkmnwQD9yETSZw15358'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

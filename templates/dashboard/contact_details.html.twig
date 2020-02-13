@@ -52,6 +52,34 @@
             </div>
             {# /Form Row #}
 
+            {# Postcode Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    {{ form_label(form.postcode)}}
+                    {{ form_widget(form.postcode) }}
+                    <div class="error_message">{{ form_errors(form.postcode) }}</div>
+                </div>
+                <div class="form-group col-md-4 d-flex align-items-end">
+                    <button type="button" id="find_address" class="btn btn-secondary btn-lg">Find Your Address <i class="fa fa-search" aria-hidden="true"></i></button>
+                </div>
+            </div>
+            {# /Postcode Form Row #}
+
+            {# Select Address Block #}
+            <div id="select_address_block" class="display_none">
+                <div class="block_body">
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="address_picker">Please choose your address:</label>
+                            <select name="address_picker" id="address_picker" class="form-control form-control-lg">
+                                <option value="">SELECT</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# /Select Address Block #}
+
             {# House Name/Number Form Row #}
             <div class="form-row">
                 <div class="form-group col-md-12">
@@ -101,16 +129,6 @@
                 </div>
             </div>
             {# /County Form Row #}
-
-            {# Postcode Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.postcode)}}
-                    {{ form_widget(form.postcode) }}
-                    <div class="error_message">{{ form_errors(form.postcode) }}</div>
-                </div>
-            </div>
-            {# /Postcode Form Row #}
 
             <hr class="border-dashed my-8">
 

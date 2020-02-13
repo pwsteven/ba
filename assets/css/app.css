@@ -1,6 +1,7 @@
 @import "../gaxon-icon/style.css";
 @import "~perfect-scrollbar";
 @import "semidark-style-1.min.css";
+@import "~font-awesome";
 
 #ba_form {padding: 20px;}
 #ba_form label.required:before {content:"* "; color: #d9534f; font-weight: bold;}

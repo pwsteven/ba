@@ -2,6 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\BACorrespondence;
+use App\Entity\Complaints;
+use App\Entity\ContactDetails;
+use App\Entity\CreditMonitor;
+use App\Entity\EmotionalDistress;
+use App\Entity\FinancialLoss;
+use App\Entity\FurtherCorrespondence;
+use App\Entity\PersonalDetails;
+use App\Entity\Reimbursements;
 use App\Entity\User;
 use App\Form\ManualImportType;
 use App\Repository\BACorrespondenceRepository;
@@ -216,7 +225,12 @@ class AdminClientsController extends BaseController
 
             if ($proClaimDetails['client_claim_code'] === "CON"){
 
-                dd($tempPassword);
+                if (!empty($proClaimDetails['client_date_of_birth'])) {
+                    $date_of_birth = \DateTime::createFromFormat('d/m/Y', $proClaimDetails['client_date_of_birth']);
+                    $date_of_birth->format('Ymd');
+                } else {
+                    $date_of_birth = "";
+                }
 
                 // IMPORT DETAILS FROM PROCLAIM TO DATABASE 'USER' TABLE
                 $user = new User();
@@ -231,7 +245,58 @@ class AdminClientsController extends BaseController
                 $user->setFirstName($proClaimDetails['client_forename']);
                 $user->setProClaimReference($proClaimRefNo);
 
+                // IMPORT DETAILS FROM PROCLAIM TO DATABASE 'PERSONAL DETAILS' TABLE
+                $personalDetails = new PersonalDetails();
+                $personalDetails->setUser($user);
+                $personalDetails->setFirstName($proClaimDetails['client_forename']);
+                $personalDetails->setMiddleName($proClaimDetails['client_middle_name']);
+                $personalDetails->setSurname($proClaimDetails['client_surname']);
+                $personalDetails->setDateOfBirth($date_of_birth);
+
+                $contactDetails = new ContactDetails();
+                $contactDetails->setUser($user);
+                /**
+                if (!empty($proClaimDetails['client_address_block'])){
+                    $contactDetails->setAddressBlock($proClaimDetails['client_address_block']);
+                    $contactDetails->setUseClientAddressBlock(true);
+                }
+                 **/
+                $contactDetails->setPostcode($proClaimDetails['client_postcode']);
+                $contactDetails->setEmailAddress($proClaimDetails['client_email']);
+                $contactDetails->setMobileTelephoneNumber($proClaimDetails['client_mobile_phone']);
+
+                $baCorrespondenceDetails = new BACorrespondence();
+                $baCorrespondenceDetails->setUserID($user);
+
+                $furtherCorrespondenceDetails = new FurtherCorrespondence();
+                $furtherCorrespondenceDetails->setUser($user);
+
+                $complaintDetails = new Complaints();
+                $complaintDetails->setUser($user);
+
+                $financialLossDetails = new FinancialLoss();
+                $financialLossDetails->setUser($user);
+
+                $reimbursementDetails = new Reimbursements();
+                $reimbursementDetails->setUser($user);
+
+                $creditMonitorDetails = new CreditMonitor();
+                $creditMonitorDetails->setUser($user);
+
+                $emotionalDistressDetails = new EmotionalDistress();
+                $emotionalDistressDetails->setUser($user);
+
                 $entityManager->persist($user);
+                $entityManager->persist($personalDetails);
+                $entityManager->persist($contactDetails);
+                $entityManager->persist($baCorrespondenceDetails);
+                $entityManager->persist($furtherCorrespondenceDetails);
+                $entityManager->persist($complaintDetails);
+                $entityManager->persist($financialLossDetails);
+                $entityManager->persist($reimbursementDetails);
+                $entityManager->persist($creditMonitorDetails);
+                $entityManager->persist($emotionalDistressDetails);
+
                 $entityManager->flush();
 
                 return $this->redirectToRoute('app_admin_clients');
