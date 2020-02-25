@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/address_lookup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/AddressLookupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ba_onboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ba_onboard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/SendMail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/email/app_invite.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/address_lookup.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/address_lookup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AddressLookupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AddressLookupController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimGetClientStarterDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimGetClientStarterDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/clients.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +280,11 @@
       <workItem from="1581450842444" duration="24000" />
       <workItem from="1581450895648" duration="45000" />
       <workItem from="1581498345228" duration="8215000" />
-      <workItem from="1581517520323" duration="15591000" />
+      <workItem from="1581517520323" duration="18527000" />
+      <workItem from="1581596713096" duration="24068000" />
+      <workItem from="1582017705372" duration="1442000" />
+      <workItem from="1582622601948" duration="597000" />
+      <workItem from="1582623941660" duration="851000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -560,7 +566,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581518775881</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Working on Address Lookup in Contact Details page&#10;13/02/20 11:28pm">
+      <created>1581593336737</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1581593336737</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +595,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="BA Correspondence&#10;10/12/19 09:37am" />
     <MESSAGE value="Dashboard Controller Page Structure Complete &#10;10/12/19 15:59pm" />
     <MESSAGE value="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm" />
     <MESSAGE value="Adding Breach Two fields to BACorrespondenceType and relevant form template&#10;10/12/19 17:28pm" />
@@ -607,17 +619,18 @@
     <MESSAGE value="Webpacking...&#10;05/02/20 12:52pm" />
     <MESSAGE value="Webpacking...&#10;05/02/20 16:07pm" />
     <MESSAGE value="Working on AdminClientsController - User created&#10;12/02/20 14:44pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on AdminClientsController - User created&#10;12/02/20 14:44pm" />
+    <MESSAGE value="Working on Address Lookup in Contact Details page&#10;13/02/20 11:28pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on Address Lookup in Contact Details page&#10;13/02/20 11:28pm" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581587049747">
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581670882501">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581587049747" />
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1581450858793">
+    <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581670882501" />
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582017736841">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1581450858793" />
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1582017736841" />
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581586779825">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -626,14 +639,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581522373668" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581518769984">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581593332865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581518769984" />
-    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581526481957">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581593332865" />
+    <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581670763337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1581526481957" />
+    <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1581670763337" />
     <state x="511" y="73" key="RollbackChangesDialog" timestamp="1576063065979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -642,10 +655,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="569" y="279" key="VCS.EditChangelistDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063088318" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1581517530265">
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1582623954604">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1581517530265" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582623954604" />
     <state x="339" y="157" key="run.anything.popup" timestamp="1578065732369">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -23,7 +23,8 @@
         "symfony/web-server-bundle": "4.3.*",
         "symfony/webpack-encore-bundle": "^1.6",
         "symfony/yaml": "4.3.*",
-      "ext-soap": "*"
+      "ext-soap": "*",
+      "ext-json": "*"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.2",

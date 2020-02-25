@@ -759,16 +759,16 @@ function changeTheme($theme, $style, $themeStylesheet, $init) {
     if ($theme === 'lite') {
 
         $body.removeClass('theme-dark theme-semidark');
-        $themeStylesheet.href = 'assets/css/' + $theme + '-' + $style + '.min.css';
+        //$themeStylesheet.href = 'assets/css/' + $theme + '-' + $style + '.min.css';
     } else if ($theme === 'dark') {
 
         $body.removeClass('theme-semidark').addClass('theme-dark');
-        $themeStylesheet.href = 'assets/css/' + $theme + '-style-1.min.css';
+        //$themeStylesheet.href = 'assets/css/' + $theme + '-style-1.min.css';
         $('#theme-style-chooser').hide();
     } else if ($theme === 'semidark') {
 
         $body.removeClass('theme-dark').addClass('theme-semidark');
-        $themeStylesheet.href = 'assets/css/' + $theme + '-' + $style + '.min.css';
+        //$themeStylesheet.href = 'assets/css/' + $theme + '-' + $style + '.min.css';
     }
 
     localStorage.setItem('dt-theme', $theme);

@@ -20,8 +20,6 @@ class ContactDetails
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Encrypted()
-     * @Assert\NotBlank(message="Please enter your House Name/Number")
      */
     private $houseNameNumber;
 

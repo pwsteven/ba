@@ -136,22 +136,6 @@ class ProClaimGetClientStarterDetails
             //******************************** CONTACT DETAILS *************************************
             //**************************************************************************************
 
-            // GET CLIENT ADDRESS BLOCK
-            $param = [
-                'csessionid' => $session_id,
-                'ccasetype' => '93',
-                'ccaseno' => $caseRefNo,
-                'cfieldname' => 'Client.Address block',
-            ];
-            $response = $client->proGetData($param);
-            if ($response->cstatus!='OK') {
-                $data['client_address_block'] = $response->cerror;
-            } else {
-                $session_id = $response->csessionid;
-                $case_field_value = $response->cfieldvalue;
-                $data['client_address_block'] = $case_field_value;
-            }
-
             // GET CLIENT POSTCODE
             $param = [
                 'csessionid' => $session_id,

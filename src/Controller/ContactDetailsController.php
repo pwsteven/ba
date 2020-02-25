@@ -59,7 +59,7 @@ class ContactDetailsController extends BaseController
             $entityManager->persist($contactDetails);
             $entityManager->flush();
 
-            $address_block = $contactDetails->getHouseNameNumber().' '.$contactDetails->getStreetAddress().', ';
+            $address_block = $contactDetails->getStreetAddress().', ';
             if (!empty($contactDetails->getStreetAddress2())):
                 $address_block .= $contactDetails->getStreetAddress2().', ';
             endif;

@@ -25,6 +25,7 @@ use App\Repository\ReimbursementsRepository;
 use App\Repository\UserRepository;
 use App\Service\ProClaimGetClientStarterDetails;
 use App\Service\ProClaimRequest;
+use App\Service\SendMail;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Omines\DataTablesBundle\Adapter\Doctrine\ORMAdapter;
@@ -60,6 +61,7 @@ class AdminClientsController extends BaseController
      * @var ReimbursementsRepository
      * @var CreditMonitorRepository
      * @var EmotionalDistressRepository
+     * @var string
      */
     private $dataTableFactory;
     private $router;
@@ -209,9 +211,11 @@ class AdminClientsController extends BaseController
      * @param Request $request
      * @param ProClaimGetClientStarterDetails $claimGetClientStarterDetails
      * @param EntityManagerInterface $entityManager
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @param SendMail $sendMail
      * @return Response
      */
-    public function clientManualInput(Request $request, ProClaimGetClientStarterDetails $claimGetClientStarterDetails, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder)
+    public function clientManualInput(Request $request, ProClaimGetClientStarterDetails $claimGetClientStarterDetails, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder, SendMail $sendMail)
     {
 
         $form = $this->createForm(ManualImportType::class);
@@ -298,6 +302,9 @@ class AdminClientsController extends BaseController
                 $entityManager->persist($emotionalDistressDetails);
 
                 $entityManager->flush();
+
+                $sendMail->appInvite($proClaimDetails['client_email'], $proClaimDetails['client_forename']);
+                $this->addFlash('client_added_success', 'Client details added... Invitation email sent!');
 
                 return $this->redirectToRoute('app_admin_clients');
 

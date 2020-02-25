@@ -14,12 +14,6 @@ class ContactDetailsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('houseNameNumber', TextType::class, [
-                'label' => 'House Name/Number',
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ]
-            ])
             ->add('streetAddress', TextType::class, [
                 'label' => 'Street Address',
                 'attr' => [
