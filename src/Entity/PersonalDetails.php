@@ -61,6 +61,11 @@ class PersonalDetails
      */
     private $imageFileName;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $avatar;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -140,12 +145,24 @@ class PersonalDetails
 
     public function getImageFileName(): ?string
     {
-        return UploaderHelper::FILE_IMAGE.'/'.$this->imageFileName;
+        return UploaderHelper::CLIENT_ID_IMAGE.'/'.$this->imageFileName;
     }
 
     public function setImageFileName(?string $imageFileName): self
     {
         $this->imageFileName = $imageFileName;
+
+        return $this;
+    }
+
+    public function getAvatar(): ?string
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(?string $avatar): self
+    {
+        $this->avatar = $avatar;
 
         return $this;
     }

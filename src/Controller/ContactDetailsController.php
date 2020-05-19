@@ -72,8 +72,12 @@ class ContactDetailsController extends BaseController
             //Commit to ProClaim
             $data = [
                 'case_id' => $this->getUser()->getProClaimReference(),
-                'address_block' => $address_block,
+                'street_address' => $contactDetails->getStreetAddress(),
+                'street_address_2' => $contactDetails->getStreetAddress2(),
+                'town_city' => $contactDetails->getTownCity(),
+                'county' => $contactDetails->getCounty(),
                 'postcode' => $contactDetails->getPostcode(),
+                'address_block' => $address_block,
                 'email' => $contactDetails->getEmailAddress(),
                 'mobile_phone' => $contactDetails->getMobileTelephoneNumber(),
             ];

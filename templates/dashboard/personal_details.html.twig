@@ -87,8 +87,8 @@
                     <div class="error_message">{{ form_errors(form.imageFile) }}</div>
                 </div>
                 <div class="form-group col-md-3">
-                    {% if form.vars.data.imageFileName != "article_image/" %}
-                        <img src="{{ uploaded_asset(form.vars.data.imageFileName)|imagine_filter('squared_thumbnail_small') }}" height="100">
+                    {% if form.vars.data.imageFileName|default %}
+                        <img src="{{ form.vars.data.imageFileName|imagine_filter('squared_thumbnail_small') }}" alt="">
                     {% endif %}
                 </div>
             </div>

@@ -4,7 +4,12 @@
 namespace App\Service;
 
 use Gedmo\Sluggable\Util\Urlizer;
+use League\Flysystem\FileExistsException;
+use League\Flysystem\FileNotFoundException;
+use League\Flysystem\FilesystemInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Asset\Context\RequestStackContext;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
@@ -14,32 +19,59 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 class UploaderHelper
 {
 
-    const FILE_IMAGE = 'article_image';
+    const CLIENT_ID_IMAGE = 'photo_id';
 
-    private $uploadsPath;
     /**
      * @var RequestStackContext
+     * @var FilesystemInterface
+     * @var LoggerInterface
+     * @var string
      */
     private $requestStackContext;
+    private $filesystem;
+    private $logger;
+    private $uploadedAssetsBaseUrl;
 
-    public function __construct(string $uploadsPath, RequestStackContext $requestStackContext)
+    public function __construct(FilesystemInterface $publicUploadsFilesystem, RequestStackContext $requestStackContext, LoggerInterface $logger, string $uploadedAssetsBaseUrl)
     {
-        $this->uploadsPath = $uploadsPath;
         $this->requestStackContext = $requestStackContext;
+        $this->filesystem = $publicUploadsFilesystem;
+        $this->logger = $logger;
+        $this->uploadedAssetsBaseUrl = $uploadedAssetsBaseUrl;
     }
 
-    public function uploadClientFile(UploadedFile $uploadedFile): string
+    public function uploadClientFile(File $file, ?string $existingFileName): string
     {
 
-        $destination = $this->uploadsPath.'/'.self::FILE_IMAGE;
+        if ($file instanceof UploadedFile){
+            $originalFileName = $file->getClientOriginalName();
+        } else {
+            $originalFileName = $file->getFilename();
+        }
+        $newFileName = Urlizer::urlize(pathinfo($originalFileName, PATHINFO_FILENAME)).'-'.uniqid().'.'.$file->guessExtension();
 
-        $originalFileName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-        $newFileName = Urlizer::urlize($originalFileName) . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
+        $stream = fopen($file->getPathname(), 'r');
 
-        $uploadedFile->move(
-            $destination,
-            $newFileName
-        );
+        try {
+            $this->filesystem->writeStream(
+                self::CLIENT_ID_IMAGE . '/' . $newFileName,
+                $stream
+            );
+        } catch (FileExistsException $e) {
+            $this->logger->alert(sprintf('Unable to upload new file "%s"', $newFileName));
+        }
+
+        if (is_resource($stream)){
+            fclose($stream);
+        }
+
+        if ($existingFileName){
+            try {
+                $this->filesystem->delete(self::CLIENT_ID_IMAGE . '/' . $existingFileName);
+            } catch (FileNotFoundException $e) {
+                $this->logger->alert(sprintf('Old uploaded file "%s" was missing when trying to delete', $existingFileName));
+            }
+        }
 
         return $newFileName;
 
@@ -47,7 +79,7 @@ class UploaderHelper
 
     public function getPublicPath(string $path): string
     {
-        return $this->requestStackContext->getBasePath().'/uploads/'.$path;
+        return $this->requestStackContext->getBasePath().$this->uploadedAssetsBaseUrl.'/'.$path;
     }
 
 }

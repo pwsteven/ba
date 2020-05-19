@@ -48,7 +48,9 @@ class ProClaimPutContactDetails
 
             $session_id = $response->csessionid;
 
+            // **************************************************
             // UPDATE CASE
+            // **************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -64,7 +66,9 @@ class ProClaimPutContactDetails
                 $data['message'] = 'Case updated!';
             }
 
+            // **************************************************
             // SET LINKED ACTION
+            // **************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -77,7 +81,9 @@ class ProClaimPutContactDetails
                 $data['message'] = 'Set Linked Action Error: ' .$response->cerror;
             }
 
+            // **************************************************
             // UPDATE ADDRESS BLOCK
+            // **************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -91,7 +97,25 @@ class ProClaimPutContactDetails
                 $data['message'] = 'Set Address Block Error: ' .$response->cerror;
             }
 
+            // **************************************************
+            // UPDATE STREET ADDRESS
+            // **************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Client.Address Line 1',
+                'cfieldvalue' => $caseData['street_address'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Street Address Error: ' .$response->cerror;
+            }
+
+            // **************************************************
             // UPDATE POSTCODE
+            // **************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -105,7 +129,9 @@ class ProClaimPutContactDetails
                 $data['message'] = 'Set PostCode Error: ' .$response->cerror;
             }
 
+            // **************************************************
             // UPDATE EMAIL
+            // **************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -119,7 +145,9 @@ class ProClaimPutContactDetails
                 $data['message'] = 'Set Email Error: ' .$response->cerror;
             }
 
+            // **************************************************
             // UPDATE MOBILE/TELEPHONE
+            // **************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -133,7 +161,9 @@ class ProClaimPutContactDetails
                 $data['message'] = 'Set Mobile/Phone Error: ' .$response->cerror;
             }
 
+            // **************************************************
             // COMMIT TO PROCLAIM
+            // **************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',

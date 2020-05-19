@@ -61,8 +61,10 @@ class PersonalDetailsController extends BaseController
             /** @var UploadedFile $uploadedFile */
             $uploadedFile = $form['imageFile']->getData();
             if ($uploadedFile) {
-                $newFileName = $uploaderHelper->uploadClientFile($uploadedFile);
+                $newFileName = $uploaderHelper->uploadClientFile($uploadedFile, $personalDetails->getImageFileName());
                 $personalDetails->setImageFileName($newFileName);
+                $userAvatar = $this->getUser()->setAvatar($newFileName);
+                $entityManager->persist($userAvatar);
             }
 
             //Commit form values to the database

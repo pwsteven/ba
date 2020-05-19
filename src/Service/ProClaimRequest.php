@@ -169,7 +169,76 @@ class ProClaimRequest
             //******************************** CONTACT DETAILS *************************************
             //**************************************************************************************
 
+            // GET CLIENT STREET ADDRESS
+            //************************************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'Client.Address Line 1',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['client_street_address'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['client_street_address'] = $case_field_value;
+            }
+
+            // GET CLIENT STREET ADDRESS 2
+            //************************************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'Client.Address Line 2',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['client_street_address_2'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['client_street_address_2'] = $case_field_value;
+            }
+
+            // GET CLIENT TOWN/CITY
+            //************************************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'Client.Address Line 4',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['client_town_city'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['client_town_city'] = $case_field_value;
+            }
+
+            // GET CLIENT COUNTY
+            //************************************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'Client.Address Line 5',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['client_county'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['client_county'] = $case_field_value;
+            }
+
             // GET CLIENT ADDRESS BLOCK
+            //************************************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -186,6 +255,7 @@ class ProClaimRequest
             }
 
             // GET CLIENT POSTCODE
+            //************************************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -202,6 +272,7 @@ class ProClaimRequest
             }
 
             // GET CLIENT EMAIL
+            //************************************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
@@ -218,6 +289,7 @@ class ProClaimRequest
             }
 
             // GET CLIENT MOBILE/TELEPHONE
+            //************************************************************************
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',

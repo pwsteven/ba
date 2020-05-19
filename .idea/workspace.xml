@@ -2,20 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Service/SendMail.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/email/app_invite.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200518142333.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200518143047.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/address_lookup.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/address_lookup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AddressLookupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AddressLookupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimGetClientStarterDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimGetClientStarterDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/clients.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutContactDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UploaderHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/clients_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients_edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/article_image/user-5de7da079d621.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1716325915.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db171efb7541.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1721c3389c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploads/photo_id/daily-mail-650x350-5db1aa3a09d3a.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +33,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -187,7 +194,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -211,18 +217,6 @@
       <recent name="C:\xampp\htdocs\ba_onboard\src\Controller" />
       <recent name="C:\xampp\htdocs\ba_onboard\public\uploads" />
     </key>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -284,7 +278,13 @@
       <workItem from="1581596713096" duration="24068000" />
       <workItem from="1582017705372" duration="1442000" />
       <workItem from="1582622601948" duration="597000" />
-      <workItem from="1582623941660" duration="851000" />
+      <workItem from="1582623941660" duration="1607000" />
+      <workItem from="1585217161092" duration="239000" />
+      <workItem from="1585217742287" duration="8098000" />
+      <workItem from="1586942493143" duration="488000" />
+      <workItem from="1586943372752" duration="725000" />
+      <workItem from="1587028426176" duration="77000" />
+      <workItem from="1589795263407" duration="17012000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -573,29 +573,34 @@
       <option name="project" value="LOCAL" />
       <updated>1581593336737</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Working on sending automatic email to client upon registering details in manual import&#10;25/02/20 10:00am">
+      <created>1582624951986</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1582624951987</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Dashboard Controller Page Structure Complete &#10;10/12/19 15:59pm" />
     <MESSAGE value="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm" />
     <MESSAGE value="Adding Breach Two fields to BACorrespondenceType and relevant form template&#10;10/12/19 17:28pm" />
     <MESSAGE value="Setting FurtherCorrespondence Entity, Controller, Type, ProClaim + Template &#10;11/12/19 19:00pm" />
@@ -620,17 +625,18 @@
     <MESSAGE value="Webpacking...&#10;05/02/20 16:07pm" />
     <MESSAGE value="Working on AdminClientsController - User created&#10;12/02/20 14:44pm" />
     <MESSAGE value="Working on Address Lookup in Contact Details page&#10;13/02/20 11:28pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on Address Lookup in Contact Details page&#10;13/02/20 11:28pm" />
+    <MESSAGE value="Working on sending automatic email to client upon registering details in manual import&#10;25/02/20 10:00am" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on sending automatic email to client upon registering details in manual import&#10;25/02/20 10:00am" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581670882501">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1581670882501" />
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582017736841">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586942856385">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1582017736841" />
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1586942856385" />
     <state x="437" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581586779825">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -639,34 +645,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581522373668" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1581593332865">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582624937569">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581593332865" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582624937569" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581670763337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="481" y="177" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1581670763337" />
-    <state x="511" y="73" key="RollbackChangesDialog" timestamp="1576063065979">
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1586942842448">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="511" y="73" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063065979" />
-    <state x="569" y="279" key="VCS.EditChangelistDialog" timestamp="1576063088318">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="569" y="279" key="VCS.EditChangelistDialog/0.0.1366.728@0.0.1366.728" timestamp="1576063088318" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1582623954604">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582623954604" />
-    <state x="339" y="157" key="run.anything.popup" timestamp="1578065732369">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1578065732369" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1577104892640">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577104892640" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586942842448" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -45,7 +45,10 @@
                             </tr>
                             <tr>
                                 <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">5</span> Image File:</td>
-                                <td><img src="{{ uploaded_asset(client_personal.0.imageFileName)|imagine_filter('squared_thumbnail_small') }}" alt=""></td>
+                                <td>
+                                    {% if client_personal.0.imageFileName|default %}
+                                        <img src="{{ client_personal.0.imageFileName|imagine_filter('squared_thumbnail_small') }}" alt=""></td>
+                                    {% endif %}
                             </tr>
                             </tbody>
                         </table>
@@ -72,10 +75,6 @@
                             <tbody>
                             <tr>
                                 <td class="text-uppercase" colspan="2"><span class="badge badge-info mb-1 mr-1">6</span> Clients Full Address Details</td>
-                            </tr>
-                            <tr>
-                                <td class="text-uppercase" style="width: 50%">House Name/Number:</td>
-                                <td>{{ client_contact.0.houseNameNumber }}</td>
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Street Address:</td>

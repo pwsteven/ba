@@ -13,7 +13,11 @@
                 {# Dropdown Link #}
                 <a href="#" class="dropdown-toggle dt-avatar-wrapper text-body"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
+                    {% if app.user.avatar|default %}
+                        <img class="dt-avatar" src="{{ app.user.avatar|imagine_filter('squared_thumbnail_small') }}" alt="{{ app.user.firstName }}">
+                    {% else %}
+                        <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
+                    {% endif %}
                     <span class="dt-avatar-info">
                         <span class="dt-avatar-name">{{ app.user.firstName }}</span>
                     </span>
