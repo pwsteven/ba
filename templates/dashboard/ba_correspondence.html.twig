@@ -6,8 +6,12 @@
 
     <div class="col-12">
         <h2>Test File Uploads</h2>
-
-
+        <form action="{{ path('upload_file_reference', {
+            id: app.user.id
+        }) }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="reference">
+            <button type="submit" class="btn btn-sm btn-primary">Upload</button>
+        </form>
         <hr>
     </div>
 

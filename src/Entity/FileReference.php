@@ -47,11 +47,9 @@ class FileReference
         return $this->user;
     }
 
-    public function setUser(?User $user): self
+    public function __construct(User $user)
     {
         $this->user = $user;
-
-        return $this;
     }
 
     public function getFilename(): ?string

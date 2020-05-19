@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200519091746.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/address_lookup.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/address_lookup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutContactDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/clients_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients_edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/FileReference.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FileReference.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UploaderHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +268,7 @@
       <workItem from="1586942493143" duration="488000" />
       <workItem from="1586943372752" duration="725000" />
       <workItem from="1587028426176" duration="77000" />
-      <workItem from="1589795263407" duration="23374000" />
+      <workItem from="1589795263407" duration="28765000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -577,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589876575529</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Updated Contact Details added GetAddress API functionality">
+      <created>1589883191706</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1589883191706</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +599,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Adding Breach Two fields to BACorrespondenceType and relevant form template&#10;10/12/19 17:28pm" />
     <MESSAGE value="Setting FurtherCorrespondence Entity, Controller, Type, ProClaim + Template &#10;11/12/19 19:00pm" />
     <MESSAGE value="Setting Complaints Entity, Controller, Type, ProClaim + Template &#10;13/12/19 12:05pm" />
     <MESSAGE value="Complaints Entity, Controller, Type, ProClaim + Template Complete &#10;16/12/19 10:04pm" />
@@ -623,7 +623,8 @@
     <MESSAGE value="Working on Address Lookup in Contact Details page&#10;13/02/20 11:28pm" />
     <MESSAGE value="Working on sending automatic email to client upon registering details in manual import&#10;25/02/20 10:00am" />
     <MESSAGE value="Setting up Flysystem and Liip Imagine" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up Flysystem and Liip Imagine" />
+    <MESSAGE value="Updated Contact Details added GetAddress API functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Contact Details added GetAddress API functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581670882501">
@@ -642,10 +643,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581522373668" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589876569431">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589883186518">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589876569431" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589883186456" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581670763337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -654,6 +655,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586942842448" />
+    <state x="375" y="122" key="refactoring.ChangeSignatureDialog" timestamp="1589886835427">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="375" y="122" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1589886835427" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

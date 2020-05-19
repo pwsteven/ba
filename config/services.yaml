@@ -16,6 +16,7 @@ services:
         bind:
             $uploadedAssetsBaseUrl: '%uploads_base_url%'
             $publicUploadsFilesystem: '@oneup_flysystem.public_uploads_filesystem_filesystem'
+
             $proClaimWsdl: 'http://remote.yourlawyers.co.uk:8085/wsa/wsa1/wsdl?targetURI=urn:services-eclipse-co-uk:proclaim:proclaim'
             $proClaimUser: 'Rudi'
             $proClaimPassword: 'Rudi'
