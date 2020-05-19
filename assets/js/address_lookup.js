@@ -34,6 +34,7 @@ $('#find_address').click(function(event) {
                 if (address_counter === 1){
                     $('#contact_details_streetAddress').val(data['address'][0]['street_address']);
                     $('#contact_details_streetAddress2').val(data['address'][0]['line_2']);
+                    $('#contact_details_streetAddress3').val(data['address'][0]['line_3']);
                     $('#contact_details_townCity').val(data['address'][0]['town_city']);
                     $('#contact_details_county').val(data['address'][0]['county']);
                 } else {
@@ -44,8 +45,8 @@ $('#find_address').click(function(event) {
                     let value;
                     for(idx in data['address']) {
                         addy = data['address'][idx];
-                        visual = addy['street_address'] + ' ' + addy['line_2'] + ' ' + addy['town_city'] + ' ' + addy['county'];
-                        value = addy['street_address'] + '|' + addy['line_2'] + '|' + addy['town_city'] + '|' + addy['county'];
+                        visual = addy['street_address'] + ' ' + addy['line_2'] + ' ' + addy['line_3'] + ' ' + addy['town_city'] + ' ' + addy['county'];
+                        value = addy['street_address'] + '|' + addy['line_2'] + '|' + addy['line_3'] + '|' + addy['town_city'] + '|' + addy['county'];
                         $('#address_picker').append($('<option>', {value: value, text: visual}));
                     }
                 }
@@ -59,8 +60,9 @@ $('#address_picker').on('change', function() {
         const address_bits = $(this).val().split('|');
         $('#contact_details_streetAddress').val(address_bits[0]);
         $('#contact_details_streetAddress2').val(address_bits[1]);
-        $('#contact_details_townCity').val(address_bits[2]);
-        $('#contact_details_county').val(address_bits[3]);
+        $('#contact_details_streetAddress3').val(address_bits[2]);
+        $('#contact_details_townCity').val(address_bits[3]);
+        $('#contact_details_county').val(address_bits[4]);
         $('#select_address_block').fadeOut(250);
     }
 });

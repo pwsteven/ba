@@ -2,29 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200518142333.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200518143047.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200519091746.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/address_lookup.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/address_lookup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContactDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonalDetailsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/PersonalDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ContactDetailsType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutContactDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutContactDetails.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/UploaderHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/clients_edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients_edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_sidebar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/personal_details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/article_image/user-5de7da079d621.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1716325915.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db171efb7541.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/photo_id/bt-online-600x300-5db1721c3389c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/photo_id/daily-mail-650x350-5db1aa3a09d3a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/proclaim_get.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/contact_details.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +274,7 @@
       <workItem from="1586942493143" duration="488000" />
       <workItem from="1586943372752" duration="725000" />
       <workItem from="1587028426176" duration="77000" />
-      <workItem from="1589795263407" duration="17012000" />
+      <workItem from="1589795263407" duration="23374000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -580,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582624951987</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Setting up Flysystem and Liip Imagine">
+      <created>1589876575529</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1589876575529</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +598,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ProClaim Put Service Classes Added &#10;10/12/19 16:22pm" />
     <MESSAGE value="Adding Breach Two fields to BACorrespondenceType and relevant form template&#10;10/12/19 17:28pm" />
     <MESSAGE value="Setting FurtherCorrespondence Entity, Controller, Type, ProClaim + Template &#10;11/12/19 19:00pm" />
     <MESSAGE value="Setting Complaints Entity, Controller, Type, ProClaim + Template &#10;13/12/19 12:05pm" />
@@ -626,7 +622,8 @@
     <MESSAGE value="Working on AdminClientsController - User created&#10;12/02/20 14:44pm" />
     <MESSAGE value="Working on Address Lookup in Contact Details page&#10;13/02/20 11:28pm" />
     <MESSAGE value="Working on sending automatic email to client upon registering details in manual import&#10;25/02/20 10:00am" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on sending automatic email to client upon registering details in manual import&#10;25/02/20 10:00am" />
+    <MESSAGE value="Setting up Flysystem and Liip Imagine" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setting up Flysystem and Liip Imagine" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581670882501">
@@ -645,10 +642,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581522373668" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582624937569">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589876569431">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1582624937569" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589876569431" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581670763337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

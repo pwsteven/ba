@@ -39,6 +39,12 @@ class ContactDetails
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Encrypted()
+     */
+    private $streetAddress3;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
      * @Assert\NotBlank(message="Please enter your Town/City")
      */
     private $townCity;
@@ -129,6 +135,18 @@ class ContactDetails
     public function setStreetAddress2(?string $streetAddress2): self
     {
         $this->streetAddress2 = $streetAddress2;
+
+        return $this;
+    }
+
+    public function getStreetAddress3(): ?string
+    {
+        return $this->streetAddress3;
+    }
+
+    public function setStreetAddress3(?string $streetAddress3): self
+    {
+        $this->streetAddress3 = $streetAddress3;
 
         return $this;
     }
@@ -240,4 +258,5 @@ class ContactDetails
 
         return $this;
     }
+
 }

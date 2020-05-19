@@ -203,6 +203,23 @@ class ProClaimRequest
                 $data['client_street_address_2'] = $case_field_value;
             }
 
+            // GET CLIENT STREET ADDRESS 3
+            //************************************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'Client.Address Line 3',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['client_street_address_3'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['client_street_address_3'] = $case_field_value;
+            }
+
             // GET CLIENT TOWN/CITY
             //************************************************************************
             $param = [

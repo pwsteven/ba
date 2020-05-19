@@ -114,6 +114,67 @@ class ProClaimPutContactDetails
             }
 
             // **************************************************
+            // UPDATE STREET ADDRESS 2
+            // **************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Client.Address Line 2',
+                'cfieldvalue' => $caseData['street_address_2'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Street Address 2 Error: ' .$response->cerror;
+            }
+
+            // **************************************************
+            // UPDATE STREET ADDRESS 3
+            // **************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Client.Address Line 3',
+                'cfieldvalue' => $caseData['street_address_3'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Street Address 3 Error: ' .$response->cerror;
+            }
+            // **************************************************
+            // UPDATE TOWN/CITY
+            // **************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Client.Address Line 4',
+                'cfieldvalue' => $caseData['town_city'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Town/City Error: ' .$response->cerror;
+            }
+            // **************************************************
+            // UPDATE COUNTY
+            // **************************************************
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'Client.Address Line 5',
+                'cfieldvalue' => $caseData['county'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set County Error: ' .$response->cerror;
+            }
+            // **************************************************
             // UPDATE POSTCODE
             // **************************************************
             $param = [

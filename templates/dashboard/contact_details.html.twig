@@ -101,6 +101,16 @@
             </div>
             {# /Street Address Line 2 Form Row #}
 
+            {# Street Address Line 3 Form Row #}
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    {{ form_label(form.streetAddress3)}}
+                    {{ form_widget(form.streetAddress3) }}
+                    <div class="error_message">{{ form_errors(form.streetAddress3) }}</div>
+                </div>
+            </div>
+            {# /Street Address Line 3 Form Row #}
+
             {# Town/City Form Row #}
             <div class="form-row">
                 <div class="form-group col-md-12">

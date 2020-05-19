@@ -63,6 +63,9 @@ class ContactDetailsController extends BaseController
             if (!empty($contactDetails->getStreetAddress2())):
                 $address_block .= $contactDetails->getStreetAddress2().', ';
             endif;
+            if (!empty($contactDetails->getStreetAddress3())):
+                $address_block .= $contactDetails->getStreetAddress3().', ';
+            endif;
             if (!empty($contactDetails->getTownCity())):
                 $address_block .= $contactDetails->getTownCity();
             endif;
@@ -74,6 +77,7 @@ class ContactDetailsController extends BaseController
                 'case_id' => $this->getUser()->getProClaimReference(),
                 'street_address' => $contactDetails->getStreetAddress(),
                 'street_address_2' => $contactDetails->getStreetAddress2(),
+                'street_address_3' => $contactDetails->getStreetAddress3(),
                 'town_city' => $contactDetails->getTownCity(),
                 'county' => $contactDetails->getCounty(),
                 'postcode' => $contactDetails->getPostcode(),

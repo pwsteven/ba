@@ -27,6 +27,13 @@ class ContactDetailsType extends AbstractType
                     'class' => 'form-control form-control-lg',
                 ]
             ])
+            ->add('streetAddress3', TextType::class, [
+                'label' => 'Street Address Line 3',
+                'required' => false,
+                'attr' => [
+                    'class' => 'form-control form-control-lg',
+                ]
+            ])
             ->add('townCity', TextType::class, [
                 'label' => 'Town/City',
                 'attr' => [
