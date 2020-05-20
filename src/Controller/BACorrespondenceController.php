@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Form\BACorrespondenceType;
 use App\Repository\BACorrespondenceRepository;
+use App\Repository\FileReferenceRepository;
 use App\Service\ProClaimPutBACorrespondence;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
@@ -25,12 +26,15 @@ class BACorrespondenceController extends BaseController
 
     /**
      * @var BACorrespondenceRepository
+     * @var FileReferenceRepository
      */
     private $BACorrespondenceRepository;
+    private $fileReferenceRepository;
 
-    public function __construct(BACorrespondenceRepository $BACorrespondenceRepository)
+    public function __construct(BACorrespondenceRepository $BACorrespondenceRepository, FileReferenceRepository $fileReferenceRepository)
    {
        $this->BACorrespondenceRepository = $BACorrespondenceRepository;
+       $this->fileReferenceRepository = $fileReferenceRepository;
    }
 
     /**
@@ -51,6 +55,7 @@ class BACorrespondenceController extends BaseController
 
         $userID = $this->getUser()->getId();
         $baCorrespondenceDetails = $this->BACorrespondenceRepository->findOneBySomeField($userID);
+        $fileReferences = $this->fileReferenceRepository->findByExampleField($userID);
 
         $form = $this->createForm(BACorrespondenceType::class, $baCorrespondenceDetails);
         $form->handleRequest($request);
@@ -152,6 +157,7 @@ class BACorrespondenceController extends BaseController
         return $this->render('dashboard/ba_correspondence.html.twig', [
             'header_text' => 'BA Correspondence',
             'form' => $form->createView(),
+            'files' => $fileReferences,
         ]);
     }
 }

@@ -22,11 +22,11 @@ class FileReferenceRepository extends ServiceEntityRepository
     // /**
     //  * @return FileReference[] Returns an array of FileReference objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
+            ->andWhere('f.user = :val')
             ->setParameter('val', $value)
             ->orderBy('f.id', 'ASC')
             ->setMaxResults(10)
@@ -34,7 +34,7 @@ class FileReferenceRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?FileReference

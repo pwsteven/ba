@@ -8,8 +8,10 @@ use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\HeaderUtils;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -30,6 +32,7 @@ class FileReferenceController extends BaseController
      * @param Request $request
      * @param UploaderHelper $uploaderHelper
      * @param EntityManagerInterface $entityManager
+     * @param ValidatorInterface $validator
      * @return RedirectResponse
      */
     public function uploadFileReference(User $user, Request $request, UploaderHelper $uploaderHelper, EntityManagerInterface $entityManager, ValidatorInterface $validator)
@@ -80,5 +83,29 @@ class FileReferenceController extends BaseController
         $entityManager->flush();
 
         return $this->redirectToRoute('app_ba_correspondence');
+    }
+
+    /**
+     * @param FileReference $fileReference
+     * @param UploaderHelper $uploaderHelper
+     * @return StreamedResponse
+     * @Route("file/{id}/download", name="download_file_reference", methods={"GET"})
+     */
+    public function downloadFileReference(FileReference $fileReference, UploaderHelper $uploaderHelper)
+    {
+        //dd($fileReference->getFilePath());
+
+        $response = new StreamedResponse(function() use ($fileReference, $uploaderHelper) {
+            $outputStream = fopen('php://output', 'wb');
+            $fileStream = $uploaderHelper->readStream($fileReference->getFilePath(), false);
+            stream_copy_to_stream($fileStream, $outputStream);
+        });
+        $response->headers->set('Content-Type', $fileReference->getMimeType());
+        $disposition = HeaderUtils::makeDisposition(
+            HeaderUtils::DISPOSITION_ATTACHMENT,
+            $fileReference->getOriginalFileName()
+        );
+        $response->headers->set('Content-Disposition', $disposition);
+        return $response;
     }
 }

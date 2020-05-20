@@ -72,6 +72,23 @@ class UploaderHelper
         }
     }
 
+
+    /**
+     * @param string $path
+     * @param bool $isPublic
+     * @return resource
+     */
+    public function readStream(string $path, bool $isPublic)
+    {
+
+        $filesystem = $isPublic ? $this->filesystem : $this->privateFileSystem;
+        $resource = $filesystem->readStream($path);
+        if ($resource === false){
+            throw new \Exception(sprintf('Error opening stream for "%s"', $path));
+        }
+        return $resource;
+    }
+
     public function getPublicPath(string $path): string
     {
         return $this->requestStackContext->getBasePath().$this->uploadedAssetsBaseUrl.'/'.$path;

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Service\UploaderHelper;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -105,5 +106,9 @@ class FileReference
         $this->FileStage = $FileStage;
 
         return $this;
+    }
+    public function getFilePath()
+    {
+        return UploaderHelper::FILE_REFERENCE.'/'.$this->getFilename();
     }
 }
