@@ -20,49 +20,36 @@ class UploaderHelper
 {
 
     const CLIENT_ID_IMAGE = 'photo_id';
+    const FILE_REFERENCE = 'file_reference';
 
     /**
      * @var RequestStackContext
      * @var FilesystemInterface
      * @var LoggerInterface
      * @var string
+     * @var FilesystemInterface
      */
     private $requestStackContext;
     private $filesystem;
     private $logger;
     private $uploadedAssetsBaseUrl;
+    private $privateFileSystem;
 
-    public function __construct(FilesystemInterface $publicUploadsFilesystem, RequestStackContext $requestStackContext, LoggerInterface $logger, string $uploadedAssetsBaseUrl)
+    public function __construct(FilesystemInterface $publicUploadsFilesystem, FilesystemInterface $privateUploadsFilesystem, RequestStackContext $requestStackContext, LoggerInterface $logger, string $uploadedAssetsBaseUrl)
     {
         $this->requestStackContext = $requestStackContext;
         $this->filesystem = $publicUploadsFilesystem;
         $this->logger = $logger;
         $this->uploadedAssetsBaseUrl = $uploadedAssetsBaseUrl;
+        $this->privateFileSystem = $privateUploadsFilesystem;
     }
 
     public function uploadClientFile(File $file, ?string $existingFileName): string
     {
 
-        if ($file instanceof UploadedFile){
-            $originalFileName = $file->getClientOriginalName();
-        } else {
-            $originalFileName = $file->getFilename();
-        }
-        $newFileName = Urlizer::urlize(pathinfo($originalFileName, PATHINFO_FILENAME)).'-'.uniqid().'.'.$file->guessExtension();
-
-        $stream = fopen($file->getPathname(), 'r');
-
         try {
-            $this->filesystem->writeStream(
-                self::CLIENT_ID_IMAGE . '/' . $newFileName,
-                $stream
-            );
-        } catch (FileExistsException $e) {
-            $this->logger->alert(sprintf('Unable to upload new file "%s"', $newFileName));
-        }
-
-        if (is_resource($stream)){
-            fclose($stream);
+            $newFileName = $this->uploadFile($file, self::CLIENT_ID_IMAGE, true);
+        } catch (\Exception $e) {
         }
 
         if ($existingFileName){
@@ -79,12 +66,42 @@ class UploaderHelper
 
     public function uploadFileReference(File $file): string
     {
-        dd($file);
+        try {
+            return $this->uploadFile($file, self::FILE_REFERENCE, false);
+        } catch (\Exception $e) {
+        }
     }
 
     public function getPublicPath(string $path): string
     {
         return $this->requestStackContext->getBasePath().$this->uploadedAssetsBaseUrl.'/'.$path;
+    }
+
+    private function uploadFile(File $file, string $directory, bool $isPublic): string
+    {
+        if ($file instanceof UploadedFile){
+            $originalFileName = $file->getClientOriginalName();
+        } else {
+            $originalFileName = $file->getFilename();
+        }
+        $newFileName = Urlizer::urlize(pathinfo($originalFileName, PATHINFO_FILENAME)).'-'.uniqid().'.'.$file->guessExtension();
+
+        $filesystem = $isPublic ? $this->filesystem : $this->privateFileSystem;
+
+        $stream = fopen($file->getPathname(), 'r');
+        $result = $filesystem->writeStream(
+            $directory.'/'.$newFileName,
+            $stream
+        );
+        if ($result === false) {
+            throw new \Exception(sprintf('Could not write uploaded file "%s"', $newFileName));
+        }
+        if (is_resource($stream)) {
+            fclose($stream);
+        }
+
+        return $newFileName;
+
     }
 
 }

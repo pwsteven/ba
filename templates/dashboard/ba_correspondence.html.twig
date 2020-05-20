@@ -4,16 +4,22 @@
 
 {% block body %}
 
-    <div class="col-12">
-        <h2>Test File Uploads</h2>
-        <form action="{{ path('upload_file_reference', {
-            id: app.user.id
-        }) }}" method="POST" enctype="multipart/form-data">
-            <input type="file" name="reference">
-            <button type="submit" class="btn btn-sm btn-primary">Upload</button>
-        </form>
-        <hr>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Test File Uploads</h2>
+            <form action="{{ path('upload_file_reference', {
+                id: app.user.id
+            }) }}" method="POST" enctype="multipart/form-data">
+                <input type="file" name="reference">
+                <input type="hidden" name="file_stage" value="ba_notification_copy">
+                <button type="submit" class="btn btn-sm btn-primary">Upload</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2>Uploaded Files</h2>
+        </div>
     </div>
+    <hr>
 
     {# Grid #}
     <div class="col-12">
@@ -30,6 +36,17 @@
         <div class="dt-card__body">
             <div class="alert alert-primary alert-dismissible fade show" role="alert">
                 <strong>Fantastic!</strong> You completed the Contact Details section. Let's keep going...
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for message in app.session.flashBag.get('error') %}
+        <div class="dt-card__body">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Warning!</strong> {{ message }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

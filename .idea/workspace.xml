@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200520114155.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/oneup_flysystem.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/FileReference.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FileReference.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/UploaderHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
@@ -268,7 +269,8 @@
       <workItem from="1586942493143" duration="488000" />
       <workItem from="1586943372752" duration="725000" />
       <workItem from="1587028426176" duration="77000" />
-      <workItem from="1589795263407" duration="28765000" />
+      <workItem from="1589795263407" duration="41772000" />
+      <workItem from="1589980527523" duration="376000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -578,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589883191706</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Working on the new Private Uploads service">
+      <created>1589888983523</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1589888983544</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -599,7 +608,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Setting FurtherCorrespondence Entity, Controller, Type, ProClaim + Template &#10;11/12/19 19:00pm" />
     <MESSAGE value="Setting Complaints Entity, Controller, Type, ProClaim + Template &#10;13/12/19 12:05pm" />
     <MESSAGE value="Complaints Entity, Controller, Type, ProClaim + Template Complete &#10;16/12/19 10:04pm" />
     <MESSAGE value="Financial Loss Entity, Controller, Type, ProClaim + Template Complete &#10;16/12/19 16:51pm" />
@@ -624,7 +632,8 @@
     <MESSAGE value="Working on sending automatic email to client upon registering details in manual import&#10;25/02/20 10:00am" />
     <MESSAGE value="Setting up Flysystem and Liip Imagine" />
     <MESSAGE value="Updated Contact Details added GetAddress API functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Contact Details added GetAddress API functionality" />
+    <MESSAGE value="Working on the new Private Uploads service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on the new Private Uploads service" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581670882501">
@@ -643,10 +652,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581522373668" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589883186518">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589888978169">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589883186456" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589888978169" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581670763337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

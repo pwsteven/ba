@@ -37,6 +37,11 @@ class FileReference
      */
     private $originalFileName;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $FileStage;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,9 +52,11 @@ class FileReference
         return $this->user;
     }
 
-    public function __construct(User $user)
+    public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
     }
 
     public function getFilename(): ?string
@@ -84,6 +91,18 @@ class FileReference
     public function setOriginalFileName(?string $originalFileName): self
     {
         $this->originalFileName = $originalFileName;
+
+        return $this;
+    }
+
+    public function getFileStage(): ?string
+    {
+        return $this->FileStage;
+    }
+
+    public function setFileStage(?string $FileStage): self
+    {
+        $this->FileStage = $FileStage;
 
         return $this;
     }
