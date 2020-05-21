@@ -4,17 +4,13 @@
 
 {% block body %}
 
-    {{ dump() }}
-
     <div class="row">
         <div class="col-md-8">
             <h2>Test File Uploads</h2>
             <form action="{{ path('upload_file_reference', {
                 id: app.user.id
-            }) }}" method="POST" enctype="multipart/form-data">
-                <input type="file" name="reference">
+            }) }}" method="POST" enctype="multipart/form-data" class="dropzone js-reference-dropzone">
                 <input type="hidden" name="file_stage" value="ba_notification_copy">
-                <button type="submit" class="btn btn-sm btn-primary">Upload</button>
             </form>
         </div>
         <div class="col-md-4">

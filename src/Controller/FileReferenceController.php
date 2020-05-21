@@ -33,7 +33,7 @@ class FileReferenceController extends BaseController
      * @param UploaderHelper $uploaderHelper
      * @param EntityManagerInterface $entityManager
      * @param ValidatorInterface $validator
-     * @return RedirectResponse
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function uploadFileReference(User $user, Request $request, UploaderHelper $uploaderHelper, EntityManagerInterface $entityManager, ValidatorInterface $validator)
     {
@@ -65,11 +65,7 @@ class FileReferenceController extends BaseController
         );
 
         if ($violations->count() > 0){
-            /** @var ConstraintViolation $violation */
-            $violation = $violations[0];
-            $this->addFlash('error', $violation->getMessage());
-
-            return $this->redirectToRoute('app_ba_correspondence');
+            return $this->json($violations, 400);
         }
 
         $filename = $uploaderHelper->uploadFileReference($uploadedFile);
@@ -82,7 +78,12 @@ class FileReferenceController extends BaseController
         $entityManager->persist($fileReference);
         $entityManager->flush();
 
-        return $this->redirectToRoute('app_ba_correspondence');
+        return $this->json($fileReference,
+        201,
+        [],
+        [
+            'groups' => 'main',
+        ]);
     }
 
     /**
@@ -93,7 +94,6 @@ class FileReferenceController extends BaseController
      */
     public function downloadFileReference(FileReference $fileReference, UploaderHelper $uploaderHelper)
     {
-        //dd($fileReference->getFilePath());
 
         $response = new StreamedResponse(function() use ($fileReference, $uploaderHelper) {
             $outputStream = fopen('php://output', 'wb');

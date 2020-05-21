@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/dropzone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ba_onboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ba_onboard.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/FileReference.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FileReference.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/UploaderHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +174,7 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SKBd8CRlUERlCBj5pFGNoJUp0Z" />
@@ -273,6 +275,7 @@
       <workItem from="1587028426176" duration="77000" />
       <workItem from="1589795263407" duration="41772000" />
       <workItem from="1589980527523" duration="8145000" />
+      <workItem from="1589989667329" duration="7693000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -596,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589981084526</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Yarn add Dropzone">
+      <created>1589989758155</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1589989758155</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +627,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Complaints Entity, Controller, Type, ProClaim + Template Complete &#10;16/12/19 10:04pm" />
     <MESSAGE value="Financial Loss Entity, Controller, Type, ProClaim + Template Complete &#10;16/12/19 16:51pm" />
     <MESSAGE value="Started Reimbursements Entity, Controller, Type, ProClaim + Template  &#10;17/12/19 09:14am" />
     <MESSAGE value="Started Reimbursements Entity, Controller, Type, ProClaim + Template  &#10;17/12/19 16:17pm" />
@@ -642,7 +651,8 @@
     <MESSAGE value="Updated Contact Details added GetAddress API functionality" />
     <MESSAGE value="Working on the new Private Uploads service" />
     <MESSAGE value="Yarn upgrade" />
-    <option name="LAST_COMMIT_MESSAGE" value="Yarn upgrade" />
+    <MESSAGE value="Yarn add Dropzone" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yarn add Dropzone" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581670882501">
@@ -661,10 +671,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581522373668" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589981077202">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589989753577">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589981077202" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589989753577" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581670763337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

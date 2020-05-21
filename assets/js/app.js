@@ -17,5 +17,7 @@ import 'sweetalert2';
 import './script';
 import './form';
 import './address_lookup';
+import './dropzone';
+
 
 //console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
