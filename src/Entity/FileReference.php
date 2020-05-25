@@ -39,14 +39,21 @@ class FileReference
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups("main")
+     * @Groups({"main", "input"})
      */
     private $originalFileName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("main")
      */
     private $FileStage;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups("main")
+     */
+    private $FormUploadName;
 
     public function getId(): ?int
     {
@@ -115,5 +122,17 @@ class FileReference
     public function getFilePath()
     {
         return UploaderHelper::FILE_REFERENCE.'/'.$this->getFilename();
+    }
+
+    public function getFormUploadName(): ?string
+    {
+        return $this->FormUploadName;
+    }
+
+    public function setFormUploadName(?string $FormUploadName): self
+    {
+        $this->FormUploadName = $FormUploadName;
+
+        return $this;
     }
 }

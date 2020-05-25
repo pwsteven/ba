@@ -62,35 +62,6 @@ class BACorrespondenceController extends BaseController
 
         if ($form->isSubmitted() && $form->isValid()){
 
-            //COLLECT + UPLOAD FILE|IMAGE FILES
-            /** @var UploadedFile $breachOneNotificationFile */
-            $breachOneNotificationFile = $form['breachOneNotificationFile']->getData();
-            if ($breachOneNotificationFile){
-                $newFileName = $uploaderHelper->uploadClientFile($breachOneNotificationFile);
-                $baCorrespondenceDetails->setBreachOneNotificationFilePath($newFileName);
-            }
-
-            /** @var UploadedFile $breachOneBookingConfirmationFile */
-            $breachOneBookingConfirmationFile = $form['breachOneBookingConfirmationFile']->getData();
-            if ($breachOneBookingConfirmationFile){
-                $newFileName = $uploaderHelper->uploadClientFile($breachOneBookingConfirmationFile);
-                $baCorrespondenceDetails->setBreachOneBookingConfirmationFilePath($newFileName);
-            }
-
-            /** @var UploadedFile $breachTwoNotificationFile */
-            $breachTwoNotificationFile = $form['breachTwoNotificationFile']->getData();
-            if ($breachTwoNotificationFile){
-                $newFileName = $uploaderHelper->uploadClientFile($breachTwoNotificationFile);
-                $baCorrespondenceDetails->setBreachTwoNotificationFilePath($newFileName);
-            }
-
-            /** @var UploadedFile $breachTwoBookingConfirmationFile */
-            $breachTwoBookingConfirmationFile = $form['breachTwoBookingConfirmationFile']->getData();
-            if ($breachTwoBookingConfirmationFile){
-                $newFileName = $uploaderHelper->uploadClientFile($breachTwoBookingConfirmationFile);
-                $baCorrespondenceDetails->setBreachTwoBookingConfirmationFilePath($newFileName);
-            }
-
             // COMMIT FORM FIELD VALUES TO DATABASE
             $baCorrespondenceDetails->setComplete(true);
             $userSetBACorrespondence = $this->getUser()->setAppBACorrespondence(true);

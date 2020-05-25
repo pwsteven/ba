@@ -35,6 +35,38 @@ class FileReferenceRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findByExampleFields($value, $value2)
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.user = :val')
+            ->andWhere('f.FileStage = :val2')
+            ->setParameters([
+                'val' => $value,
+                'val2' => $value2,
+            ])
+            ->orderBy('f.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function findByFilteredExampleFields($value, $value2)
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.user = :val')
+            ->andWhere('f.FormUploadName = :val2')
+            ->setParameters([
+                'val' => $value,
+                'val2' => $value2,
+            ])
+            ->orderBy('f.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
 
     /*
     public function findOneBySomeField($value): ?FileReference

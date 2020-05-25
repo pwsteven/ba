@@ -4,37 +4,6 @@
 
 {% block body %}
 
-    <div class="row">
-        <div class="col-md-8">
-            <h2>Test File Uploads</h2>
-            <form action="{{ path('upload_file_reference', {
-                id: app.user.id
-            }) }}" method="POST" enctype="multipart/form-data" class="dropzone js-reference-dropzone">
-                <input type="hidden" name="file_stage" value="ba_notification_copy">
-            </form>
-        </div>
-        <div class="col-md-4">
-            <h2>Uploaded Files</h2>
-            <ul class="list-group small">
-                {% for file in files %}
-                    {% if file.FileStage == 'ba_notification_copy' %}
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            {{ file.originalFileName }}
-                            <span>
-                                <a href="{{ path('download_file_reference', {
-                                    id: file.id
-                                }) }}" title="download">
-                                    <span class="fa fa-download"></span>
-                                </a>
-                            </span>
-                        </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
-    <hr>
-
     {# Grid #}
     <div class="col-12">
         {# Page Header #}
@@ -50,17 +19,6 @@
         <div class="dt-card__body">
             <div class="alert alert-primary alert-dismissible fade show" role="alert">
                 <strong>Fantastic!</strong> You completed the Contact Details section. Let's keep going...
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-    {% endfor %}
-
-    {% for message in app.session.flashBag.get('error') %}
-        <div class="dt-card__body">
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Warning!</strong> {{ message }}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -123,17 +81,48 @@
 
                     {# Breach One Notification File Upload Form Row #}
                     <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOneNotificationFile) }}
-                            {{ form_widget(form.breachOneNotificationFile) }}
-                            <div class="error_message">{{ form_errors(form.breachOneNotificationFile) }}</div>
+
+                        {# Grid Item #}
+                        <div class="col-md-12 col-sm-12">
+                            {# Card #}
+                            <div class="dt-card">
+
+                                {# Card Header #}
+                                <div class="dt-card__header">
+
+                                    {# Card Heading #}
+                                    <div class="dt-card__heading">
+                                        <h3 class="dt-card__title">Please upload a copy of the notification received from BA:</h3>
+                                    </div>
+                                    {# /Card Heading #}
+
+                                </div>
+                                {# /Card Header #}
+
+                                {# Card Body #}
+                                <div class="dt-card__body">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <button id="ba_notification_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
+                                                Choose File
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <h4>All Uploaded Files For This Stage</h4>
+                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_notification_copy'}) }}"></ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {# /Card Body #}
+
+                            </div>
+                            {# /Card #}
                         </div>
-                        <div class="form-group col-md-12">
-                            {% if form.vars.data.breachOneNotificationFilePath != "" %}
-                                <p><b>Uploaded File:</b> {{ form.vars.data.breachOneNotificationFilePath }}</p>
-                                <hr class="border-dashed my-8">
-                            {% endif %}
-                        </div>
+                        {# /Grid Item #}
+
+
                     </div>
                     {# /Breach One Notification File Upload Form Row #}
 
@@ -197,21 +186,49 @@
                     </div>
                     {# /Breach One Booking Payment Form Row #}
 
-                    {# Breach One Booking File Upload Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOneBookingConfirmationFile) }}
-                            {{ form_widget(form.breachOneBookingConfirmationFile) }}
-                            <div class="error_message">{{ form_errors(form.breachOneBookingConfirmationFile) }}</div>
+                    {# Breach One Booking File Upload Row #}
+                    <div class="row">
+                        {# Grid Item #}
+                        <div class="col-md-12 col-sm-12">
+                            {# Card #}
+                            <div class="dt-card">
+
+                                {# Card Header #}
+                                <div class="dt-card__header">
+
+                                    {# Card Heading #}
+                                    <div class="dt-card__heading">
+                                        <h3 class="dt-card__title">Please upload a copy of the booking notification::</h3>
+                                    </div>
+                                    {# /Card Heading #}
+
+                                </div>
+                                {# /Card Header #}
+
+                                {# Card Body #}
+                                <div class="dt-card__body">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <button id="ba_booking_notification_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
+                                                Choose File
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <h4>All Uploaded Files For This Stage</h4>
+                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_booking_notification'}) }}"></ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {# /Card Body #}
+
+                            </div>
+                            {# /Card #}
                         </div>
-                        <div class="form-group col-md-12">
-                            {% if form.vars.data.breachOneBookingConfirmationFilePath != "" %}
-                                <p><b>Uploaded File:</b> {{ form.vars.data.breachOneBookingConfirmationFilePath }}</p>
-                                <hr class="border-dashed my-8">
-                            {% endif %}
-                        </div>
+                        {# /Grid Item #}
                     </div>
-                    {# /Breach One Booking File Upload Form Row #}
+                    {# /Breach One Booking File Upload Row #}
 
                 </div>
             </div>
@@ -244,19 +261,46 @@
                     {# /Breach Two Date Received Form Row #}
 
                     {# Breach Two Notification File Upload Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoNotificationFile) }}
-                            {{ form_widget(form.breachTwoNotificationFile) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoNotificationFile) }}</div>
+                    {# Grid Item #}
+                    <div class="col-md-12 col-sm-12">
+                        {# Card #}
+                        <div class="dt-card">
+
+                            {# Card Header #}
+                            <div class="dt-card__header">
+
+                                {# Card Heading #}
+                                <div class="dt-card__heading">
+                                    <h3 class="dt-card__title">Please upload a copy of the notification that you had been affected by the data event:</h3>
+                                </div>
+                                {# /Card Heading #}
+
+                            </div>
+                            {# /Card Header #}
+
+                            {# Card Body #}
+                            <div class="dt-card__body">
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6">
+                                        <button id="ba_notification_button_2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
+                                            Choose File
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <h4>All Uploaded Files For This Stage</h4>
+                                        <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_notification_copy_2'}) }}"></ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {# /Card Body #}
+
                         </div>
-                        <div class="form-group col-md-12">
-                            {% if form.vars.data.breachTwoNotificationFilePath != "" %}
-                                <p><b>Uploaded File:</b> {{ form.vars.data.breachTwoNotificationFilePath }}</p>
-                                <hr class="border-dashed my-8">
-                            {% endif %}
-                        </div>
+                        {# /Card #}
                     </div>
+                    {# /Grid Item #}
+
                     {# /Breach Two Notification File Upload Form Row #}
 
                     {# Breach Two Notification Not Affected Form Row #}
@@ -319,21 +363,49 @@
                     </div>
                     {# /Breach Two Booking Payment Form Row #}
 
-                    {# Breach Two Booking File Upload Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoBookingConfirmationFile) }}
-                            {{ form_widget(form.breachTwoBookingConfirmationFile) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoBookingConfirmationFile) }}</div>
+                    {# Breach Two Booking File Upload Row #}
+                    <div class="row">
+                        {# Grid Item #}
+                        <div class="col-md-12 col-sm-12">
+                            {# Card #}
+                            <div class="dt-card">
+
+                                {# Card Header #}
+                                <div class="dt-card__header">
+
+                                    {# Card Heading #}
+                                    <div class="dt-card__heading">
+                                        <h3 class="dt-card__title">Please upload a copy of the booking notification::</h3>
+                                    </div>
+                                    {# /Card Heading #}
+
+                                </div>
+                                {# /Card Header #}
+
+                                {# Card Body #}
+                                <div class="dt-card__body">
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <button id="ba_booking_notification_button_2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
+                                                Choose File
+                                            </button>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <h4>All Uploaded Files For This Stage</h4>
+                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_booking_notification_2'}) }}"></ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                {# /Card Body #}
+
+                            </div>
+                            {# /Card #}
                         </div>
-                        <div class="form-group col-md-12">
-                            {% if form.vars.data.breachTwoBookingConfirmationFilePath != "" %}
-                                <p><b>Uploaded File:</b> {{ form.vars.data.breachTwoBookingConfirmationFilePath }}</p>
-                                <hr class="border-dashed my-8">
-                            {% endif %}
-                        </div>
+                        {# /Grid Item #}
                     </div>
-                    {# /Breach Two Booking File Upload Form Row #}
+                    {# /Breach Two Booking File Upload Row #}
 
 
                 </div>
@@ -354,5 +426,7 @@
         {# /Card #}
     </div>
     {# /Grid #}
+
+    {{ include('dashboard/modals/_ba_correspondence.html.twig') }}
 
 {% endblock %}

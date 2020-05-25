@@ -51,30 +51,6 @@ class BACorrespondenceType extends AbstractType
                     'class' => 'form-control form-control-lg',
                 ],
             ])
-            ->add('breachOneNotificationFile', FileType::class, [
-                'mapped' => false,
-                'label' => 'Please upload a copy of the notification:',
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2M',
-                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf',
-                            'application/msword',
-                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            'text/plain',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                    ])
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
             ->add('breachOneNotificationNotAffected', ChoiceType::class, [
                 'label' => 'Have you since received notification confirming you were not affected?',
                 'choices' => [
@@ -143,30 +119,6 @@ class BACorrespondenceType extends AbstractType
                     'class' => 'form-control form-control-lg',
                 ],
             ])
-            ->add('breachOneBookingConfirmationFile', FileType::class, [
-                'label' => 'Please upload a copy of the booking notification:',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2M',
-                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf',
-                            'application/msword',
-                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            'text/plain',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                    ])
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
             ->add('breachTwoNotification', ChoiceType::class, [
                 'label' => ' 11. Did you receive notification that you had been affected by the data event occurring between 10.58pm on 21 August 2018 – 9.45pm on 5 September 2018?',
                 'choices' => [
@@ -186,30 +138,6 @@ class BACorrespondenceType extends AbstractType
                 ],
                 'label' => 'Date Received',
                 'required' => false,
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
-            ->add('breachTwoNotificationFile', FileType::class, [
-                'mapped' => false,
-                'label' => 'Please upload a copy of the notification:',
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2M',
-                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf',
-                            'application/msword',
-                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            'text/plain',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                    ])
-                ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
                 ],
@@ -278,30 +206,6 @@ class BACorrespondenceType extends AbstractType
                     'Other' => 'Other Payment Method',
                 ],
                 'required' => false,
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
-            ->add('breachTwoBookingConfirmationFile', FileType::class, [
-                'label' => 'Please upload a copy of the booking notification:',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2M',
-                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf',
-                            'application/msword',
-                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            'text/plain',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                    ])
-                ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
                 ],

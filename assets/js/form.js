@@ -231,3 +231,15 @@ if ($('#emotional_distress_adverseConsequences_0').prop("checked") === true){
     $('#emotional_distress_adverseConsequencesDetails').prop('disabled', true);
     $('#emotional_distress_adverseConsequencesFiles').prop('disabled', true);
 }
+$('#ba_notification_button').click(function () {
+    $('#form_upload_name').val('ba_notification_copy');
+});
+$('#ba_booking_notification_button').click(function () {
+    $('#form_upload_name').val('ba_booking_notification');
+});
+$('#ba_notification_button_2').click(function () {
+    $('#form_upload_name').val('ba_notification_copy_2');
+});
+$('#ba_booking_notification_button_2').click(function () {
+    $('#form_upload_name').val('ba_booking_notification_2');
+});

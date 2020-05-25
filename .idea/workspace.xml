@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/dropzone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/UserLogger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200522142911.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200525105341.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UserLoggerRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard/modals/_ba_correspondence.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ba_onboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ba_onboard.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/dropzone.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dropzone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BACorrespondenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FileReferenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/FileReference.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/FileReference.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/BACorrespondenceType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/UploaderHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/UploaderHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/ba_correspondence.html.twig" afterDir="false" />
     </list>
@@ -175,6 +185,7 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/vendor/sinergi/browser-detector" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SKBd8CRlUERlCBj5pFGNoJUp0Z" />
@@ -275,7 +286,8 @@
       <workItem from="1587028426176" duration="77000" />
       <workItem from="1589795263407" duration="41772000" />
       <workItem from="1589980527523" duration="8145000" />
-      <workItem from="1589989667329" duration="7693000" />
+      <workItem from="1589989667329" duration="44168000" />
+      <workItem from="1590397901318" duration="3082000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1571303162672</created>
@@ -606,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589989758155</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Installed Serializer">
+      <created>1590066392368</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1590066392368</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,7 +646,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Financial Loss Entity, Controller, Type, ProClaim + Template Complete &#10;16/12/19 16:51pm" />
     <MESSAGE value="Started Reimbursements Entity, Controller, Type, ProClaim + Template  &#10;17/12/19 09:14am" />
     <MESSAGE value="Started Reimbursements Entity, Controller, Type, ProClaim + Template  &#10;17/12/19 16:17pm" />
     <MESSAGE value="Started Credit Monitoring Entity, Controller, Type, ProClaim + Template  &#10;18/12/19 15:15pm" />
@@ -652,7 +670,8 @@
     <MESSAGE value="Working on the new Private Uploads service" />
     <MESSAGE value="Yarn upgrade" />
     <MESSAGE value="Yarn add Dropzone" />
-    <option name="LAST_COMMIT_MESSAGE" value="Yarn add Dropzone" />
+    <MESSAGE value="Installed Serializer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Installed Serializer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="78" key="#com.intellij.ide.util.MemberChooser" timestamp="1581670882501">
@@ -671,10 +690,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1581522373668" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1589989753577">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1590066384320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1589989753577" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1590066384320" />
     <state x="481" y="177" key="NewPhpClassDialog" timestamp="1581670763337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

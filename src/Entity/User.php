@@ -173,9 +173,15 @@ class User implements UserInterface
      */
     private $avatar;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\UserLogger", mappedBy="User")
+     */
+    private $userLoggers;
+
     public function __construct()
     {
         $this->fileReferences = new ArrayCollection();
+        $this->userLoggers = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -641,6 +647,37 @@ class User implements UserInterface
     public function setAvatar(?string $avatar): self
     {
         $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UserLogger[]
+     */
+    public function getUserLoggers(): Collection
+    {
+        return $this->userLoggers;
+    }
+
+    public function addUserLogger(UserLogger $userLogger): self
+    {
+        if (!$this->userLoggers->contains($userLogger)) {
+            $this->userLoggers[] = $userLogger;
+            $userLogger->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserLogger(UserLogger $userLogger): self
+    {
+        if ($this->userLoggers->contains($userLogger)) {
+            $this->userLoggers->removeElement($userLogger);
+            // set the owning side to null (unless already changed)
+            if ($userLogger->getUser() === $this) {
+                $userLogger->setUser(null);
+            }
+        }
 
         return $this;
     }

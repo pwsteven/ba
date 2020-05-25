@@ -44,6 +44,11 @@ class UploaderHelper
         $this->privateFileSystem = $privateUploadsFilesystem;
     }
 
+    /**
+     * @param File $file
+     * @param string|null $existingFileName
+     * @return string
+     */
     public function uploadClientFile(File $file, ?string $existingFileName): string
     {
 
@@ -64,6 +69,10 @@ class UploaderHelper
 
     }
 
+    /**
+     * @param File $file
+     * @return string
+     */
     public function uploadFileReference(File $file): string
     {
         try {
@@ -76,7 +85,8 @@ class UploaderHelper
     /**
      * @param string $path
      * @param bool $isPublic
-     * @return resource
+     * @return false|resource
+     * @throws FileNotFoundException
      */
     public function readStream(string $path, bool $isPublic)
     {
@@ -89,11 +99,36 @@ class UploaderHelper
         return $resource;
     }
 
+    /**
+     * @param string $path
+     * @param bool $isPublic
+     * @throws FileNotFoundException
+     */
+    public function deleteFile(string $path, bool $isPublic)
+    {
+        $filesystem = $isPublic ? $this->filesystem : $this->privateFileSystem;
+        $result = $filesystem->delete($path);
+        if ($result === false){
+            throw new \Exception(sprintf('Error deleting %s', $path));
+        }
+    }
+
+    /**
+     * @param string $path
+     * @return string
+     */
     public function getPublicPath(string $path): string
     {
         return $this->requestStackContext->getBasePath().$this->uploadedAssetsBaseUrl.'/'.$path;
     }
 
+    /**
+     * @param File $file
+     * @param string $directory
+     * @param bool $isPublic
+     * @return string
+     * @throws FileExistsException
+     */
     private function uploadFile(File $file, string $directory, bool $isPublic): string
     {
         if ($file instanceof UploadedFile){

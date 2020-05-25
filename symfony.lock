@@ -247,6 +247,9 @@
             "./config/packages/security_checker.yaml"
         ]
     },
+    "sinergi/browser-detector": {
+        "version": "6.1.2"
+    },
     "specshaper/encrypt-bundle": {
         "version": "dev-master"
     },
