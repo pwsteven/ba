@@ -17,30 +17,6 @@ class FurtherCorrespondenceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('personalInformationBreachedFile', FileType::class, [
-                'label' => '12. Please upload a copy of the email from BA confirming that your personal information has been breached:',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'maxSizeMessage' => 'Maximum file size is 1 Megabytes',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf',
-                            'application/msword',
-                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            'text/plain',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                    ])
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
             ->add('receivedAnyOtherBACorrespondence', ChoiceType::class, [
                 'label' => ' 13. Have you received any other correspondence from BA regarding the breach?',
                 'choices' => [
@@ -50,34 +26,6 @@ class FurtherCorrespondenceType extends AbstractType
                 ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
-                ],
-            ])
-            ->add('allCorrespondenceSentReceivedFile', FileType::class, [
-                'label' => '14. Please upload copies of all correspondence sent to and received from BA regarding the claim:',
-                'mapped' => false,
-                'required' => false,
-                'multiple' => true,
-                'constraints' => [
-                    new All([
-                        new File([
-                            'maxSize' => '2M',
-                            'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                            'mimeTypes' => [
-                                'application/pdf',
-                                'application/x-pdf',
-                                'application/msword',
-                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                                'text/plain',
-                                'image/jpeg',
-                                'image/png',
-                            ],
-                            'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                        ]),
-                    ]),
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                    'multiple' => 'multiple',
                 ],
             ])
         ;

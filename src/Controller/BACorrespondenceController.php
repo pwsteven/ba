@@ -7,14 +7,11 @@ use App\Form\BACorrespondenceType;
 use App\Repository\BACorrespondenceRepository;
 use App\Repository\FileReferenceRepository;
 use App\Service\ProClaimPutBACorrespondence;
-use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * Class BACorrespondenceController
@@ -41,11 +38,10 @@ class BACorrespondenceController extends BaseController
      * @Route("/dashboard/ba-correspondence", name="app_ba_correspondence")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
-     * @param UploaderHelper $uploaderHelper
      * @param ProClaimPutBACorrespondence $proClaimPutBACorrespondence
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutBACorrespondence $proClaimPutBACorrespondence)
+    public function index(Request $request, EntityManagerInterface $entityManager, ProClaimPutBACorrespondence $proClaimPutBACorrespondence)
     {
 
         $showForm = $this->getUser()->getAppContactDetails();

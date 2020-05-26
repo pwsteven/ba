@@ -3,12 +3,11 @@
 namespace App\Controller;
 
 use App\Form\FurtherCorrespondenceType;
+use App\Repository\FileReferenceRepository;
 use App\Repository\FurtherCorrespondenceRepository;
 use App\Service\ProClaimPutFurtherCorrespondence;
-use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,23 +22,25 @@ class FurtherCorrespondenceController extends BaseController
 
     /**
      * @var FurtherCorrespondenceRepository
+     * @var FileReferenceRepository
      */
     private $furtherCorrespondenceRepository;
+    private $fileReferenceRepository;
 
-    public function __construct(FurtherCorrespondenceRepository $furtherCorrespondenceRepository)
+    public function __construct(FurtherCorrespondenceRepository $furtherCorrespondenceRepository, FileReferenceRepository $fileReferenceRepository)
    {
        $this->furtherCorrespondenceRepository = $furtherCorrespondenceRepository;
+       $this->fileReferenceRepository = $fileReferenceRepository;
    }
 
     /**
      * @Route("/dashboard/further-correspondence", name="app_further_correspondence")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
-     * @param UploaderHelper $uploaderHelper
      * @param ProClaimPutFurtherCorrespondence $proClaimPutFurtherCorrespondence
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutFurtherCorrespondence $proClaimPutFurtherCorrespondence)
+    public function index(Request $request, EntityManagerInterface $entityManager, ProClaimPutFurtherCorrespondence $proClaimPutFurtherCorrespondence)
     {
 
         $showForm = $this->getUser()->getAppBACorrespondence();
@@ -54,25 +55,6 @@ class FurtherCorrespondenceController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-
-            //COLLECT + UPLOAD FILE|IMAGE FILES
-            /** @var UploadedFile $personalInformationBreachedFile */
-            $personalInformationBreachedFile = $form['personalInformationBreachedFile']->getData();
-            if ($personalInformationBreachedFile){
-                $newFileName = $uploaderHelper->uploadClientFile($personalInformationBreachedFile);
-                $furtherCorrespondenceDetails->setPersonalInformationBreachedFilePath($newFileName);
-            }
-
-            /** @var UploadedFile $allCorrespondenceSentReceivedFiles */
-            $allCorrespondenceSentReceivedFiles = $form['allCorrespondenceSentReceivedFile']->getData();
-            if ($allCorrespondenceSentReceivedFiles){
-                $filesData = [];
-                foreach ($allCorrespondenceSentReceivedFiles as $allCorrespondenceSentReceivedFile){
-                    $newFileName = $uploaderHelper->uploadClientFile($allCorrespondenceSentReceivedFile);
-                    $filesData[] = $newFileName;
-                }
-                $furtherCorrespondenceDetails->setAllCorrespondenceSentReceivedFilePath($filesData);
-            }
 
             // COMMIT FORM FIELD VALUES TO DATABASE
             $furtherCorrespondenceDetails->setComplete(true);

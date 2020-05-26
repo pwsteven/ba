@@ -243,3 +243,9 @@ $('#ba_notification_button_2').click(function () {
 $('#ba_booking_notification_button_2').click(function () {
     $('#form_upload_name').val('ba_booking_notification_2');
 });
+$('#further_notification_button').click(function () {
+    $('#form_upload_name').val('further_notification_email');
+});
+$('#further_notification_button_2').click(function () {
+    $('#form_upload_name').val('further_notification_copies');
+});

@@ -2,13 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\UserLogger;
+use App\Service\UserLogger;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Sinergi\BrowserDetector\Browser;
-use Sinergi\BrowserDetector\Device;
-use Sinergi\BrowserDetector\Language;
-use Sinergi\BrowserDetector\Os;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,25 +19,32 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends BaseController
 {
 
-
     /**
      * @var SecurityController
      */
     private $securityController;
+    /**
+     * @var EntityManagerInterface
+     */
+    private $entityManager;
 
-    public function __construct(SecurityController $securityController)
+    public function __construct(SecurityController $securityController, EntityManagerInterface $entityManager)
     {
         $this->securityController = $securityController;
+        $this->entityManager = $entityManager;
     }
 
     /**
      * @Route("/dashboard", name="app_dashboard")
      * @param Request $request
-     * @param EntityManagerInterface $entityManager
+     * @param UserLogger $userLogger
      * @return Response
      */
-    public function index(Request $request, UserLogger $userLogger, EntityManagerInterface $entityManager)
+    public function index(Request $request, UserLogger $userLogger)
     {
+
+        $userID = $this->getUser()->getId();
+        $userLogger->userLogin($userID);
 
         if ($this->securityController->isGranted("ROLE_ADMIN")){
             return $this->redirectToRoute('app_admin');
@@ -49,23 +52,8 @@ class DashboardController extends BaseController
 
         if ($request->isMethod('POST')) {
             $user = $this->getUser()->setAppStarted(true);
-
-            $browser = new Browser();
-            $os = new Os();
-            $device = new Device();
-            $language = new Language();
-
-            $userLogger->setUser($user);
-            $userLogger->setBrowser($browser);
-            $userLogger->setOperatingSystem($os);
-            $userLogger->setDevice($device);
-            $userLogger->setOpLanguage($language);
-            $userLogger->setTimeLogged(new \DateTime());
-
-
-            $entityManager->persist($user);
-            $entityManager->persist($userLogger);
-            $entityManager->flush();
+            $this->entityManager->persist($user);
+            $this->entityManager->flush();
             return $this->redirectToRoute('app_personal_details');
         }
 

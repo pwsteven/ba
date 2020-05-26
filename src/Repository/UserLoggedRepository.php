@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\UserLogger;
+use App\Entity\UserLogged;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method UserLogger|null find($id, $lockMode = null, $lockVersion = null)
- * @method UserLogger|null findOneBy(array $criteria, array $orderBy = null)
- * @method UserLogger[]    findAll()
- * @method UserLogger[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method UserLogged|null find($id, $lockMode = null, $lockVersion = null)
+ * @method UserLogged|null findOneBy(array $criteria, array $orderBy = null)
+ * @method UserLogged[]    findAll()
+ * @method UserLogged[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UserLoggerRepository extends ServiceEntityRepository
+class UserLoggedRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, UserLogger::class);
+        parent::__construct($registry, UserLogged::class);
     }
 
     // /**
-    //  * @return UserLogger[] Returns an array of UserLogger objects
+    //  * @return UserLogged[] Returns an array of UserLogged objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class UserLoggerRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?UserLogger
+    public function findOneBySomeField($value): ?UserLogged
     {
         return $this->createQueryBuilder('u')
             ->andWhere('u.exampleField = :val')

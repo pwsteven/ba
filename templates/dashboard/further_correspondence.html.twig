@@ -45,16 +45,45 @@
 
             {# Breach Confirmation File Upload Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.personalInformationBreachedFile) }}
-                    {{ form_widget(form.personalInformationBreachedFile) }}
-                    <div class="error_message">{{ form_errors(form.personalInformationBreachedFile) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+
+                        {# Card Header #}
+                        <div class="dt-card__header">
+
+                            {# Card Heading #}
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title">12. Please upload a copy of the email from BA confirming that your personal information has been breached:</h3>
+                            </div>
+                            {# /Card Heading #}
+
+                        </div>
+                        {# /Card Header #}
+
+                        {# Card Body #}
+                        <div class="dt-card__body">
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <button id="further_notification_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal-2">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h4>All Uploaded Files For This Stage</h4>
+                                    <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'further_notification_email'}) }}"></ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        {# /Card Body #}
+
+                    </div>
+                    {# /Card #}
                 </div>
-                <div class="form-group col-md-12">
-                    {% if form.vars.data.personalInformationBreachedFilePath != "" %}
-                        <p><b>Uploaded File:</b> {{ form.vars.data.personalInformationBreachedFilePath }}</p>
-                    {% endif %}
-                </div>
+                {# /Grid Item #}
             </div>
             {# /Breach Confirmation File Upload Form Row #}
 
@@ -74,22 +103,45 @@
 
             {# All Correspondence Files Upload Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.allCorrespondenceSentReceivedFile) }}
-                    {{ form_widget(form.allCorrespondenceSentReceivedFile) }}
-                    <div class="error_message">{{ form_errors(form.allCorrespondenceSentReceivedFile) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+
+                        {# Card Header #}
+                        <div class="dt-card__header">
+
+                            {# Card Heading #}
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title">14. Please upload copies of all correspondence sent to and received from BA regarding the claim:</h3>
+                            </div>
+                            {# /Card Heading #}
+
+                        </div>
+                        {# /Card Header #}
+
+                        {# Card Body #}
+                        <div class="dt-card__body">
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <button id="further_notification_button_2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal-2">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h4>All Uploaded Files For This Stage</h4>
+                                    <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'further_notification_copies'}) }}"></ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        {# /Card Body #}
+
+                    </div>
+                    {# /Card #}
                 </div>
-                <div class="form-group col-md-12">
-                    {% if form.vars.data.allCorrespondenceSentReceivedFilePath != NULL %}
-                        <p>
-                            <b>Uploaded Files:</b><br>
-                            {% for key,value in form.vars.data.allCorrespondenceSentReceivedFilePath %}
-                                {{ value }}<br>
-                            {% endfor %}
-                        </p>
-                        <hr class="border-dashed my-8">
-                    {% endif %}
-                </div>
+                {# /Grid Item #}
             </div>
             {# /All Correspondence Files Upload Form Row #}
 
@@ -108,5 +160,7 @@
         {# /Card #}
     </div>
     {# /Grid #}
+
+    {{ include('dashboard/modals/_further_correspondence.html.twig') }}
 
 {% endblock %}

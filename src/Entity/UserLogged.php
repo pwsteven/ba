@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserLoggerRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UserLoggedRepository")
  */
-class UserLogger
+class UserLogged
 {
     /**
      * @ORM\Id()
@@ -15,6 +15,11 @@ class UserLogger
      * @ORM\Column(type="integer")
      */
     private $id;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $userID;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -42,14 +47,40 @@ class UserLogger
     private $TimeLogged;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="userLoggers")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $User;
+    private $version;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $is_robot;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $is_mobile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $IpAddress;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getUserID(): ?int
+    {
+        return $this->userID;
+    }
+
+    public function setUserID(?int $userID): self
+    {
+        $this->userID = $userID;
+
+        return $this;
     }
 
     public function getBrowser(): ?string
@@ -112,14 +143,55 @@ class UserLogger
         return $this;
     }
 
-    public function getUser(): ?User
+    public function __toString()
     {
-        return $this->User;
+        return $this->Browser;
     }
 
-    public function setUser(?User $User): self
+    public function getVersion(): ?string
     {
-        $this->User = $User;
+        return $this->version;
+    }
+
+    public function setVersion(?string $version): self
+    {
+        $this->version = $version;
+
+        return $this;
+    }
+
+    public function getIsRobot(): ?bool
+    {
+        return $this->is_robot;
+    }
+
+    public function setIsRobot(?bool $is_robot): self
+    {
+        $this->is_robot = $is_robot;
+
+        return $this;
+    }
+
+    public function getIsMobile(): ?bool
+    {
+        return $this->is_mobile;
+    }
+
+    public function setIsMobile(?bool $is_mobile): self
+    {
+        $this->is_mobile = $is_mobile;
+
+        return $this;
+    }
+
+    public function getIpAddress(): ?string
+    {
+        return $this->IpAddress;
+    }
+
+    public function setIpAddress(?string $IpAddress): self
+    {
+        $this->IpAddress = $IpAddress;
 
         return $this;
     }
