@@ -46,19 +46,6 @@ class PersonalDetailsType extends AbstractType
                     'class' => 'form-control form-control-lg',
                 ],
             ])
-            ->add('imageFile', FileType::class, [
-                'mapped' => false,
-                'label' => '5. Upload Photo ID',
-                'required' => false,
-                'constraints' => [
-                    new Image([
-                        'maxSize' => '5M'
-                    ])
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
         ;
     }
 

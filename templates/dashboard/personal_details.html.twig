@@ -34,63 +34,174 @@
 
             {# First Name Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.firstName)}}
-                    {{ form_widget(form.firstName) }}
-                    <div class="error_message">{{ form_errors(form.firstName) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            {# Card Heading #}
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title"><span class="text-danger">*</span>1. What is your First Name?</h3>
+                            </div>
+                            {# /Card Heading #}
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.firstName) }}
+                                    <small class="form-text">Please provide your legal first name, not a nickname or shortened name.</small>
+                                    <div class="error_message">{{ form_errors(form.firstName) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /First Name Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Middle Name Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.middleName) }}
-                    {{ form_widget(form.middleName) }}
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            {# Card Heading #}
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title">2. What is your Middle Name?</h3>
+                            </div>
+                            {# /Card Heading #}
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.middleName) }}
+                                    <small class="form-text">Please provide your legal middle name, if you have one.</small>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Middle Name Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Surname Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.surname) }}
-                    {{ form_widget(form.surname) }}
-                    <div class="error_message">{{ form_errors(form.surname) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            {# Card Heading #}
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title"><span class="text-danger">*</span>3. What is your Surname?</h3>
+                            </div>
+                            {# /Card Heading #}
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.surname) }}
+                                    <div class="error_message">{{ form_errors(form.surname) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Surname Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Date Of Birth Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.dateOfBirth) }}
-                    {{ form_widget(form.dateOfBirth) }}
-                    <div class="error_message">{{ form_errors(form.dateOfBirth) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            {# Card Heading #}
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title"><span class="text-danger">*</span>4. What is your full Date of Birth?</h3>
+                            </div>
+                            {# /Card Heading #}
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.dateOfBirth) }}
+                                    <div class="error_message">{{ form_errors(form.dateOfBirth) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Date Of Birth Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Upload Photo ID Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-9">
-                    {{ form_label(form.imageFile) }}
-                    {{ form_widget(form.imageFile) }}
-                    <div class="error_message">{{ form_errors(form.imageFile) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+
+                        {# Card Header #}
+                        <div class="dt-card__header">
+
+                            {# Card Heading #}
+                            <div class="dt-card__heading">
+                                <h3 class="dt-card__title">5. Upload Photo ID:</h3>
+                            </div>
+                            {# /Card Heading #}
+
+                        </div>
+                        {# /Card Header #}
+
+                        {# Card Body #}
+                        <div class="dt-card__body">
+
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <button id="personal-details-button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#personal-details-stage">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h4>All Uploaded Files For This Stage</h4>
+                                    <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'photo-id'}) }}"></ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        {# /Card Body #}
+
+                    </div>
+                    {# /Card #}
                 </div>
-                <div class="form-group col-md-3">
-                    {% if form.vars.data.imageFileName|default %}
-                        <img src="{{ form.vars.data.imageFileName|imagine_filter('squared_thumbnail_small') }}" alt="">
-                    {% endif %}
-                </div>
+                {# /Grid Item #}
             </div>
             {# /Upload Photo ID Form Row #}
 
@@ -108,6 +219,8 @@
         {# /Card #}
     </div>
     {# /Grid #}
+
+    {{ include('dashboard/modals/_personal_details.html.twig') }}
 
 {% endblock %}
 
