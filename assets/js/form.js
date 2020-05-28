@@ -231,21 +231,21 @@ if ($('#emotional_distress_adverseConsequences_0').prop("checked") === true){
     $('#emotional_distress_adverseConsequencesDetails').prop('disabled', true);
     $('#emotional_distress_adverseConsequencesFiles').prop('disabled', true);
 }
-$('#ba_notification_button').click(function () {
-    $('#form_upload_name').val('ba_notification_copy');
+$('#ba-correspondence-copy-button').click(function () {
+    $('#form_upload_name').val('ba-correspondence-copy');
 });
-$('#ba_booking_notification_button').click(function () {
-    $('#form_upload_name').val('ba_booking_notification');
+$('#ba-correspondence-booking-button').click(function () {
+    $('#form_upload_name').val('ba-correspondence-booking');
 });
-$('#ba_notification_button_2').click(function () {
-    $('#form_upload_name').val('ba_notification_copy_2');
+$('#ba-correspondence-copy-button-2').click(function () {
+    $('#form_upload_name').val('ba-correspondence-copy-2');
 });
-$('#ba_booking_notification_button_2').click(function () {
-    $('#form_upload_name').val('ba_booking_notification_2');
+$('#ba-correspondence-booking-button-2').click(function () {
+    $('#form_upload_name').val('ba-correspondence-booking-2');
 });
-$('#further_notification_button').click(function () {
-    $('#form_upload_name').val('further_notification_email');
+$('#further-correspondence-confirm-email-button').click(function () {
+    $('#form_upload_name').val('further-correspondence-confirm-email');
 });
-$('#further_notification_button_2').click(function () {
-    $('#form_upload_name').val('further_notification_copies');
+$('#further-correspondence-received-button').click(function () {
+    $('#form_upload_name').val('further-correspondence-received');
 });

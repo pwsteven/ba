@@ -50,34 +50,6 @@ class FinancialLossType extends AbstractType
                     'class' => 'form-control form-control-lg'
                 ]
             ])
-            ->add('financialLossFiles', FileType::class, [
-                'label' => '21. Please upload all documents evidencing the financial loss suffered:',
-                'mapped' => false,
-                'required' => false,
-                'multiple' => true,
-                'constraints' => [
-                    new All([
-                        new File([
-                            'maxSize' => '2M',
-                            'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                            'mimeTypes' => [
-                                'application/pdf',
-                                'application/x-pdf',
-                                'application/msword',
-                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                                'text/plain',
-                                'image/jpeg',
-                                'image/png',
-                            ],
-                            'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                        ]),
-                    ]),
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                    'multiple' => 'multiple',
-                ],
-            ])
         ;
     }
 

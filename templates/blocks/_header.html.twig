@@ -17,7 +17,8 @@
             {# Brand Logo - TODO fix not working properly #}
             <span class="dt-brand__logo">
                 <a class="dt-brand__logo-link" href="{{ path('app_admin') }}">
-                    Your Lawyers Ltd
+                    <img class="dt-brand__logo-img d-none d-lg-inline-block" src="{{ asset('build/images/your_lawyers_small_logo.b0f6d56e.png') }}" alt="Your Lawyers">
+                    <img class="dt-brand__logo-symbol d-lg-none" src="{{ asset('build/images/yl_36x36.a46e64e2.png') }}" alt="Your Lawyers">
                 </a>
             </span>
             {# /Brand Logo #}
@@ -27,13 +28,6 @@
 
         {# Header ToolBar #}
         <div class="dt-header__toolbar">
-
-            {# Search Box #}
-            <form class="search-box d-none d-lg-block">
-                <input class="form-control border-0" placeholder="Search in app..." value="" type="search">
-                <span class="search-icon text-light-gray"><i class="icon icon-search icon-lg"></i></span>
-            </form>
-            {# /Search Box #}
 
             {# Header Navigation Wrapper #}
             <div class="dt-nav-wrapper">
@@ -49,13 +43,6 @@
 
                         {# Dropdown Option #}
                         <div class="dropdown-menu">
-
-                            {# Mobile Search Box #}
-                            <form class="search-box right-side-icon">
-                                <input class="form-control form-control-lg" type="search" placeholder="Search in app...">
-                                <button type="submit" class="search-icon"><i class="icon icon-search icon-lg"></i></button>
-                            </form>
-                            {# /Mobile Search Box #}
 
                         </div>
                         {# /DropDown Option #}

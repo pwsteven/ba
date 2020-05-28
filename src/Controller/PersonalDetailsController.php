@@ -5,11 +5,8 @@ namespace App\Controller;
 use App\Form\PersonalDetailsType;
 use App\Repository\PersonalDetailsRepository;
 use App\Service\ProClaimPutPersonalDetails;
-use App\Service\ProClaimRequest;
-use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,11 +34,10 @@ class PersonalDetailsController extends BaseController
      * @Route("/dashboard/personal-details", name="app_personal_details")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
-     * @param UploaderHelper $uploaderHelper
      * @param ProClaimPutPersonalDetails $proClaimPutPersonalDetails
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutPersonalDetails $proClaimPutPersonalDetails)
+    public function index(Request $request, EntityManagerInterface $entityManager, ProClaimPutPersonalDetails $proClaimPutPersonalDetails)
     {
 
         $showForm = $this->getUser()->getAppStarted();
@@ -56,16 +52,6 @@ class PersonalDetailsController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-
-            //Upload image file if not empty and commit to the database
-            /** @var UploadedFile $uploadedFile */
-            $uploadedFile = $form['imageFile']->getData();
-            if ($uploadedFile) {
-                $newFileName = $uploaderHelper->uploadClientFile($uploadedFile, $personalDetails->getImageFileName());
-                $personalDetails->setImageFileName($newFileName);
-                $userAvatar = $this->getUser()->setAvatar($newFileName);
-                $entityManager->persist($userAvatar);
-            }
 
             //Commit form values to the database
             $personalDetails->setCompleted(true);

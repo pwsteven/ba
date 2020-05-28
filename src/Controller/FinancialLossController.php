@@ -5,10 +5,8 @@ namespace App\Controller;
 use App\Form\FinancialLossType;
 use App\Repository\FinancialLossRepository;
 use App\Service\ProClaimPutFinancialLoss;
-use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,11 +33,10 @@ class FinancialLossController extends BaseController
      * @Route("/dashboard/financial-loss", name="app_financial_loss")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
-     * @param UploaderHelper $uploaderHelper
      * @param ProClaimPutFinancialLoss $proClaimPutFinancialLoss
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutFinancialLoss $proClaimPutFinancialLoss)
+    public function index(Request $request, EntityManagerInterface $entityManager, ProClaimPutFinancialLoss $proClaimPutFinancialLoss)
     {
 
         $showForm = $this->getUser()->getAppComplaints();
@@ -54,18 +51,6 @@ class FinancialLossController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-
-            //COLLECT + UPLOAD FILE|IMAGE FILES
-            /** @var UploadedFile $financialLossFiles */
-            $financialLossFiles = $form['financialLossFiles']->getData();
-            if ($financialLossFiles) {
-                $filesData = [];
-                foreach ($financialLossFiles as $financialLossFile) {
-                    $newFileName = $uploaderHelper->uploadClientFile($financialLossFile);
-                    $filesData[] = $newFileName;
-                }
-                $financialLossDetails->setFinancialLossFilesPath($filesData);
-            }
 
             // COMMIT FORM FIELD VALUES TO DATABASE
             $financialLossDetails->setComplete(true);

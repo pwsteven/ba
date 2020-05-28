@@ -29,9 +29,9 @@
             </div>
         {% endfor %}
 
-        <div class="progress mb-2">
+        <div class="progress mb-5">
             <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0"
-                 aria-valuemax="100">Step 2 of 10
+                 aria-valuemax="100">20%
             </div>
         </div>
     </div>
@@ -46,112 +46,156 @@
 
             {# Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label>6. Please provide your Full Address</label>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>6. Please provide your Full Address:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            {# Postcode Form Row #}
+                            <div class="row">
+                                <div class="form-group col-md-8">
+                                    {{ form_label(form.postcode)}}
+                                    {{ form_widget(form.postcode) }}
+                                    <div class="error_message">{{ form_errors(form.postcode) }}</div>
+                                </div>
+                                <div class="form-group col-md-4 d-flex align-items-end">
+                                    <button type="button" id="find_address" class="btn btn-secondary btn-lg">Find Address <i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                                <div id="find_postcode_message" class="col-md-12 mt-0 mb-3"></div>
+                            </div>
+                            {# /Postcode Form Row #}
+                            {# Select Address Block #}
+                            <div id="select_address_block" class="display_none">
+                                <div class="block_body">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="address_picker">Please choose your address:</label>
+                                            <select name="address_picker" id="address_picker" class="form-control form-control-lg">
+                                                <option value="">SELECT</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {# /Select Address Block #}
+
+                            {# Street Address Form Row #}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    {{ form_label(form.streetAddress)}}
+                                    {{ form_widget(form.streetAddress) }}
+                                    <div class="error_message">{{ form_errors(form.streetAddress) }}</div>
+                                </div>
+                            </div>
+                            {# /Street Address Form Row #}
+
+                            {# Street Address Line 2 Form Row #}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    {{ form_label(form.streetAddress2)}}
+                                    {{ form_widget(form.streetAddress2) }}
+                                    <div class="error_message">{{ form_errors(form.streetAddress2) }}</div>
+                                </div>
+                            </div>
+                            {# /Street Address Line 2 Form Row #}
+
+                            {# Street Address Line 3 Form Row #}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    {{ form_label(form.streetAddress3)}}
+                                    {{ form_widget(form.streetAddress3) }}
+                                    <div class="error_message">{{ form_errors(form.streetAddress3) }}</div>
+                                </div>
+                            </div>
+                            {# /Street Address Line 3 Form Row #}
+
+                            {# Town/City Form Row #}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    {{ form_label(form.townCity)}}
+                                    {{ form_widget(form.townCity) }}
+                                    <div class="error_message">{{ form_errors(form.townCity) }}</div>
+                                </div>
+                            </div>
+                            {# /Town/City Form Row #}
+
+                            {# County Form Row #}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    {{ form_label(form.county)}}
+                                    {{ form_widget(form.county) }}
+                                    <div class="error_message">{{ form_errors(form.county) }}</div>
+                                </div>
+                            </div>
+                            {# /County Form Row #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Form Row #}
 
-            {# Postcode Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-8">
-                    {{ form_label(form.postcode)}}
-                    {{ form_widget(form.postcode) }}
-                    <div class="error_message">{{ form_errors(form.postcode) }}</div>
-                </div>
-                <div class="form-group col-md-4 d-flex align-items-end">
-                    <button type="button" id="find_address" class="btn btn-secondary btn-lg">Find Address <i class="fa fa-search" aria-hidden="true"></i></button>
-                </div>
-                <div id="find_postcode_message" class="col-md-12 mt-0 mb-3"></div>
-            </div>
-            {# /Postcode Form Row #}
-
-            {# Select Address Block #}
-            <div id="select_address_block" class="display_none">
-                <div class="block_body">
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="address_picker">Please choose your address:</label>
-                            <select name="address_picker" id="address_picker" class="form-control form-control-lg">
-                                <option value="">SELECT</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {# /Select Address Block #}
-
-            {# Street Address Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.streetAddress)}}
-                    {{ form_widget(form.streetAddress) }}
-                    <div class="error_message">{{ form_errors(form.streetAddress) }}</div>
-                </div>
-            </div>
-            {# /Street Address Form Row #}
-
-            {# Street Address Line 2 Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.streetAddress2)}}
-                    {{ form_widget(form.streetAddress2) }}
-                    <div class="error_message">{{ form_errors(form.streetAddress2) }}</div>
-                </div>
-            </div>
-            {# /Street Address Line 2 Form Row #}
-
-            {# Street Address Line 3 Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.streetAddress3)}}
-                    {{ form_widget(form.streetAddress3) }}
-                    <div class="error_message">{{ form_errors(form.streetAddress3) }}</div>
-                </div>
-            </div>
-            {# /Street Address Line 3 Form Row #}
-
-            {# Town/City Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.townCity)}}
-                    {{ form_widget(form.townCity) }}
-                    <div class="error_message">{{ form_errors(form.townCity) }}</div>
-                </div>
-            </div>
-            {# /Town/City Form Row #}
-
-            {# County Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.county)}}
-                    {{ form_widget(form.county) }}
-                    <div class="error_message">{{ form_errors(form.county) }}</div>
-                </div>
-            </div>
-            {# /County Form Row #}
-
-            <hr class="border-dashed my-8">
-
             {# Email Address Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.emailAddress)}}
-                    {{ form_widget(form.emailAddress) }}
-                    <div class="error_message">{{ form_errors(form.emailAddress) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>7. Please provide your Email Address:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.emailAddress) }}
+                                    <div class="error_message">{{ form_errors(form.emailAddress) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Email Address Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Mobile/Telephone Number Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.mobileTelephoneNumber)}}
-                    {{ form_widget(form.mobileTelephoneNumber) }}
-                    <div class="error_message">{{ form_errors(form.mobileTelephoneNumber) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>8. Please provide your Mobile/Telephone Number:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.mobileTelephoneNumber) }}
+                                    <div class="error_message">{{ form_errors(form.mobileTelephoneNumber) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Mobile/Telephone Number Form Row #}
 

@@ -28,9 +28,9 @@
 
     {# Grid #}
     <div class="col-12">
-        <div class="progress mb-2">
+        <div class="progress mb-5">
             <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0"
-                 aria-valuemax="100">Step 6 of 10
+                 aria-valuemax="100">60%
             </div>
         </div>
     </div>
@@ -44,82 +44,136 @@
             {{ form_start(form, {'attr': {'id': 'ba_form'}}) }}
 
             {# Suffered Financial Loss Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.typeFinancialLoss) }}
-                </div>
-                <div class="form-group col-md-12">
-                    {% for FinancialLoss in form.typeFinancialLoss %}
-                        <div class="custom-control custom-checkbox financial_loss mb-3 ml-5">
-                            {{ form_widget(FinancialLoss, {
-                                attr: {
-                                    'class': 'custom-control-input'
-                                }
-                            }) }} <label class="custom-control-label" for="{{ FinancialLoss.vars.id }}">{{ FinancialLoss.vars.label }}</label>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>19. Have you incurred any financial loss as a result of the breach, and if so what type of financial loss:</h4>
                         </div>
-                    {% endfor %}
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {% for FinancialLoss in form.typeFinancialLoss %}
+                                        <div class="custom-control custom-checkbox financial_loss mb-3 ml-5">
+                                            {{ form_widget(FinancialLoss, {
+                                                attr: {
+                                                    'class': 'custom-control-input'
+                                                }
+                                            }) }} <label class="custom-control-label" for="{{ FinancialLoss.vars.id }}">{{ FinancialLoss.vars.label }}</label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {# FINANCIAL LOSS BLOCK #}
+                            <div id="financial_loss_block" class="display_none">
+                                {# Other Comment Form Row #}
+                                <div class="row mt-3">
+                                    {# Grid Item #}
+                                    <div class="col-md-12 col-sm-12">
+                                        {# Card #}
+                                        <div class="dt-card">
+                                            {# Card Header #}
+                                            <div class="dt-card__header">
+                                                <h4>Please add more detail in the text field below...</h4>
+                                            </div>
+                                            {# /Card Header #}
+                                            {# Card Body #}
+                                            <div class="dt-card__body">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12">
+                                                        {{ form_widget(form.typeFinancialLossOtherComment) }}
+                                                        <div class="error_message">{{ form_errors(form.typeFinancialLossOtherComment) }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {# /Card Body #}
+                                        </div>
+                                        {# /Card #}
+                                    </div>
+                                    {# /Grid Item #}
+                                </div>
+                                {# /Other Comment Form Row #}
+                            </div>
+                            {# /FINANCIAL LOSS BLOCK #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Suffered Financial Loss Form Row #}
 
-            {# FINANCIAL LOSS BLOCK #}
-            <div id="financial_loss_block" class="display_none">
-
-                {# Other Comment Form Row #}
-                <div class="form-row">
-                    <div class="form-group col-md-12 ml-5">
-                        {{ form_label(form.typeFinancialLossOtherComment) }}
-                        {{ form_widget(form.typeFinancialLossOtherComment) }}
-                        <div class="error_message">{{ form_errors(form.typeFinancialLossOtherComment) }}</div>
-                    </div>
-                </div>
-                {# /Other Comment Form Row #}
-
-            </div>
-            {# /FINANCIAL LOSS BLOCK #}
-
-            <hr class="border-dashed my-8">
-
             {# Total Loss Amount Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.totalLossAmount) }}
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"> &pound; </span>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>20. What was the total amount of the financial loss suffered?</h4>
                         </div>
-                        {{ form_widget(form.totalLossAmount) }}
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"> &pound; </span>
+                                        </div>
+                                        {{ form_widget(form.totalLossAmount) }}
+                                    </div>
+                                    <div class="error_message">{{ form_errors(form.totalLossAmount) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
                     </div>
-                    <div class="error_message">{{ form_errors(form.totalLossAmount) }}</div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Total Loss Amount Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Financial Loss Upload Files Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.financialLossFiles) }}
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>21. Please upload all documents evidencing the financial loss suffered:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <button id="financial-loss-button" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#financial-loss-stage">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h4>All Uploaded Files For This Stage</h4>
+                                    <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'financial-loss'}) }}"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
-                <div class="form-group col-md-12">
-                    {{ form_widget(form.financialLossFiles) }}
-                    <div class="error_message">{{ form_errors(form.financialLossFiles) }}</div>
-                </div>
-                <div class="form-group col-md-12">
-                    {% if form.vars.data.financialLossFilesPath != NULL %}
-                        <p>
-                            <b>Uploaded Files:</b><br>
-                            {% for key,value in form.vars.data.financialLossFilesPath %}
-                                {{ value }}<br>
-                            {% endfor %}
-                        </p>
-                        <hr class="border-dashed my-8">
-                    {% endif %}
-                </div>
+                {# /Grid Item #}
             </div>
             {# /Financial Loss Upload Files Form Row #}
-
 
             {# Submit Form Row #}
             <div class="form-row">
@@ -135,5 +189,7 @@
         {# /Card #}
     </div>
     {# /Grid #}
+
+    {{ include('dashboard/modals/_financial_loss.html.twig') }}
 
 {% endblock %}

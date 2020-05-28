@@ -131,22 +131,6 @@ class FileReferenceController extends BaseController
         ]);
     }
 
-    /**
-     * @Route("/dashboard/file/filtered/references/{str}", name="get_filtered_file_references", methods={"GET"})
-     * @param string $str
-     * @param FileReferenceRepository $fileReferenceRepository
-     * @return JsonResponse
-     */
-    public function getFilteredFileReferences(string $str, FileReferenceRepository $fileReferenceRepository)
-    {
-        $userID = $this->getUser()->getId();
-        return $this->json($fileReferenceRepository->findByFilteredExampleFields($userID, $str),
-            200,
-            [],
-            [
-                'groups' => 'main',
-            ]);
-    }
 
     /**
      * @param FileReference $fileReference
@@ -154,11 +138,10 @@ class FileReferenceController extends BaseController
      * @param EntityManagerInterface $entityManager
      * @return Response
      * @throws Exception
-     * @Route("/dashboard/file/{id}/delete", name="delete_file_refernces", methods={"DELETE"})
+     * @Route("/dashboard/file/references/{id}", name="delete_file_references", methods={"DELETE"})
      */
     public function deleteFileReference(FileReference $fileReference, UploaderHelper $uploaderHelper, EntityManagerInterface $entityManager)
     {
-
         $entityManager->getConnection()->beginTransaction();
         try {
             $entityManager->remove($fileReference);
@@ -170,36 +153,6 @@ class FileReferenceController extends BaseController
             $entityManager->getConnection()->rollBack();
             throw $exception;
         }
-
     }
 
-    /**
-     * @param FileReference $fileReference
-     * @param UploaderHelper $uploaderHelper
-     * @param EntityManagerInterface $entityManager
-     * @param SerializerInterface $serializer
-     * @param Request $request
-     * @return JsonResponse
-     * @Route("/dashboard/file/{id}/edit", name="edit_file_refernces", methods={"PUT"})
-     */
-    public function editFileNameReference(FileReference $fileReference, UploaderHelper $uploaderHelper, EntityManagerInterface $entityManager, SerializerInterface $serializer, Request $request)
-    {
-        $serializer->deserialize(
-            $request->getContent(),
-            FileReference::class,
-            'json',
-            [
-                'object_to_populate' => $fileReference,
-                'groups' => ['input']
-            ]
-        );
-        $entityManager->persist($fileReference);
-        $entityManager->flush();
-        return $this->json($fileReference,
-            200,
-            [],
-            [
-                'groups' => 'main',
-            ]);
-    }
 }

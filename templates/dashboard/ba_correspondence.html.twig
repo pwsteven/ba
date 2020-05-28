@@ -28,9 +28,9 @@
 
     {# Grid #}
     <div class="col-12">
-        <div class="progress mb-2">
+        <div class="progress mb-5">
             <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0"
-                 aria-valuemax="100">Step 3 of 10
+                 aria-valuemax="100">30%
             </div>
         </div>
     </div>
@@ -45,372 +45,632 @@
 
             {# Received Confirmation Email Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.receivedConfirmationEmail) }}
-                    {{ form_widget(form.receivedConfirmationEmail) }}
-                    <div class="error_message">{{ form_errors(form.receivedConfirmationEmail) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>9. Have you received an email from BA confirming that your personal information has been compromised?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.receivedConfirmationEmail) }}
+                                    <div class="error_message">{{ form_errors(form.receivedConfirmationEmail) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Received Confirmation Email Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Breach One Notification Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.breachOneNotification) }}
-                    {{ form_widget(form.breachOneNotification) }}
-                    <div class="error_message">{{ form_errors(form.breachOneNotification) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>10. Did you receive notification that you had been affected by the data event occurring between 21 April 2018 – 28 July 2018?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.breachOneNotification) }}
+                                    <div class="error_message">{{ form_errors(form.breachOneNotification) }}</div>
+                                </div>
+                            </div>
+
+                            {# Breach One Block #}
+                            <div id="breach_one_block"{% if form.vars.data.breachOneNotification != 'YES' %} class="display_none"{% endif %}>
+
+                                <div class="block_body mt-5">
+
+                                    {# Breach One Date Received Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Date Received:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachOneDateReceived) }}
+                                                            <div class="error_message">{{ form_errors(form.breachOneDateReceived) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Date Received Form Row #}
+
+                                    {# Breach One Notification File Upload Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Please upload a copy of the notification received from BA:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <button id="ba-correspondence-copy-button" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#ba-correspondence-stage">
+                                                                Choose File
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <h4>All Uploaded Files For This Stage</h4>
+                                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'ba-correspondence'}) }}"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Notification File Upload Form Row #}
+
+                                    {# Breach One Notification Not Affected Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Have you since received notification confirming you were not affected?</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachOneNotificationNotAffected) }}
+                                                            <div class="error_message">{{ form_errors(form.breachOneNotificationNotAffected) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Notification Not Affected Form Row #}
+
+                                    {# Breach One Booking Date Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Date of Booking:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachOneDateOfBooking) }}
+                                                            <div class="error_message">{{ form_errors(form.breachOneDateOfBooking) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Booking Date Form Row #}
+
+                                    {# Breach One Email Used Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Email address used for the booking related to the claim:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachOneEmailAddressUsed) }}
+                                                            <div class="error_message">{{ form_errors(form.breachOneEmailAddressUsed) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Email Used Form Row #}
+
+                                    {# Breach One Booking Reference Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Booking Reference:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachOneBookingReference) }}
+                                                            <div class="error_message">{{ form_errors(form.breachOneBookingReference) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Booking Reference Form Row #}
+
+                                    {# Breach One Booking Platform Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Platform the British Airways booking was made on:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachOneBookingPlatform) }}
+                                                            <div class="error_message">{{ form_errors(form.breachOneBookingPlatform) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Booking Platform Form Row #}
+
+                                    {# Breach One Booking Payment Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>The booking was paid for using:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachOnePaymentMethod) }}
+                                                            <div class="error_message">{{ form_errors(form.breachOnePaymentMethod) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Booking Payment Form Row #}
+
+                                    {# Breach One Booking File Upload Row #}
+                                    <div class="row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Please upload a copy of the booking notification::</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <button id="ba-correspondence-booking-button" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#ba-correspondence-stage">
+                                                                Choose File
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <h4>All Uploaded Files For This Stage</h4>
+                                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'ba-correspondence'}) }}"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach One Booking File Upload Row #}
+
+                                </div>
+                            </div>
+                            {# /Breach One Block #}
+
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Breach One Notification Form Row #}
 
-            {# Breach One Block #}
-            <div id="breach_one_block"{% if form.vars.data.breachOneNotification != 'YES' %} class="display_none"{% endif %}>
-                <div class="block_body">
-
-                    {# Breach One Date Received Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOneDateReceived) }}
-                            {{ form_widget(form.breachOneDateReceived) }}
-                            <div class="error_message">{{ form_errors(form.breachOneDateReceived) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach One Date Received Form Row #}
-
-                    {# Breach One Notification File Upload Form Row #}
-                    <div class="form-row">
-
-                        {# Grid Item #}
-                        <div class="col-md-12 col-sm-12">
-                            {# Card #}
-                            <div class="dt-card">
-
-                                {# Card Header #}
-                                <div class="dt-card__header">
-
-                                    {# Card Heading #}
-                                    <div class="dt-card__heading">
-                                        <h3 class="dt-card__title">Please upload a copy of the notification received from BA:</h3>
-                                    </div>
-                                    {# /Card Heading #}
-
-                                </div>
-                                {# /Card Header #}
-
-                                {# Card Body #}
-                                <div class="dt-card__body">
-
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                            <button id="ba_notification_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
-                                                Choose File
-                                            </button>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <h4>All Uploaded Files For This Stage</h4>
-                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_notification_copy'}) }}"></ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                {# /Card Body #}
-
-                            </div>
-                            {# /Card #}
-                        </div>
-                        {# /Grid Item #}
-
-
-                    </div>
-                    {# /Breach One Notification File Upload Form Row #}
-
-                    {# Breach One Notification Not Affected Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOneNotificationNotAffected) }}
-                            {{ form_widget(form.breachOneNotificationNotAffected) }}
-                            <div class="error_message">{{ form_errors(form.breachOneNotificationNotAffected) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach One Notification Not Affected Form Row #}
-
-                    {# Breach One Booking Date Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{  form_label(form.breachOneDateOfBooking) }}
-                            {{ form_widget(form.breachOneDateOfBooking) }}
-                            <div class="error_message">{{ form_errors(form.breachOneDateOfBooking) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach One Booking Date Form Row #}
-
-                    {# Breach One Email Used Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOneEmailAddressUsed) }}
-                            {{ form_widget(form.breachOneEmailAddressUsed) }}
-                            <div class="error_message">{{ form_errors(form.breachOneEmailAddressUsed) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach One Email Used Form Row #}
-
-                    {# Breach One Booking Reference Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOneBookingReference) }}
-                            {{ form_widget(form.breachOneBookingReference) }}
-                            <div class="error_message">{{ form_errors(form.breachOneBookingReference) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach One Booking Reference Form Row #}
-
-                    {# Breach One Booking Platform Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOneBookingPlatform) }}
-                            {{ form_widget(form.breachOneBookingPlatform) }}
-                            <div class="error_message">{{ form_errors(form.breachOneBookingPlatform) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach One Booking Platform Form Row #}
-
-                    {# Breach One Booking Payment Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachOnePaymentMethod) }}
-                            {{ form_widget(form.breachOnePaymentMethod) }}
-                            <div class="error_message">{{ form_errors(form.breachOnePaymentMethod) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach One Booking Payment Form Row #}
-
-                    {# Breach One Booking File Upload Row #}
-                    <div class="row">
-                        {# Grid Item #}
-                        <div class="col-md-12 col-sm-12">
-                            {# Card #}
-                            <div class="dt-card">
-
-                                {# Card Header #}
-                                <div class="dt-card__header">
-
-                                    {# Card Heading #}
-                                    <div class="dt-card__heading">
-                                        <h3 class="dt-card__title">Please upload a copy of the booking notification::</h3>
-                                    </div>
-                                    {# /Card Heading #}
-
-                                </div>
-                                {# /Card Header #}
-
-                                {# Card Body #}
-                                <div class="dt-card__body">
-
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                            <button id="ba_booking_notification_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
-                                                Choose File
-                                            </button>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <h4>All Uploaded Files For This Stage</h4>
-                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_booking_notification'}) }}"></ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                {# /Card Body #}
-
-                            </div>
-                            {# /Card #}
-                        </div>
-                        {# /Grid Item #}
-                    </div>
-                    {# /Breach One Booking File Upload Row #}
-
-                </div>
-            </div>
-            {# /Breach One Block #}
-
-            <hr class="border-dashed my-8">
-
             {# Breach Two Notification Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.breachTwoNotification)}}
-                    {{ form_widget(form.breachTwoNotification) }}
-                    <div class="error_message">{{ form_errors(form.breachTwoNotification) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>11. Did you receive notification that you had been affected by the data event occurring between 10.58pm on 21 August 2018 – 9.45pm on 5 September 2018?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.breachTwoNotification) }}
+                                    <div class="error_message">{{ form_errors(form.breachTwoNotification) }}</div>
+                                </div>
+                            </div>
+
+                            {# Breach Two Block #}
+                            <div id="breach_two_block"{% if form.vars.data.breachTwoNotification != 'YES' %} class="display_none"{% endif %}>
+
+                                <div class="block_body mt-5">
+
+                                    {# Breach Two Date Received Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Date Received:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachTwoDateReceived) }}
+                                                            <div class="error_message">{{ form_errors(form.breachTwoDateReceived) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Date Received Form Row #}
+
+                                    {# Breach Two Notification File Upload Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Please upload a copy of the notification that you had been affected by the data event:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <button id="ba-correspondence-copy-button-2" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#ba-correspondence-stage">
+                                                                Choose File
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <h4>All Uploaded Files For This Stage</h4>
+                                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'ba-correspondence'}) }}"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Notification File Upload Form Row #}
+
+                                    {# Breach Two Notification Not Affected Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Have you since received notification confirming you were not affected?</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachTwoNotificationNotAffected) }}
+                                                            <div class="error_message">{{ form_errors(form.breachTwoNotificationNotAffected) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Notification Not Affected Form Row #}
+
+                                    {# Breach Two Booking Date Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Date of Booking:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachTwoDateOfBooking) }}
+                                                            <div class="error_message">{{ form_errors(form.breachTwoDateOfBooking) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Booking Date Form Row #}
+
+                                    {# Breach Two Email Used Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Email address used for the booking related to the claim:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachTwoEmailAddressUsed) }}
+                                                            <div class="error_message">{{ form_errors(form.breachTwoEmailAddressUsed) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Email Used Form Row #}
+
+                                    {# Breach Two Booking Reference Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Booking Reference:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachTwoBookingReference) }}
+                                                            <div class="error_message">{{ form_errors(form.breachTwoBookingReference) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Booking Reference Form Row #}
+
+                                    {# Breach Two Booking Platform Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Platform the British Airways booking was made on:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachTwoBookingPlatform) }}
+                                                            <div class="error_message">{{ form_errors(form.breachTwoBookingPlatform) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Booking Platform Form Row #}
+
+                                    {# Breach Two Booking Payment Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>The booking was paid for using:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.breachTwoPaymentMethod) }}
+                                                            <div class="error_message">{{ form_errors(form.breachTwoPaymentMethod) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Booking Payment Form Row #}
+
+                                    {# Breach Two Booking File Upload Row #}
+                                    <div class="row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Please upload a copy of the booking notification:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <button id="ba-correspondence-booking-button-2" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#ba-correspondence-stage">
+                                                                Choose File
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <h4>All Uploaded Files For This Stage</h4>
+                                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'ba-correspondence'}) }}"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Breach Two Booking File Upload Row #}
+
+                                </div>
+                            </div>
+                            {# /Breach Two Block #}
+
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Breach Two Notification Form Row #}
 
-            {# Breach Two Block #}
-            <div id="breach_two_block"{% if form.vars.data.breachTwoNotification != 'YES' %} class="display_none"{% endif %}>
-                <div class="block_body">
-
-                    {# Breach Two Date Received Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoDateReceived) }}
-                            {{ form_widget(form.breachTwoDateReceived) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoDateReceived) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach Two Date Received Form Row #}
-
-                    {# Breach Two Notification File Upload Form Row #}
-                    {# Grid Item #}
-                    <div class="col-md-12 col-sm-12">
-                        {# Card #}
-                        <div class="dt-card">
-
-                            {# Card Header #}
-                            <div class="dt-card__header">
-
-                                {# Card Heading #}
-                                <div class="dt-card__heading">
-                                    <h3 class="dt-card__title">Please upload a copy of the notification that you had been affected by the data event:</h3>
-                                </div>
-                                {# /Card Heading #}
-
-                            </div>
-                            {# /Card Header #}
-
-                            {# Card Body #}
-                            <div class="dt-card__body">
-
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <button id="ba_notification_button_2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
-                                            Choose File
-                                        </button>
-                                    </div>
-                                    <div class="col-md-6 col-sm-6">
-                                        <h4>All Uploaded Files For This Stage</h4>
-                                        <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_notification_copy_2'}) }}"></ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                            {# /Card Body #}
-
-                        </div>
-                        {# /Card #}
-                    </div>
-                    {# /Grid Item #}
-
-                    {# /Breach Two Notification File Upload Form Row #}
-
-                    {# Breach Two Notification Not Affected Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoNotificationNotAffected) }}
-                            {{ form_widget(form.breachTwoNotificationNotAffected) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoNotificationNotAffected) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach Two Notification Not Affected Form Row #}
-
-                    {# Breach Two Booking Date Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{  form_label(form.breachTwoDateOfBooking) }}
-                            {{ form_widget(form.breachTwoDateOfBooking) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoDateOfBooking) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach Two Booking Date Form Row #}
-
-                    {# Breach Two Email Used Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoEmailAddressUsed) }}
-                            {{ form_widget(form.breachTwoEmailAddressUsed) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoEmailAddressUsed) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach Two Email Used Form Row #}
-
-                    {# Breach Two Booking Reference Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoBookingReference) }}
-                            {{ form_widget(form.breachTwoBookingReference) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoBookingReference) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach Two Booking Reference Form Row #}
-
-                    {# Breach Two Booking Platform Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoBookingPlatform) }}
-                            {{ form_widget(form.breachTwoBookingPlatform) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoBookingPlatform) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach Two Booking Platform Form Row #}
-
-                    {# Breach Two Booking Payment Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.breachTwoPaymentMethod) }}
-                            {{ form_widget(form.breachTwoPaymentMethod) }}
-                            <div class="error_message">{{ form_errors(form.breachTwoPaymentMethod) }}</div>
-                        </div>
-                    </div>
-                    {# /Breach Two Booking Payment Form Row #}
-
-                    {# Breach Two Booking File Upload Row #}
-                    <div class="row">
-                        {# Grid Item #}
-                        <div class="col-md-12 col-sm-12">
-                            {# Card #}
-                            <div class="dt-card">
-
-                                {# Card Header #}
-                                <div class="dt-card__header">
-
-                                    {# Card Heading #}
-                                    <div class="dt-card__heading">
-                                        <h3 class="dt-card__title">Please upload a copy of the booking notification:</h3>
-                                    </div>
-                                    {# /Card Heading #}
-
-                                </div>
-                                {# /Card Header #}
-
-                                {# Card Body #}
-                                <div class="dt-card__body">
-
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                            <button id="ba_booking_notification_button_2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#large-modal">
-                                                Choose File
-                                            </button>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <h4>All Uploaded Files For This Stage</h4>
-                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_filtered_file_references', {str: 'ba_booking_notification_2'}) }}"></ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                {# /Card Body #}
-
-                            </div>
-                            {# /Card #}
-                        </div>
-                        {# /Grid Item #}
-                    </div>
-                    {# /Breach Two Booking File Upload Row #}
-
-
-                </div>
-            </div>
-            {# /Breach Two Block #}
 
             {# Submit Form Row #}
             <div class="form-row">

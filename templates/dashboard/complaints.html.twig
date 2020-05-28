@@ -28,9 +28,9 @@
 
     {# Grid #}
     <div class="col-12">
-        <div class="progress mb-2">
+        <div class="progress mb-5">
             <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                 aria-valuemax="100">Step 5 of 10
+                 aria-valuemax="100">50%
             </div>
         </div>
     </div>
@@ -45,107 +45,243 @@
 
             {# Lodged Complaint Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.lodgedComplaint) }}
-                    {{ form_widget(form.lodgedComplaint) }}
-                    <div class="error_message">{{ form_errors(form.lodgedComplaint) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>15. Have you lodged a formal complaint through British Airways official procedures?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.lodgedComplaint) }}
+                                    <div class="error_message">{{ form_errors(form.lodgedComplaint) }}</div>
+                                </div>
+                            </div>
+
+                            {# COMPLAINT BLOCK #}
+                            <div id="complaint_block"{% if form.vars.data.lodgedComplaint != 'YES' %} class="display_none"{% endif %}>
+
+                                <div class="block_body mt-5">
+
+                                    {# Complaint Made Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>When was the complaint made?</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.complaintMade) }}
+                                                            <div class="error_message">{{ form_errors(form.complaintMade) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Complaint Made Form Row #}
+
+                                    {# Received Response Form Row #}
+                                    <div class="form-row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Have you received a response to your complaint?</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            {{ form_widget(form.receivedResponse) }}
+                                                            <div class="error_message">{{ form_errors(form.receivedResponse) }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Received Response Form Row #}
+
+                                    {# RECEIVED RESPONSE BLOCK #}
+                                    <div id="complaint_satisfied_response_block"{% if form.vars.data.receivedResponse is null or form.vars.data.receivedResponse == 'Yes' %} class="display_none"{% endif %}>
+                                        {# Satisfied Response Form Row #}
+                                        <div class="form-row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4>Are you satisfied with the response to your complaint?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.satisfiedResponse) }}
+                                                                <div class="error_message">{{ form_errors(form.satisfiedResponse) }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Satisfied Response Form Row #}
+                                    </div>
+                                    {# /RECEIVED RESPONSE BLOCK #}
+
+                                    {# UNSATISFIED RESPONSE BLOCK #}
+                                    <div id="complaint_reason_unsatisfied_block"{% if form.vars.data.reasonUnsatisfied is null or form.vars.data.satisfiedResponse == 'Yes' %} class="display_none"{% endif %}>
+
+                                        {# Unsatisfied Response Form Row #}
+                                        <div class="form-row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4>If you are unsatisfied with your complaint, please explain your reasons for this:</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.reasonUnsatisfied) }}
+                                                                <div class="error_message">{{ form_errors(form.reasonUnsatisfied) }}</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Unsatisfied Response Form Row #}
+                                    </div>
+                                    {# /UNSATISFIED RESPONSE BLOCK #}
+                                </div>
+                            </div>
+                            {# /COMPLAINT BLOCK #}
+
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Lodged Complaint Form Row #}
 
-            {# COMPLAINT BLOCK #}
-            <div id="complaint_block"{% if form.vars.data.lodgedComplaint != 'YES' %} class="display_none"{% endif %}>
-                <div class="block_body">
-
-                    {# Complaint Made Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.complaintMade) }}
-                            {{ form_widget(form.complaintMade) }}
-                            <div class="error_message">{{ form_errors(form.complaintMade) }}</div>
-                        </div>
-                    </div>
-                    {# /Complaint Made Form Row #}
-
-                    {# Received Response Form Row #}
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.receivedResponse) }}
-                            {{ form_widget(form.receivedResponse) }}
-                            <div class="error_message">{{ form_errors(form.receivedResponse) }}</div>
-                        </div>
-                    </div>
-                    {# /Received Response Form Row #}
-
-                    {# RECEIVED RESPONSE BLOCK #}
-                    <div id="complaint_satisfied_response_block"{% if form.vars.data.receivedResponse is null or form.vars.data.receivedResponse == 'Yes' %} class="display_none"{% endif %}>
-
-                        {# Satisfied Response Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.satisfiedResponse) }}
-                                {{ form_widget(form.satisfiedResponse) }}
-                                <div class="error_message">{{ form_errors(form.satisfiedResponse) }}</div>
-                            </div>
-                        </div>
-                        {# /Satisfied Response Form Row #}
-
-                    </div>
-                    {# /RECEIVED RESPONSE BLOCK #}
-
-                    {# UNSATISFIED RESPONSE BLOCK #}
-                    <div id="complaint_reason_unsatisfied_block"{% if form.vars.data.reasonUnsatisfied is null or form.vars.data.satisfiedResponse == 'Yes' %} class="display_none"{% endif %}>
-
-                        {# Unsatisfied Response Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.reasonUnsatisfied) }}
-                                {{ form_widget(form.reasonUnsatisfied) }}
-                                <div class="error_message">{{ form_errors(form.reasonUnsatisfied) }}</div>
-                            </div>
-                        </div>
-                        {# /Unsatisfied Response Form Row #}
-
-                    </div>
-                    {# /UNSATISFIED RESPONSE BLOCK #}
-
-                </div>
-            </div>
-            {# /COMPLAINT BLOCK #}
-
-            <hr class="border-dashed my-8">
-
             {# Contacted ICO Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.contactedIOC) }}
-                    {{ form_widget(form.contactedIOC) }}
-                    <div class="error_message">{{ form_errors(form.contactedIOC) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>16. Have you contacted the Information Commissioner's Office about the British Airways data breach?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.contactedIOC) }}
+                                    <div class="error_message">{{ form_errors(form.contactedIOC) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Contacted ICO Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Contacted Action Fraud Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.contactedActionFraud) }}
-                    {{ form_widget(form.contactedActionFraud) }}
-                    <div class="error_message">{{ form_errors(form.contactedActionFraud) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>17. Have you contacted Action Fraud about the British Airways data breach?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.contactedActionFraud) }}
+                                    <div class="error_message">{{ form_errors(form.contactedActionFraud) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Contacted Action Fraud Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Contacted Get Safe Online Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.accessedGetSafeOnline) }}
-                    {{ form_widget(form.accessedGetSafeOnline) }}
-                    <div class="error_message">{{ form_errors(form.accessedGetSafeOnline) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>18. Have you accessed "Get Safe Online" following the British Airways data breach?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.accessedGetSafeOnline) }}
+                                    <div class="error_message">{{ form_errors(form.accessedGetSafeOnline) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Contacted Get Safe Online Form Row #}
 
