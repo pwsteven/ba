@@ -20,8 +20,8 @@ class ComplaintsType extends AbstractType
                 'label' => ' 15. Have you lodged a formal complaint through British Airways official procedures?',
                 'choices' => [
                     'Please Select' => '',
-                    'No' => 'NO',
                     'Yes' => 'YES',
+                    'No' => 'NO',
                 ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
@@ -74,8 +74,8 @@ class ComplaintsType extends AbstractType
                 'label' => ' 16. Have you contacted the Information Commissioner\'s Office about the British Airways data breach?',
                 'choices' => [
                     'Please Select' => '',
-                    'No' => 'NO',
                     'Yes' => 'YES',
+                    'No' => 'NO',
                 ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
@@ -85,8 +85,8 @@ class ComplaintsType extends AbstractType
                 'label' => ' 17. Have you contacted Action Fraud about the British Airways data breach?',
                 'choices' => [
                     'Please Select' => '',
-                    'No' => 'NO',
                     'Yes' => 'YES',
+                    'No' => 'NO',
                 ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
@@ -96,8 +96,8 @@ class ComplaintsType extends AbstractType
                 'label' => ' 18. Have you accessed "Get Safe Online" following the British Airways data breach?',
                 'choices' => [
                     'Please Select' => '',
-                    'No' => 'NO',
                     'Yes' => 'YES',
+                    'No' => 'NO',
                 ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',

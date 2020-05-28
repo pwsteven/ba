@@ -26,30 +26,6 @@ class CreditMonitorType extends AbstractType
                     'class' => 'form-control form-control-lg',
                 ]
             ])
-            ->add('monitorCreditFile', FileType::class, [
-                'label' => 'Please upload evidence of your account:',
-                'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2M',
-                        'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf',
-                            'application/msword',
-                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                            'text/plain',
-                            'image/jpeg',
-                            'image/png',
-                        ],
-                        'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                    ])
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
         ;
     }
 

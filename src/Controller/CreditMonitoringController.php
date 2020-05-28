@@ -5,10 +5,8 @@ namespace App\Controller;
 use App\Form\CreditMonitorType;
 use App\Repository\CreditMonitorRepository;
 use App\Service\ProClaimPutCreditMonitoring;
-use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,10 +34,9 @@ class CreditMonitoringController extends BaseController
      * @param Request $request
      * @param EntityManagerInterface $entityManager
      * @param ProClaimPutCreditMonitoring $proClaimPutCreditMonitoring
-     * @param UploaderHelper $uploaderHelper
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutCreditMonitoring $proClaimPutCreditMonitoring)
+    public function index(Request $request, EntityManagerInterface $entityManager, ProClaimPutCreditMonitoring $proClaimPutCreditMonitoring)
     {
 
         $showForm = $this->getUser()->getAppReimbursements();
@@ -54,14 +51,6 @@ class CreditMonitoringController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            //COLLECT + UPLOAD FILE|IMAGE FILES
-            /** @var UploadedFile $monitorCreditFile */
-            $monitorCreditFile = $form['monitorCreditFile']->getData();
-            if ($monitorCreditFile) {
-                $newFileName = $uploaderHelper->uploadClientFile($monitorCreditFile);
-                $creditMonitorDetails->setMonitorCreditFilePath($newFileName);
-            }
 
             // COMMIT FORM FIELD VALUES TO DATABASE
             $creditMonitorDetails->setComplete(true);

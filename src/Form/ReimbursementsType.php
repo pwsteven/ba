@@ -22,8 +22,9 @@ class ReimbursementsType extends AbstractType
                 'label' => ' 22. Have you ever been reimbursed for the financial loss you suffered?',
                 'choices' => [
                     'Please Select' => '',
-                    'No' => 'NO',
                     'Yes' => 'YES',
+                    'No' => 'NO',
+
                 ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
@@ -40,33 +41,6 @@ class ReimbursementsType extends AbstractType
                 'label' => 'Please enter the amount you were reimbursed:',
                 'required' => false,
                 'currency' => false,
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                ],
-            ])
-            ->add('reimbursementFiles', FileType::class, [
-                'label' => 'Please upload any and all correspondence in relation to the reimbursement:',
-                'mapped' => false,
-                'required' => false,
-                'multiple' => true,
-                'constraints' => [
-                    new All([
-                        new File([
-                            'maxSize' => '2M',
-                            'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                            'mimeTypes' => [
-                                'application/pdf',
-                                'application/x-pdf',
-                                'application/msword',
-                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                                'text/plain',
-                                'image/jpeg',
-                                'image/png',
-                            ],
-                            'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                        ]),
-                    ]),
-                ],
                 'attr' => [
                     'class' => 'form-control form-control-lg',
                 ],

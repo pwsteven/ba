@@ -1,5 +1,9 @@
 const $ = require('jquery');
 
+$('#ba_form').submit(function(event) {
+    $('#submit-form-button').html('Submitting <i class="fa fa-spinner fa-spin fa-fw"></i>').prop('disabled', true);
+});
+
 $('#ba_correspondence_breachOneNotification').on('change', function () {
     const value = $('#ba_correspondence_breachOneNotification option:selected').attr("value");
     if (value === 'YES') {

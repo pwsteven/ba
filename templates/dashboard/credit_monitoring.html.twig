@@ -28,9 +28,9 @@
 
     {# Grid #}
     <div class="col-12">
-        <div class="progress mb-2">
+        <div class="progress mb-5">
             <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-                 aria-valuemax="100">Step 8 of 10
+                 aria-valuemax="100">80%
             </div>
         </div>
     </div>
@@ -44,45 +44,76 @@
             {{ form_start(form, {'attr': {'id': 'ba_form'}}) }}
 
             {# Experian ProtectMyID Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.monitorCredit) }}
-                    {{ form_widget(form.monitorCredit) }}
-                    <div class="error_message">{{ form_errors(form.monitorCredit) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>23. Have you signed up for Experian ProtectMyID or accepted any other offer sent to you by British Airways to monitor your credit?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.monitorCredit) }}
+                                    <div class="error_message">{{ form_errors(form.monitorCredit) }}</div>
+                                </div>
+                            </div>
+                            {# CREDIT MONITOR BLOCK #}
+                            <div id="credit_monitor_block"{% if form.vars.data.monitorCredit != 'YES' %} class="display_none"{% endif %}>
+
+                                <div class="block_body mt-5">
+                                    {# Account Evidence File Upload #}
+                                    <div class="row">
+                                        {# Grid Item #}
+                                        <div class="col-md-12 col-sm-12">
+                                            {# Card #}
+                                            <div class="dt-card">
+                                                {# Card Header #}
+                                                <div class="dt-card__header">
+                                                    <h4>Please upload evidence of your account:</h4>
+                                                </div>
+                                                {# /Card Header #}
+                                                {# Card Body #}
+                                                <div class="dt-card__body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <button id="credit-monitor-button" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#credit-monitoring-stage">
+                                                                Choose File
+                                                            </button>
+                                                        </div>
+                                                        <div class="col-md-6 col-sm-6">
+                                                            <h4>All Uploaded Files For This Stage</h4>
+                                                            <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'credit-monitoring'}) }}"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {# /Card Body #}
+                                            </div>
+                                            {# /Card #}
+                                        </div>
+                                        {# /Grid Item #}
+                                    </div>
+                                    {# /Account Evidence File Upload #}
+                                </div>
+                            </div>
+                            {# /CREDIT MONITOR BLOCK #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Experian ProtectMyID Form Row #}
-
-            {# CREDIT MONITOR BLOCK #}
-            <div id="credit_monitor_block"{% if form.vars.data.monitorCredit != 'YES' %} class="display_none"{% endif %}>
-                <div class="block_body">
-
-                    {# Account Evidence File Upload #}
-
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            {{ form_label(form.monitorCreditFile) }}
-                            {{ form_widget(form.monitorCreditFile) }}
-                            <div class="error_message">{{ form_errors(form.monitorCreditFile) }}</div>
-                        </div>
-                        <div class="form-group col-md-12">
-                            {% if form.vars.data.monitorCreditFilePath != "" %}
-                                <p><b>Uploaded File:</b> {{ form.vars.data.monitorCreditFilePath }}</p>
-                                <hr class="border-dashed my-8">
-                            {% endif %}
-                        </div>
-                    </div>
-
-                    {# /Account Evidence File Upload #}
-
-                </div>
-            </div>
-            {# /CREDIT MONITOR BLOCK #}
 
             {# Submit Form Row #}
             <div class="form-row">
                 <div class="form-group col-md-12 text-right">
-                    <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage...">Submit &amp; Continue <i class="icon icon-forward"></i></button>
+                    <button type="submit" id="submit-form-button" class="btn btn-outline-info btn-lg" title="continue to the next stage...">Submit &amp; Continue <i class="icon icon-forward"></i></button>
                 </div>
             </div>
             {# /Submit Form Row #}
@@ -93,6 +124,8 @@
         {# /Card #}
     </div>
     {# /Grid #}
+
+    {{ include('dashboard/modals/_credit_monitoring.html.twig') }}
 
 {% endblock %}
 

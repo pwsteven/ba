@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use SpecShaper\EncryptBundle\Annotations\Encrypted;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ReimbursementsRepository")
@@ -25,6 +26,7 @@ class Reimbursements
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please select either Yes or No")
      */
     private $financialLossSuffered;
 

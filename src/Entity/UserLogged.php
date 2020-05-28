@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use SpecShaper\EncryptBundle\Annotations\Encrypted;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserLoggedRepository")
@@ -23,16 +24,19 @@ class UserLogged
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
      */
     private $Browser;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
      */
     private $OperatingSystem;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
      */
     private $Device;
 
@@ -63,6 +67,7 @@ class UserLogged
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
      */
     private $IpAddress;
 

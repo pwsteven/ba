@@ -32,24 +32,7 @@
             {# Header Navigation Wrapper #}
             <div class="dt-nav-wrapper">
 
-                {# Mobile Search #}
-                <ul class="dt-nav d-lg-none">
-                    <li class="dt-nav__item dt-notification-search dropdown">
 
-                        {# Dropdown Link #}
-                        <a href="#" class="dt-nav__link dropdown-toggle no-arrow" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"> <i class="icon icon-search-new icon-fw icon-lg"></i> </a>
-                        {# /Dropdown Link #}
-
-                        {# Dropdown Option #}
-                        <div class="dropdown-menu">
-
-                        </div>
-                        {# /DropDown Option #}
-
-                    </li>
-                </ul>
-                {# /Mobile Search #}
 
                 {# Logout #}
                 <ul class="dt-nav">
@@ -76,12 +59,9 @@
                                 <img class="dt-avatar" src="{{ asset('html-bs4/default/assets/images/user.png') }}" alt="{{ app.user.firstName }}">
                                 <span class="dt-avatar-info">
                                     <span class="dt-avatar-name">{{ app.user.firstName }}</span>
-                                    <span class="f-12">Administrator</span>
                                 </span>
                             </div>
-                            <a class="dropdown-item" href="javascript:void(0)"> <i class="icon icon-user-o icon-fw mr-2 mr-sm-1"></i>Account
-                            </a> <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="icon icon-setting icon-fw mr-2 mr-sm-1"></i>Setting </a>
+                            <a class="dropdown-item" href="javascript:void(0)"> <i class="icon icon-user-o icon-fw mr-2 mr-sm-1"></i>Account</a>
                             <a class="dropdown-item" href="{{ path('app_logout') }}"> <i class="icon icon-edit icon-fw mr-2 mr-sm-1"></i>Logout
                             </a>
                         </div>

@@ -5,10 +5,8 @@ namespace App\Controller;
 use App\Form\ReimbursementsType;
 use App\Repository\ReimbursementsRepository;
 use App\Service\ProClaimPutReimbursements;
-use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -35,11 +33,10 @@ class ReimbursementsController extends BaseController
      * @Route("/dashboard/reimbursements", name="app_reimbursements")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
-     * @param UploaderHelper $uploaderHelper
      * @param ProClaimPutReimbursements $proClaimPutReimbursements
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutReimbursements $proClaimPutReimbursements)
+    public function index(Request $request, EntityManagerInterface $entityManager, ProClaimPutReimbursements $proClaimPutReimbursements)
     {
 
         $showForm = $this->getUser()->getAppFinancialLoss();
@@ -54,18 +51,6 @@ class ReimbursementsController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            //COLLECT + UPLOAD FILE|IMAGE FILES
-            /** @var UploadedFile $reimbursementFiles */
-            $reimbursementFiles = $form['reimbursementFiles']->getData();
-            if ($reimbursementFiles){
-                $filesData = [];
-                foreach ($reimbursementFiles as $reimbursementFile) {
-                    $newFileName = $uploaderHelper->uploadClientFile($reimbursementFile);
-                    $filesData[] = $newFileName;
-                }
-                $reimbursementDetails->setReimbursementFilesPath($filesData);
-            }
 
             // COMMIT FORM FIELD VALUES TO DATABASE
             $reimbursementDetails->setComplete(true);

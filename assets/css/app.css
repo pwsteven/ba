@@ -4,12 +4,11 @@
 @import "~font-awesome";
 @import "~dropzone/dist/min/dropzone.min.css";
 
-#ba_form {padding: 20px;}
+#ba_form {padding: 10px;}
 #ba_form label.required:before {content:"* "; color: #d9534f; font-weight: bold;}
 .display_none {display: none;}
 .block_body {
-    padding: 15px;
-    margin-bottom: 30px;
+    padding: 30px 7px 0 7px;
     border: 2px solid #cccccc;
     background-color: #dddddd;
     -webkit-border-radius: 7px;
