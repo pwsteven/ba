@@ -28,9 +28,9 @@
 
     {# Grid #}
     <div class="col-12">
-        <div class="progress mb-2">
+        <div class="progress mb-5">
             <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                 aria-valuemax="100">Step 10 of 10
+                 aria-valuemax="100">100%
             </div>
         </div>
     </div>
@@ -40,10 +40,38 @@
     <div class="col-12">
         {# Card #}
         <div class="dt-card">
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <p>Thank-you for completing our BA OnBoarding process!</p>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>Complete!</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <p>Thank-you {{ app.user.firstName }} for completing our BA OnBoarding process!</p>
+                                    <p>Our team appreciate the time you have taken to answering our questions.</p>
+                                    <p>We will be in touch regarding your claim against British Airways soon.</p>
+                                    <p>Yours sincerely,</p>
+                                    <p><img src="#" width="146" height="56" style="margin:0; padding:0; border:none; display:block;" border="0" alt="" /></p>
+                                    <p>Aman Johal<br>Solicitor &amp; Director</p>
+                                    <p><br>
+                                        <b><u>BAgroupaction.com</u></b><br>
+                                        <b><u>Your Lawyers Limited</u></b><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
         </div>
         {# /Card #}

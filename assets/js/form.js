@@ -218,7 +218,7 @@ $('#emotional_distress_adverseConsequences_0').click(function () {
         $('#emotional_distress_adverseConsequencesDetails').prop('disabled', true);
         $('#emotional_distress_adverseConsequencesFiles').prop('disabled', true);
     } else {
-        for (let i = 1; i < 8; i++) {
+        for (let i = 1; i < 9; i++) {
             $('#emotional_distress_adverseConsequences_'+i).prop('disabled', false);
         }
         $('#emotional_distress_adverseConsequencesExample').prop('disabled', false);
@@ -252,4 +252,10 @@ $('#further-correspondence-confirm-email-button').click(function () {
 });
 $('#further-correspondence-received-button').click(function () {
     $('#form_upload_name').val('further-correspondence-received');
+});
+$('#emotional-distress-evidence-button').click(function () {
+    $('#form_upload_name').val('emotional-distress-evidence');
+});
+$('#emotional-distress-consequences-button').click(function () {
+    $('#form_upload_name').val('emotional-distress-consequences');
 });

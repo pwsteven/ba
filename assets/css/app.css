@@ -7,7 +7,7 @@
 #ba_form {padding: 10px;}
 #ba_form label.required:before {content:"* "; color: #d9534f; font-weight: bold;}
 .display_none {display: none;}
-.block_body {
+.block_body, .distressed_block {
     padding: 30px 7px 0 7px;
     border: 2px solid #cccccc;
     background-color: #dddddd;
@@ -17,15 +17,6 @@
 }
 #ba_form input[type="checkbox"]:hover {cursor: pointer;}
 #ba_form .financial_loss label:hover, #ba_form .emotions label:hover, #ba_form .steps label:hover, #ba_form .consequences label:hover {cursor: pointer;}
-#ba_form .distressed_block {
-    padding: 15px;
-    margin: 7px 15px;
-    border: 2px solid #cccccc;
-    background-color: #f5f5f5;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
-}
 #ba_form select[multiple] option:hover {cursor: pointer}
 #ba_form .error_message ul {margin: 0; padding: 0; list-style: none;}
 #ba_form .error_message ul li {color: #d9534f; font-weight: bold; padding-top: 10px;}

@@ -298,35 +298,6 @@ class EmotionalDistressType extends AbstractType
                     'class' => 'form-control',
                 ],
             ])
-            ->add('stepsTakenFiles', FileType::class, [
-                'label' => '32. If you have any documents evidencing the steps you have taken as a result of the breach, please upload these. Please Note: any personal information 
-                that you would prefer not to disclose (such as account numbers) can be blanked out before uploading.',
-                'mapped' => false,
-                'required' => false,
-                'multiple' => true,
-                'constraints' => [
-                    new All([
-                        new File([
-                            'maxSize' => '2M',
-                            'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                            'mimeTypes' => [
-                                'application/pdf',
-                                'application/x-pdf',
-                                'application/msword',
-                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                                'text/plain',
-                                'image/jpeg',
-                                'image/png',
-                            ],
-                            'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                        ]),
-                    ]),
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                    'multiple' => 'multiple',
-                ],
-            ])
             ->add('adverseConsequences', ChoiceType::class, [
                 'label' => ' 33. Which, if any, of the following adverse consequences have you suffered as a result of the breach?',
                 'multiple' => true,
@@ -358,35 +329,6 @@ class EmotionalDistressType extends AbstractType
                 'required' => false,
                 'attr' => [
                     'class' => 'form-control',
-                ],
-            ])
-            ->add('adverseConsequencesFiles', FileType::class, [
-                'label' => '35. If you have any documents evidencing the consequences of the breach, please upload these. Please Note: any personal information 
-                that you would prefer not to disclose (such as account numbers) can be blanked out before uploading.',
-                'mapped' => false,
-                'required' => false,
-                'multiple' => true,
-                'constraints' => [
-                    new All([
-                        new File([
-                            'maxSize' => '2M',
-                            'maxSizeMessage' => 'Maximum file size is 2 Megabytes',
-                            'mimeTypes' => [
-                                'application/pdf',
-                                'application/x-pdf',
-                                'application/msword',
-                                'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-                                'text/plain',
-                                'image/jpeg',
-                                'image/png',
-                            ],
-                            'mimeTypesMessage' => 'Allows formats: PDF; DOC; DOCX; TXT; JPEG; JPG; PNG'
-                        ]),
-                    ]),
-                ],
-                'attr' => [
-                    'class' => 'form-control form-control-lg',
-                    'multiple' => 'multiple',
                 ],
             ])
             ->add('additionalInformation', TextareaType::class, [

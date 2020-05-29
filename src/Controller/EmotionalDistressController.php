@@ -5,10 +5,8 @@ namespace App\Controller;
 use App\Form\EmotionalDistressType;
 use App\Repository\EmotionalDistressRepository;
 use App\Service\ProClaimPutEmotionalDistress;
-use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,11 +37,10 @@ class EmotionalDistressController extends BaseController
      * @Route("/dashboard/emotional-distress", name="app_emotional_distress")
      * @param Request $request
      * @param EntityManagerInterface $entityManager
-     * @param UploaderHelper $uploaderHelper
      * @param ProClaimPutEmotionalDistress $proClaimPutEmotionalDistress
      * @return Response
      */
-    public function index(Request $request, EntityManagerInterface $entityManager, UploaderHelper $uploaderHelper, ProClaimPutEmotionalDistress $proClaimPutEmotionalDistress)
+    public function index(Request $request, EntityManagerInterface $entityManager, ProClaimPutEmotionalDistress $proClaimPutEmotionalDistress)
     {
 
         $showForm = $this->getUser()->getAppCreditMonitoring();
@@ -58,30 +55,6 @@ class EmotionalDistressController extends BaseController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-            //COLLECT + UPLOAD FILE|IMAGE FILES
-            /** @var UploadedFile $stepsTakenFiles */
-            $stepsTakenFiles = $form['stepsTakenFiles']->getData();
-            if ($stepsTakenFiles) {
-                $filesData = [];
-                foreach ($stepsTakenFiles as $stepsTakenFile) {
-                    $newFileName = $uploaderHelper->uploadClientFile($stepsTakenFile);
-                    $filesData[] = $newFileName;
-                }
-                $emotionalDistressDetails->setStepsTakenFilesPath($filesData);
-            }
-
-            /** @var UploadedFile $adverseConsequencesFiles */
-            $adverseConsequencesFiles = $form['adverseConsequencesFiles']->getData();
-            if ($adverseConsequencesFiles) {
-                $filesData = [];
-                foreach ($adverseConsequencesFiles as $adverseConsequencesFile) {
-                    $newFileName = $uploaderHelper->uploadClientFile($adverseConsequencesFile);
-                    $filesData[] = $newFileName;
-                }
-                $emotionalDistressDetails->setAdverseConsequencesFilesPath($filesData);
-            }
-
 
             // COMMIT FORM FIELD VALUES TO DATABASE
             $emotionalDistressDetails->setComplete(true);

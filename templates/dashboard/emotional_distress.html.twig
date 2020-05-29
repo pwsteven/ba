@@ -28,9 +28,9 @@
 
     {# Grid #}
     <div class="col-12">
-        <div class="progress mb-2">
+        <div class="progress mb-5">
             <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                 aria-valuemax="100">Step 9 of 10
+                 aria-valuemax="100">90%
             </div>
         </div>
     </div>
@@ -42,478 +42,745 @@
         <div class="dt-card">
 
             {{ form_start(form, {'attr': {
-                'id': 'ba_form'
+                'id': 'ba_form', 'novalidate': 'novalidate'
             }}) }}
 
             {# Concerned Personal Details Shared Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.personalDetails) }}
-                    {{ form_widget(form.personalDetails) }}
-                    <div class="error_message">{{ form_errors(form.personalDetails) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>24. Are you concerned that your personal details will be used fraudulently now or at some point in the future?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.personalDetails) }}
+                                    <small class="form-text">Examples of fraudulent use of your personal data include: identity fraud; debit/credit card fraud; publication of your details on the dark web (i.e. a collection of websites that exist on an encrypted network and cannot be found by using traditional search engines or visited by using traditional search engines or visited by using traditional browsers); ransom/scam emails; or supply your details to facilitate unwanted advertising/marketing sales.</small>
+                                    <div class="error_message">{{ form_errors(form.personalDetails) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Concerned Personal Details Shared Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Emotions Experienced Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.emotionsExperiencedNew) }}
-                </div>
-                <div class="form-group col-md-12">
-                    {% for Emotions in form.emotionsExperiencedNew %}
-                        <div class="custom-control custom-checkbox emotions mb-3 ml-5">
-                            {{ form_widget(Emotions, {
-                                attr: {
-                                    'class': 'custom-control-input'
-                                }
-                            }) }} <label class="custom-control-label" for="{{ Emotions.vars.id }}">{{ Emotions.vars.label }}</label>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>25. Upon finding out that your personal information had been breached, did you experience any type of emotional distress? If so, please indicate which of the following emotions you experienced:</h4>
                         </div>
-                    {% endfor %}
-                    <div class="error_message">{{ form_errors(form.emotionsExperiencedNew) }}</div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {% for Emotions in form.emotionsExperiencedNew %}
+                                        <div class="custom-control custom-checkbox emotions mb-3 ml-5">
+                                            {{ form_widget(Emotions, {
+                                                attr: {
+                                                    'class': 'custom-control-input'
+                                                }
+                                            }) }} <label class="custom-control-label" for="{{ Emotions.vars.id }}">{{ Emotions.vars.label }}</label>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="error_message">{{ form_errors(form.emotionsExperiencedNew) }}</div>
+                                </div>
+                            </div>
+                            {# EMOTIONS EXPERIENCED BLOCK #}
+                            <div id="emotions_experienced_block" class="display_none">
+                                {# Emotions Experienced Comment Form Row #}
+                                <div class="row">
+                                    {# Grid Item #}
+                                    <div class="col-md-12 col-sm-12">
+                                        {# Card #}
+                                        <div class="dt-card">
+                                            {# Card Header #}
+                                            <div class="dt-card__header">
+                                                <h4>Please add more info in the text field below...</h4>
+                                            </div>
+                                            {# /Card Header #}
+                                            {# Card Body #}
+                                            <div class="dt-card__body">
+                                                <div class="row">
+                                                    <div class="col-md-12 col-sm-12">
+                                                        {{ form_widget(form.emotionsExperiencedComment) }}
+                                                        <div class="error_message">{{ form_errors(form.emotionsExperiencedComment) }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {# /Card Body #}
+                                        </div>
+                                        {# /Card #}
+                                    </div>
+                                    {# /Grid Item #}
+                                </div>
+                                {# /Emotions Experienced Comment Form Row #}
+                            </div>
+                            {# /EMOTIONS EXPERIENCED BLOCK #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Emotions Experienced Form Row #}
 
-            {# EMOTIONS EXPERIENCED BLOCK #}
-            <div id="emotions_experienced_block" class="display_none">
-
-                {# Emotions Experienced Comment Form Row #}
-                <div class="form-row">
-                    <div class="form-group col-md-11 ml-5">
-                        {{ form_label(form.emotionsExperiencedComment) }}
-                        {{ form_widget(form.emotionsExperiencedComment) }}
-                        <div class="error_message">{{ form_errors(form.emotionsExperiencedComment) }}</div>
-                    </div>
-                </div>
-                {# /Emotions Experienced Comment Form Row #}
-
-            </div>
-            {# /EMOTIONS EXPERIENCED BLOCK #}
-
-            <hr class="border-dashed my-8">
-
-
             {# Emotional Distress Lasted Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.emotionalDistressLasted) }}
-                    {{ form_widget(form.emotionalDistressLasted) }}
-                    <div class="error_message">{{ form_errors(form.emotionalDistressLasted) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>26. Please indicate how long your emotional distress lasted?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.emotionalDistressLasted) }}
+                                    <div class="error_message">{{ form_errors(form.emotionalDistressLasted) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Emotional Distress Lasted Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Breach Questions Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label>27. As a result of the breach have you felt:</label>
-                    {# Distressed Block #}
-                    <div class="distressed_block">
-
-                        {# Breach Question A Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12 mt-3">
-                                {{ form_label(form.breachQuestionA) }}
-                                {{ form_widget(form.breachQuestionA) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionA) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>27. As a result of the breach have you felt:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {# Distressed Block #}
+                                    <div class="distressed_block">
+                                        {# Breach Question A Form Row #}
+                                        <div class="row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4><span class="text-danger">*</span> Feeling nervous, anxious or on edge?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.breachQuestionA) }}
+                                                                <div class="error_message">{{ form_errors(form.breachQuestionA) }}</div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 mt-3">
+                                                                {{ form_widget(form.breachQuestionA_example) }}
+                                                                <small class="form-text">Please provide examples, if possible, in the text box above...</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Breach Question A Form Row #}
+                                        {# Breach Question B Form Row #}
+                                        <div class="row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4><span class="text-danger">*</span> Not being able to stop or control worrying?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.breachQuestionB) }}
+                                                                <div class="error_message">{{ form_errors(form.breachQuestionB) }}</div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 mt-3">
+                                                                {{ form_widget(form.breachQuestionB_example) }}
+                                                                <small class="form-text">Please provide examples, if possible, in the text box above...</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Breach Question B Form Row #}
+                                        {# Breach Question C Form Row #}
+                                        <div class="row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4><span class="text-danger">*</span> Worrying too much about different things?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.breachQuestionC) }}
+                                                                <div class="error_message">{{ form_errors(form.breachQuestionC) }}</div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 mt-3">
+                                                                {{ form_widget(form.breachQuestionC_example) }}
+                                                                <small class="form-text">Please provide examples, if possible, in the text box above...</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Breach Question C Form Row #}
+                                        {# Breach Question D Form Row #}
+                                        <div class="row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4><span class="text-danger">*</span> Trouble relaxing?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.breachQuestionD) }}
+                                                                <div class="error_message">{{ form_errors(form.breachQuestionD) }}</div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 mt-3">
+                                                                {{ form_widget(form.breachQuestionD_example) }}
+                                                                <small class="form-text">Please provide examples, if possible, in the text box above...</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Breach Question D Form Row #}
+                                        {# Breach Question E Form Row #}
+                                        <div class="row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4><span class="text-danger">*</span> Being so restless that it is hard to sit still?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.breachQuestionE) }}
+                                                                <div class="error_message">{{ form_errors(form.breachQuestionE) }}</div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 mt-3">
+                                                                {{ form_widget(form.breachQuestionE_example) }}
+                                                                <small class="form-text">Please provide examples, if possible, in the text box above...</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Breach Question E Form Row #}
+                                        {# Breach Question F Form Row #}
+                                        <div class="row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4><span class="text-danger">*</span> Becoming easily annoyed or irritable?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.breachQuestionF) }}
+                                                                <div class="error_message">{{ form_errors(form.breachQuestionF) }}</div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 mt-3">
+                                                                {{ form_widget(form.breachQuestionF_example) }}
+                                                                <small class="form-text">Please provide examples, if possible, in the text box above...</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Breach Question F Form Row #}
+                                        {# Breach Question G Form Row #}
+                                        <div class="row">
+                                            {# Grid Item #}
+                                            <div class="col-md-12 col-sm-12">
+                                                {# Card #}
+                                                <div class="dt-card">
+                                                    {# Card Header #}
+                                                    <div class="dt-card__header">
+                                                        <h4><span class="text-danger">*</span> Feeling afraid as if something awful might happen?</h4>
+                                                    </div>
+                                                    {# /Card Header #}
+                                                    {# Card Body #}
+                                                    <div class="dt-card__body">
+                                                        <div class="row">
+                                                            <div class="col-md-12 col-sm-12">
+                                                                {{ form_widget(form.breachQuestionG) }}
+                                                                <div class="error_message">{{ form_errors(form.breachQuestionG) }}</div>
+                                                            </div>
+                                                            <div class="col-md-12 col-sm-12 mt-3">
+                                                                {{ form_widget(form.breachQuestionG_example) }}
+                                                                <small class="form-text">Please provide examples, if possible, in the text box above...</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {# /Card Body #}
+                                                </div>
+                                                {# /Card #}
+                                            </div>
+                                            {# /Grid Item #}
+                                        </div>
+                                        {# /Breach Question G Form Row #}
+                                    </div>
+                                    {# /Distressed Block #}
+                                </div>
                             </div>
                         </div>
-                        {# /Breach Question A Form Row #}
-
-                        {# Breach Question A Example Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.breachQuestionA_example) }}
-                                {{ form_widget(form.breachQuestionA_example) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionA_example) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question A Example Form Row #}
-
-                        <hr>
-
-                        {# Breach Question B Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12 mt-3">
-                                {{ form_label(form.breachQuestionB) }}
-                                {{ form_widget(form.breachQuestionB) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionB) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question B Form Row #}
-
-                        {# Breach Question B Example Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.breachQuestionB_example) }}
-                                {{ form_widget(form.breachQuestionB_example) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionB_example) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question B Example Form Row #}
-
-                        <hr>
-
-                        {# Breach Question C Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12 mt-3">
-                                {{ form_label(form.breachQuestionC) }}
-                                {{ form_widget(form.breachQuestionC) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionC) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question C Form Row #}
-
-                        {# Breach Question C Example Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.breachQuestionC_example) }}
-                                {{ form_widget(form.breachQuestionC_example) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionC_example) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question C Example Form Row #}
-
-                        <hr>
-
-                        {# Breach Question D Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12 mt-3">
-                                {{ form_label(form.breachQuestionD) }}
-                                {{ form_widget(form.breachQuestionD) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionD) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question D Form Row #}
-
-                        {# Breach Question D Example Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.breachQuestionD_example) }}
-                                {{ form_widget(form.breachQuestionD_example) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionD_example) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question D Example Form Row #}
-
-                        <hr>
-
-                        {# Breach Question E Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12 mt-3">
-                                {{ form_label(form.breachQuestionE) }}
-                                {{ form_widget(form.breachQuestionE) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionE) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question E Form Row #}
-
-                        {# Breach Question E Example Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.breachQuestionE_example) }}
-                                {{ form_widget(form.breachQuestionE_example) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionE_example) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question E Example Form Row #}
-
-                        <hr>
-
-                        {# Breach Question F Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12 mt-3">
-                                {{ form_label(form.breachQuestionF) }}
-                                {{ form_widget(form.breachQuestionF) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionF) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question F Form Row #}
-
-                        {# Breach Question F Example Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.breachQuestionF_example) }}
-                                {{ form_widget(form.breachQuestionF_example) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionF_example) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question F Example Form Row #}
-
-                        <hr>
-
-                        {# Breach Question G Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12 mt-3">
-                                {{ form_label(form.breachQuestionG) }}
-                                {{ form_widget(form.breachQuestionG) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionG) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question G Form Row #}
-
-                        {# Breach Question G Example Form Row #}
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                {{ form_label(form.breachQuestionG_example) }}
-                                {{ form_widget(form.breachQuestionG_example) }}
-                                <div class="error_message">{{ form_errors(form.breachQuestionG_example) }}</div>
-                            </div>
-                        </div>
-                        {# /Breach Question G Example Form Row #}
-
+                        {# /Card Body #}
                     </div>
-                    {# /Distressed Block #}
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Breach Questions Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Diagnosed Conditions Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.diagnosedConditionsNew) }}
-                    {{ form_widget(form.diagnosedConditionsNew) }}
-                    <div class="error_message">{{ form_errors(form.diagnosedConditionsNew) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>28. Please indicate whether you have ever been diagnosed as suffering from any of the following conditions:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.diagnosedConditionsNew) }}
+                                    <div class="error_message">{{ form_errors(form.diagnosedConditionsNew) }}</div>
+                                </div>
+                            </div>
+                            {# DIAGNOSED CONDITIONS BLOCK #}
+                            <div id="diagnosed_conditions_block"{% if form.vars.data.diagnosedConditionsNew != 'Other' %} class="display_none"{% endif %}>
+                                {# Diagnosed Condition Comment Form Row #}
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 mt-3">
+                                        {{ form_widget(form.diagnosedConditionsExample) }}
+                                        <small class="form-text">Please provide more info, if possible, in the text box above...</small>
+                                    </div>
+                                </div>
+                                {# /Diagnosed Condition Comment Form Row #}
+                            </div>
+                            {# /DIAGNOSED CONDITIONS BLOCK #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Diagnosed Conditions Form Row #}
 
-            {# DIAGNOSED CONDITIONS BLOCK #}
-            <div id="diagnosed_conditions_block"{% if form.vars.data.diagnosedConditionsNew != 'Other' %} class="display_none"{% endif %}>
-
-                {# Diagnosed Condition Comment Form Row #}
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        {{ form_label(form.diagnosedConditionsExample) }}
-                        {{ form_widget(form.diagnosedConditionsExample) }}
-                        <div class="error_message">{{ form_errors(form.diagnosedConditionsExample) }}</div>
-                    </div>
-                </div>
-                {# /Diagnosed Condition Comment Form Row #}
-
-            </div>
-            {# /DIAGNOSED CONDITIONS BLOCK #}
-
-            <hr class="border-dashed my-8">
-
             {# Impact Condition Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.impactConditionNew) }}
-                    {{ form_widget(form.impactConditionNew) }}
-                    <div class="error_message">{{ form_errors(form.impactConditionNew) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>29. Did finding out that your personal information had been breached have an impact on your condition?</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.impactConditionNew) }}
+                                    <div class="error_message">{{ form_errors(form.impactConditionNew) }}</div>
+                                </div>
+                            </div>
+                            {# IMPACT CONDITION BLOCK #}
+                            <div id="impact_condition_block"{% if form.vars.data.impactConditionNew != 'Symptoms were exacerbated' %} class="display_none"{% endif %}>
+                                {# Impact Condition Comment Form Row #}
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 mt-3">
+                                        {{ form_widget(form.impactConditionExample) }}
+                                        <small class="form-text">Please provide details, if possible, if your symptoms have got worse...</small>
+                                    </div>
+                                </div>
+                                {# /Impact Condition Comment Form Row #}
+                            </div>
+                            {# /IMPACT CONDITION BLOCK #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Impact Condition Form Row #}
 
-            {# IMPACT CONDITION BLOCK #}
-            <div id="impact_condition_block"{% if form.vars.data.impactConditionNew != 'Symptoms were exacerbated' %} class="display_none"{% endif %}>
-
-                {# Impact Condition Comment Form Row #}
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        {{ form_label(form.impactConditionExample) }}
-                        {{ form_widget(form.impactConditionExample) }}
-                        <div class="error_message">{{ form_errors(form.impactConditionExample) }}</div>
-                    </div>
-                </div>
-                {# /Impact Condition Comment Form Row #}
-
-            </div>
-            {# /IMPACT CONDITION BLOCK #}
-
-            <hr class="border-dashed my-8">
-
             {# Steps Taken Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.stepsTaken) }}
-                </div>
-                <div class="form-group col-md-12">
-                    {% for Steps in form.stepsTaken %}
-                        <div class="custom-control custom-checkbox steps mb-3 ml-5">
-                            {{ form_widget(Steps, {
-                                attr: {
-                                    'class': 'custom-control-input'
-                                }
-                            }) }} <label class="custom-control-label" for="{{ Steps.vars.id }}">{{ Steps.vars.label }}</label>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>30. What, if any, steps have you taken as a result of the breach?</h4>
                         </div>
-                    {% endfor %}
-                    <div class="error_message">{{ form_errors(form.stepsTaken) }}</div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {% for steps in form.stepsTaken %}
+                                        <div class="custom-control custom-checkbox steps mb-3 ml-5">
+                                            {{ form_widget(steps, {
+                                                attr: {
+                                                    'class': 'custom-control-input'
+                                                }
+                                            }) }} <label class="custom-control-label" for="{{ steps.vars.id }}">{{ steps.vars.label }}</label>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="error_message">{{ form_errors(form.stepsTaken) }}</div>
+                                </div>
+                            </div>
+                            {# STEPS TAKEN BLOCK #}
+                            <div id="steps_taken_block" class="display_none">
+                                {# Steps Taken "Other" Comment Form Row #}
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 mt-3">
+                                        {{ form_widget(form.stepsTakenExample) }}
+                                        <small class="form-text">Please provide more info, if possible, in the text box above...</small>
+                                    </div>
+                                </div>
+                                {# /Steps Taken "Other" Comment Form Row #}
+                            </div>
+                            {# /STEPS TAKEN BLOCK #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Steps Taken Form Row #}
 
-            {# STEPS TAKEN BLOCK #}
-            <div id="steps_taken_block" class="display_none">
-
-                {# Steps Taken "Other" Comment Form Row #}
-                <div class="form-row">
-                    <div class="form-group col-md-11 ml-5">
-                        {{ form_label(form.stepsTakenExample) }}
-                        {{ form_widget(form.stepsTakenExample) }}
-                        <div class="error_message">{{ form_errors(form.stepsTakenExample) }}</div>
-                    </div>
-                </div>
-                {# /Steps Taken "Other" Comment Form Row #}
-
-            </div>
-            {# /STEPS TAKEN BLOCK #}
-
-            <hr class="border-dashed my-8">
-
             {# Steps Taken Details Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.stepsTakenDetails) }}
-                    {{ form_widget(form.stepsTakenDetails) }}
-                    <div class="error_message">{{ form_errors(form.stepsTakenDetails) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>31. In the event you have taken any of the steps above, please describe the inconvenience that this has caused you and the time taken to do so:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.stepsTakenDetails) }}
+                                    <div class="error_message">{{ form_errors(form.stepsTakenDetails) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Steps Taken Details Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Steps Taken Upload Files Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.stepsTakenFiles) }}
-                </div>
-                <div class="form-group col-md-12">
-                    {{ form_widget(form.stepsTakenFiles) }}
-                    <div class="error_message">{{ form_errors(form.stepsTakenFiles) }}</div>
-                </div>
-
-                {# IF FILES HAVE BEEN UPLOADED DISPLAY THEM HERE #}
-                {% if form.vars.data.stepsTakenFilesPath != NULL %}
-                    <div class="form-group col-md-12">
-                        <p>
-                            <b>Uploaded Files:</b><br>
-                            {% for key,value in form.vars.data.stepsTakenFilesPath %}
-                                {{ value }}<br>
-                            {% endfor %}
-                        </p>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>32. If you have any documents evidencing the steps you have taken as a result of the breach, please upload these.</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <button id="emotional-distress-evidence-button" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#emotional-distress-stage">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h4>All Uploaded Files For This Stage</h4>
+                                    <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'emotional-distress'}) }}"></ul>
+                                </div>
+                                <div class="col-sm-12 col-md-12 mt-3">
+                                    <small class="form-text">Please Note: any personal information that you would prefer not to disclose (such as account numbers) can be blanked out before uploading.</small>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
                     </div>
-                {% endif %}
-                {# /IF FILES HAVE BEEN UPLOADED DISPLAY THEM HERE #}
-
+                    {# /Card #}
+                </div>
+                {# /Grid Item #}
             </div>
             {# /Steps Taken Upload Files Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Adverse Consequences Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.adverseConsequences) }}
-                </div>
-                <div class="form-group col-md-12">
-                    {% for Consequences in form.adverseConsequences %}
-                        <div class="custom-control custom-checkbox consequences mb-3 ml-5">
-                            {{ form_widget(Consequences, {
-                                attr: {
-                                    'class': 'custom-control-input'
-                                }
-                            }) }} <label class="custom-control-label" for="{{ Consequences.vars.id }}">{{ Consequences.vars.label }}</label>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>33. Which, if any, of the following adverse consequences have you suffered as a result of the breach?</h4>
                         </div>
-                    {% endfor %}
-                    <div class="error_message">{{ form_errors(form.adverseConsequences) }}</div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {% for consequences in form.adverseConsequences %}
+                                        <div class="custom-control custom-checkbox consequences mb-3 ml-5">
+                                            {{ form_widget(consequences, {
+                                                attr: {
+                                                    'class': 'custom-control-input'
+                                                }
+                                            }) }} <label class="custom-control-label" for="{{ consequences.vars.id }}">{{ consequences.vars.label }}</label>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="error_message">{{ form_errors(form.adverseConsequences) }}</div>
+                                </div>
+                            </div>
+                            {# CONSEQUENCES BLOCK #}
+                            <div id="adverse_consequences_block" class="display_none">
+                                {# Adverse Consequences Example Form Row #}
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 mt-3">
+                                        {{ form_widget(form.adverseConsequencesExample) }}
+                                        <small class="form-text">Please provide more info, if possible, in the text box above...</small>
+                                    </div>
+                                </div>
+                                {# /Adverse Consequences Example Form Row #}
+                            </div>
+                            {# /CONSEQUENCES BLOCK #}
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Adverse Consequences Form Row #}
 
-            {# CONSEQUENCES BLOCK #}
-            <div id="adverse_consequences_block" class="display_none">
-
-                {# Adverse Consequences Example Form Row #}
-                <div class="form-row">
-                    <div class="form-group col-md-11 ml-5">
-                        {{ form_label(form.adverseConsequencesExample) }}
-                        {{ form_widget(form.adverseConsequencesExample) }}
-                        <div class="error_message">{{ form_errors(form.adverseConsequencesExample) }}</div>
-                    </div>
-                </div>
-                {# /Adverse Consequences Example Form Row #}
-
-            </div>
-            {# /CONSEQUENCES BLOCK #}
-
-            <hr class="border-dashed my-8">
-
             {# Adverse Consequences Details Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.adverseConsequencesDetails) }}
-                    {{ form_widget(form.adverseConsequencesDetails) }}
-                    <div class="error_message">{{ form_errors(form.adverseConsequencesDetails) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>34. Please provide details of the adverse consequences regarding the breach:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.adverseConsequencesDetails) }}
+                                    <div class="error_message">{{ form_errors(form.adverseConsequencesDetails) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Adverse Consequences Details Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Adverse Consequences Upload Files Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.adverseConsequencesFiles) }}
-                </div>
-                <div class="form-group col-md-12">
-                    {{ form_widget(form.adverseConsequencesFiles) }}
-                    <div class="error_message">{{ form_errors(form.adverseConsequencesFiles) }}</div>
-                </div>
-
-                {# IF ANY FILES HAVE BEEN UPLOADED DISPLAY THEM HERE #}
-                {% if form.vars.data.adverseConsequencesFilesPath != NULL %}
-                    <div class="form-group col-md-12">
-                        <p>
-                            <b>Uploaded Files:</b><br>
-                            {% for key,value in form.vars.data.adverseConsequencesFilesPath %}
-                                {{ value }}<br>
-                            {% endfor %}
-                        </p>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>35. If you have any documents evidencing the consequences of the breach, please upload these.</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <button id="emotional-distress-consequences-button" type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#emotional-distress-stage">
+                                        Choose File
+                                    </button>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h4>All Uploaded Files For This Stage</h4>
+                                    <ul class="list-group small js-reference-list" data-url="{{ path('get_file_references', {str: 'emotional-distress'}) }}"></ul>
+                                </div>
+                                <div class="col-sm-12 col-md-12 mt-3">
+                                    <small class="form-text">Please Note: any personal information that you would prefer not to disclose (such as account numbers) can be blanked out before uploading.</small>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
                     </div>
-                {% endif %}
-                {# /IF ANY FILES HAVE BEEN UPLOADED DISPLAY THEM HERE #}
-
+                    {# /Card #}
+                </div>
+                {# /Grid Item #}
             </div>
             {# Adverse Consequences Upload Files Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Additional Information Form Row #}
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.additionalInformation) }}
-                    {{ form_widget(form.additionalInformation) }}
-                    <div class="error_message">{{ form_errors(form.additionalInformation) }}</div>
+            <div class="row">
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4>36. Please add in the text box below any other additional information that may be of relevance:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.additionalInformation) }}
+                                    <small class="form-text">This is an opportunity for you to tell us how the breach has affected you personally...</small>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Additional Information Form Row #}
 
-            <hr class="border-dashed my-8">
-
             {# Lead Test Claimant Form Row #}
             <div class="form-row">
-                <div class="form-group col-md-12">
-                    {{ form_label(form.leadTestClaimant) }}
-                    {{ form_widget(form.leadTestClaimant) }}
-                    <div class="error_message">{{ form_errors(form.leadTestClaimant) }}</div>
+                {# Grid Item #}
+                <div class="col-md-12 col-sm-12">
+                    {# Card #}
+                    <div class="dt-card">
+                        {# Card Header #}
+                        <div class="dt-card__header">
+                            <h4><span class="text-danger">*</span>37. Please indicate whether you would be willing to be contacted by a member of the Your Lawyers team regarding participation as a “lead test” claimant or on the Your Lawyers Client Committee:</h4>
+                        </div>
+                        {# /Card Header #}
+                        {# Card Body #}
+                        <div class="dt-card__body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    {{ form_widget(form.leadTestClaimant) }}
+                                    <small class="form-text">Please note that members of the client committee will be required to engage in regular meetings and contact with Your Lawyers. Please only say yes if you are prepared to sacrifice the time.</small>
+                                    <div class="error_message">{{ form_errors(form.leadTestClaimant) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                        {# /Card Body #}
+                    </div>
+                    {# /Card #}
                 </div>
+                {# /Grid Item #}
             </div>
             {# /Lead Test Claimant Form Row #}
-
 
             {# Submit Form Row #}
             <div class="form-row">
                 <div class="form-group col-md-12 text-right">
-                    <button type="submit" class="btn btn-outline-info btn-lg" title="complete the process...">Submit &amp; Complete <i class="icon icon-forward"></i></button>
+                    <button type="submit" id="submit-form-button" class="btn btn-outline-info btn-lg" title="complete the process...">Submit &amp; Complete <i class="icon icon-forward"></i></button>
                 </div>
             </div>
             {# /Submit Form Row #}
@@ -524,6 +791,8 @@
         {# /Card #}
     </div>
     {# /Grid #}
+
+    {{ include('dashboard/modals/_emotional_distress.html.twig') }}
 
 {% endblock %}
 
