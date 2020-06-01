@@ -18,6 +18,7 @@ use App\Repository\ComplaintsRepository;
 use App\Repository\ContactDetailsRepository;
 use App\Repository\CreditMonitorRepository;
 use App\Repository\EmotionalDistressRepository;
+use App\Repository\FileReferenceRepository;
 use App\Repository\FinancialLossRepository;
 use App\Repository\FurtherCorrespondenceRepository;
 use App\Repository\PersonalDetailsRepository;
@@ -26,6 +27,7 @@ use App\Repository\UserRepository;
 use App\Service\ProClaimGetClientStarterDetails;
 use App\Service\ProClaimRequest;
 use App\Service\SendMail;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Omines\DataTablesBundle\Adapter\Doctrine\ORMAdapter;
@@ -61,6 +63,7 @@ class AdminClientsController extends BaseController
      * @var ReimbursementsRepository
      * @var CreditMonitorRepository
      * @var EmotionalDistressRepository
+     * @var FileReferenceRepository
      * @var string
      */
     private $dataTableFactory;
@@ -75,9 +78,10 @@ class AdminClientsController extends BaseController
     private $reimbursementsRepository;
     private $creditMonitorRepository;
     private $emotionalDistressRepository;
+    private $fileReferenceRepository;
     private $errorMessage;
 
-    public function __construct(DataTableFactory $dataTableFactory, RouterInterface $router, UserRepository $userRepository, PersonalDetailsRepository $personalDetailsRepository, ContactDetailsRepository $contactDetailsRepository, BACorrespondenceRepository $BACorrespondenceRepository, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, ComplaintsRepository $complaintsRepository, FinancialLossRepository $financialLossRepository, ReimbursementsRepository $reimbursementsRepository, CreditMonitorRepository $creditMonitorRepository, EmotionalDistressRepository $emotionalDistressRepository)
+    public function __construct(DataTableFactory $dataTableFactory, RouterInterface $router, UserRepository $userRepository, PersonalDetailsRepository $personalDetailsRepository, ContactDetailsRepository $contactDetailsRepository, BACorrespondenceRepository $BACorrespondenceRepository, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, ComplaintsRepository $complaintsRepository, FinancialLossRepository $financialLossRepository, ReimbursementsRepository $reimbursementsRepository, CreditMonitorRepository $creditMonitorRepository, EmotionalDistressRepository $emotionalDistressRepository, FileReferenceRepository $fileReferenceRepository)
     {
         $this->dataTableFactory = $dataTableFactory;
         $this->router = $router;
@@ -92,6 +96,7 @@ class AdminClientsController extends BaseController
         $this->creditMonitorRepository = $creditMonitorRepository;
         $this->emotionalDistressRepository = $emotionalDistressRepository;
         $this->errorMessage = "";
+        $this->fileReferenceRepository = $fileReferenceRepository;
     }
 
     /**
@@ -149,59 +154,37 @@ class AdminClientsController extends BaseController
      * @param int $id
      * @return Response
      */
-    public function clientEdit(int $id)
+    public function clientViewDB(int $id)
     {
-        $clientUserDetails = $this->userRepository->findByExampleField($id);
-        $clientPersonalDetails = $this->personalDetailsRepository->findByExampleField($id);
-        $clientContactDetails = $this->contactDetailsRepository->findByExampleField($id);
-        $clientBADetails = $this->BACorrespondenceRepository->findByExampleField($id);
-        $clientFurtherCorrespondenceDetails = $this->furtherCorrespondenceRepository->findByExampleField($id);
-        $clientComplaintDetails = $this->complaintsRepository->findByExampleField($id);
-        $clientFinanceDetails = $this->financialLossRepository->findByExampleField($id);
-        $clientReimbursementDetails = $this->reimbursementsRepository->findByExampleField($id);
-        $clientCreditDetails = $this->creditMonitorRepository->findByExampleField($id);
-        $clientEmotionsDetails = $this->emotionalDistressRepository->findByExampleField($id);
 
-        return $this->render('admin/clients_edit.html.twig', [
-            'client_user' => $clientUserDetails,
-            'client_personal' => $clientPersonalDetails,
-            'client_contact' => $clientContactDetails,
-            'client_ba' => $clientBADetails,
-            'client_further' => $clientFurtherCorrespondenceDetails,
-            'client_complaints' => $clientComplaintDetails,
-            'client_finance' => $clientFinanceDetails,
-            'client_reimbursements' => $clientReimbursementDetails,
-            'client_credit' => $clientCreditDetails,
-            'client_emotions' => $clientEmotionsDetails,
-        ]);
-    }
-
-    /**
-     * @Route("admin/clients/delete/{id}", name="app_admin_client_delete")
-     * @param int $id
-     * @return Response
-     */
-    public function clientDelete(int $id)
-    {
-        return $this->render('admin/clients_delete.html.twig', [
-
+        return $this->render('admin/clients_view_db.html.twig', [
+            'client_user' => $this->userRepository->findByExampleField($id),
+            'client_personal' => $this->personalDetailsRepository->findByExampleField($id),
+            'client_contact' => $this->contactDetailsRepository->findByExampleField($id),
+            'client_ba' => $this->BACorrespondenceRepository->findByExampleField($id),
+            'client_further' => $this->furtherCorrespondenceRepository->findByExampleField($id),
+            'client_complaints' => $this->complaintsRepository->findByExampleField($id),
+            'client_finance' => $this->financialLossRepository->findByExampleField($id),
+            'client_reimbursements' => $this->reimbursementsRepository->findByExampleField($id),
+            'client_credit' => $this->creditMonitorRepository->findByExampleField($id),
+            'client_emotions' => $this->emotionalDistressRepository->findByExampleField($id),
+            'files' => $this->fileReferenceRepository->findByExampleField($id),
         ]);
     }
 
     /**
      * @Route("admin/clients/proclaim/{id}", name="app_admin_client_proclaim")
-     * @param int $id
      * @param User $user
      * @param ProClaimRequest $proClaimRequest
      * @return Response
      */
-    public function clientProClaim(int $id, User $user, ProClaimRequest $proClaimRequest)
+    public function clientViewProClaim(User $user, ProClaimRequest $proClaimRequest)
     {
 
-        $proClaimID = $user->getProClaimReference($id);
+        $proClaimID = $user->getProClaimReference();
         $proClaimDetails = $proClaimRequest->getCaseDetails($proClaimID);
 
-        return $this->render('admin/client_proclaim.html.twig', [
+        return $this->render('admin/client_view_proclaim.html.twig', [
             'proclaim' => $proClaimDetails,
         ]);
     }
@@ -230,7 +213,7 @@ class AdminClientsController extends BaseController
             if ($proClaimDetails['client_claim_code'] === "CON"){
 
                 if (!empty($proClaimDetails['client_date_of_birth'])) {
-                    $date_of_birth = \DateTime::createFromFormat('d/m/Y', $proClaimDetails['client_date_of_birth']);
+                    $date_of_birth = DateTime::createFromFormat('d/m/Y', $proClaimDetails['client_date_of_birth']);
                     $date_of_birth->format('Ymd');
                 } else {
                     $date_of_birth = "";
@@ -336,6 +319,17 @@ class AdminClientsController extends BaseController
     {
         $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         return substr(str_shuffle( $chars ), 0, $length);
+    }
+
+    /**
+     * @Route("admin/clients/delete/{id}", name="app_admin_client_delete", methods={"DELETE"})
+     * @return Response
+     */
+    public function clientDelete()
+    {
+        return $this->render('admin/clients_delete.html.twig', [
+
+        ]);
     }
 
 }

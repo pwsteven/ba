@@ -46,11 +46,15 @@
                             <tr>
                                 <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">5</span> Image File:</td>
                                 <td>
-                                    {% if client_personal.0.imageFileName|default %}
-                                        <a href="{{ uploaded_asset(client_personal.0.imageFileName) }}" target="_blank">
-                                            <img src="{{ client_personal.0.imageFileName|imagine_filter('squared_thumbnail_small') }}" alt="">
-                                        </a>
-                                    {% endif %}
+                                    <div class="list-group small">
+                                    {% for file in files %}
+                                        {% if file.fileStage == 'personal-details' %}
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -149,7 +153,17 @@
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Copy of the notification:</td>
-                                <td>{{ client_ba.0.breachOneNotificationFilePath }}</td>
+                                <td>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'ba-correspondence-copy' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Since received notification confirming not affected:</td>
@@ -177,7 +191,17 @@
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Copy of booking notification:</td>
-                                <td>{{ client_ba.0.breachOneBookingConfirmationFilePath }}</td>
+                                <td>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'ba-correspondence-booking' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </td>
                             </tr>
                             {# /BREACH ONE #}
 
@@ -192,7 +216,17 @@
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Copy of the notification:</td>
-                                <td>{{ client_ba.0.breachTwoNotificationFilePath }}</td>
+                                <td>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'ba-correspondence-copy-2' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Since received notification confirming not affected:</td>
@@ -220,7 +254,17 @@
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Copy of booking notification:</td>
-                                <td>{{ client_ba.0.breachTwoBookingConfirmationFilePath }}</td>
+                                <td>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'ba-correspondence-booking-2' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </td>
                             </tr>
                             {# /BREACH TWO #}
                             </tbody>
@@ -248,7 +292,17 @@
                             <tbody>
                             <tr>
                                 <td class="text-uppercase" style="width: 50%"><span class="badge badge-info mb-1 mr-1">12</span> Copy of the email from BA confirming that your personal information has been breached:</td>
-                                <td>{{ client_further.0.personalInformationBreachedFilePath }}</td>
+                                <td>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'further-correspondence-confirm-email' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">13</span> Received any other correspondence from BA regarding the breach:</td>
@@ -257,11 +311,15 @@
                             <tr>
                                 <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">14</span> Copies of all correspondence sent to and received from BA regarding the claim:</td>
                                 <td>
-                                    {% if client_further.0.allCorrespondenceSentReceivedFilePath != NULL %}
-                                        {% for key,value in client_further.0.allCorrespondenceSentReceivedFilePath %}
-                                            {{ value }}<br>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'further-correspondence-received' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
                                         {% endfor %}
-                                    {% endif %}
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -363,11 +421,15 @@
                             <tr>
                                 <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">21</span> All documents evidencing the financial loss suffered:</td>
                                 <td>
-                                    {% if client_finance.0.financialLossFilesPath != NULL %}
-                                        {% for key,value in client_finance.0.financialLossFilesPath %}
-                                            {{ value }}<br>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'financial-loss-documents' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
                                         {% endfor %}
-                                    {% endif %}
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -408,11 +470,15 @@
                             <tr>
                                 <td class="text-uppercase">All correspondence documents provided in relation to the reimbursement:</td>
                                 <td>
-                                    {% if client_reimbursements.0.reimbursementFilesPath != NULL %}
-                                        {% for key,value in client_reimbursements.0.reimbursementFilesPath %}
-                                            {{ value }}<br>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'reimbursements-correspondence' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
                                         {% endfor %}
-                                    {% endif %}
+                                    </div>
                                 </td>
                             </tr>
                             </tbody>
@@ -444,7 +510,17 @@
                             </tr>
                             <tr>
                                 <td class="text-uppercase">Uploaded evidence of account:</td>
-                                <td>{{ client_credit.0.monitorCreditFilePath }}</td>
+                                <td>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'credit-monitoring-evidence' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
@@ -635,11 +711,15 @@
                             <tr>
                                 <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">32</span> All documents evidencing the steps you have taken as a result of the breach:</td>
                                 <td>
-                                    {% if client_emotions.0.stepsTakenFilesPath != NULL %}
-                                        {% for key,value in client_emotions.0.stepsTakenFilesPath %}
-                                            {{ value }}<br>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'emotional-distress-evidence' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
                                         {% endfor %}
-                                    {% endif %}
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -663,11 +743,15 @@
                             <tr>
                                 <td class="text-uppercase"><span class="badge badge-info mb-1 mr-1">35</span> All documents evidencing the consequences of the breach:</td>
                                 <td>
-                                    {% if client_emotions.0.adverseConsequencesFilesPath != NULL %}
-                                        {% for key,value in client_emotions.0.adverseConsequencesFilesPath %}
-                                            {{ value }}<br>
+                                    <div class="list-group small">
+                                        {% for file in files %}
+                                            {% if file.formUploadName == 'emotional-distress-consequences' %}
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="{{ path('download_file_reference', {id: file.id}) }}">{{ file.originalFileName }}</a>
+                                                </li>
+                                            {% endif %}
                                         {% endfor %}
-                                    {% endif %}
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -696,4 +780,3 @@
     {# /Grid #}
 
 {% endblock %}
-

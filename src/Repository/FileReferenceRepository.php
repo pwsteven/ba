@@ -29,7 +29,6 @@ class FileReferenceRepository extends ServiceEntityRepository
             ->andWhere('f.user = :val')
             ->setParameter('val', $value)
             ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
