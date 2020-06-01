@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="Updated Admin View DB User credentials page">
-      <change afterPath="$PROJECT_DIR$/templates/admin/clients_view_db.html.twig" afterDir="false" />
+    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/ApiToken.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200601104538.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ApiTokenRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/ApiTokenAuthenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileReferenceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/client_proclaim.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_view_proclaim.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/clients_edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dashboard/complete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/complete.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/UserFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,14 +280,7 @@
       <workItem from="1590655577335" duration="21748000" />
       <workItem from="1590744972117" duration="17934000" />
       <workItem from="1591000328283" duration="119000" />
-      <workItem from="1591000483286" duration="3636000" />
-    </task>
-    <task id="LOCAL-00006" summary="Webpack Login build">
-      <created>1571732558917</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1571732558917</updated>
+      <workItem from="1591000483286" duration="9407000" />
     </task>
     <task id="LOCAL-00007" summary="Webpack Login build">
       <created>1571732824353</created>
@@ -623,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590759943298</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Updated Admin View DB User credentials page">
+      <created>1591006402442</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1591006402444</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,10 +682,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1590499714125" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591005553977">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591006398937">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591005553977" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591006398937" />
     <state x="481" y="85" key="NewPhpClassDialog" timestamp="1590491310905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

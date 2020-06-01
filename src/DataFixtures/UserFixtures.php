@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\ApiToken;
 use App\Entity\BACorrespondence;
 use App\Entity\Complaints;
 use App\Entity\ContactDetails;
@@ -31,6 +32,7 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
+        date_default_timezone_set('Europe/London');
         $user = new User();
         $user->setEmail('pwsteven13@gmail.com');
         $user->setFirstName('Paul Steven');
@@ -67,6 +69,9 @@ class UserFixtures extends Fixture
         $emotionalDistressDetails = new EmotionalDistress();
         $emotionalDistressDetails->setUser($user);
 
+        $apiToken1 = new ApiToken($user);
+        $apiToken2 = new ApiToken($user);
+
         $manager->persist($user);
         $manager->persist($personalDetails);
         $manager->persist($contactDetails);
@@ -77,6 +82,8 @@ class UserFixtures extends Fixture
         $manager->persist($reimbursementDetails);
         $manager->persist($creditMonitorDetails);
         $manager->persist($emotionalDistressDetails);
+        $manager->persist($apiToken1);
+        $manager->persist($apiToken2);
 
         $manager->flush();
     }
