@@ -15,6 +15,7 @@ import 'bootstrap';
 import 'masonry-layout';
 import 'sweetalert2';
 import './script';
+import './form_admin';
 
 
 

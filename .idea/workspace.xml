@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="Building email template">
-      <change afterPath="$PROJECT_DIR$/assets/images/ba_invite_email_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/email/images/Btm_blu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/email/images/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/email/images/Top_blu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/email/images/ba_invite_email_image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/images/email/images/yl_transparent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/ApiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/email/app_invite_new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ba_onboard.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ba_onboard.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/form_admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/login-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/login-bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ApiToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ApiToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ApiTokenRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ApiTokenRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/ApiTokenAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/ApiTokenAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/app_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app_admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/SendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/SendMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/email/app_invite.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/app_invite.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/client_manual_import.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_manual_import.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/email/app_invite_new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/app_invite_new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,14 +282,7 @@
       <workItem from="1591000328283" duration="119000" />
       <workItem from="1591000483286" duration="17961000" />
       <workItem from="1591095072938" duration="148000" />
-      <workItem from="1591095267197" duration="13850000" />
-    </task>
-    <task id="LOCAL-00008" summary="Webpack Login build">
-      <created>1571734997391</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1571734997391</updated>
+      <workItem from="1591095267197" duration="18267000" />
     </task>
     <task id="LOCAL-00009" summary="Webpack Login build">
       <created>1571744144974</created>
@@ -641,7 +620,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591016855938</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Building email template">
+      <created>1591181353393</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1591181353397</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -698,10 +684,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1591111098352" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591181187299">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591181348001">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591181187299" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591181348001" />
     <state x="481" y="85" key="NewPhpClassDialog" timestamp="1590491310905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

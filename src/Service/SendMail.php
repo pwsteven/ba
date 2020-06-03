@@ -44,14 +44,14 @@ class SendMail extends AbstractController
             $mail->Port       = 587; // TCP port to connect to
 
             //Recipients
-            $mail->setFrom('pwsteven13@gmail.com', 'Paul Steven');
-            $mail->addAddress('psteven13@outlook.com', $firstName);     // Add a recipient
-            //$mail->addAddress('ellen@example.com');               // Name is optional
+            $mail->setFrom('pwsteven13@gmail.com', 'BA Group Action');
+            //$mail->addAddress('psteven13@outlook.com', $firstName);     // Testing Purposes only
+            $mail->addAddress($emailAddress, $firstName);     // Add a recipient
             $mail->addReplyTo('pwsteven13@gmail.com', 'Paul Steven');
-            //$mail->addBCC('aman.johal@me.com');
-            //$mail->addBCC('matthew.p@yourlawyers.co.uk');
-            //$mail->addBCC('matthew@yourlawyers.co.uk');
-            //$mail->addBCC('jonathan@yourlawyers.co.uk');
+            $mail->addBCC('aman.johal@me.com');
+            $mail->addBCC('matthew.p@yourlawyers.co.uk');
+            $mail->addBCC('matthew@yourlawyers.co.uk');
+            $mail->addBCC('jonathan@yourlawyers.co.uk');
 
             // Attachments
             //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -60,20 +60,19 @@ class SendMail extends AbstractController
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Invitation To Join BA Data Breach App';
-            $mail->Body    = $this->render('email/app_invite.html.twig', [
+            $mail->Body    = $this->render('email/app_invite_new.html.twig', [
                 'first_name' => $firstName,
                 'token' => $token,
             ]);
 
             $alt_message = 'Hi '.$firstName.', \n\n';
-            $alt_message .= 'As part of your claim against British Airways, Your Lawyers Ltd would like to invite you to participate in joining our BA Data Breach app. \n\n';
-            $alt_message .= 'This is a secure site where we gather evidence from yourself to help with your claim. \n\n';
-            $alt_message .= 'The whole process should take no longer than 10 minutes and it\'s crucial that we gather as much information as possible in order to pursue your claim for compensation. \n\n';
-            $alt_message .= 'Please click on the below link to gain access to the BA Data Breach app... \n\n';
+            $alt_message .= 'As part of your claim against British Airways, Your Lawyers Ltd would like to invite you to participate in joining the BA Data Breach app. \n\n';
+            $alt_message .= 'This is a secure area where we gather evidence from yourself to help with your claim. The whole process should take no longer than 10 minutes. \n\n';
+            $alt_message .= 'Please click on the link below to gain access to your own personal account that\'s been created for you on our BA Data Breach app... \n\n';
             $alt_message .= 'Access Your Account:  https://127.0.0.1:8000/api/account?token='.$token.' \n\n';
             $alt_message .= 'Thanks, \n';
             $alt_message .= 'Your Lawyers Ltd \n\n';
-            $alt_message .= 'This email was submitted from https://127.0.0.1:8000/admin/api/account';
+            $alt_message .= 'This email was submitted from https://ba.yourlawyers.co.uk';
             $mail->AltBody = $alt_message;
 
             $mail->send();
