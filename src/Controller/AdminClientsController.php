@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\ApiToken;
 use App\Entity\BACorrespondence;
 use App\Entity\Complaints;
 use App\Entity\ContactDetails;
@@ -13,6 +14,7 @@ use App\Entity\PersonalDetails;
 use App\Entity\Reimbursements;
 use App\Entity\User;
 use App\Form\ManualImportType;
+use App\Repository\ApiTokenRepository;
 use App\Repository\BACorrespondenceRepository;
 use App\Repository\ComplaintsRepository;
 use App\Repository\ContactDetailsRepository;
@@ -196,9 +198,10 @@ class AdminClientsController extends BaseController
      * @param EntityManagerInterface $entityManager
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @param SendMail $sendMail
+     * @param ApiTokenRepository $apiTokenRepository
      * @return Response
      */
-    public function clientManualInput(Request $request, ProClaimGetClientStarterDetails $claimGetClientStarterDetails, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder, SendMail $sendMail)
+    public function clientManualInput(Request $request, ProClaimGetClientStarterDetails $claimGetClientStarterDetails, EntityManagerInterface $entityManager, UserPasswordEncoderInterface $passwordEncoder, SendMail $sendMail, ApiTokenRepository $apiTokenRepository)
     {
 
         $form = $this->createForm(ManualImportType::class);
@@ -206,9 +209,11 @@ class AdminClientsController extends BaseController
 
         if ($form->isSubmitted() && $form->isValid()){
 
+            date_default_timezone_set('Europe/London');
             $proClaimRefNo = $form['ProClaimRefNo']->getData();
             $proClaimDetails = $claimGetClientStarterDetails->getCaseDetails($proClaimRefNo);
             $tempPassword = $this->randomPassword(8);
+
 
             if ($proClaimDetails['client_claim_code'] === "CON"){
 
@@ -216,14 +221,14 @@ class AdminClientsController extends BaseController
                     $date_of_birth = DateTime::createFromFormat('d/m/Y', $proClaimDetails['client_date_of_birth']);
                     $date_of_birth->format('Ymd');
                 } else {
-                    $date_of_birth = "";
+                    $date_of_birth = null;
                 }
 
                 // IMPORT DETAILS FROM PROCLAIM TO DATABASE 'USER' TABLE
                 $user = new User();
-                //$user->setEmail($proClaimDetails['client_email']);
+                $user->setEmail($proClaimDetails['client_email']);
                 // THIS IS JUST FOR TESTING PURPOSES
-                $user->setEmail('paul@shopnbag.co.uk');
+                //$user->setEmail('paul@shopnbag.co.uk');
                 $user->setRoles(['ROLE_USER']);
                 $user->setPassword($passwordEncoder->encodePassword(
                    $user,
@@ -273,6 +278,9 @@ class AdminClientsController extends BaseController
                 $emotionalDistressDetails = new EmotionalDistress();
                 $emotionalDistressDetails->setUser($user);
 
+                // CREATE API TOKEN
+                $apiToken = new ApiToken($user);
+
                 $entityManager->persist($user);
                 $entityManager->persist($personalDetails);
                 $entityManager->persist($contactDetails);
@@ -283,10 +291,13 @@ class AdminClientsController extends BaseController
                 $entityManager->persist($reimbursementDetails);
                 $entityManager->persist($creditMonitorDetails);
                 $entityManager->persist($emotionalDistressDetails);
+                $entityManager->persist($apiToken);
 
                 $entityManager->flush();
 
-                $sendMail->appInvite($proClaimDetails['client_email'], $proClaimDetails['client_forename']);
+                $token = $apiTokenRepository->findOneBySomeField($user);
+
+                $sendMail->appInvite($proClaimDetails['client_email'], $proClaimDetails['client_forename'], $this->randomPassword(7).$token->getToken());
                 $this->addFlash('client_added_success', 'Client details added... Invitation email sent!');
 
                 return $this->redirectToRoute('app_admin_clients');
