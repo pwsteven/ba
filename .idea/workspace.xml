@@ -2,13 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/form_admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200603154608.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/email/app_invite_version_3.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app_admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/app_admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app_admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Security/ApiTokenAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/ApiTokenAuthenticator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimGetClientStarterDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimGetClientStarterDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/SendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/SendMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/client_manual_import.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_manual_import.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin_base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin_base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/clients_delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/clients_delete.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/blocks/_header.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/blocks/_header.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/email/app_invite_new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/app_invite_new.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,6 +205,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="copyright.profiles" />
   </component>
   <component name="RecentsManager">
@@ -282,14 +290,9 @@
       <workItem from="1591000328283" duration="119000" />
       <workItem from="1591000483286" duration="17961000" />
       <workItem from="1591095072938" duration="148000" />
-      <workItem from="1591095267197" duration="18267000" />
-    </task>
-    <task id="LOCAL-00009" summary="Webpack Login build">
-      <created>1571744144974</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1571744144974</updated>
+      <workItem from="1591095267197" duration="28148000" />
+      <workItem from="1591261534604" duration="1909000" />
+      <workItem from="1591268453843" duration="1007000" />
     </task>
     <task id="LOCAL-00010" summary="Dashboard build">
       <created>1571757884669</created>
@@ -627,7 +630,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591181353397</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Added form_admin.js to webpack">
+      <created>1591190434217</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1591190434218</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +658,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Personal Details reworked&#10;13/01/20 11:20am" />
     <MESSAGE value="Contact Details reworked&#10;13/01/20 12:39pm" />
     <MESSAGE value="Emotional Distress html template, entity, form template &amp; controller (not proClaim) complete&#10;21/01/20 10:46am" />
     <MESSAGE value="Admin View Client Database Details Complete&#10;23/01/20 12:32pm" />
@@ -673,21 +682,22 @@
     <MESSAGE value="Updated Admin View DB User credentials page" />
     <MESSAGE value="Created ApiToken entity" />
     <MESSAGE value="Building email template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Building email template" />
+    <MESSAGE value="Added form_admin.js to webpack" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added form_admin.js to webpack" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586942856385">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591268102692">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1586942856385" />
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591111098352">
+    <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1591268102692" />
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591191443593">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1591111098352" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591181348001">
+    <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1591191443593" />
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591190431779">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591181348001" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591190431779" />
     <state x="481" y="85" key="NewPhpClassDialog" timestamp="1590491310905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

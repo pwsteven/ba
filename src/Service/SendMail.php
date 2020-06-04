@@ -48,10 +48,11 @@ class SendMail extends AbstractController
             //$mail->addAddress('psteven13@outlook.com', $firstName);     // Testing Purposes only
             $mail->addAddress($emailAddress, $firstName);     // Add a recipient
             $mail->addReplyTo('pwsteven13@gmail.com', 'Paul Steven');
-            $mail->addBCC('aman.johal@me.com');
-            $mail->addBCC('matthew.p@yourlawyers.co.uk');
-            $mail->addBCC('matthew@yourlawyers.co.uk');
-            $mail->addBCC('jonathan@yourlawyers.co.uk');
+            //$mail->addBCC('aman.johal@me.com');
+            //$mail->addBCC('matthew.p@yourlawyers.co.uk');
+            //$mail->addBCC('matthew@yourlawyers.co.uk');
+            //$mail->addBCC('jonathan@yourlawyers.co.uk');
+            $mail->addBCC('psteven13@outlook.com');
 
             // Attachments
             //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -60,7 +61,7 @@ class SendMail extends AbstractController
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
             $mail->Subject = 'Invitation To Join BA Data Breach App';
-            $mail->Body    = $this->render('email/app_invite_new.html.twig', [
+            $mail->Body    = $this->render('email/app_invite_version_3.html.twig', [
                 'first_name' => $firstName,
                 'token' => $token,
             ]);

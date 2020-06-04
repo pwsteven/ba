@@ -1,5 +1,6 @@
 @import "../gaxon-icon/style.css";
 @import "~perfect-scrollbar";
+@import "~font-awesome";
 @import "dark-style-1.min.css";
 
 #admin_form {padding: 20px;}

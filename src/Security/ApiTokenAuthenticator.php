@@ -5,7 +5,9 @@ namespace App\Security;
 use App\Repository\ApiTokenRepository;
 use Exception;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
@@ -17,12 +19,15 @@ class ApiTokenAuthenticator extends AbstractGuardAuthenticator
 {
     /**
      * @var ApiTokenRepository
+     * @var RouterInterface
      */
     private $apiTokenRepository;
+    private $router;
 
-    public function __construct(ApiTokenRepository $apiTokenRepository)
+    public function __construct(ApiTokenRepository $apiTokenRepository, RouterInterface $router)
     {
         $this->apiTokenRepository = $apiTokenRepository;
+        $this->router = $router;
     }
 
     public function supports(Request $request)
@@ -67,7 +72,7 @@ class ApiTokenAuthenticator extends AbstractGuardAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
     {
-        // allow the authentication to proceed...
+        return new RedirectResponse($this->router->generate('app_dashboard'));
     }
 
     public function start(Request $request, AuthenticationException $authException = null)

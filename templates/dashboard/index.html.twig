@@ -9,7 +9,7 @@
         {# Page Header #}
         <div class="dt-page__header">
             <h1 class="dt-page__title">Dashboard</h1>
-            <span>The British Airways OnBoarding App.</span>
+            <span>The BA Data Breach App</span>
         </div>
         {# /Page Header #}
     </div>
@@ -49,9 +49,9 @@
                 {# Card Body #}
                 <div class="dt-card__body">
                     <p>Please click on the button below to begin the process...</p>
-                    <form method="post">
+                    <form id="start_form" method="post">
                         <div class="form-group">
-                            <button type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage..."> Begin <i class="icon icon-forward"></i> </button>
+                            <button id="start-form-button" type="submit" class="btn btn-outline-info btn-lg" title="continue to the next stage..."> Click To Start <i class="icon icon-forward"></i> </button>
                         </div>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
                     </form>

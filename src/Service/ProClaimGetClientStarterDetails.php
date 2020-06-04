@@ -168,12 +168,12 @@ class ProClaimGetClientStarterDetails
                 $data['client_email'] = $case_field_value;
             }
 
-            // GET CLIENT MOBILE/TELEPHONE
+            // GET CLIENT MAIN MOBILE/TELEPHONE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => 'Client.Tel Mobile',
+                'cfieldname' => 'Client.Tel Main',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {

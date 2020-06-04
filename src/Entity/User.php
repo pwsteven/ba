@@ -47,6 +47,12 @@ class User implements UserInterface
     private $firstName;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Encrypted()
+     */
+    private $fullName;
+
+    /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $appStarted;
@@ -181,8 +187,6 @@ class User implements UserInterface
      */
     private $apiTokens;
 
-
-
     public function __construct()
     {
         $this->fileReferences = new ArrayCollection();
@@ -275,6 +279,18 @@ class User implements UserInterface
     public function setFirstName(string $firstName): self
     {
         $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getFullName(): ?string
+    {
+        return $this->fullName;
+    }
+
+    public function setFullName(?string $fullName): self
+    {
+        $this->fullName = $fullName;
 
         return $this;
     }
@@ -686,4 +702,5 @@ class User implements UserInterface
 
         return $this;
     }
+
 }

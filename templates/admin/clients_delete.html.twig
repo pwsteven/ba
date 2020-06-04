@@ -11,27 +11,39 @@
 
     {# Grid #}
     <div class="row dt-masonry">
-
         {# Grid Item #}
         <div class="col-sm-12 dt-masonry__item">
-
             {# Card #}
             <div class="dt-card">
-
                 {# Card Header #}
                 <div class="dt-card__header">
-
+                    <h4>Are you sure you wish to delete the client <span class="badge badge-info"> {{ client_full_name }} </span> from the system?</h4>
                 </div>
                 {# /Card Header #}
-
+                {# Card Body #}
+                <div class="dt-card__body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <form id="delete_form" method="post">
+                                <div class="form-group">
+                                    <button id="delete-form-button" type="submit" class="btn btn-danger btn-lg" title="click to delete client..."> Yes! Delete <i class="fa fa-trash"></i> </button>
+                                </div>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <a href="{{ path('app_admin_clients') }}">No! Get me out of here!!!</a>
+                        </div>
+                    </div>
+                </div>
+                {# /Card Body #}
             </div>
             {# /Card #}
-
         </div>
         {# /Grid Item #}
-
     </div>
     {# /Grid #}
-
 {% endblock %}
 

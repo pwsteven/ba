@@ -109,8 +109,8 @@ class AdminClientsController extends BaseController
     public function index(Request $request)
     {
         $table = $this->dataTableFactory->create()
-            ->add('firstName', TextColumn::class, [
-                'label' => 'Name',
+            ->add('fullName', TextColumn::class, [
+                'label' => 'Full Name',
             ])
             ->add('appStarted', BoolColumn::class, [
                 'label' => 'Started',
@@ -235,6 +235,7 @@ class AdminClientsController extends BaseController
                    $tempPassword
                 ));
                 $user->setFirstName($proClaimDetails['client_forename']);
+                $user->setFullName($proClaimDetails['client_forename'].' '.$proClaimDetails['client_surname']);
                 $user->setProClaimReference($proClaimRefNo);
 
                 // IMPORT DETAILS FROM PROCLAIM TO DATABASE 'PERSONAL DETAILS' TABLE
@@ -333,13 +334,21 @@ class AdminClientsController extends BaseController
     }
 
     /**
-     * @Route("admin/clients/delete/{id}", name="app_admin_client_delete", methods={"DELETE"})
+     * @Route("admin/client/delete/{id}", name="app_admin_client_delete", methods={"GET", "POST"})
+     * @param int $id
      * @return Response
      */
-    public function clientDelete()
+    public function clientDelete(int $id, Request $request, PersonalDetailsRepository $personalDetailsRepository, EntityManagerInterface $entityManager)
     {
-        return $this->render('admin/clients_delete.html.twig', [
+        $client = $personalDetailsRepository->findOneBySomeField($id);
 
+        if ($request->isMethod('POST')) {
+
+            dd($id);
+        }
+
+        return $this->render('admin/clients_delete.html.twig', [
+            'client_full_name' => $client->getFirstName().' '.$client->getSurname(),
         ]);
     }
 
