@@ -51,4 +51,18 @@ class ContactDetailsRepository extends ServiceEntityRepository
         }
     }
 
+    public function deleteBySomeField($value)
+    {
+        try {
+            return $this->createQueryBuilder('c')
+                ->delete()
+                ->where('c.User = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            echo 'Error returning User: '.$e;
+        }
+    }
+
 }

@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Reimbursements;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\NonUniqueResultException;
 
 /**
  * @method Reimbursements|null find($id, $lockMode = null, $lockVersion = null)
@@ -45,6 +46,20 @@ class ReimbursementsRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
+    }
+
+    public function deleteBySomeField($value)
+    {
+        try {
+            return $this->createQueryBuilder('r')
+                ->delete()
+                ->where('r.User = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            echo 'Error returning User: '.$e;
+        }
     }
 
 }

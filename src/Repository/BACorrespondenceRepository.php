@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\BACorrespondence;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\NonUniqueResultException;
 
 /**
  * @method BACorrespondence|null find($id, $lockMode = null, $lockVersion = null)
@@ -45,6 +46,20 @@ class BACorrespondenceRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
+    }
+
+    public function deleteBySomeField($value)
+    {
+        try {
+            return $this->createQueryBuilder('b')
+                ->delete()
+                ->where('b.userID = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            echo 'Error returning User: '.$e;
+        }
     }
 
 }

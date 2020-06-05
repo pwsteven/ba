@@ -66,6 +66,7 @@ class AdminClientsController extends BaseController
      * @var CreditMonitorRepository
      * @var EmotionalDistressRepository
      * @var FileReferenceRepository
+     * @var ApiTokenRepository
      * @var string
      */
     private $dataTableFactory;
@@ -81,9 +82,10 @@ class AdminClientsController extends BaseController
     private $creditMonitorRepository;
     private $emotionalDistressRepository;
     private $fileReferenceRepository;
+    private $apiTokenRepository;
     private $errorMessage;
 
-    public function __construct(DataTableFactory $dataTableFactory, RouterInterface $router, UserRepository $userRepository, PersonalDetailsRepository $personalDetailsRepository, ContactDetailsRepository $contactDetailsRepository, BACorrespondenceRepository $BACorrespondenceRepository, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, ComplaintsRepository $complaintsRepository, FinancialLossRepository $financialLossRepository, ReimbursementsRepository $reimbursementsRepository, CreditMonitorRepository $creditMonitorRepository, EmotionalDistressRepository $emotionalDistressRepository, FileReferenceRepository $fileReferenceRepository)
+    public function __construct(DataTableFactory $dataTableFactory, RouterInterface $router, UserRepository $userRepository, PersonalDetailsRepository $personalDetailsRepository, ContactDetailsRepository $contactDetailsRepository, BACorrespondenceRepository $BACorrespondenceRepository, FurtherCorrespondenceRepository $furtherCorrespondenceRepository, ComplaintsRepository $complaintsRepository, FinancialLossRepository $financialLossRepository, ReimbursementsRepository $reimbursementsRepository, CreditMonitorRepository $creditMonitorRepository, EmotionalDistressRepository $emotionalDistressRepository, FileReferenceRepository $fileReferenceRepository, ApiTokenRepository $apiTokenRepository)
     {
         $this->dataTableFactory = $dataTableFactory;
         $this->router = $router;
@@ -99,6 +101,7 @@ class AdminClientsController extends BaseController
         $this->emotionalDistressRepository = $emotionalDistressRepository;
         $this->errorMessage = "";
         $this->fileReferenceRepository = $fileReferenceRepository;
+        $this->apiTokenRepository = $apiTokenRepository;
     }
 
     /**
@@ -327,29 +330,43 @@ class AdminClientsController extends BaseController
         ]);
     }
 
-    public function randomPassword($length = 8): string
-    {
-        $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        return substr(str_shuffle( $chars ), 0, $length);
-    }
-
     /**
-     * @Route("admin/client/delete/{id}", name="app_admin_client_delete", methods={"GET", "POST"})
+     * @Route("admin/client/delete/{id}", name="app_admin_client_delete", methods={"GET", "POST"}, requirements={"id":"\d+"})
      * @param int $id
+     * @param Request $request
      * @return Response
      */
-    public function clientDelete(int $id, Request $request, PersonalDetailsRepository $personalDetailsRepository, EntityManagerInterface $entityManager)
+    public function clientDelete(int $id, Request $request)
     {
-        $client = $personalDetailsRepository->findOneBySomeField($id);
+        $client = $this->personalDetailsRepository->findOneBySomeField($id);
 
         if ($request->isMethod('POST')) {
 
-            dd($id);
+            $this->personalDetailsRepository->deleteBySomeField($id);
+            $this->contactDetailsRepository->deleteBySomeField($id);
+            $this->BACorrespondenceRepository->deleteBySomeField($id);
+            $this->furtherCorrespondenceRepository->deleteBySomeField($id);
+            $this->complaintsRepository->deleteBySomeField($id);
+            $this->financialLossRepository->deleteBySomeField($id);
+            $this->reimbursementsRepository->deleteBySomeField($id);
+            $this->creditMonitorRepository->deleteBySomeField($id);
+            $this->emotionalDistressRepository->deleteBySomeField($id);
+            $this->apiTokenRepository->deleteBySomeField($id);
+            $this->userRepository->deleteBySomeField($id);
+            $this->addFlash('client_added_success', 'Client details have been deleted from the database!');
+            return $this->redirectToRoute('app_admin_clients');
+
         }
 
         return $this->render('admin/clients_delete.html.twig', [
             'client_full_name' => $client->getFirstName().' '.$client->getSurname(),
         ]);
+    }
+
+    public function randomPassword($length = 8): string
+    {
+        $chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        return substr(str_shuffle( $chars ), 0, $length);
     }
 
 }

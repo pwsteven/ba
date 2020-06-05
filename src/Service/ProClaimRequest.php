@@ -605,13 +605,12 @@ class ProClaimRequest
             //**************************** FURTHER CORRESPONDENCE **********************************
             //**************************************************************************************
 
-            // GET RECEIVED ANY OTHER BA CORRESPONDENCE TODO
-            /*
+            // GET RECEIVED ANY OTHER BA CORRESPONDENCE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Other correspondence received?.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -621,7 +620,6 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_received_any_other_ba_correspondence'] = $case_field_value;
             }
-            */
 
             //**************************************************************************************
             //********************************* COMPLAINTS *****************************************

@@ -77,13 +77,12 @@ class ProClaimPutFurtherCorrespondence
                 $data['message'] = 'Set Linked Action Error: ' . $response->cerror;
             }
 
-            // UPDATE RECEIVED ANY OTHER BA CORRESPONDENCE  TODO
-            /*
+            // UPDATE RECEIVED ANY OTHER BA CORRESPONDENCE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Other correspondence received?.response',
                 'cfieldvalue' => $caseData['received_any_other_ba_correspondence'],
             ];
             $response = $client->proPutData($param);
@@ -91,7 +90,6 @@ class ProClaimPutFurtherCorrespondence
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Received Any Other BA Correspondence Error: ' . $response->cerror;
             }
-            */
 
             // COMMIT TO PROCLAIM
             $param = [

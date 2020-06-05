@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\NonUniqueResultException;
 
 /**
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -38,12 +39,29 @@ class UserRepository extends ServiceEntityRepository
 
     public function findOneBySomeField($value): ?User
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.proClaimReference = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        try {
+            return $this->createQueryBuilder('u')
+                ->andWhere('u.proClaimReference = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            echo 'Error finding User: '.$e;
+        }
+    }
+
+    public function deleteBySomeField($value)
+    {
+        try {
+            return $this->createQueryBuilder('u')
+                ->delete()
+                ->where('u.id = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            echo 'Error deleting User: '.$e;
+        }
     }
 
 }

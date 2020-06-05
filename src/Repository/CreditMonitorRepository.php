@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\CreditMonitor;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\NonUniqueResultException;
 
 /**
  * @method CreditMonitor|null find($id, $lockMode = null, $lockVersion = null)
@@ -44,6 +45,20 @@ class CreditMonitorRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
+    }
+
+    public function deleteBySomeField($value)
+    {
+        try {
+            return $this->createQueryBuilder('c')
+                ->delete()
+                ->where('c.User = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            echo 'Error returning User: '.$e;
+        }
     }
 
 }

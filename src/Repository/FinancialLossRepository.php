@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\FinancialLoss;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\NonUniqueResultException;
 
 /**
  * @method FinancialLoss|null find($id, $lockMode = null, $lockVersion = null)
@@ -45,6 +46,20 @@ class FinancialLossRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
+    }
+
+    public function deleteBySomeField($value)
+    {
+        try {
+            return $this->createQueryBuilder('f')
+                ->delete()
+                ->where('f.User = :val')
+                ->setParameter('val', $value)
+                ->getQuery()
+                ->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            echo 'Error returning User: '.$e;
+        }
     }
 
 }

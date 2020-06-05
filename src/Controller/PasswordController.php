@@ -81,11 +81,11 @@ class PasswordController extends AbstractController
             }
 
             $user = $this->userRepository->findOneBy(['email' => $email]);
-            $firstName = $user->getFirstName();
             if ($user === null) {
                 $this->error = "Sorry! No email address found!";
                 $this->lastUsername = $email;
             } else {
+                $firstName = $user->getFirstName();
                 try {
                     $this->token = Uuid::uuid1();
                 } catch (UnsatisfiedDependencyException $e) {
@@ -105,10 +105,10 @@ class PasswordController extends AbstractController
                     $mail->Port       = 587;                                    // TCP port to connect to
 
                     //Recipients
-                    $mail->setFrom('pwsteven13@gmail.com', 'Paul Steven');
-                    $mail->addAddress('psteven13@outlook.com', $firstName);     // Add a recipient
+                    $mail->setFrom('pwsteven13@gmail.com', 'BA Data Breach App');
+                    $mail->addAddress($email, $firstName);     // Add a recipient
                     //$mail->addAddress('ellen@example.com');               // Name is optional
-                    $mail->addReplyTo('pwsteven13@gmail.com', 'Paul Steven');
+                    $mail->addReplyTo('noreply@ba.yourlawyers.co.uk', 'No-Reply');
                     //$mail->addCC('cc@example.com');
                     //$mail->addBCC('bcc@example.com');
 
@@ -119,7 +119,7 @@ class PasswordController extends AbstractController
                     // Content
                     $mail->isHTML(true);                                  // Set email format to HTML
                     $mail->Subject = 'Password Recovery Link';
-                    $mail->Body    = $this->render('email/forgot_password.html.twig', [
+                    $mail->Body    = $this->render('email/forgot_password_version_2.html.twig', [
                         'first_name' => $firstName,
                         'token' => $this->token->toString(),
                         'expires_date' => $emailExpiresDate,
