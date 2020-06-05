@@ -72,30 +72,11 @@
                             {# FINANCIAL LOSS BLOCK #}
                             <div id="financial_loss_block" class="display_none">
                                 {# Other Comment Form Row #}
-                                <div class="row mt-3">
-                                    {# Grid Item #}
-                                    <div class="col-md-12 col-sm-12">
-                                        {# Card #}
-                                        <div class="dt-card">
-                                            {# Card Header #}
-                                            <div class="dt-card__header">
-                                                <h4>Please add more detail in the text field below...</h4>
-                                            </div>
-                                            {# /Card Header #}
-                                            {# Card Body #}
-                                            <div class="dt-card__body">
-                                                <div class="row">
-                                                    <div class="col-md-12 col-sm-12">
-                                                        {{ form_widget(form.typeFinancialLossOtherComment) }}
-                                                        <div class="error_message">{{ form_errors(form.typeFinancialLossOtherComment) }}</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {# /Card Body #}
-                                        </div>
-                                        {# /Card #}
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 mt-3">
+                                        {{ form_widget(form.typeFinancialLossOtherComment) }}
+                                        <small class="form-text">Please provide more info, if possible, in the text box above...</small>
                                     </div>
-                                    {# /Grid Item #}
                                 </div>
                                 {# /Other Comment Form Row #}
                             </div>

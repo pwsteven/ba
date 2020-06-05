@@ -78,6 +78,7 @@ class FinancialLossController extends BaseController
             $data = [
                 'case_id' => $this->getUser()->getProClaimReference(),
                 'type_financial_Loss' => $typeFinancialLoss,
+                'type_financial_Loss_other_text' => $financialLossDetails->getTypeFinancialLossOtherComment(),
                 'total_loss_amount' => $financialLossDetails->getTotalLossAmount(),
             ];
             //dd($data);

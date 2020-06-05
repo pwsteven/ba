@@ -762,7 +762,7 @@ class ProClaimRequest
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => 'BA SOI - Financial Loss circumstances.Text',
+                'cfieldname' => 'BA - Financial Loss type.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -771,6 +771,22 @@ class ProClaimRequest
                 $session_id = $response->csessionid;
                 $case_field_value = $response->cfieldvalue;
                 $data['client_financial_Loss'] = $case_field_value;
+            }
+
+            // GET FINANCIAL LOSS OTHER COMMENT
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseRefNo,
+                'cfieldname' => 'BA - Financial Loss type - other.text',
+            ];
+            $response = $client->proGetData($param);
+            if ($response->cstatus!='OK') {
+                $data['client_financial_Loss_other_comment'] = $response->cerror;
+            } else {
+                $session_id = $response->csessionid;
+                $case_field_value = $response->cfieldvalue;
+                $data['client_financial_Loss_other_comment'] = $case_field_value;
             }
 
             // GET TOTAL LOSS AMOUNT

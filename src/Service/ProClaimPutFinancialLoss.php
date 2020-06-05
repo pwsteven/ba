@@ -82,13 +82,27 @@ class ProClaimPutFinancialLoss
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => 'BA SOI - Financial Loss circumstances.Text',
+                'cfieldname' => 'BA - Financial Loss type.text',
                 'cfieldvalue' => $caseData['type_financial_Loss'],
             ];
             $response = $client->proPutData($param);
             $session_id = $response->csessionid;
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Type Financial Loss Error: ' . $response->cerror;
+            }
+
+            // UPDATE FINANCIAL LOSS OTHER TEXT BOX
+            $param = [
+                'csessionid' => $session_id,
+                'ccasetype' => '93',
+                'ccaseno' => $caseData['case_id'],
+                'cfieldname' => 'BA - Financial Loss type - other.text',
+                'cfieldvalue' => $caseData['type_financial_Loss_other_text'],
+            ];
+            $response = $client->proPutData($param);
+            $session_id = $response->csessionid;
+            if ($response->cstatus != 'OK') {
+                $data['message'] = 'Set Financial Loss Other Text Error: ' . $response->cerror;
             }
 
             // UPDATE TOTAL LOSS AMOUNT

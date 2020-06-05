@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/ba-login-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191206153419.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191211184602.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191223110646.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20200116105848.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/email/forgot_password_version_2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/forgot_password_version_2.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/FinancialLossController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutFinancialLoss.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutFinancialLoss.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/client_view_proclaim.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_view_proclaim.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard/financial_loss.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard/financial_loss.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,14 +288,7 @@
       <workItem from="1591095072938" duration="148000" />
       <workItem from="1591095267197" duration="28148000" />
       <workItem from="1591261534604" duration="1909000" />
-      <workItem from="1591268453843" duration="15698000" />
-    </task>
-    <task id="LOCAL-00012" summary="03/12/19 3:20pm">
-      <created>1575386814951</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1575386814951</updated>
+      <workItem from="1591268453843" duration="21392000" />
     </task>
     <task id="LOCAL-00013" summary="05/12/19 11:44am">
       <created>1575546394544</created>
@@ -624,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591350112210</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Updated forgot_password_version_2.html.twig">
+      <created>1591353778877</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1591353778877</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +654,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Admin View Client Database Details Complete&#10;23/01/20 12:32pm" />
     <MESSAGE value="Beginning Manual + Auto Import pages in Admin&#10;28/01/20 10:30am" />
     <MESSAGE value="Webpacking...&#10;05/02/20 12:52pm" />
     <MESSAGE value="Webpacking...&#10;05/02/20 16:07pm" />
@@ -670,7 +678,8 @@
     <MESSAGE value="Added form_admin.js to webpack" />
     <MESSAGE value="Created app_invite_version_3.html.twig" />
     <MESSAGE value="Created forgot_password_version_2.html.twig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created forgot_password_version_2.html.twig" />
+    <MESSAGE value="Updated forgot_password_version_2.html.twig" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated forgot_password_version_2.html.twig" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591268102692">
@@ -681,10 +690,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1591278956169" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591350108658">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591353776435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591350108658" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591353776435" />
     <state x="481" y="85" key="NewPhpClassDialog" timestamp="1590491310905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
