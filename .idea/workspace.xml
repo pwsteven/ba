@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4577e412-7ab3-42d9-a956-1ed2cf572bb3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/email/forgot_password_version_2.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/form_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/form_admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminClientsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ApiTokenRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ApiTokenRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BACorrespondenceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BACorrespondenceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ComplaintsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ComplaintsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ContactDetailsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ContactDetailsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CreditMonitorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CreditMonitorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EmotionalDistressRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EmotionalDistressRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FinancialLossRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FinancialLossRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/FurtherCorrespondenceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FurtherCorrespondenceRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PersonalDetailsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonalDetailsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ReimbursementsRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ReimbursementsRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimPutFurtherCorrespondence.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimPutFurtherCorrespondence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/ProClaimRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/client_view_proclaim.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/client_view_proclaim.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/email/app_invite_version_3.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/app_invite_version_3.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/email/forgot_password_version_2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/email/forgot_password_version_2.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,14 +279,7 @@
       <workItem from="1591095072938" duration="148000" />
       <workItem from="1591095267197" duration="28148000" />
       <workItem from="1591261534604" duration="1909000" />
-      <workItem from="1591268453843" duration="13035000" />
-    </task>
-    <task id="LOCAL-00011" summary="Dashboard Controller">
-      <created>1571853983612</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1571853983612</updated>
+      <workItem from="1591268453843" duration="15698000" />
     </task>
     <task id="LOCAL-00012" summary="03/12/19 3:20pm">
       <created>1575386814951</created>
@@ -642,7 +617,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591270888386</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Created forgot_password_version_2.html.twig">
+      <created>1591350112210</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1591350112210</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +645,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Emotional Distress html template, entity, form template &amp; controller (not proClaim) complete&#10;21/01/20 10:46am" />
     <MESSAGE value="Admin View Client Database Details Complete&#10;23/01/20 12:32pm" />
     <MESSAGE value="Beginning Manual + Auto Import pages in Admin&#10;28/01/20 10:30am" />
     <MESSAGE value="Webpacking...&#10;05/02/20 12:52pm" />
@@ -688,7 +669,8 @@
     <MESSAGE value="Building email template" />
     <MESSAGE value="Added form_admin.js to webpack" />
     <MESSAGE value="Created app_invite_version_3.html.twig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created app_invite_version_3.html.twig" />
+    <MESSAGE value="Created forgot_password_version_2.html.twig" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created forgot_password_version_2.html.twig" />
   </component>
   <component name="WindowStateProjectService">
     <state x="363" y="90" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591268102692">
@@ -699,10 +681,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="117" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1591278956169" />
-    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591270882581">
+    <state x="301" y="0" key="CommitChangelistDialog2" timestamp="1591350108658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591270882581" />
+    <state x="301" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1591350108658" />
     <state x="481" y="85" key="NewPhpClassDialog" timestamp="1590491310905">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
