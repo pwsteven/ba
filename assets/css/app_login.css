@@ -3,7 +3,7 @@
 @import "~typeface-numans";
 html,body {
     background-color: lightgray;
-    background-image: url('../images/login-bg.jpg');
+    background-image: url('../images/ba-login-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;

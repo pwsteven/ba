@@ -29,9 +29,11 @@ use App\Repository\UserRepository;
 use App\Service\ProClaimGetClientStarterDetails;
 use App\Service\ProClaimRequest;
 use App\Service\SendMail;
+use App\Service\UploaderHelper;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\QueryBuilder;
+use League\Flysystem\FileNotFoundException;
 use Omines\DataTablesBundle\Adapter\Doctrine\ORMAdapter;
 use Omines\DataTablesBundle\Column\BoolColumn;
 use Omines\DataTablesBundle\Column\TextColumn;
@@ -131,7 +133,8 @@ class AdminClientsController extends BaseController
                 'label' => 'Actions',
                 'className' => 'text-center',
                 'render' => function($value) {
-                    return '<a href="'.$this->router->generate('app_admin_client_edit', ['id' => $value]).'"><i class="icon icon-auth-screen icon-fw icon-xl"  data-toggle="tooltip" data-placement="top" title="Client Database Entries"></i></a> - <a href="'.$this->router->generate('app_admin_client_proclaim', ['id' => $value]).'" title="Client ProClaim Entries"><i class="icon icon-components icon-fw icon-xl"></i></a> - <a href="'.$this->router->generate('app_admin_client_delete', ['id' => $value]).'" title="Delete Client"><i class="icon icon-close-circle icon-fw icon-xl"></i></a>';
+                    //return '<a href="'.$this->router->generate('app_admin_client_edit', ['id' => $value]).'"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x" title="View Database Entires For Client" aria-hidden="true"></i><i class="fa fa-database"></i></span></a> - <a href="'.$this->router->generate('app_admin_client_proclaim', ['id' => $value]).'" title="Client ProClaim Entries"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x" title="View ProClaim Details For Client" aria-hidden="true"></i><i class="fa fa-cloud-upload"></i></span></a> - <a href="'.$this->router->generate('app_admin_client_delete', ['id' => $value]).'" title="Delete Client"><span class="fa-stack fa-lg"><i class="fa fa-square-o fa-stack-2x" title="Delete Client" aria-hidden="true"></i><i class="fa fa-remove"></i></span></a>';
+                    return '<div class="btn-group mr-2 mb-2" role="group" aria-label="Database"><a href="'.$this->router->generate('app_admin_client_edit', ['id' => $value]).'" class="btn btn-outline-primary" title="View Database Entires For Client"><i class="fa fa-database"></i></a><a href="'.$this->router->generate('app_admin_client_proclaim', ['id' => $value]).'" class="btn btn-outline-primary" title="Client ProClaim Entries"><i class="fa fa-cloud-upload"></i></a><a href="'.$this->router->generate('app_admin_client_delete', ['id' => $value]).'" class="btn btn-outline-primary" title="Delete Client"><i class="fa fa-remove"></i></a></div>';
                 }
             ])
             ->createAdapter(ORMAdapter::class, [
@@ -334,9 +337,11 @@ class AdminClientsController extends BaseController
      * @Route("admin/client/delete/{id}", name="app_admin_client_delete", methods={"GET", "POST"}, requirements={"id":"\d+"})
      * @param int $id
      * @param Request $request
+     * @param UploaderHelper $uploaderHelper
      * @return Response
+     * @throws FileNotFoundException
      */
-    public function clientDelete(int $id, Request $request)
+    public function clientDelete(int $id, Request $request, UploaderHelper $uploaderHelper)
     {
         $client = $this->personalDetailsRepository->findOneBySomeField($id);
 
@@ -352,6 +357,11 @@ class AdminClientsController extends BaseController
             $this->creditMonitorRepository->deleteBySomeField($id);
             $this->emotionalDistressRepository->deleteBySomeField($id);
             $this->apiTokenRepository->deleteBySomeField($id);
+            $files = $this->fileReferenceRepository->findByExampleField($id);
+            foreach ($files as $file){
+                $uploaderHelper->deleteFile($file->getFilePath(), false);
+                $this->fileReferenceRepository->deleteBySomeField($file->getId());
+            }
             $this->userRepository->deleteBySomeField($id);
             $this->addFlash('client_added_success', 'Client details have been deleted from the database!');
             return $this->redirectToRoute('app_admin_clients');
