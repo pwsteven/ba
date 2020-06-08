@@ -825,13 +825,12 @@ class ProClaimRequest
                 $data['client_financial_loss_suffered'] = $case_field_value;
             }
 
-            // GET PROVIDER TODO
-            /*
+            // GET PROVIDER
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - who provided reimbursement.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -841,7 +840,6 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_provider'] = $case_field_value;
             }
-            */
 
             // GET AMOUNT REIMBURSED
             $param = [
@@ -883,13 +881,12 @@ class ProClaimRequest
             //*************************** EMOTIONAL DISTRESS ***************************************
             //**************************************************************************************
 
-            // GET PERSONAL DETAILS USED FRAUDULENTLY TODO
-            /*
+            // GET PERSONAL DETAILS USED FRAUDULENTLY
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - concerned details used fraudulently.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -899,14 +896,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_personal_details'] = $case_field_value;
             }
-            */
 
             // GET EMOTIONS EXPERIENCED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => 'BA SOI - distress.Response',
+                'cfieldname' => 'BA - Distress - emotions experienced.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -922,7 +918,7 @@ class ProClaimRequest
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => 'BA SOI - distress explanation.Text',
+                'cfieldname' => 'BA - Distress - emotions experienced - other.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -933,13 +929,12 @@ class ProClaimRequest
                 $data['client_emotions_experienced_comment'] = $case_field_value;
             }
 
-            // GET EMOTIONAL DISTRESS LASTED TODO
-            /*
+            // GET EMOTIONAL DISTRESS LASTED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Distress lasted.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -949,15 +944,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_emotional_distress_lasted'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION A TODO
-            /*
+            // GET BREACH QUESTION A
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU anxious.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -967,15 +960,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_a'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION A EXAMPLE TODO
-            /*
+            // GET BREACH QUESTION A EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU anxious reason.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -985,15 +976,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_a_example'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION B TODO
-            /*
+            // GET BREACH QUESTION B
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU worry.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1003,15 +992,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_b'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION B EXAMPLE TODO
-            /*
+            // GET BREACH QUESTION B EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU worry reason.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1021,15 +1008,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_b_example'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION C TODO
-            /*
+            // GET BREACH QUESTION C
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU different.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1039,15 +1024,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_c'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION C EXAMPLE TODO
-            /*
+            // GET BREACH QUESTION C EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU different reason.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1057,15 +1040,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_c_example'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION D TODO
-            /*
+            // GET BREACH QUESTION D
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU relaxing.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1075,15 +1056,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_d'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION D EXAMPLE TODO
-            /*
+            // GET BREACH QUESTION D EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU relaxing reason.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1093,15 +1072,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_d_example'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION E TODO
-            /*
+            // GET BREACH QUESTION E
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU restless.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1111,15 +1088,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_e'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION E EXAMPLE TODO
-            /*
+            // GET BREACH QUESTION E EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU restless reason.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1129,15 +1104,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_e_example'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION F TODO
-            /*
+            // GET BREACH QUESTION F
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU irritable.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1147,15 +1120,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_f'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION F EXAMPLE TODO
-            /*
+            // GET BREACH QUESTION F EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU irritable reason.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1165,15 +1136,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_f_example'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION G TODO
-            /*
+            // GET BREACH QUESTION G
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU afraid.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1183,15 +1152,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_g'] = $case_field_value;
             }
-            */
 
-            // GET BREACH QUESTION G EXAMPLE TODO
-            /*
+            // GET BREACH QUESTION G EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'MU afraid reason.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1201,15 +1168,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_breach_question_g_example'] = $case_field_value;
             }
-            */
 
-            // GET DIAGNOSED CONDITIONS TODO
-            /*
+            // GET DIAGNOSED CONDITIONS
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => 'BA SOI - diagnosis.Response',
+                'cfieldname' => 'BA - diagnosed conditions.Response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1219,15 +1184,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_diagnosed_conditions'] = $case_field_value;
             }
-            */
 
-            // GET DIAGNOSED CONDITIONS MORE INFO EXAMPLE TODO
-            /*
+            // GET DIAGNOSED CONDITIONS MORE INFO
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - diagnosed conditions other.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1237,15 +1200,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_diagnosed_conditions_example'] = $case_field_value;
             }
-            */
 
-            // GET IMPACT CONDITION TODO
-            /*
+            // GET IMPACT CONDITION
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - diagnosed conditions other.response',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1255,15 +1216,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_impact_condition'] = $case_field_value;
             }
-            */
 
-            // GET IMPACT CONDITION MORE INFO EXAMPLE TODO
-            /*
+            // GET IMPACT CONDITION MORE INFO EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - symptoms exacerbated.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1273,15 +1232,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_impact_condition_example'] = $case_field_value;
             }
-            */
 
-            // GET STEPS TAKEN TODO
-            /*
+            // GET STEPS TAKEN
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - steps taken.Text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1291,15 +1248,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_steps_taken'] = $case_field_value;
             }
-            */
 
-            // GET STEPS TAKEN MORE INFO EXAMPLE TODO
-            /*
+            // GET STEPS TAKEN MORE INFO EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - steps taken other.Text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1309,15 +1264,13 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_steps_taken_example'] = $case_field_value;
             }
-            */
 
-            // GET STEPS TAKEN DETAILS TODO
-            /*
+            // GET STEPS TAKEN DETAILS
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'BA - inconvenience.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1327,7 +1280,6 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_steps_taken_details'] = $case_field_value;
             }
-            */
 
             // GET ADVERSE CONSEQUENCES
             $param = [
@@ -1345,13 +1297,12 @@ class ProClaimRequest
                 $data['client_adverse_consequences'] = $case_field_value;
             }
 
-            // GET ADVERSE CONSEQUENCES MORE INFO EXAMPLE TODO
-            /*
+            // GET ADVERSE CONSEQUENCES MORE INFO EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseRefNo,
-                'cfieldname' => '',
+                'cfieldname' => 'GAC - Adverse Breach Consequences other.text',
             ];
             $response = $client->proGetData($param);
             if ($response->cstatus!='OK') {
@@ -1361,7 +1312,6 @@ class ProClaimRequest
                 $case_field_value = $response->cfieldvalue;
                 $data['client_adverse_consequences_example'] = $case_field_value;
             }
-            */
 
             // GET ADVERSE CONSEQUENCES DETAILS
             $param = [

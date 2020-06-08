@@ -92,13 +92,12 @@ class ProClaimPutReimbursements
                 $data['message'] = 'Set Financial Loss Suffered Error: ' . $response->cerror;
             }
 
-            // UPDATE PROVIDER TODO
-            /*
+            // UPDATE PROVIDER
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - who provided reimbursement.text',
                 'cfieldvalue' => $caseData['provider'],
             ];
             $response = $client->proPutData($param);
@@ -106,7 +105,6 @@ class ProClaimPutReimbursements
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Provider Error: ' . $response->cerror;
             }
-            */
 
             // UPDATE AMOUNT REIMBURSED
             $param = [

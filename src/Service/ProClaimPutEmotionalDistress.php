@@ -78,13 +78,12 @@ class ProClaimPutEmotionalDistress
                 $data['message'] = 'Set Linked Action Error: ' . $response->cerror;
             }
 
-            // UPDATE PERSONAL DETAILS USED FRAUDULENTLY TODO
-            /*
+            // UPDATE PERSONAL DETAILS USED FRAUDULENTLY
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - concerned details used fraudulently.response',
                 'cfieldvalue' => $caseData['personal_details'],
             ];
             $response = $client->proPutData($param);
@@ -92,15 +91,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Personal Details Used Fraudulently Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE EMOTIONS EXPERIENCED TODO (EXPECTING A YES|NO ANSWER WHEN THE QUESTION IS MULTIPLE CHOICE ** NEEDS CHANGED
-            /*
+            // UPDATE EMOTIONS EXPERIENCED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => 'BA SOI - distress.Response',
+                'cfieldname' => 'BA - Distress - emotions experienced.text',
                 'cfieldvalue' => $caseData['emotions_experienced_new'],
             ];
             $response = $client->proPutData($param);
@@ -108,14 +105,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Emotions Experienced Error: ' . $response->cerror;
             }
-            */
 
             // UPDATE EMOTIONS EXPERIENCED COMMENT
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => 'BA SOI - distress explanation.Text',
+                'cfieldname' => 'BA - Distress - emotions experienced - other.text',
                 'cfieldvalue' => $caseData['emotions_experienced_comment'],
             ];
             $response = $client->proPutData($param);
@@ -124,13 +120,12 @@ class ProClaimPutEmotionalDistress
                 $data['message'] = 'Set Emotions Experienced Comment Error: ' . $response->cerror;
             }
 
-            // UPDATE EMOTIONAL DISTRESS LASTED TODO
-            /*
+            // UPDATE EMOTIONAL DISTRESS LASTED
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - Distress lasted.response',
                 'cfieldvalue' => $caseData['emotional_distress_lasted'],
             ];
             $response = $client->proPutData($param);
@@ -138,15 +133,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Emotional Distress Lasted Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION A TODO
-            /*
+            // UPDATE BREACH QUESTION A
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU anxious.response',
                 'cfieldvalue' => $caseData['breach_question_a'],
             ];
             $response = $client->proPutData($param);
@@ -154,15 +147,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question A Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION A EXAMPLE TODO
-            /*
+            // UPDATE BREACH QUESTION A EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU anxious reason.text',
                 'cfieldvalue' => $caseData['breach_question_a_example'],
             ];
             $response = $client->proPutData($param);
@@ -170,15 +161,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question A Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION B TODO
-            /*
+            // UPDATE BREACH QUESTION B
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU worry.response',
                 'cfieldvalue' => $caseData['breach_question_b'],
             ];
             $response = $client->proPutData($param);
@@ -186,15 +175,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question B Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION B EXAMPLE TODO
-            /*
+            // UPDATE BREACH QUESTION B EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU worry reason.text',
                 'cfieldvalue' => $caseData['breach_question_b_example'],
             ];
             $response = $client->proPutData($param);
@@ -202,15 +189,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question B Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION C TODO
-            /*
+            // UPDATE BREACH QUESTION C
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU different.response',
                 'cfieldvalue' => $caseData['breach_question_c'],
             ];
             $response = $client->proPutData($param);
@@ -218,15 +203,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question C Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION C EXAMPLE TODO
-            /*
+            // UPDATE BREACH QUESTION C EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU different reason.text',
                 'cfieldvalue' => $caseData['breach_question_c_example'],
             ];
             $response = $client->proPutData($param);
@@ -234,15 +217,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question C Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION D TODO
-            /*
+            // UPDATE BREACH QUESTION D
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU relaxing.response',
                 'cfieldvalue' => $caseData['breach_question_d'],
             ];
             $response = $client->proPutData($param);
@@ -250,15 +231,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question D Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION D EXAMPLE TODO
-            /*
+            // UPDATE BREACH QUESTION D EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU relaxing reason.text',
                 'cfieldvalue' => $caseData['breach_question_d_example'],
             ];
             $response = $client->proPutData($param);
@@ -266,15 +245,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question D Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION E TODO
-            /*
+            // UPDATE BREACH QUESTION E
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU restless.response',
                 'cfieldvalue' => $caseData['breach_question_e'],
             ];
             $response = $client->proPutData($param);
@@ -282,15 +259,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question E Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION E EXAMPLE TODO
-            /*
+            // UPDATE BREACH QUESTION E EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU restless reason.text',
                 'cfieldvalue' => $caseData['breach_question_e_example'],
             ];
             $response = $client->proPutData($param);
@@ -298,15 +273,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question E Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION F TODO
-            /*
+            // UPDATE BREACH QUESTION F
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU irritable.response',
                 'cfieldvalue' => $caseData['breach_question_f'],
             ];
             $response = $client->proPutData($param);
@@ -314,15 +287,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question F Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION F EXAMPLE TODO
-            /*
+            // UPDATE BREACH QUESTION F EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU irritable reason.text',
                 'cfieldvalue' => $caseData['breach_question_f_example'],
             ];
             $response = $client->proPutData($param);
@@ -330,15 +301,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question F Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION G TODO
-            /*
+            // UPDATE BREACH QUESTION G
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU afraid.response',
                 'cfieldvalue' => $caseData['breach_question_g'],
             ];
             $response = $client->proPutData($param);
@@ -346,15 +315,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question G Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE BREACH QUESTION G EXAMPLE TODO
-            /*
+            // UPDATE BREACH QUESTION G EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'MU afraid reason.text',
                 'cfieldvalue' => $caseData['breach_question_g_example'],
             ];
             $response = $client->proPutData($param);
@@ -362,15 +329,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Breach Question G Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE DIAGNOSED CONDITIONS TODO
-            /*
+            // UPDATE DIAGNOSED CONDITIONS
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => 'BA SOI - diagnosis.Response',
+                'cfieldname' => 'BA - diagnosed conditions.Response',
                 'cfieldvalue' => $caseData['diagnosed_conditions'],
             ];
             $response = $client->proPutData($param);
@@ -378,15 +343,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Diagnosed Conditions Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE DIAGNOSED CONDITIONS MORE INFO TODO
-            /*
+            // UPDATE DIAGNOSED CONDITIONS MORE INFO
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - diagnosed conditions other.text',
                 'cfieldvalue' => $caseData['diagnosed_conditions_example'],
             ];
             $response = $client->proPutData($param);
@@ -394,15 +357,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Diagnosed Conditions More Info Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE IMPACT CONDITION TODO
-            /*
+            // UPDATE IMPACT CONDITION
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - diagnosed conditions other.response',
                 'cfieldvalue' => $caseData['impact_condition'],
             ];
             $response = $client->proPutData($param);
@@ -410,15 +371,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Impact Condition Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE IMPACT CONDITION MORE INFO EXAMPLE TODO
-            /*
+            // UPDATE IMPACT CONDITION MORE INFO EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - symptoms exacerbated.text',
                 'cfieldvalue' => $caseData['impact_condition_example'],
             ];
             $response = $client->proPutData($param);
@@ -426,15 +385,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Impact Condition More Info Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE STEPS TAKEN TODO
-            /*
+            // UPDATE STEPS TAKEN
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - steps taken.Text',
                 'cfieldvalue' => $caseData['steps_taken'],
             ];
             $response = $client->proPutData($param);
@@ -442,15 +399,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Steps Taken Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE STEPS TAKEN MORE INFO TODO
-            /*
+            // UPDATE STEPS TAKEN MORE INFO
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - steps taken other.Text',
                 'cfieldvalue' => $caseData['steps_taken_example'],
             ];
             $response = $client->proPutData($param);
@@ -458,15 +413,13 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Steps Taken More Info Example Error: ' . $response->cerror;
             }
-            */
 
-            // UPDATE STEPS TAKEN DETAILS TODO
-            /*
+            // UPDATE STEPS TAKEN DETAILS
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'BA - inconvenience.text',
                 'cfieldvalue' => $caseData['steps_taken_details'],
             ];
             $response = $client->proPutData($param);
@@ -474,7 +427,6 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Steps Taken Details Error: ' . $response->cerror;
             }
-            */
 
             // UPDATE ADVERSE CONSEQUENCES
             $param = [
@@ -490,13 +442,12 @@ class ProClaimPutEmotionalDistress
                 $data['message'] = 'Set Adverse Consequences Error: ' . $response->cerror;
             }
 
-            // UPDATE ADVERSE CONSEQUENCES MORE INFO EXAMPLE TODO
-            /*
+            // UPDATE ADVERSE CONSEQUENCES MORE INFO EXAMPLE
             $param = [
                 'csessionid' => $session_id,
                 'ccasetype' => '93',
                 'ccaseno' => $caseData['case_id'],
-                'cfieldname' => '',
+                'cfieldname' => 'GAC - Adverse Breach Consequences other.text',
                 'cfieldvalue' => $caseData['adverse_consequences_example'],
             ];
             $response = $client->proPutData($param);
@@ -504,7 +455,6 @@ class ProClaimPutEmotionalDistress
             if ($response->cstatus != 'OK') {
                 $data['message'] = 'Set Adverse Consequences More Info Error: ' . $response->cerror;
             }
-            */
 
             // UPDATE ADVERSE CONSEQUENCES DETAILS
             $param = [
