@@ -1,0 +1,34 @@
+home:
+    path:       /
+    controller: Tests\Fixtures\AppBundle\Controller\HomeController::showAction
+
+plain:
+    path:       /plain
+    controller: Tests\Fixtures\AppBundle\Controller\PlainController::tableAction
+
+type:
+    path:       /type
+    controller: Tests\Fixtures\AppBundle\Controller\TypeController::tableAction
+
+service:
+    path:       /service
+    controller: Tests\Fixtures\AppBundle\Controller\ServiceController::tableAction
+
+custom:
+    path:       /custom
+    controller: Tests\Fixtures\AppBundle\Controller\CustomQueryController::tableAction
+
+grouped:
+    path:       /grouped
+    controller: Tests\Fixtures\AppBundle\Controller\GroupedController::tableAction
+
+grouped2:
+    path:       /grouped2
+    controller: Tests\Fixtures\AppBundle\Controller\GroupedController::table2Action
+
+employee.edit:
+    path:       /employee/{id}
+
+orm_adapter_events.pre_query:
+    path: /orm-adapter-events/pre-query
+    controller: Tests\Fixtures\AppBundle\Controller\ORMAdapterEventsController::preQueryAction
